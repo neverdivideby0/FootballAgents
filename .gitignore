@@ -1,0 +1,25 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+.pytest_cache/
+
+# Env / secrets
+.env
+.env.*
+!.env.example
+
+# Local data / cache / run logs (keep curated memory in git, ignore machine cache)
+.cache/
+data_cache/
+runs/
+data/
+
+# Generated outputs (reports + the built explorer HTML — regenerate with `refresh`)
+exports/
+
+# OS / editor
+.DS_Store
+.idea/
+.vscode/

@@ -1,0 +1,27 @@
+{
+  "team": "Argentina",
+  "summary": "[placeholder] Argentina (FIFA #1); 1 analysed match(es). Enable use_llm for a synthesised scouting report.",
+  "strengths": [],
+  "weaknesses": [],
+  "tactical_tendencies": [
+    "France close ranks",
+    "France substitutions: Dembele and Giroud off; Thuram and Kolo Muani on.",
+    "Argentina substitution: Lautaro Martinez introduced in extra time.",
+    "low-block (Argentina)",
+    "Argentina sit back in a low block",
+    "France implement a double substitution; subsequently enjoy more possession",
+    "France substitutions: Kolo Muani and Thuram introduced, providing fresh attacking options and momentum.",
+    "Camavinga pressing De Paul to disrupt Argentina's midfield build-up."
+  ],
+  "key_players": [
+    "G\u00e9ronimo Rulli",
+    "Emiliano Mart\u00ednez",
+    "Juan Musso",
+    "Gabriel Rojas",
+    "Agustin Giay"
+  ],
+  "sources": [
+    "football_data_org:team/762",
+    "Argentina_vs_France_2022-12-18"
+  ]
+}

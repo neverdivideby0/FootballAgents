@@ -1,0 +1,18 @@
+{
+  "team": "France",
+  "summary": "[placeholder] France (FIFA #2); 1 analysed match(es). Enable use_llm for a synthesised scouting report.",
+  "strengths": [],
+  "weaknesses": [],
+  "tactical_tendencies": [],
+  "key_players": [
+    "Brice Samba",
+    "Mike Maignan",
+    "Lucas Chevalier",
+    "Robin Risser",
+    "N'Golo Kant\u00e9"
+  ],
+  "sources": [
+    "football_data_org:team/773",
+    "Argentina_vs_France_2022-12-18"
+  ]
+}

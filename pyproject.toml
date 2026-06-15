@@ -1,0 +1,34 @@
+[project]
+name = "worldcupagents"
+version = "0.2.0"
+description = "FootballAgents — a multi-agent LLM system that predicts football matches (World Cup + the big-5 leagues) via team-advocate debate and a grounded judge. Inspired by TradingAgents."
+readme = "README.md"
+requires-python = ">=3.11"
+dependencies = [
+    "langgraph>=0.2.0",
+    "pydantic>=2.7",
+    "typer>=0.12",
+    "rich>=13.7",
+    "python-dotenv>=1.0",
+    "httpx>=0.27",
+    # LLM provider clients ship in core so the CLI can switch between them freely.
+    # (deepseek is OpenAI-API-compatible -> uses langchain-openai.)
+    "langchain-anthropic>=0.2",
+    "langchain-openai>=0.2",
+    "langchain-google-genai>=2.0",
+    "questionary>=2.0",  # arrow-key interactive prompts (like TradingAgents)
+]
+
+[project.optional-dependencies]
+dev = ["pytest>=8.0"]
+
+[project.scripts]
+footballagents = "worldcupagents.cli:app"   # preferred (multi-league)
+worldcupagents = "worldcupagents.cli:app"   # back-compat alias
+
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[tool.hatch.build.targets.wheel]
+packages = ["worldcupagents"]

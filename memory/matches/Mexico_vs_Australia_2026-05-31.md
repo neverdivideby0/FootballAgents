@@ -1,0 +1,29 @@
+# Tactical Report — Mexico vs Australia (2026-05-31)
+
+_Generated 2026-06-11 16:45 UTC_  
+_Sources: https://www.theguardian.com/football/live/2026/may/31/mexico-v-australia-socceroos-football-friendly-live-updates_
+
+## 0-15 Initial Setup
+(no commentary for this phase)
+
+## 15-45 First-Half Shift
+Mexico’s 27th-minute set-piece goal shifted the game decisively, forcing Australia into a reactive posture and exposing their lack of attacking structure. The remainder of the half was dominated by Mexico’s left-sided territorial pressure and repeated second-ball threats, while Australia looked disjointed in transition and struggled to get Toure involved high enough up the pitch.
+- **Formations / blocks:** Australia forced into a chasing shape after conceding, with the commentary suggesting they struggled to impose any coherent attacking structure.; Mexico controlling the phase through sustained left-side attacks and set-piece pressure, with Australia repeatedly retreating to defend in a compact block.
+- **Adjustments:** Australia had to change tack after the 27' goal and a drinks-break discussion at 34' allowed Popovic to give instructions.; Mexico repeatedly targeted the left wing, then varied the route by having Vega drive inside and Fidalgo shoot from distance.; Australia tried to respond in transition, but failed to hold up possession through Toure.
+- **Key matchups:** O’Neill vs Vasquez on the set-piece cross and header.; Ryan vs Vasquez/ Martinez on the 33' free-kick follow-up.; Italiano vs Chavez on the left-sided block/crossing sequence.; Ryan vs Fidalgo on the 43' long-range strike.; Toure vs Mexico’s recovery/press after Australia’s clearances.
+- **Events:** 27′ goal: GOAL! Mexico 1-0 Australia (Vasquez, 27)
+
+## Half-Time Brief
+Mexico led 1-0 at half-time, but Australia were much improved after the break and controlled two-thirds of possession while creating the clearer chances. The Socceroos threatened repeatedly in transition, with Hrustic denied by Ochoa, and Mexico increasingly relied on substitutions and set pieces to regain momentum before a chaotic free-kick incident briefly swung the emotional balance back in their favour.
+- **Formations / blocks:** Australia dominant in possession after the interval, with two-thirds of the ball by 62 minutes; Australia pressing for an equaliser and forcing Mexico into more defensive phases; Mexico briefly defending a lead before being pushed back by Australian transition attacks
+- **Adjustments:** Mexico made four half-time substitutions, then five more at 60 minutes, and two further changes at 73 minutes; Australia readied four substitutions at 64 minutes; Australia’s improved second-half approach featured quicker transitions down the right; Mexico took a quick free-kick at 75 minutes before the referee had set the wall
+- **Key matchups:** Hrustic vs Ochoa: Hrustic’s first-touch one-on-one was smothered by the goalkeeper; Trewin vs Mexico’s defensive line: Trewin intercepting and feeding attacks from the right; Souttar vs Gallardo: Souttar fouled Gallardo just outside the box
+
+## 45-75 Tactical Adjustments
+(no commentary for this phase)
+
+## 75-90+ Crunch Time
+Australia came out after the break with far more intent, winning the ball higher and attacking quickly in transition rather than waiting in a deeper, possession-light shape. Their biggest threat in this phase came from set pieces and early crosses, with Souttar, Toure and O’Neill all involved, while Mexico responded with blocking schemes on dead balls and a fresh goalkeeper in Ochoa. The commentary suggests Australia’s approach is effective when they can counter and deliver from wide areas, but still leaves the question of how they cope if they fall behind and must chase the game. 
+- **Formations / blocks:** Australia remaining in a possession-absent, transition-focused setup; Mexico sitting in a set-piece defense / blocking setup when defending corners and free kicks
+- **Adjustments:** Australia showing a revised attacking intent after the break, pressing for quicker transitions and more aggressive fullback involvement; Australia using Metcalfe at left fullback to aid buildup and delivery; Mexico making four substitutions at the interval, including goalkeeper Guillermo Ochoa
+- **Key matchups:** Metcalfe vs Mexico’s transition pressure while operating at left fullback; Toure vs Reyes in transition duels; O’Neill/Souttar vs Mexico’s aerial defense on set pieces; Bos vs Huerta on the counter

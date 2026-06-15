@@ -1,0 +1,16 @@
+{
+  "team": "Manchester City FC",
+  "summary": "[placeholder] Manchester City FC (unranked); 0 analysed match(es). Enable use_llm for a synthesised scouting report.",
+  "strengths": [],
+  "weaknesses": [],
+  "tactical_tendencies": [],
+  "key_players": [
+    "Erling Haaland (27G/8A)",
+    "Antoine Semenyo (17G/4A)",
+    "Phil Foden (7G/5A)"
+  ],
+  "sources": [
+    "football_data_org:team/65",
+    "match_store:189"
+  ]
+}
