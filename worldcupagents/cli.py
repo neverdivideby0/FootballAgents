@@ -719,7 +719,8 @@ def guardian_guide_cmd(
         console.print("[yellow]Nothing ingested — the Guardian feed may have moved.[/yellow]")
         raise typer.Exit(1)
     console.print(f"[green]✓ Guardian guide[/green] {res.teams} team briefs, "
-                  f"{res.players} player profiles{f', {res.errors} errors' if res.errors else ''}. "
+                  f"{res.players} player profiles, {res.coaches} coach names"
+                  f"{f', {res.errors} errors' if res.errors else ''}. "
                   f"They now appear in the dossier + debate.")
 
 
@@ -740,6 +741,27 @@ def bbc_guide_cmd(
         raise typer.Exit(1)
     console.print(f"[green]✓ BBC guide[/green] {res.teams} team summaries, "
                   f"{res.full_profiles} full profiles{f', {res.errors} errors' if res.errors else ''}.")
+
+
+@app.command(name="guardian-experts")
+def guardian_experts_cmd(
+    limit: int = typer.Option(None, "--limit", help="Only the first N teams (quick test)"),
+):
+    """Ingest the Guardian 'Experts' Network' WC2026 team guides for all 48 nations:
+    long-form previews (The plan / The coach / Star player / Unsung hero / One to
+    watch) by local experts. Prose → the qualitative warehouse (team-linked →
+    tactical analyst + dossier); the coach section → a structured coach note (→
+    dossier + debate). Re-run as the Guardian publishes any still-pending nations.
+    """
+    from worldcupagents.pipelines.guardian_experts import ingest_guardian_experts
+    with console.status("Fetching the Guardian Experts' Network guides (all 48)…"):
+        res = ingest_guardian_experts(DEFAULT_CONFIG, limit=limit)
+    if not res.teams:
+        console.print("[yellow]Nothing ingested — the Guardian index may have moved.[/yellow]")
+        raise typer.Exit(1)
+    console.print(f"[green]✓ Guardian Experts' Network[/green] {res.teams} team guides, "
+                  f"{res.coaches} coach profiles{f', {res.errors} errors' if res.errors else ''}. "
+                  f"They now appear in the dossier + debate.")
 
 
 @app.command(name="note-player")

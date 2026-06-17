@@ -71,6 +71,8 @@ class TeamProfile(BaseModel):
     squad: list[Player] = Field(default_factory=list)
     probable_xi: list[str] = Field(default_factory=list)
     formation: Optional[str] = None
+    coach: Optional[str] = None          # head coach / manager name (data vendor)
+    coach_note: str = ""                 # their style & pedigree, in prose (qualitative)
     style: str = ""
     form: list[MatchResult] = Field(default_factory=list)
     xg_for: Optional[float] = None

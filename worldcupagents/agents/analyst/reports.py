@@ -69,6 +69,10 @@ def make_form_analyst(config: dict, llm=None, usage_acc: dict | None = None):
             tempo = _tempo_line(config, p.team)
             if tempo:
                 lines.append(tempo)
+        for p in (home, away):  # head coach: style & pedigree (qualitative)
+            coach = _coach_line(config, p)
+            if coach:
+                lines.append(coach)
         for p, opp in ((home, away.team), (away, home.team)):  # data-backed soft spots
             weak = _weakness_line(config, p, opp)
             if weak:
@@ -387,6 +391,23 @@ def _forte_line(config: dict, team: str) -> str:
                 f"defensive solidity {fo['solidity']}) [source: fitted strength model]")
     except Exception as e:  # noqa: BLE001
         logger.warning("forte line failed for %r (%s)", team, e)
+        return ""
+
+
+def _coach_line(config: dict, profile) -> str:
+    """Head coach style & pedigree — the manager is a real x-factor (pragmatist vs
+    expansive, tournament-hardened vs debutant). Name from the data vendor, prose
+    from the Guardian Experts' Network guide; sourced. Offline at predict time."""
+    try:
+        from worldcupagents.dataflows.coach import coach_brief, coach_digest
+        brief = coach_brief(config, profile.team, profile)
+        digest = coach_digest(brief)
+        if not digest:
+            return ""
+        src = brief.get("source") or "data vendor"
+        return f"Coach — {profile.team}: {digest} [source: {src}]"
+    except Exception as e:  # noqa: BLE001 — coach line must not break predict
+        logger.warning("coach line failed for %r (%s)", profile.team, e)
         return ""
 
 

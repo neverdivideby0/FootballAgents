@@ -39,6 +39,7 @@ SOURCE = "The Guardian WC2026 player guide"
 class GuideResult:
     teams: int = 0
     players: int = 0
+    coaches: int = 0
     errors: int = 0
 
 
@@ -146,6 +147,18 @@ def ingest_guardian_player_guide(config: dict | None = None, fetch_json=None,
                         ages.append(a)
                 if fetch_json is None:
                     time.sleep(0.3)  # polite between team sheets
+            # Coach NAME for all 48 (the player guide covers every nation) → the
+            # structured coach store, so each team has a coach line in the dossier.
+            # The richer style/pedigree PROSE comes from the Experts' Network guide;
+            # upsert merges name + note without clobbering either's provenance.
+            coach_name = _strip_html(row.get("Coach"))
+            if coach_name:
+                try:
+                    store.upsert_team_coach(team, name=coach_name, source=SOURCE)
+                    res.coaches += 1
+                except Exception as e:  # noqa: BLE001
+                    logger.warning("guardian guide: coach upsert failed for %s (%s)", team, e)
+                    res.errors += 1
             # Team-level qualitative note → warehouse (team-linked).
             avg_age = round(sum(ages) / len(ages), 1) if ages else None
             note = _team_note(row, avg_age)

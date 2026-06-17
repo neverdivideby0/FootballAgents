@@ -136,6 +136,13 @@ def _team_block(team: str, config: dict, profile, strength, since: str) -> dict:
             store.close()
     # Team playing style in prose (manual / scraped notes from the warehouse).
     block["qual_notes"] = _safe(_team_qual_brief, config, team)
+    # Head coach: name (data vendor) + style & pedigree (Guardian Experts' guide).
+    try:
+        from worldcupagents.dataflows.coach import coach_brief
+        block["coach"] = coach_brief(config, team, profile)
+    except Exception as e:  # noqa: BLE001
+        logger.warning("dossier coach brief failed for %s (%s)", team, e)
+        block["coach"] = None
     return block
 
 
@@ -248,6 +255,12 @@ def dossier_markdown(doss: dict) -> str:
         out.append(f"### {b['team']}{rank}")
         if b.get("formation"):
             out.append(f"- **Formation:** {b['formation']}")
+        co = b.get("coach")
+        if co:
+            from worldcupagents.dataflows.coach import coach_digest
+            digest = coach_digest(co)
+            if digest:
+                out.append(f"- **Coach:** {digest}")
         fo = b.get("forte")
         if fo:
             out.append(f"- **Forte:** {fo['label']} (attack {fo['attack']}, solidity {fo['solidity']})")

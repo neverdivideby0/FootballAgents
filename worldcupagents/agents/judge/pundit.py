@@ -112,6 +112,9 @@ The two team advocates debated:
 Synthesize the debate into a grounded verdict. Weigh the strongest points from each side,
 discount weak or biased claims, and account for external x-factors the advocates may have
 under-weighted (travel, heat/altitude, knockout pressure, squad depth, fatigue).
+Weigh the two head COACHES where the reports give them: their style (pragmatic/low-block
+vs expansive), in-tournament adjustment, and big-match pedigree can decide a tight game —
+name the coaching edge in key_factors when it is real.
 Be SPECIFIC about WHERE the game is won: name the decisive battleground (a flank, the
 centre-forward, midfield control, set pieces, pace vs experience) in key_factors, and the
 single player most likely to decide it in x_factors.

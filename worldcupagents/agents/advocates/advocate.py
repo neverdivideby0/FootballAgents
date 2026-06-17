@@ -92,6 +92,8 @@ Write a persuasive, evidence-grounded argument (≤180 words) for why {me.team} 
 - Anchor your case on a SPECIFIC area of the game where {me.team} wins it — a particular
   player, a flank, the centre-forward, midfield control, set pieces, pace, or experience —
   not just "we're better overall".
+- If the reports describe the coaches, use {me.team}'s manager (their tactical plan,
+  big-match pedigree, in-game adjustments) as part of the case where it genuinely helps.
 - Reason from squad quality, form, and matchup dynamics. Do NOT invent specific stats you were not given.
 - CITE your evidence: when you reference a result, stat, or tactical observation, quote it with
   its date and source tag exactly as it appears in the data above (e.g. "2-1 v Chelsea FC

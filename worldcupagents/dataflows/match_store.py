@@ -100,6 +100,14 @@ CREATE TABLE IF NOT EXISTS player_notes (
     source     TEXT,
     updated_at TEXT
 );
+CREATE TABLE IF NOT EXISTS team_coach (
+    team_key   TEXT PRIMARY KEY,   -- normalize_key(team)
+    team       TEXT,
+    name       TEXT,               -- head coach / manager (may be NULL if only prose)
+    note       TEXT,               -- their style & pedigree, in prose
+    source     TEXT,
+    updated_at TEXT
+);
 """
 _TEAM_ALIAS_MIGRATIONS = (
     ("alias_norm", "TEXT"),
@@ -632,6 +640,45 @@ class MatchStore:
                                 [f"{normalize_key(team)}|{normalize_key(player)}"])
         self.conn.commit()
         return cur.rowcount > 0
+
+    # --- head coach / manager (name + a style & pedigree note) ---
+
+    def upsert_team_coach(self, team: str, name: str | None = None, note: str | None = None,
+                          source: str = "manual") -> None:
+        """Upsert one team's coach. Merge-friendly: a name-only call keeps an existing
+        note and vice-versa, so the data vendor (name) and the Guardian guide (prose)
+        can each fill their half without clobbering the other."""
+        from datetime import datetime, timezone
+        from worldcupagents.dataflows.names import normalize_key
+        tk = normalize_key(team)
+        prev = self.team_coach(team) or {}
+        # Source should credit whoever supplied the substantive prose note; a
+        # name-only update must not overwrite the note's provenance.
+        if note:
+            new_source = source
+        elif prev.get("note"):
+            new_source = prev.get("source")
+        else:
+            new_source = source or prev.get("source")
+        self.conn.execute(
+            "INSERT OR REPLACE INTO team_coach (team_key, team, name, note, source, updated_at) "
+            "VALUES (?, ?, ?, ?, ?, ?)",
+            [tk, team, name or prev.get("name"), note or prev.get("note"),
+             new_source, datetime.now(timezone.utc).strftime("%Y-%m-%d")],
+        )
+        self.conn.commit()
+
+    def team_coach(self, team: str) -> dict | None:
+        from worldcupagents.dataflows.names import normalize_key
+        row = self.conn.execute(
+            "SELECT team, name, note, source, updated_at FROM team_coach WHERE team_key = ?",
+            [normalize_key(team)],
+        ).fetchone()
+        return dict(row) if row else None
+
+    def all_team_coaches(self) -> list[dict]:
+        return [dict(r) for r in self.conn.execute(
+            "SELECT team, name, note, source, updated_at FROM team_coach ORDER BY team").fetchall()]
 
     def all_matches(self) -> list[dict]:
         cur = self.conn.execute(f"SELECT {', '.join(_COLS)} FROM matches ORDER BY date")

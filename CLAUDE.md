@@ -156,6 +156,31 @@ the 48 article fetches. `pipelines/bbc_guide.py` (injectable `fetch_text`).
 Complements the Guardian guide (BBC = tournament framing/history; Guardian =
 strengths/weaknesses/coach + per-player bios).
 
+**Guardian Experts' Network + coach layer (2026-06):** `footballagents
+guardian-experts` ingests the Guardian's long-form per-nation previews (the series
+`football/series/world-cup-2026-guardian-experts-network`). The free Guardian API
+tier only serves ~18 of these and tier-blocks the item endpoint for the rest, so
+we **enumerate the full series off its paginated public index page and read each
+public, non-paywalled article page directly** (owner-sanctioned scraping: polite
+UA + retries, cache, provenance kept; never a paywall). Each article has a stable
+section set (The plan / The coach / Star player / Unsung hero / One to watch);
+`title_and_body` flattens the page's `<h2>`+`<p>` into the same shape the API
+bodyText had, `split_sections` slices it (drops the standing boilerplate), and the
+prose lands in the qualitative warehouse via `ingest_public_article(html_text=…)`
+(team-linked → tactical analyst + dossier). Landed **45 of 48 team guides + 45
+coach profiles** (3 — Mexico/South Korea/South Africa — have placeholder index
+links that 404 because the Guardian hasn't published them yet; re-run to pick them
+up). `pipelines/guardian_experts.py` (injectable `fetch_text`). The Guardian
+*player* guide additionally backfills the coach **name** for all 48
+(`guardian_guide.py` → `upsert_team_coach`), and football-data supplies it live —
+so the 3 stragglers still get a coach line.
+The **coach is now a first-class signal**: `TeamProfile.coach` (name, from
+football-data) + a new `team_coach` store table (prose, from this guide), merged
+by `dataflows/coach.py::coach_brief`/`coach_digest`. Surfaced in the dossier
+(`- Coach:` line), the **form report** (`reports._coach_line` → propagates to
+advocates + judge + scenario via `reports_block`), and called out explicitly in
+the judge + advocate prompts (weigh managerial style/pedigree where real).
+
 **Guardian player guide (2026-06):** `footballagents guardian-guide` ingests the
 Guardian WC2026 interactive player guide — its data is a public "docsdata" feed
 (`interactive.guim.co.uk/docsdata/{sheet}.json`): a Teams sheet (48 nations: bio/

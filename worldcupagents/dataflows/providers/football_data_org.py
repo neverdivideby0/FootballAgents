@@ -122,6 +122,7 @@ class FootballDataOrgProvider:
                 team=t.get("name", canonical_name(team)),
                 fifa_rank=fifa_rankings.get_rank(team),
                 squad=squad,
+                coach=coach or None,
                 style=f"coach: {coach}" if coach else "",
                 form=self.get_recent_results(team, 5),
                 tournament_pedigree=(t.get("area") or {}).get("name", ""),

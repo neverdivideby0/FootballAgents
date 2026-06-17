@@ -84,7 +84,7 @@ Other tools (all default to offline; add `--provider` to use an LLM):
 | `resolve` | Score a played prediction (Brier); `--sync` auto-resolves from the store |
 | `fetch-data` | Download results + odds + per-match stats + (`--xg`) Understat metrics |
 | `hoard-data` | Snapshot public datasets (international results, StatsBomb, Wikipedia totals) |
-| `guardian-guide` / `bbc-guide` | Ingest the Guardian/BBC WC2026 guides (player bios + team profiles) |
+| `guardian-guide` / `bbc-guide` / `guardian-experts` | Ingest the Guardian player guide / BBC team guide / Guardian Experts' Network previews (player bios, team profiles, **coach style & pedigree**) |
 | `qual-data` / `note-player` | Add your own article/team/player style notes |
 | `backtest` | Measure prediction accuracy vs naive + market baselines |
 | `leagues` / `check` / `resolve-name` | List competitions / data-source status / name resolution |
@@ -172,14 +172,16 @@ uv run footballagents dossier "Arsenal FC" "Liverpool FC" -L PL --season 2025-26
 
 It shows line-up, squad player stats (club form for national teams), **recent games
 with per-match stats** (shots/SoT/corners/fouls/cards/xG), attack-vs-defence forte,
-set pieces, playing style, **data-backed weaknesses**, your scouting notes, the live
-market, and head-to-head. The same dossier is embedded as §0 of every exported report.
+set pieces, playing style, the **head coach's style & pedigree**, **data-backed
+weaknesses**, your scouting notes, the live market, and head-to-head. The same
+dossier is embedded as §0 of every exported report.
 
 **Free qualitative sources — one command each** (everything flows into the debate):
 
 ```bash
 uv run footballagents guardian-guide      # Guardian WC2026 guide: ~1,250 player bios + 48 team briefs
 uv run footballagents bbc-guide           # BBC WC2026 guide: full team profiles, ranking, pedigree
+uv run footballagents guardian-experts    # Guardian Experts' Network: all-48 long-form previews + coach style & pedigree
 uv run footballagents qual-data --url "<article>" --team "Arsenal FC"   # any public tactics article
 uv run footballagents note-player "Bukayo Saka" -t "Arsenal FC" --note "Inverted winger…"
 ```
