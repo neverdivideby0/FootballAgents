@@ -167,10 +167,10 @@ section set (The plan / The coach / Star player / Unsung hero / One to watch);
 `title_and_body` flattens the page's `<h2>`+`<p>` into the same shape the API
 bodyText had, `split_sections` slices it (drops the standing boilerplate), and the
 prose lands in the qualitative warehouse via `ingest_public_article(html_text=…)`
-(team-linked → tactical analyst + dossier). Landed **45 of 48 team guides + 45
-coach profiles** (3 — Mexico/South Korea/South Africa — have placeholder index
-links that 404 because the Guardian hasn't published them yet; re-run to pick them
-up). `pipelines/guardian_experts.py` (injectable `fetch_text`). The Guardian
+(team-linked → tactical analyst + dossier). Landed **all 48 team guides + 48 coach
+profiles**. (The index link regex must keep the US-edition `-soccer` slug suffix —
+truncating it 404s, which initially hid Mexico/South Korea/South Africa.)
+`pipelines/guardian_experts.py` (injectable `fetch_text`). The Guardian
 *player* guide additionally backfills the coach **name** for all 48
 (`guardian_guide.py` → `upsert_team_coach`), and football-data supplies it live —
 so the 3 stragglers still get a coach line.

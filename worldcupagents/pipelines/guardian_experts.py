@@ -38,7 +38,9 @@ _UA = ("Mozilla/5.0 (Macintosh; Intel Mac OS X 10_15_7) AppleWebKit/537.36 "
        "(KHTML, like Gecko) Chrome/124.0 Safari/537.36")
 
 # A team-guide article path, e.g. /football/2026/jun/06/spain-world-cup-2026-team-guide
-_GUIDE_PATH = re.compile(r"/football/2026/[a-z]{3}/\d{2}/[a-z0-9-]*world-cup-2026-team-guide")
+# (the trailing class also captures the US-edition '-soccer' suffix; truncating it
+# yields a 404, which is what hid Mexico/South Korea/South Africa).
+_GUIDE_PATH = re.compile(r"/football/2026/[a-z]{3}/\d{2}/[a-z0-9-]*world-cup-2026-team-guide[a-z0-9-]*")
 _TITLE_SPLIT = re.compile(r"\s*World Cup 2026 team guide", re.I)
 # Body text: <h2> section labels + <p> paragraphs, in document order.
 _BLOCK_RE = re.compile(r"<(h2|p)\b[^>]*>(.*?)</\1>", re.S)

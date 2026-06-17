@@ -75,6 +75,15 @@ def test_fetch_index_urls_dedupes_and_stops():
     assert urls == [_ENGLAND_URL]
 
 
+def test_index_regex_keeps_us_edition_soccer_suffix():
+    # The US-edition '-soccer' slug must be captured in FULL — truncating it 404s
+    # (this hid Mexico/South Korea/South Africa).
+    idx = '<a href="/football/2026/may/28/south-korea-world-cup-2026-team-guide-soccer">x</a>'
+    urls = fetch_index_urls(fetch_text=lambda u: idx if "page=" not in u else "<html></html>")
+    assert urls == ["https://www.theguardian.com/football/2026/may/28/"
+                    "south-korea-world-cup-2026-team-guide-soccer"]
+
+
 def test_title_and_body_from_article_html():
     title, body = title_and_body(_ARTICLE_HTML)
     assert _team_from_title(title) == "England"
