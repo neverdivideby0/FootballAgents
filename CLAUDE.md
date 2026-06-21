@@ -55,7 +55,8 @@ report in memory/matches/), `scout-report` (stats + tactical memory → report),
 reflection), `backtest` (calibration yardstick), `fetch-data` (populate the
 SQLite match store), `watch` (matchday autopilot: poll → structured-punditry +
 tactical analysis per finished match → auto-resolve; `--interval` to loop),
-`players`, `leagues`, `check`, `resolve-name`, `eliminate`. Exports:
+`credit` (per-signal with-vs-without Brier scoreboard), `players`, `leagues`,
+`check`, `resolve-name`, `eliminate`. Exports:
 sectioned markdown (`pipelines/report_export.py`) or txt. All LLM steps are
 offline-by-default; add `--provider`/`--llm` to spend.
 
@@ -140,6 +141,17 @@ with `--interval N` wrapping it in an in-process poll loop (`interval=0` default
 single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provider`
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
 work.
+
+**Per-signal credit — "which signals actually helped?" (2026-06, `credit.py`):**
+every shipped prediction now records a `SIGNALS:` line in `prediction_log.md`
+(`predict._signals_present` — the extra inputs it carried beyond the baseline:
+punditry / tactical / lessons / qualitative / market / calibration). `footballagents
+credit` is the **deliberately simple, explainable** scoreboard: for each signal it
+compares the mean Brier of resolved predictions that HAD it vs those that didn't
+(`signal_credit`/`credit_report`), with a per-side `n≥3` gate. It's labelled an
+**association, not proof** (signals cluster on bigger games; no confound control) —
+a readable dial to watch as the tournament fills in, not a live weight. Forward-
+looking: predictions made before SIGNALS tagging have no line and are skipped.
 
 **Live market as a judge feature (2026-06):** with `ODDS_API_KEY` set, the judge
 and Final Pundit are shown the **de-vigged bookmaker consensus** (The Odds API,

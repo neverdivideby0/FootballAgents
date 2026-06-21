@@ -1211,6 +1211,20 @@ def watch(
         console.print("\n[dim]watch stopped.[/dim]")
 
 
+@app.command()
+def credit():
+    """Which signals actually helped? A simple with-vs-without Brier scoreboard.
+
+    Each shipped prediction records the extra signals it used (punditry, market,
+    tactical history, lessons, qualitative notes, the calibration note). Once they
+    resolve, this compares the average Brier of predictions that carried each signal
+    against those that didn't. It's an association, not proof — read it as a scoreboard
+    that sharpens as the tournament fills in.
+    """
+    from worldcupagents.credit import credit_report
+    console.print(credit_report(DEFAULT_CONFIG))
+
+
 @app.command(name="simulate-tournament")
 def simulate_tournament_cmd(
     n: int = typer.Option(10_000, "-n", "--runs", help="Monte-Carlo tournament runs"),

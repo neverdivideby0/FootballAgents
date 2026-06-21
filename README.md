@@ -75,6 +75,7 @@ Other tools (all default to offline; add `--provider` to use an LLM):
 | `odds` | Live de-vigged bookmaker consensus + Polymarket crowd for a fixture |
 | `simulate-tournament` | 10k Monte-Carlo runs of WC2026 → each team's advancement odds |
 | `evaluate` | Does the LLM debate beat the baseline/market? (Brier scoreboard) |
+| `credit` | Which signals actually helped? Simple with-vs-without Brier per signal (punditry, market, …) |
 | `refresh` | One matchday command (~15s): pull results, auto-resolve, re-simulate, rebuild the explorer |
 | `watch` | Matchday autopilot: poll for finished matches → distil punditry + tactics → auto-resolve. `--interval N` to loop |
 | `analyze-match` | Turn a match's text commentary into a 5-phase tactical report |
