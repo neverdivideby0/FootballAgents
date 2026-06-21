@@ -53,6 +53,21 @@ app = typer.Typer(
 console = Console()
 
 
+def _refit_judge_weight_and_report(config: dict | None = None) -> None:
+    """Recompute the recency-weighted, shrunk-to-prior blend weight from the eval
+    log and print one line. Best-effort — never breaks the matchday loop."""
+    try:
+        from worldcupagents.calibration import refit_judge_weight
+        info = refit_judge_weight(config or DEFAULT_CONFIG)
+        if info is None:
+            return  # no usable eval reads yet — stays at the 0.6 prior
+        console.print(
+            f"[green]✓ judge_weight[/green] {info['weight']} "
+            f"[dim](shrunk from fit {info['w_fit']} toward 0.6 prior, n={info['n']})[/dim]")
+    except Exception as e:  # noqa: BLE001 — weight refit must not break the loop
+        console.print(f"[dim]judge_weight refit skipped ({e})[/dim]")
+
+
 @app.callback()
 def _main() -> None:
     """WorldCupAgents CLI."""
@@ -1069,6 +1084,9 @@ def refresh(
     if synced:
         console.print(f"[green]✓ auto-resolved {len(synced)} pending prediction(s)[/green]")
 
+    # Re-fit the blend weight from the eval log (recency-weighted, shrunk to prior).
+    _refit_judge_weight_and_report()
+
     if sim:
         from worldcupagents.pipelines.simulate import export_simulation, simulate_tournament
         cfg = copy.deepcopy(DEFAULT_CONFIG)
@@ -1084,6 +1102,113 @@ def refresh(
     from worldcupagents.pipelines.data_explorer import export_data_explorer
     path = export_data_explorer(copy.deepcopy(DEFAULT_CONFIG))
     console.print(f"[green]✓ explorer[/green] {path}")
+
+
+def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
+    """One idempotent matchday tick: pull results, distil punditry + tactics for any
+    newly-FINISHED match not yet processed, then auto-resolve + re-fit the weight."""
+    from pathlib import Path
+
+    from worldcupagents.dataflows.match_store import MatchStore
+    from worldcupagents.graph.reflection import sync_pending
+    from worldcupagents.leagues.registry import apply_league, get_league
+    from worldcupagents.pipelines.analyze_match import analyze_match
+    from worldcupagents.pipelines.fetch_data import fetch_data
+    from worldcupagents.pipelines.punditry import analyze_punditry
+
+    # 1. Pull the newest results into the store (per league).
+    for lg_key in [s.strip() for s in leagues.split(",") if s.strip()]:
+        lcfg = copy.deepcopy(cfg)
+        try:
+            apply_league(lcfg, get_league(lg_key))
+        except ValueError as e:
+            console.print(f"[red]✗ {e}[/red]")
+            continue
+        res = fetch_data(lcfg)
+        console.print(f"[green]✓ {lg_key}[/green] results updated "
+                      f"(+{res['added']} rows, {res['total']} total)")
+
+    # 2. Finished WC matches whose punditry digest doesn't exist yet = "just finished".
+    comp = cfg.get("fd_competition")
+    store = MatchStore.from_config(cfg)
+    try:
+        finished = [m for m in store.all_matches()
+                    if (comp is None or m.get("comp") == comp) and m.get("date")]
+    finally:
+        store.close()
+    pdir = Path(cfg.get("memory_dir", "memory")) / "punditry"
+    from worldcupagents.agents.analyst.tactical import make_match_id
+    todo = [m for m in finished
+            if not (pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json").exists()]
+
+    if todo:
+        console.print(f"[cyan]▸ {len(todo)} newly-finished match(es) to analyse[/cyan]")
+    for m in todo:
+        h, a, d = m["home"], m["away"], m["date"]
+        try:
+            po = analyze_punditry(h, a, d, cfg)
+            analyze_match(h, a, d, cfg)  # liveblog tactical report (existing pipeline)
+            tag = f"{po.n_articles} article(s)" if po.n_articles else "no punditry found"
+            console.print(f"  [green]✓[/green] {h} vs {a} ({d}) — {tag}")
+        except Exception as e:  # noqa: BLE001 — one bad fixture must not sink the tick
+            console.print(f"  [yellow]⚠ {h} vs {a} ({d}) skipped ({e})[/yellow]")
+
+    # 3. Close the learning loop: resolve any newly-decided predictions, re-fit weight.
+    synced = sync_pending(cfg, reflect_llm=reflect_llm)
+    if synced:
+        console.print(f"[green]✓ auto-resolved {len(synced)} pending prediction(s)[/green]")
+    _refit_judge_weight_and_report(cfg)
+
+
+@app.command()
+def watch(
+    interval: int = typer.Option(
+        0, "--interval", help="Minutes between polls; 0 = a single tick (cron/launchd-friendly)"),
+    leagues: str = typer.Option("WC2026", "--leagues", "-L", help="Competitions to poll for results"),
+    provider: str = typer.Option(None, "--provider", "-p", help="LLM provider for punditry extraction (implies --llm)"),
+    model: str = typer.Option(None, "--model", help="Override the analyst model"),
+    llm: bool = typer.Option(None, "--llm/--no-llm", help="Run the real LLM analyst (default: offline placeholder)"),
+):
+    """Matchday autopilot: poll football-data, and for every newly-FINISHED match
+    distil its punditry into structured signals (+ the liveblog tactical report),
+    then auto-resolve predictions and re-fit the blend weight.
+
+    \b
+      footballagents watch                       # one idempotent tick (run from cron)
+      footballagents watch --interval 30         # in-process loop, poll every 30 min
+      footballagents watch --provider openai     # real LLM punditry extraction
+
+    The tick is idempotent: a match is processed once (keyed on its punditry digest
+    file), so re-running — or polling on a timer — never repeats work.
+    """
+    import time
+
+    from worldcupagents.llm_clients.factory import create_llm
+
+    cfg = _build_config(provider, None, model, llm, None)
+    _resolve_league(cfg, leagues.split(",")[0].strip())
+    reflect_llm = None
+    if cfg.get("use_llm"):
+        try:
+            reflect_llm = create_llm(cfg["llm_provider"], cfg["quick_think_llm"])
+        except Exception as e:  # noqa: BLE001 — reflection is best-effort
+            console.print(f"[yellow]⚠ reflection LLM unavailable ({e}); resolving without one.[/yellow]")
+    mode = (f"LLM analyst: {cfg['llm_provider']} ({cfg['quick_think_llm']})"
+            if cfg["use_llm"] else "offline placeholder (add --provider/--llm for real extraction)")
+    console.print(f"[dim]{mode}[/dim]")
+
+    if interval <= 0:
+        _watch_tick(cfg, leagues, reflect_llm)
+        return
+    console.print(f"[bold]watching[/bold] — polling every {interval} min (Ctrl-C to stop)")
+    try:
+        while True:
+            stamp = datetime.now(timezone.utc).strftime("%Y-%m-%d %H:%M UTC")
+            console.print(f"\n[dim]── tick {stamp} ──[/dim]")
+            _watch_tick(cfg, leagues, reflect_llm)
+            time.sleep(interval * 60)
+    except KeyboardInterrupt:
+        console.print("\n[dim]watch stopped.[/dim]")
 
 
 @app.command(name="simulate-tournament")
@@ -1323,6 +1448,7 @@ def resolve(
             t.add_row(f"{r['home']} vs {r['away']} ({r['match_date']})", r["actual"],
                       r["predicted"] or "?", f"{r['brier']:.3f}", quality_label(r["brier"]))
         console.print(t)
+        _refit_judge_weight_and_report()
         return
 
     if not home or not away:
