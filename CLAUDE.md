@@ -60,6 +60,16 @@ tactical analysis per finished match → auto-resolve; `--interval` to loop),
 sectioned markdown (`pipelines/report_export.py`) or txt. All LLM steps are
 offline-by-default; add `--provider`/`--llm` to spend.
 
+**Guided launcher (2026-06):** running `footballagents` with **no command** opens an
+arrow-key menu (`_launch_menu` in `cli.py`, `invoke_without_command=True` on the
+callback) — predict / dossier / odds / watch / refresh / resolve / credit / explore.
+Each choice maps to argv via `_menu_argv` and dispatches the REAL command through
+`_run_argv` (so behaviour is identical to typing it); LLM flows reuse `_guided_select`
+so the user picks provider + model (e.g. `gpt-5.4-mini`, not the cheap default).
+Guarded by `sys.stdin.isatty()` — a non-TTY invocation prints `--help` instead of
+hanging. Note: `analyze-match`/`watch` use the **quick** model by design (cheap
+extraction); pass `--model <id>` (or pick it in the menu) to use a stronger one.
+
 To run with real LLMs: pick a provider at the CLI (`--provider anthropic|openai|
 google|deepseek`) with the matching key in `.env` (DeepSeek routes through the
 OpenAI-compatible client). Or use `-i`/`--interactive` for an **arrow-key picker**

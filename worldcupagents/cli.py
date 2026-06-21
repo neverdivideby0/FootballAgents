@@ -68,9 +68,19 @@ def _refit_judge_weight_and_report(config: dict | None = None) -> None:
         console.print(f"[dim]judge_weight refit skipped ({e})[/dim]")
 
 
-@app.callback()
-def _main() -> None:
-    """WorldCupAgents CLI."""
+@app.callback(invoke_without_command=True)
+def _main(ctx: typer.Context) -> None:
+    """FootballAgents — predict football matches via an agent debate.
+
+    Run with no command (`footballagents`) for a guided, arrow-key menu.
+    """
+    if ctx.invoked_subcommand is not None:
+        return  # a real command was given — run it normally
+    # No command: show the guided launcher on a TTY, else fall back to --help.
+    if sys.stdin.isatty():
+        _launch_menu()
+    else:
+        typer.echo(ctx.get_help())
 
 
 @app.command()
@@ -1835,6 +1845,90 @@ def _pick_depth() -> str | None:
         default="medium",
     ).ask()
     return pick
+
+
+def _launch_menu() -> None:
+    """The guided home screen: pick an action, gather the few inputs it needs, run it.
+
+    Shown when `footballagents` is run with no command. Each choice dispatches the
+    real CLI command (so behaviour is identical to typing it), with the interactive
+    flows reusing the same arrow-key pickers as the flags."""
+    import questionary
+
+    console.print("[bold]⚽ FootballAgents[/bold] [dim]— what would you like to do?[/dim]")
+    action = questionary.select(
+        "Choose an action  (↑/↓ then Enter, Esc to quit)",
+        choices=[
+            questionary.Choice("🔮  Predict a match (guided)", value="predict"),
+            questionary.Choice("📋  Pre-match dossier — the data, no LLM", value="dossier"),
+            questionary.Choice("📈  Live odds for a fixture", value="odds"),
+            questionary.Choice("📡  Watch — matchday autopilot", value="watch"),
+            questionary.Choice("🔄  Refresh after a matchday", value="refresh"),
+            questionary.Choice("✅  Resolve played predictions", value="resolve"),
+            questionary.Choice("🎯  Signal credit — which signals helped", value="credit"),
+            questionary.Choice("🧭  Open the data explorer", value="explore"),
+            questionary.Separator(),
+            questionary.Choice("❔  Full command list", value="help"),
+            questionary.Choice("✋  Quit", value="quit"),
+        ],
+    ).ask()
+
+    if action in (None, "quit"):
+        return
+    argv = _menu_argv(action)
+    if argv is None:
+        return  # the user backed out of a sub-prompt
+    _run_argv(argv)
+
+
+def _menu_argv(action: str) -> list[str] | None:
+    """Turn a menu choice into the argv for the real command (gathering inputs)."""
+    import questionary
+
+    simple = {"predict": ["predict", "-i"], "refresh": ["refresh"],
+              "credit": ["credit"], "explore": ["explore"], "help": ["--help"]}
+    if action in simple:
+        return simple[action]
+
+    if action in ("dossier", "odds"):
+        home = questionary.text("Home / first team:").ask()
+        away = questionary.text("Away / second team:").ask()
+        return [action, home.strip(), away.strip()] if home and away else None
+
+    if action == "resolve":
+        argv = ["resolve", "--sync"]
+        sel = _menu_pick_llm("Write an AI reflection on each result? (needs a key)")
+        if sel:
+            argv += ["--provider", sel["provider"]]
+        return argv
+
+    if action == "watch":
+        argv = ["watch"]
+        sel = _menu_pick_llm("Use an LLM to distil punditry/tactics? (needs a key)")
+        if sel:
+            argv += ["--provider", sel["provider"], "--model", sel["quick"]]
+        else:
+            argv += ["--no-llm"]
+        if questionary.confirm("Keep polling every 30 min? (No = one tick now)", default=False).ask():
+            argv += ["--interval", "30"]
+        return argv
+    return None
+
+
+def _menu_pick_llm(prompt: str) -> dict | None:
+    """Yes → the provider+model picker (returns the _guided_select dict, so the user
+    chooses e.g. gpt-5.4-mini over the cheap default); No/Esc → None (offline)."""
+    import questionary
+    if not questionary.confirm(prompt, default=False).ask():
+        return None
+    return _guided_select()
+
+
+def _run_argv(argv: list[str]) -> None:
+    """Dispatch the chosen command through the real Typer app (identical to typing it)."""
+    from typer.main import get_command
+    console.print(f"[dim]→ footballagents {' '.join(argv)}[/dim]\n")
+    get_command(app)(args=argv, prog_name="footballagents")
 
 
 def _guided_select() -> dict | None:

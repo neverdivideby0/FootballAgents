@@ -28,7 +28,17 @@ uv run footballagents --help
 
 ---
 
-## 2. The easy way — one guided command
+## 2. The easy way — just run it
+
+```bash
+uv run footballagents
+```
+
+With no command, it opens a **guided menu** — arrow-key your way to predict, dossier,
+odds, watch, refresh, resolve, credit, or the data explorer. Each choice asks only for
+what it needs (and the LLM steps let you pick the provider + model, e.g. `gpt-5.4-mini`).
+
+Or jump straight to a prediction:
 
 ```bash
 uv run footballagents predict -i
