@@ -15,7 +15,7 @@ from __future__ import annotations
 import logging
 from pathlib import Path
 
-from worldcupagents.agents.schemas import MatchTacticalReport, PlayerStat
+from worldcupagents.agents.schemas import MatchTacticalReport, PlayerStat, PunditryDigest
 from worldcupagents.dataflows.entities import resolve_team, same_team
 from worldcupagents.dataflows.match_store import MatchStore, db_path
 from worldcupagents.dataflows.names import canonical_name, normalize_key
@@ -115,8 +115,10 @@ def _lesson_line(entry: str, first: str) -> str | None:
 
 
 def past_context_for(team_a: str, team_b: str, config: dict) -> str:
-    """Everything memory has for this fixture: tactical brief + prediction lessons."""
+    """Everything memory has for this fixture: tactical brief + punditry signals +
+    qualitative notes + prediction lessons."""
     parts = [predictive_brief(team_a, team_b, config),
+             punditry_brief(team_a, team_b, config),
              qualitative_brief(team_a, team_b, config),
              prediction_lessons(team_a, team_b, config)]
     return "\n\n".join(p for p in parts if p)
@@ -198,6 +200,66 @@ def predictive_brief(team_a: str, team_b: str, config: dict) -> str:
     if not any_history:
         return ""
     return "PRE-MATCH TACTICAL BRIEF (from prior analysed matches)\n\n" + "\n\n".join(blocks)
+
+
+def _load_punditry(config: dict) -> list[PunditryDigest]:
+    """Load every persisted PunditryDigest (skips anything unreadable)."""
+    d = Path(config.get("memory_dir", "memory")) / "punditry"
+    if not d.exists():
+        return []
+    out: list[PunditryDigest] = []
+    for f in sorted(d.glob("*.json")):
+        try:
+            out.append(PunditryDigest.model_validate_json(f.read_text(encoding="utf-8")))
+        except Exception as e:  # noqa: BLE001 — a corrupt file shouldn't break recall
+            logger.warning("recall: could not read punditry %s (%s)", f.name, e)
+    return out
+
+
+def punditry_for_team(team: str, config: dict, limit: int = _MAX_MATCHES_PER_TEAM) -> list[PunditryDigest]:
+    """Most-recent punditry digests featuring ``team`` (home or away)."""
+    hits = [
+        d for d in _load_punditry(config)
+        if same_team(team, d.home, config=config) or same_team(team, d.away, config=config)
+    ]
+    hits.sort(key=lambda d: d.date or "", reverse=True)
+    return hits[:limit]
+
+
+def _punditry_line(team: str, digest: PunditryDigest, config: dict) -> str:
+    """One compact, sourced line of this team's read from a single match's punditry."""
+    read = digest.home_read if same_team(team, digest.home, config=config) else digest.away_read
+    opp = digest.away if same_team(team, digest.home, config=config) else digest.home
+    seg: list[str] = []
+    if read.tactical_shape:
+        seg.append("shape: " + "/".join(read.tactical_shape[:2]))
+    if read.standout_players:
+        seg.append("players: " + "; ".join(read.standout_players[:2]))
+    if read.fatigue_injuries:
+        seg.append("fitness: " + "; ".join(read.fatigue_injuries[:2]))
+    if not seg and read.momentum:
+        seg.append(read.momentum)
+    url = next((s for s in digest.sources if s.startswith("http")), None)
+    src = f" [source: {url}]" if url else ""
+    return f"  vs {opp} ({digest.date or 'undated'}): {', '.join(seg) or 'no notable signals'}{src}"
+
+
+def punditry_brief(team_a: str, team_b: str, config: dict) -> str:
+    """Structured punditry signals (tactical shape / player verdicts / fitness)
+    from prior analysed matches for both teams. "" when neither has any."""
+    blocks: list[str] = []
+    any_history = False
+    for team in (team_a, team_b):
+        digs = punditry_for_team(team, config)
+        if not digs:
+            continue
+        any_history = True
+        lines = [f"{team} — punditry from {len(digs)} prior match(es):"]
+        lines.extend(_punditry_line(team, d, config) for d in digs)
+        blocks.append("\n".join(lines))
+    if not any_history:
+        return ""
+    return "PUNDITRY SIGNALS (distilled from match reports & tactical columns)\n\n" + "\n\n".join(blocks)
 
 
 def top_players(team: str, config: dict, n: int = 5, squad: list[str] | None = None) -> list[PlayerStat]:
