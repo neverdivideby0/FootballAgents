@@ -59,7 +59,12 @@ class FootballDataOrgProvider:
             data = self.http.get_json(
                 f"{BASE}/competitions/{self.competition}/teams", self._headers, ttl=_SQUAD_TTL
             )
-            self._team_index = {normalize_key(t["name"]): t for t in data.get("teams", [])}
+            # Key on the CANONICAL name so vendor spellings that differ from the
+            # user/ranking form (e.g. feed "Bosnia-Herzegovina" vs "Bosnia and
+            # Herzegovina") still match — both sides go through the alias table.
+            self._team_index = {
+                normalize_key(canonical_name(t["name"])): t for t in data.get("teams", [])
+            }
         return self._team_index
 
     def _resolve(self, team: str) -> dict | None:
