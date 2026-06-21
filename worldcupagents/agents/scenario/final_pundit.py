@@ -22,7 +22,8 @@ logger = logging.getLogger(__name__)
 
 def make_final_pundit(config: dict, llm=None, usage_acc: dict | None = None):
     """usage_acc: optional mutable dict {"input": int, "output": int} for token tracking."""
-    judge_weight = config.get("ensemble_judge_weight", 0.6)
+    from worldcupagents.calibration import effective_judge_weight
+    judge_weight = effective_judge_weight(config)
     use_llm = bool(config.get("use_llm")) and llm is not None
 
     def final_pundit(state: MatchState) -> dict:
@@ -61,6 +62,9 @@ def _llm_final_read(llm, state: MatchState, usage_acc: dict | None = None,
     if mr:
         from worldcupagents.dataflows.market import market_digest
         market = f"\nLIVE MARKET (the benchmark prior):\n{market_digest(mr)}\n"
+    cal = state.get("calibration_note") or ""
+    calibration = (f"\nCALIBRATION FEEDBACK (our own resolved track record — correct for it):\n{cal}\n"
+                   if cal else "")
     stage_label, stage_rule = stage_line(config or {}, fx)
     prompt = f"""You are the FINAL pundit — the last word on {home.team} (home) vs {away.team} (away).
 
@@ -68,7 +72,7 @@ Fixture: {stage_label}. {stage_rule}
 
 The judge's PROVISIONAL verdict (post advocate-debate):
 {_provisional_digest(state)}
-{reports_block(state)}{market}{lessons}
+{reports_block(state)}{market}{calibration}{lessons}
 Three scenario pundits then stress-tested that verdict:
 {scenario_history or '(no scenario debate available)'}
 

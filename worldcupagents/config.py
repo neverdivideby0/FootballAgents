@@ -110,6 +110,10 @@ DEFAULT_CONFIG = _apply_env_overrides({
     "max_scenario_rounds": 1,         # cap = 3 * rounds pundit turns
     # Ensemble: weight on the judge's qualitative read vs the statistical baseline.
     "ensemble_judge_weight": 0.6,
+    # Let the blend weight adapt from the eval log (recency-weighted fit shrunk
+    # toward the 0.6 prior; written to data/fitted_weights.json by resolve/refresh).
+    # Set False to pin the prior above (calibration.effective_judge_weight).
+    "use_fitted_judge_weight": True,
     # Show the live market (The Odds API consensus + Polymarket crowd) to the judge
     # so it can argue where its read should differ. On for predictions; the eval
     # harness forces it OFF so the LLM-lift test stays an honest independent measure.

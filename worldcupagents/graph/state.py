@@ -50,3 +50,4 @@ class MatchState(TypedDict, total=False):
     # Final Pundit's when it is on)
     verdict: MatchVerdict
     past_context: str     # tactical history + lessons injected from memory at run start
+    calibration_note: str # recency-weighted bias correction → Judge + Final Pundit

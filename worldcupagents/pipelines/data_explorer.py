@@ -2,7 +2,7 @@
 model can see: API connections with live health checks, the full match/player/
 situations store tables, memory artifacts, and a DATA GAPS panel.
 
-``footballagents explore`` writes exports/data_explorer.html and opens it.
+``footballagents explore`` writes data_explorer.html (repo root) and opens it.
 No server, no build step: embedded JSON + vanilla JS filtering + tab navigation.
 """
 
@@ -381,51 +381,21 @@ def _memory(config: dict) -> dict:
 def _calibration(config: dict) -> dict:
     """The honest scoreboard: every RESOLVED prediction parsed from the log, with
     rolling Brier, hit-rate, and reliability bins (predicted % vs realized %).
-    This scores the system's actual shipped predictions — not a backtest."""
-    import re
-    from worldcupagents.graph.predict import _ENTRY_SEP
+    This scores the system's actual shipped predictions — not a backtest.
+
+    Parsing + reliability bins live in ``worldcupagents.calibration`` (shared with
+    the Judge's calibration feedback)."""
+    from worldcupagents.calibration import reliability_bins, resolved_predictions
 
     out: dict = {"resolved": [], "mean_brier": None, "hit_rate": None,
                  "n_with_eval_log": 0, "bins": []}
-    log = Path(config.get("prediction_log_path", "memory/prediction_log.md"))
-    if log.exists():
-        probs_re = re.compile(r"p_home=([\d.]+),\s*p_draw=([\d.]+),\s*p_away=([\d.]+)")
-        tag_re = re.compile(r"\| resolved: (\w+)(?:\s+(\d+-\d+))?\s+Brier=([\d.]+)\]")
-        for e in log.read_text(encoding="utf-8").split(_ENTRY_SEP):
-            first = e.strip().splitlines()[0] if e.strip() else ""
-            m, pm = tag_re.search(first), probs_re.search(e)
-            if not (m and pm):
-                continue
-            parts = [p.strip() for p in first.strip("[]").split("|")]
-            predicted = parts[2].split()[0] if len(parts) > 2 and parts[2].split() else "?"
-            out["resolved"].append({
-                "date": parts[0] if parts else "?",
-                "fixture": parts[1] if len(parts) > 1 else "?",
-                "predicted": predicted,
-                "actual": m.group(1), "score": m.group(2) or "",
-                "brier": float(m.group(3)),
-                "p": [float(pm.group(1)), float(pm.group(2)), float(pm.group(3))],
-            })
+    out["resolved"] = resolved_predictions(config)
 
     rs = out["resolved"]
     if rs:
         out["mean_brier"] = round(sum(r["brier"] for r in rs) / len(rs), 3)
         out["hit_rate"] = round(sum(1 for r in rs if r["predicted"] == r["actual"]) / len(rs), 2)
-        # Reliability: each match contributes 3 forecasts (home/draw/away);
-        # bin by forecast probability, compare to the realized frequency.
-        bins = [{"n": 0, "sum_p": 0.0, "hits": 0} for _ in range(10)]
-        for r in rs:
-            for p, oc in zip(r["p"], ("HOME_WIN", "DRAW", "AWAY_WIN")):
-                b = bins[min(int(p * 10), 9)]
-                b["n"] += 1
-                b["sum_p"] += p
-                b["hits"] += 1 if r["actual"] == oc else 0
-        out["bins"] = [
-            {"range": f"{i*10}–{i*10+10}%", "n": b["n"],
-             "forecast": round(b["sum_p"] / b["n"], 3) if b["n"] else None,
-             "realized": round(b["hits"] / b["n"], 3) if b["n"] else None}
-            for i, b in enumerate(bins)
-        ]
+        out["bins"] = reliability_bins(rs)
 
     # LLM-lift eval log (pipelines/evaluate.py), summarized if present.
     try:
@@ -1522,7 +1492,10 @@ fltPN();
 def export_data_explorer(config: dict | None = None) -> Path:
     config = dict(config or DEFAULT_CONFIG)
     inv = build_inventory(config)
-    out_dir = Path(config.get("exports_dir", "exports"))
+    # Write to the repo root (not exports/) so the explorer sits at the
+    # top level: <repo>/data_explorer.html. Anchored to the package location
+    # so it lands correctly regardless of the working directory.
+    out_dir = Path(__file__).resolve().parents[2]
     out_dir.mkdir(parents=True, exist_ok=True)
     path = out_dir / "data_explorer.html"
     path.write_text(render_html(inv), encoding="utf-8")
