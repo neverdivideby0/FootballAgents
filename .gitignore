@@ -18,6 +18,7 @@ data/
 
 # Generated outputs (reports + the built explorer HTML — regenerate with `refresh`)
 exports/
+data_explorer.html
 
 # OS / editor
 .DS_Store

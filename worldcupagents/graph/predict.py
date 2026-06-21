@@ -107,6 +107,7 @@ class Predictor:
                 "current_neutral_response": "", "count": 0,
             },
             "past_context": self._recall(fixture),
+            "calibration_note": self._calibration_note(),
         }
 
     def _recall(self, fixture: Fixture) -> str:
@@ -117,6 +118,16 @@ class Predictor:
             return past_context_for(fixture.home, fixture.away, self.config)
         except Exception as e:  # noqa: BLE001 — memory issues must not break a prediction
             logger.warning("recall failed (%s); proceeding without memory context", e)
+            return ""
+
+    def _calibration_note(self) -> str:
+        """Recency-weighted correction from the system's own resolved track record,
+        fed to the Judge + Final Pundit. "" when there is no resolved history."""
+        try:
+            from worldcupagents.calibration import calibration_note
+            return calibration_note(self.config)
+        except Exception as e:  # noqa: BLE001 — calibration must not break a prediction
+            logger.warning("calibration note failed (%s); proceeding without it", e)
             return ""
 
     def _finish(self, final: dict):

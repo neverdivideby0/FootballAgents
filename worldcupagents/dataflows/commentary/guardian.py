@@ -23,7 +23,7 @@ from urllib.parse import quote_plus
 from worldcupagents.agents.schemas import MatchEvent
 from worldcupagents.dataflows.commentary.base import RawMatchFeed
 from worldcupagents.dataflows.http_cache import HTTPCache
-from worldcupagents.dataflows.names import canonical_name, normalize_key
+from worldcupagents.dataflows.names import canonical_name, normalize_key, surface_forms
 
 logger = logging.getLogger(__name__)
 
@@ -148,12 +148,50 @@ class GuardianCommentaryProvider:
     def _search_url(self, home: str, away: str, date: str | None) -> str:
         q = quote_plus(f"{home} {away}")
         url = (
-            f"{BASE}/search?q={q}&section=football&show-blocks=all"
+            f"{BASE}/search?q={q}&section=football&show-blocks=all&show-fields=bodyText"
             f"&page-size=10&order-by=relevance&api-key={self.api_key}"
         )
         if date:
             url += f"&from-date={date}&to-date={date}"
         return url
+
+    def fetch_articles(self, home: str, away: str, date: str | None = None,
+                       limit: int = 5) -> list[dict]:
+        """The punditry counterpart of fetch_match: from the SAME search, return the
+        report + tactical-column ARTICLES (the ones _pick_article discards), each as
+        ``{title, url, body}``. Both team names must appear in the title. Body comes
+        from the ``bodyText`` field (articles) or flattened blocks (fallback). Empty
+        list on no-key/error — the pipeline then degrades to a placeholder digest."""
+        try:
+            data = self.http.get_json(self._search_url(home, away, date), ttl=_TTL)
+        except Exception as e:  # noqa: BLE001 — network/key/rate-limit must not crash
+            logger.warning("guardian: article search failed for %s v %s (%s)", home, away, e)
+            return []
+
+        results = ((data or {}).get("response") or {}).get("results") or []
+        # Alias-aware: a title matches a team if ANY of its spellings appears — so
+        # "South Korea" matches even though our canonical is "Korea Republic".
+        home_forms, away_forms = surface_forms(home), surface_forms(away)
+        out: list[dict] = []
+        for r in results:
+            if r.get("type") == "liveblog":
+                continue  # the liveblog is fetch_match's job (→ analyze-match)
+            title = r.get("webTitle", "")
+            t = normalize_key(title)
+            if not (any(f in t for f in home_forms) and any(f in t for f in away_forms)):
+                continue
+            body = (r.get("fields") or {}).get("bodyText") or ""
+            if not body:  # fallback: flatten any block bodies into prose
+                blocks = (r.get("blocks") or {}).get("body") or []
+                body = " ".join(_strip_html(b.get("bodyHtml") or b.get("bodyTextSummary") or "")
+                                for b in blocks)
+            body = body.strip()
+            if not body:
+                continue
+            out.append({"title": title, "url": r.get("webUrl", "guardian"), "body": body})
+            if len(out) >= limit:
+                break
+        return out
 
     def _pick_article(self, results: list[dict], home: str, away: str) -> dict | None:
         """Pick the minute-by-minute liveblog, not the match report.

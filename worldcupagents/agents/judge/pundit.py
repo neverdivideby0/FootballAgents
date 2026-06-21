@@ -25,7 +25,8 @@ logger = logging.getLogger(__name__)
 
 def make_judge(config: dict, llm=None, usage_acc: dict | None = None):
     """usage_acc: optional mutable dict {"input": int, "output": int} for token tracking."""
-    judge_weight = config.get("ensemble_judge_weight", 0.6)
+    from worldcupagents.calibration import effective_judge_weight
+    judge_weight = effective_judge_weight(config)
     use_llm = bool(config.get("use_llm")) and llm is not None
 
     def judge(state: MatchState) -> dict:
@@ -96,6 +97,9 @@ def _llm_judge_read(llm, state: MatchState, usage_acc: dict | None = None,
                      f"{fd}\n")
     except Exception:  # noqa: BLE001
         pass
+    cal = state.get("calibration_note") or ""
+    calibration = (f"\nCALIBRATION FEEDBACK (our own resolved track record — correct for it):\n{cal}\n"
+                   if cal else "")
     stage_label, stage_rule = stage_line(config or {}, fx)
     prompt = f"""You are a seasoned, neutral football pundit giving the final verdict on \
 {home.team} (home) vs {away.team} (away).
@@ -105,7 +109,7 @@ Venue: {ctx.get('venue_note') or ctx.get('venue') or 'TBD'}.
 
 {home.team}: {profile_brief(home)}
 {away.team}: {profile_brief(away)}
-{rec_line}{market}{focus}{reports}{tactical}
+{rec_line}{market}{focus}{calibration}{reports}{tactical}
 The two team advocates debated:
 {history or '(no debate available)'}
 

@@ -240,11 +240,12 @@ Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the E
 
 <!-- ENTRY_END -->
 
-[2026-05-31 | Spain vs Cape Verde | HOME_WIN 2-1 | pending]
+[2026-05-31 | Spain vs Cape Verde | HOME_WIN 2-1 | resolved: DRAW 0-0 Brier=1.353]
 
 PREDICTION:
 Spain's significant advantages in experience, ranking, and tactical prowess suggest a strong likelihood of victory over Cabo Verde. Despite potential concerns regarding Spain's match rhythm due to the lack of recent games, Cabo Verde's unranked status and absence of match data heighten their vulnerability. Spain's ability to control play and exploit tactical weaknesses in Cabo Verde is expected to yield a solid win.
 (p_home=0.784, p_draw=0.144, p_away=0.072)
+RESULT: DRAW 0-0. Predicted HOME_WIN → Brier=1.353 (poor).
 
 <!-- ENTRY_END -->
 
@@ -783,19 +784,21 @@ I moved probability mass only from the provisional away win into the draw bucket
 
 <!-- ENTRY_END -->
 
-[2026-06-14 | Germany vs Curaçao | HOME_WIN 4-0 | pending]
+[2026-06-14 | Germany vs Curaçao | HOME_WIN 4-0 | resolved: HOME_WIN 7-1 Brier=0.004]
 
 PREDICTION:
 The market is already very close to the right shape, and I mostly agree with the heavy Germany lean, though I would shade the draw slightly down and the Germany win slightly up versus consensus because the quality gap is enormous and the xG model is extreme. Curaçao’s best argument is that Germany can be less efficient in controlling every transition, but their recent results against weaker and mid-tier opposition are still too weak to justify a real upset chance. I expect Germany to dominate territory and chances, with the main question being whether they win by two, three, or more rather than whether they win at all.
 (p_home=0.949, p_draw=0.038, p_away=0.013)
+RESULT: HOME_WIN 7-1. Predicted HOME_WIN → Brier=0.004 (strong).
 
 <!-- ENTRY_END -->
 
-[2026-06-14 | Netherlands vs Japan | HOME_WIN 2-1 | pending]
+[2026-06-14 | Netherlands vs Japan | HOME_WIN 2-1 | resolved: DRAW 2-2 Brier=0.902]
 
 PREDICTION:
 I trim the draw slightly from 26% to 25% and leave the home win essentially intact at 50%, siding with the downside/neutral case that the draw is a bit over-priced relative to 90-minute quality. That said, I do not make a larger move because the upside case was real: Japan’s pressing and sequence of narrow wins justify keeping the upset path live. Final read: Netherlands are still the likelier winner, but this is a fairly tight 2-1 rather than a comfortable Oranje spot.
 (p_home=0.514, p_draw=0.240, p_away=0.245)
+RESULT: DRAW 2-2. Predicted HOME_WIN → Brier=0.902 (poor).
 
 <!-- ENTRY_END -->
 
@@ -807,11 +810,12 @@ Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the E
 
 <!-- ENTRY_END -->
 
-[2026-06-14 | Ivory Coast vs Ecuador | AWAY_WIN 0-2 | pending]
+[2026-06-14 | Ivory Coast vs Ecuador | AWAY_WIN 0-2 | resolved: HOME_WIN 1-0 Brier=1.085]
 
 PREDICTION:
 I kept Ecuador as the favorite because the concrete process signals still matter: the xG model, FIFA ranking, and broader pedigree all support an away edge. The only adjustment I made was a modest shift toward the draw, justified by the Upside/Neutral evidence that Ivory Coast's recent results are unusually swingy and that this looks like a lower-variance, lower-scoring group game than the provisional split implied. So I moved away from 53% away-win toward a more balanced 1-1-oriented distribution, while not overcorrecting into an upset lean.
 (p_home=0.178, p_draw=0.222, p_away=0.600)
+RESULT: HOME_WIN 1-0. Predicted AWAY_WIN → Brier=1.085 (poor).
 
 <!-- ENTRY_END -->
 
@@ -831,35 +835,166 @@ Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the E
 
 <!-- ENTRY_END -->
 
-[2026-06-14 | Sweden vs Tunisia | HOME_WIN 2-1 | pending]
+[2026-06-14 | Sweden vs Tunisia | HOME_WIN 2-1 | resolved: HOME_WIN 5-1 Brier=0.345]
 
 PREDICTION:
 I moved Sweden down only modestly from 53% to 51% and nudged the draw up from 25% to 27%, which is the clearest evidence-backed adjustment from the neutral/upside cases. The Neutral and Upside pundits were right that Tunisia’s low-event structure makes the draw more live than the judge’s provisional line, but the Downside case correctly held that this mainly inflates stalemate probability rather than Tunisia’s win chance. Sweden remain the likelier winner on quality, chance creation, and match-winner edge, but the most likely scoreline is now 1-1 rather than 2-1 because the grindy game-state is slightly more underpriced than the raw favorite line implied.
 (p_home=0.520, p_draw=0.252, p_away=0.227)
+RESULT: HOME_WIN 5-1. Predicted HOME_WIN → Brier=0.345 (decent).
 
 <!-- ENTRY_END -->
 
-[2026-06-14 | Sweden vs Tunisia | HOME_WIN 2-1 | pending]
+[2026-06-14 | Sweden vs Tunisia | HOME_WIN 2-1 | resolved: HOME_WIN 5-1 Brier=0.337]
 
 PREDICTION:
 I keep Sweden as the favourite, but I do make one small evidence-backed adjustment: I nudge the draw up from 25% to 27% and trim Sweden by 1%, reflecting the Neutral/Up-side point that Tunisia’s results show real variance and a credible grind-to-1-1 path. I do not materially upgrade Tunisia, because the Downside case is stronger on the objective quality gap: the model’s 1.87–1.18 xG split and Tunisia’s recent 0-5/0-1 friendlies argue against a major upset move. Final read: Sweden still most likely, but not by a wide margin, with 2-1 the best single scoreline.
 (p_home=0.526, p_draw=0.252, p_away=0.221)
+RESULT: HOME_WIN 5-1. Predicted HOME_WIN → Brier=0.337 (decent).
 
 <!-- ENTRY_END -->
 
-[2026-06-15 | Spain vs Cape Verde | HOME_WIN 5-0 | pending]
+[2026-06-15 | Spain vs Cape Verde | HOME_WIN 5-0 | resolved: DRAW 0-0 Brier=1.790]
 
 PREDICTION:
 The market is already close to the right shape, but I’d shade Spain even higher because the underlying matchup is extremely one-sided in open play and chance generation. Cabo Verde’s best path is to compress space and hope for variance, yet Spain’s possession, depth, and wide quality should steadily wear that down. I’m not buying the upset case: the recent results that flatter Cabo Verde came with major caveats, while the 0-3 losses to Bermuda and the overall data point toward them struggling when forced to defend for long stretches. On neutral ground in Atlanta, Spain should control the game, create the bulk of the chances, and win comfortably.
 (p_home=0.936, p_draw=0.044, p_away=0.020)
+RESULT: DRAW 0-0. Predicted HOME_WIN → Brier=1.790 (poor).
 
 <!-- ENTRY_END -->
 
-[2026-06-15 | Belgium vs Egypt | HOME_WIN 3-1 | pending]
+[2026-06-15 | Belgium vs Egypt | HOME_WIN 3-1 | resolved: DRAW 1-1 Brier=1.238]
 
 PREDICTION:
 I mostly hold the provisional read: Belgium stay around 70%, with the draw kept at 19% and Egypt trimmed only marginally to 11%. The main adjustment justified by the debate is against pushing the draw higher; the Neutral and Downside points were stronger than the Upside case because Egypt's suppression is real, but the 2.82 vs 0.86 xG gap still points firmly to Belgium over 90 minutes. I therefore lean to a controlled Belgium win rather than a rout, with 2-0 slightly more likely than 3-1.
 (p_home=0.732, p_draw=0.168, p_away=0.100)
+RESULT: DRAW 1-1. Predicted HOME_WIN → Brier=1.238 (poor).
+
+<!-- ENTRY_END -->
+
+[2026-06-15 | Saudi Arabia vs Uruguay | AWAY_WIN 1-3 | resolved: DRAW 1-1 Brier=1.399]
+
+PREDICTION:
+I only made a small adjustment, nudging a touch of the judge’s provisional draw probability into Uruguay win probability, because the Downside and Neutral pundits were better supported by the concrete data than the Upside case. The decisive evidence remains the large expected-goals gap and Uruguay’s superior midfield/press structure; Saudi’s chaos argument is real, but it is mostly a path to narrower margins rather than a full re-rating of the match. So I hold Uruguay as a strong favorite, trim the draw slightly, and leave the home win essentially unchanged.
+(p_home=0.063, p_draw=0.134, p_away=0.803)
+RESULT: DRAW 1-1. Predicted AWAY_WIN → Brier=1.399 (poor).
+
+<!-- ENTRY_END -->
+
+[2026-06-15 | Iran vs New Zealand | HOME_WIN 5-0 | resolved: DRAW 2-2 Brier=1.656]
+
+PREDICTION:
+I moved the provisional line only slightly: the scenario debate justifies trimming the draw a touch and nudging Iran up, mainly because the Neutral/Downside pundits correctly highlighted that New Zealand’s recent profile is not merely ‘tight’ but repeatedly failure-prone. The decisive evidence is the 4.58–0.27 xG model and the run of Kiwi shutouts/blowouts, which make a home win much more likely than the market and more likely than the provisional draw-heavy read. I am not going all the way to a rout line, though: group-stage game state, travel/context, and Iran’s own finishing variance keep 2-0 as the most sensible median result.
+(p_home=0.894, p_draw=0.075, p_away=0.032)
+RESULT: DRAW 2-2. Predicted HOME_WIN → Brier=1.656 (poor).
+
+<!-- ENTRY_END -->
+
+[2026-06-17 | Portugal vs DR Congo | HOME_WIN 4-0 | resolved: DRAW 1-1 Brier=1.571]
+
+PREDICTION:
+Portugal remain the clear favorite, and I’m keeping the home side very strong at 81%, but I did make a small adjustment from the provisional 85%/11%/4%. The specific evidence-backed reason came from the Upside and Neutral pundits: DR Congo’s recent 0-0 against Denmark, 1-0 over Jamaica, and scouting notes on being extremely difficult to break down mean the 4-0 script is too clean for a group-stage match. The most likely landing spot is still a controlled Portugal win, just more plausibly 2-0 than a rout.
+(p_home=0.873, p_draw=0.101, p_away=0.027)
+RESULT: DRAW 1-1. Predicted HOME_WIN → Brier=1.571 (poor).
+
+<!-- ENTRY_END -->
+
+[2026-06-17 | England vs Croatia | HOME_WIN 1-0 | resolved: HOME_WIN 4-2 Brier=0.426]
+
+PREDICTION:
+I move the line only modestly: England down from 50% to 49% and the draw up from 26% to 27%, while leaving Croatia flat at 24%. The Neutral pundit's point is the one that justified a concrete adjustment — the 1-0 script is a bit brittle because Croatia's tempo control and pedigree can convert some England wins into draws — but the Downside also correctly argued against overreacting, since England still hold the clearer structural edge and the model projection. So the final verdict keeps England favored, slightly increases draw equity, and still lands on a narrow 1-0 home win.
+(p_home=0.467, p_draw=0.262, p_away=0.271)
+RESULT: HOME_WIN 4-2. Predicted HOME_WIN → Brier=0.426 (decent).
+
+<!-- ENTRY_END -->
+
+[2026-06-17 | Ghana vs Panama | HOME_WIN 1-0 | resolved: HOME_WIN 1-0 Brier=0.550]
+
+PREDICTION:
+I only made one small move: I trimmed Panama’s upset chance slightly from 32% to 31% and gave that 1 point back to Ghana, because the Downside/Neutral cases were right that the raw quality gap and xG edge are real while Ghana’s ugly run is partly opponent-inflated. I did not chase the chaos narrative from the Upside pundit, since the evidence supports volatility but not a full re-pricing into a coin-flip. With the neutral venue and both teams’ tendency toward low-margin games, 1-1 remains the most likely scoreline and the draw stays fully live.
+(p_home=0.395, p_draw=0.282, p_away=0.323)
+RESULT: HOME_WIN 1-0. Predicted HOME_WIN → Brier=0.550 (beats coin-flip).
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Uzbekistan vs Colombia | AWAY_WIN 0-4 | pending]
+
+PREDICTION:
+The base case still points clearly to Colombia: the ranking gap, the recent 3-1 head-to-head, and especially the xG projection all support an away win. I did move the numbers slightly — AWAY_WIN down from 85% to 82% and DRAW up from 9% to 12% — because the Neutral pundit’s argument about group-stage volatility and the Upside pundit’s dead-ball/set-piece upset path were concrete, not speculative. Even with that adjustment, the draw remains an underdog outcome and Colombia remain strongly favoured.
+(p_home=0.041, p_draw=0.089, p_away=0.870)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Czech Republic vs South Africa | HOME_WIN 2-0 | pending]
+
+PREDICTION:
+I moved the provisional line only slightly: from 70/21/9 to 66/24/10, mainly following the Downside/Neutral point that the draw is a bit underpriced because South Africa are genuinely organised and have already held Czechia to 1-1. I did not buy a bigger swing to the upset side; the evidence still strongly favours Czechia via the model gap, squad quality, and the Schick/Souček spine. So the final view is still a Czechia home win, but with a higher draw chance than the provisional read and a less comfortable margin than a pure 2-0 script implies.
+(p_home=0.747, p_draw=0.186, p_away=0.067)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Switzerland vs Bosnia and Herzegovina | HOME_WIN 4-0 | pending]
+
+PREDICTION:
+I move the provisional line mainly by trimming Switzerland a little and lifting the draw, not by changing the basic read of the matchup. The Neutral Pundit’s argument is the one that lands: Switzerland’s structural edge is real, but their recent 1-1s and Bosnia’s ability to make games ugly justify a fatter draw tail than 19%. I do not buy a big Bosnia upgrade — the Downside Pundit’s class/depth case still holds, and the 4.35–0.35 xG model plus Switzerland’s tournament pedigree keep the home win clearly on top.
+(p_home=0.793, p_draw=0.144, p_away=0.063)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Canada vs Qatar | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+I kept Canada as the favorite but moved probability mainly from HOME_WIN into DRAW, not into AWAY_WIN. That adjustment is justified by the Neutral Pundit’s evidence-backed point that Qatar’s recent profile is draw-heavy and that the main correction should be draw inflation, while the Upside case for a bigger upset surge was less well supported. Canada’s underlying edge, xG margin, and head-to-head results still point to a narrow home win, but not quite as cleanly as the provisional 61/25/14 split implied.
+(p_home=0.547, p_draw=0.301, p_away=0.153)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Mexico vs South Korea | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+I moved the provisional split only modestly: Mexico up from 44% to 47% and South Korea down from 29% to 26%, while leaving the draw at 27%. The change is justified by the Downside and Neutral pundits’ evidence-backed points — Mexico’s home record, the recent 1-0 head-to-head win, and the slightly stronger xG model all support a firmer but still narrow home lean. I did not buy the Upside Pundit’s larger upset case because the added variance arguments were plausible but not concretely supported beyond the existing transition risk, so the away-win path looks slightly over-priced rather than under-priced.
+(p_home=0.449, p_draw=0.263, p_away=0.289)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | United States vs Australia | AWAY_WIN 0-1 | pending]
+
+PREDICTION:
+I do move the provisional verdict, but only modestly: the 39% away-win number is a touch too rich given the same-window 2-0 US win and the fact that the supplied xG split already implies a cagey, low-conversion match rather than clear Australian superiority. I side with the downside and neutral pundits that the evidence supports trimming the away win and reallocating that mass mainly to draw and a narrow US edge. Final call is essentially a coin-flip-ish group game, with 1-1 the most likely scoreline.
+(p_home=0.233, p_draw=0.321, p_away=0.445)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Scotland vs Morocco | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+I moved the line only slightly: home down from 46% to 41%, draw left at 35%, and away up from 19% to 24%. That adjustment is justified mainly by the Neutral Pundit’s point that the provisional line was too confident in a home win given the tight recent head-to-head and low-margin game state, while the Upside case for extra chaos is real but not strong enough to drive a bigger shift. Morocco’s pedigree and transition threat keep the away tail live, but Scotland’s structure and set-piece profile still make the draw the single most natural outcome, with 0-0 the likeliest scoreline.
+(p_home=0.505, p_draw=0.330, p_away=0.165)
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Brazil vs Haiti | HOME_WIN 1-0 | resolved: HOME_WIN 3-0 Brier=0.172]
+
+PREDICTION:
+I trim Brazil slightly from the provisional 76/20/4 to 71/24/5, mainly following the Neutral Pundit's evidence-backed point that the draw was a touch underpriced in a defense-leaning, low-xG match. The Upside case does not move me enough to materially raise Haiti: their attack numbers, recent results, and the 1.24–0.18 xG gap still point to Brazil control and a tiny away-win base. The likely script remains a narrow Brazil win, with 1-0 the most plausible scoreline and draw the only real live alternative.
+(p_home=0.685, p_draw=0.264, p_away=0.051)
+RESULT: HOME_WIN 3-0. Predicted HOME_WIN → Brier=0.172 (strong).
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Turkey vs Paraguay | AWAY_WIN 0-1 | resolved: AWAY_WIN 0-1 Brier=0.573]
+
+PREDICTION:
+I only trimmed the provisional away lean slightly, from 39% to 36%, because the Neutral Pundit’s variance argument is evidence-backed: the xG gap is thin, Paraguay’s defensive solidity isn’t elite, and the draw/home paths are a bit underpriced in a group-stage game. I did not swing all the way to a coinflip because the Downside case remains strong: Paraguay have the better tournament-structured profile, the prior 1-0 win over Turkey is direct matchup evidence, and Alfaro’s intensity-first setup is suited to margin games. The result I land on is a very small Paraguay edge with the draw almost as live as either side, and 1-1 feels the most natural low-margin scoreline.
+(p_home=0.337, p_draw=0.281, p_away=0.383)
+RESULT: AWAY_WIN 0-1. Predicted AWAY_WIN → Brier=0.573 (beats coin-flip).
+
+<!-- ENTRY_END -->
+
+[2026-06-20 | Brazil vs Argentina | DRAW 0-0 | pending]
+
+PREDICTION:
+Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the Elo baseline. Enable use_llm for a debate-driven read.
+(p_home=0.133, p_draw=0.453, p_away=0.414)
 
 <!-- ENTRY_END -->
 

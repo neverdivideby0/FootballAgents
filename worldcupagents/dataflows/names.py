@@ -53,3 +53,18 @@ def canonical_name(name: str) -> str:
     except Exception:
         pass
     return _ALIASES.get(normalize_key(name), (name or "").strip())
+
+
+def surface_forms(name: str) -> set[str]:
+    """All known normalized spellings for a team — its canonical form plus every
+    alias that resolves to it. Use this (not just ``canonical_name``) to match a
+    team in free prose: articles say "South Korea", but the canonical is "Korea
+    Republic", so a canonical-only substring check would miss it."""
+    canon = canonical_name(name)
+    canon_key = normalize_key(canon)
+    forms = {canon_key, normalize_key(name)}
+    # Every alias whose canonical display name matches this team's canonical.
+    for alias_key, alias_canon in _ALIASES.items():
+        if normalize_key(alias_canon) == canon_key:
+            forms.add(alias_key)
+    return {f for f in forms if f}

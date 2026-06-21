@@ -218,6 +218,42 @@ class MatchTacticalReport(BaseModel):
     sources: list[str] = Field(default_factory=list)  # provenance is mandatory
 
 
+class TeamPunditryRead(BaseModel):
+    """One team's structured signals distilled from post-match punditry articles
+    (report + tactical columns). Field descriptions double as the structured-output
+    instructions for the LLM — extract ONLY what the punditry supports."""
+
+    team: str
+    tactical_shape: list[str] = Field(
+        default_factory=list,
+        description="Formation/approach the pundits describe, e.g. '4-3-3, full-backs high', 'sat in a mid-block'",
+    )
+    standout_players: list[str] = Field(
+        default_factory=list,
+        description="Named player verdicts/ratings, e.g. 'Bellingham ran midfield', 'Rice 8/10 — shielded the back four'",
+    )
+    fatigue_injuries: list[str] = Field(
+        default_factory=list,
+        description="Fatigue, knocks, injuries or suspensions noted, e.g. 'Kane carrying a knock', 'legs gone after 70'",
+    )
+    momentum: str = Field(
+        default="", description="One line on morale/narrative/confidence going forward",
+    )
+
+
+class PunditryDigest(BaseModel):
+    """Structured per-match punditry read, persisted to memory/punditry/. The
+    distilled, debate-facing counterpart of the raw articles kept in data/punditry/."""
+
+    match_id: str
+    home: str
+    away: str
+    date: Optional[str] = None
+    home_read: TeamPunditryRead
+    away_read: TeamPunditryRead
+    sources: list[str] = Field(default_factory=list)  # article URLs — provenance is mandatory
+
+
 class PlayerStat(BaseModel):
     """Per-player metrics (from the scorers feed). Goal-contribution today;
     a richer source (passing accuracy, xG) can extend this later."""

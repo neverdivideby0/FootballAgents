@@ -53,7 +53,9 @@ CLI commands: `predict` (with `--depth`, `--scenario/--no-scenario`,
 report in memory/matches/), `scout-report` (stats + tactical memory → report),
 `critic` (quant vs qual cross-examination), `resolve` (Brier + optional LLM
 reflection), `backtest` (calibration yardstick), `fetch-data` (populate the
-SQLite match store), `players`, `leagues`, `check`, `eliminate`. Exports:
+SQLite match store), `watch` (matchday autopilot: poll → structured-punditry +
+tactical analysis per finished match → auto-resolve; `--interval` to loop),
+`players`, `leagues`, `check`, `resolve-name`, `eliminate`. Exports:
 sectioned markdown (`pipelines/report_export.py`) or txt. All LLM steps are
 offline-by-default; add `--provider`/`--llm` to spend.
 
@@ -89,7 +91,55 @@ flattened league baselines; fitted strengths were already LOOCV-validated at
 provider actually failed (placeholder-read detection via zero output tokens);
 scoring dedupes reruns per (date, fixture, provider); repeat `evaluate` runs
 skip already-evaluated fixtures so a bigger `--last` only spends on new ones.
-Keep judge_weight at 0.6 until ≥30 clean reads.
+
+**Calibration feedback — the adaptive half of the loop (2026-06, `calibration.py`):**
+the learning loop no longer only *recalls* past predictions, it *adapts* to them.
+(1) `calibration_note(config)` reads the system's own RESOLVED predictions and
+emits a plain-language correction (favourite over-backing, over/under-confidence,
+draw under-forecast) as a **recency-weighted moving average** (latest match
+weighted most via `decay^age`; the raw count sets how strongly it's phrased). It's
+injected into the **Judge + Final Pundit** prompts only (`state["calibration_note"]`
+from `predict.py`) — never advocates (they argue football; the judge sets the
+numbers). Emits from the FIRST resolved match (no game-count gate); `""` only with
+zero history. **Neutral-venue by design:** WC2026 is played at neutral grounds, so
+the fixture's home/away slot is just listing order — there is NO generic "home
+skew"; the WC signal is **favourite** over-backing, with a separate gated carve-out
+(≥3 games) for genuine 2026 hosts (USA/Canada/Mexico). (2) `judge_weight` now
+adapts instead of being pinned: `refit_judge_weight` does a **recency-weighted
+grid-search of the eval log, then shrinks toward the 0.6 prior by raw read count**
+(`final=(n·w_fit+k·prior)/(n+k)`, k≈20) — few games barely move it, more reads lean
+into the fit, no ≥30 cliff. Written to `data/fitted_weights.json` (gitignored) at
+the `resolve --sync` + `refresh` sync points; `effective_judge_weight(config)` loads
+it where `ensemble_judge_weight` was read (pin the prior with
+`use_fitted_judge_weight=False`). First live refit (2026-06, 50 post-cutoff PL eval
+reads, judge beat baseline): w_fit 1.0 → shrunk **0.886**. The explorer's 📐
+Calibration parsing now lives in `calibration.py` (`resolved_predictions` /
+`reliability_bins`, shared with the note).
+
+**Structured punditry + matchday autopilot (2026-06):** punditry no longer enters
+the debate as raw text. The tactical analyst already distilled **liveblog**
+commentary into a structured `MatchTacticalReport`; the new
+`agents/analyst/punditry.py` does the same for **articles** (match report + tactical
+columns) → a `PunditryDigest` (per-team `tactical_shape` / `standout_players` /
+`fatigue_injuries` / `momentum`). `pipelines/punditry.py::analyze_punditry` fetches
+the articles, snapshots the **raw** to `data/punditry/{match_id}/` (provenance,
+gitignored), and writes the distilled digest to `memory/punditry/{match_id}.json`
+(idempotent — a populated digest is never clobbered by an offline re-run).
+`recall.punditry_brief` surfaces it (shape/player/fitness lines) into
+`past_context_for`, so it flows through `state["past_context"]` into advocates +
+judge + final pundit — structured signals, not raw prose. The Guardian provider
+gained `fetch_articles` (same sanctioned search as `fetch_match`, now
+`show-fields=bodyText`): it returns the report + columns `_pick_article` discards,
+**skipping the liveblog** (that's `analyze-match`'s job) and matching teams
+**alias-aware** via `names.surface_forms` (so "South Korea" matches even though the
+canonical is "Korea Republic" — the variant failure mode, solved). New
+`footballagents watch` is the matchday autopilot: one **idempotent tick** (poll
+`fetch_data` → for each newly-FINISHED WC match with no digest yet, run
+`analyze_punditry` + `analyze_match`, then `sync_pending` + judge_weight refit),
+with `--interval N` wrapping it in an in-process poll loop (`interval=0` default =
+single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provider`
+spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
+work.
 
 **Live market as a judge feature (2026-06):** with `ODDS_API_KEY` set, the judge
 and Final Pundit are shown the **de-vigged bookmaker consensus** (The Odds API,
