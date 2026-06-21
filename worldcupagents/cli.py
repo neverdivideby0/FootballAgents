@@ -342,6 +342,54 @@ def check(team: str = typer.Option(None, "--team", help="Resolve a team against 
 
 
 @app.command()
+def sources(
+    probe: bool = typer.Option(False, "--probe/--no-probe",
+                               help="Live-ping each source (off by default — key-presence + store freshness only)"),
+):
+    """Supervise every data source: is the key set, is it reachable (--probe), and how
+    fresh/covered is its data in the store. Deterministic, no LLM."""
+    from worldcupagents.dataflows.match_store import MatchStore, db_path
+    from worldcupagents.pipelines.data_explorer import _sources_with_checks
+
+    srcs = _sources_with_checks(probe=probe)
+    icon = {"ok": "🟢", "error": "🔴", "skipped": "⚪", "unprobed": "⚪"}
+    t = Table(title=f"Data sources{' (live probe)' if probe else ''}")
+    t.add_column("Source"); t.add_column("Key"); t.add_column("Status"); t.add_column("Supplies", max_width=58)
+    for s in srcs:
+        keyed = "✅" if s["configured"] else "—"
+        chk = s.get("check") or {}
+        status = f"{icon.get(chk.get('status'), '⚪')} {chk.get('detail', '')}".strip()
+        if chk.get("ms"):
+            status += f" ({chk['ms']}ms)"
+        t.add_row(s["name"], keyed, status, s["provides"])
+    console.print(t)
+
+    healthy = sum(1 for s in srcs if (s.get("check") or {}).get("status") == "ok")
+    missing = sum(1 for s in srcs if not s["configured"])
+    console.print(f"[dim]{len(srcs)} sources · {missing} missing a key"
+                  + (f" · {healthy} reachable" if probe else " · run --probe for live reachability") + "[/dim]")
+
+    # Store coverage — what data actually landed, by source, with freshness.
+    if db_path(DEFAULT_CONFIG).exists():
+        store = MatchStore.from_config(DEFAULT_CONFIG)
+        try:
+            cov, wh = store.source_coverage(), store.warehouse_counts()
+        finally:
+            store.close()
+        if cov:
+            ct = Table(title="Match store — coverage by source")
+            ct.add_column("source"); ct.add_column("rows", justify="right"); ct.add_column("newest")
+            for r in cov:
+                ct.add_row(r["source"], f"{r['rows']:,}", r["latest"] or "—")
+            console.print(ct)
+        live_wh = {k: v for k, v in (wh or {}).items() if v}
+        if live_wh:
+            console.print("[dim]warehouse: " + ", ".join(f"{k}={v:,}" for k, v in live_wh.items()) + "[/dim]")
+    else:
+        console.print("[dim]No match store yet — run `fetch-data` to populate coverage.[/dim]")
+
+
+@app.command()
 def players(
     team: str = typer.Argument(..., help="Team to show per-player metrics for"),
     league: str = typer.Option(None, "--league", "-L", help="Competition (default WC2026). See `leagues`."),

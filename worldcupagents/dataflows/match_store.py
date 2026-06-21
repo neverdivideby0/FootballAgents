@@ -687,6 +687,15 @@ class MatchStore:
     def count(self) -> int:
         return self.conn.execute("SELECT COUNT(*) FROM matches").fetchone()[0]
 
+    def source_coverage(self) -> list[dict]:
+        """Per-``source`` rollup of the matches table: rows + newest date. Cheap
+        (grouped in SQL) — the freshness/coverage signal for the ``sources`` command."""
+        rows = self.conn.execute(
+            "SELECT COALESCE(source, '?') AS source, COUNT(*) AS rows, MAX(date) AS latest "
+            "FROM matches GROUP BY source ORDER BY rows DESC"
+        ).fetchall()
+        return [dict(r) for r in rows]
+
     # --- player stats ---
 
     def upsert_players(self, rows: list[dict]) -> int:

@@ -40,8 +40,10 @@ def build_inventory(config: dict | None = None) -> dict:
     return inv
 
 
-def _sources_with_checks() -> list[dict]:
-    """Source definitions + live health probe results (short timeout, never crashes)."""
+def _sources_with_checks(probe: bool = True) -> list[dict]:
+    """Source definitions + (optionally) live health probe results (short timeout,
+    never crashes). ``probe=False`` skips all network calls — key-presence only —
+    so the ``sources`` CLI command can run fast and offline."""
     import time
 
     def key(name: str) -> bool:
@@ -193,6 +195,10 @@ def _sources_with_checks() -> list[dict]:
         url = s.pop("probe_url", None)
         headers = s.pop("probe_headers", {})
         probe_key = s.pop("probe_key", None)
+        if not probe:
+            s["check"] = {"status": "unprobed", "ms": None,
+                          "detail": "key set (not probed)" if s["configured"] else "no key"}
+            continue
         if not url or not s["configured"]:
             s["check"] = {"status": "skipped", "ms": None, "detail": "not configured" if not s["configured"] else "no probe URL"}
             continue

@@ -55,8 +55,9 @@ report in memory/matches/), `scout-report` (stats + tactical memory → report),
 reflection), `backtest` (calibration yardstick), `fetch-data` (populate the
 SQLite match store), `watch` (matchday autopilot: poll → structured-punditry +
 tactical analysis per finished match → auto-resolve; `--interval` to loop),
-`credit` (per-signal with-vs-without Brier scoreboard), `players`, `leagues`,
-`check`, `resolve-name`, `eliminate`. Exports:
+`credit` (per-signal with-vs-without Brier scoreboard), `sources` (data-source
+health + store coverage), `players`, `leagues`, `check`, `resolve-name`,
+`eliminate`. Exports:
 sectioned markdown (`pipelines/report_export.py`) or txt. All LLM steps are
 offline-by-default; add `--provider`/`--llm` to spend.
 
@@ -151,6 +152,21 @@ with `--interval N` wrapping it in an in-process poll loop (`interval=0` default
 single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provider`
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
 work.
+
+**Data-supervision layer (2026-06):** oversight of the whole data layer, built to
+scale as tables/sources are added. (1) **`footballagents sources`** — deterministic
+(no LLM): every data source with key-set / reachability (`--probe`) / store freshness
++ coverage (`MatchStore.source_coverage` + `warehouse_counts`), reusing
+`data_explorer._sources_with_checks(probe=…)`. (2) Two **dev-time auditor subagents**
+(`.claude/agents/data-auditor.md`, `source-auditor.md`, haiku, single-responsibility,
+may Edit only their registry): given ONE table/source, report written/read/orphaned +
+recommendation. (3) Two **registries** (`docs/warehouse_tables.md`,
+`docs/data_sources.md`) — annotated, audited views; source of truth for the *list* is
+the `CREATE TABLE` statements + the source specs. (4) **`scripts/check_docs.py`** now
+also warns (pre-commit, never blocks) when a table/source has no registry row.
+**Audit-all = main-agent fan-out** (one auditor per item, parallel — never one agent
+looping). Workflow rule: adding a table to `match_store.py` or a source spec → run the
+matching auditor + register it before committing.
 
 **Per-signal credit — "which signals actually helped?" (2026-06, `credit.py`):**
 every shipped prediction now records a `SIGNALS:` line in `prediction_log.md`
