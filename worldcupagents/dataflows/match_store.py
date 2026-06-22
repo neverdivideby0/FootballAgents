@@ -687,6 +687,20 @@ class MatchStore:
     def count(self) -> int:
         return self.conn.execute("SELECT COUNT(*) FROM matches").fetchone()[0]
 
+    def international_results(self, since: str | None = None) -> list[dict]:
+        """International results from the warehouse (`wh_matches`) for fitting
+        national-team strengths: date, tournament, teams, scores. ``since`` bounds
+        recency (ISO date). Empty if the warehouse hasn't been hoarded."""
+        q = ("SELECT date, tournament, home_team, away_team, home_score, away_score, neutral "
+             "FROM wh_matches")
+        args: list = []
+        if since is not None:
+            q += " WHERE date >= ?"; args.append(since)
+        try:
+            return [dict(r) for r in self.conn.execute(q, args).fetchall()]
+        except Exception:  # noqa: BLE001 — wh_matches absent (warehouse not hoarded)
+            return []
+
     def source_coverage(self) -> list[dict]:
         """Per-``source`` rollup of the matches table: rows + newest date. Cheap
         (grouped in SQL) — the freshness/coverage signal for the ``sources`` command."""

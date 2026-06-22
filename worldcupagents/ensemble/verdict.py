@@ -122,7 +122,9 @@ def match_lambdas(config: dict, home, away):
         try:
             from worldcupagents.ensemble.strength import load_strength_model, team_lambdas
             strength = load_strength_model(config)
-            return team_lambdas(home.team, away.team, home.fifa_rank, away.fifa_rank, strength)
+            min_games = int(config.get("strength_min_games", 2))
+            return team_lambdas(home.team, away.team, home.fifa_rank, away.fifa_rank,
+                                strength, min_games=min_games)
         except Exception as e:  # noqa: BLE001
             logger.warning("stats-lambda unavailable (%s); rank-Elo baseline", e)
     return expected_goals(home.fifa_rank, away.fifa_rank)

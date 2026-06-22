@@ -153,6 +153,26 @@ single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provide
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
 work.
 
+**National-team λ from weighted international history (2026-06, fixes the "Spain
+0.18" bug):** `use_stats_lambda` was fitting Dixon–Coles strengths on the **active
+competition only** — for WC that's the handful of games played so far (~1/team), so a
+side that drew 0-0 once got `attack=0` → λ floored to `_MIN_LAMBDA` (0.18), flooring
+elite teams (Spain showed 0.18, same as the opponent and as Saudi Arabia). Two fixes:
+(1) **min-games guard** (`strength_min_games=2`) — a team with too few fitted games
+falls back to rank-Elo (`expected_goals_from_strengths(..., min_games)` checks
+`StrengthModel.games`). (2) **National teams now fit on weighted INTERNATIONAL history**
+(`wh_matches`, 49k results — previously orphaned): `fit_international_strengths` weights
+each game by **recency** (exponential, `intl_strength_half_life_years`, **HARD 4-year
+cutoff** `intl_strength_max_age_years` — older games count zero) × **type**
+(`tournament > qualifier > friendly`, via `_match_tier`), shrinks ratios toward the mean
+(`intl_strength_shrinkage_k`), and is **neutral-venue** (`home_adv=1.0`). `team_lambdas`/
+`load_strength_model` branch on `_is_international` (kind=="tournament" or fd=="WC");
+**club fixtures keep the per-competition `matches` fit — no club↔international mixing**.
+Spain (52 weighted games) now reads attack 1.68 / defense 0.69 → Spain–Germany λ
+≈ 2.0–1.5 (was 0.18–0.18). Known remaining limitation: the one-pass ratio doesn't
+adjust for **opponent strength**, so minnows who pad stats vs weak regional sides read
+a bit high (e.g. Curaçao) — an opponent-adjusted / iterated fit is the next refinement.
+
 **Data-supervision layer (2026-06):** oversight of the whole data layer, built to
 scale as tables/sources are added. (1) **`footballagents sources`** — deterministic
 (no LLM): every data source with key-set / reachability (`--probe`) / store freshness
