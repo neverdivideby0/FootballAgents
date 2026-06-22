@@ -153,6 +153,24 @@ single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provide
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
 work.
 
+**Probability calibration — bounded contextual deltas + draw uplift + reliable stage
+(2026-06):** three guardrails around the Tier-1 base (`ensemble/verdict.py::
+assemble_verdict`; the base stays λ→Poisson, market still reasoning-input only).
+(1) **Contextual clamp** (`baseline.clamp_to_band`, knob `max_contextual_delta=0.15`):
+after the LLM-vs-base blend, the deviation from base is scaled so NO outcome moves more
+than ±Δ — the judge can nudge the prior, never reshape it (deviations sum to zero, so
+scaling stays normalised). (2) **Draw calibration** (`ensemble/draw.py::draw_uplift`,
+knob `draw_calibration_max=0.08`): the Poisson base under-forecasts draws, so P(draw) is
+nudged up for **close** games (scaled by `1−|λh−λa|/(λh+λa)` squared) with a bump when a
+**low-directness favourite meets a solid-defence underdog** (reuses `team_forte` +
+`focus._style` directness); applied to the **base before the blend**, GROUP-stage only.
+(3) **Reliable stage** (`dataflows/fixtures.py::resolve_stage`): the draw uplift and the
+knockout draw-fold both key off `Fixture.knockout`, which used to default to group — a
+knockout predicted without `--stage` would misfire. `predict --stage` now defaults to
+**auto**: explicit flag > feed-derived (football-data `stage`, via the `simulate`
+fixtures reader) > group fallback; `predict -i` gets a stage picker pre-set to the
+detected stage. So the uplift and fold can never disagree.
+
 **National-team λ from weighted international history (2026-06, fixes the "Spain
 0.18" bug):** `use_stats_lambda` was fitting Dixon–Coles strengths on the **active
 competition only** — for WC that's the handful of games played so far (~1/team), so a

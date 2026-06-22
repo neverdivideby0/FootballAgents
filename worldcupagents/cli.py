@@ -88,7 +88,8 @@ def predict(
     home: str = typer.Argument(None, help="Home / first team (leave blank with -i to pick from list)"),
     away: str = typer.Argument(None, help="Away / second team (leave blank with -i to pick from list)"),
     date: str = typer.Option(None, "--date", help="Kickoff date YYYY-MM-DD"),
-    stage: Stage = typer.Option(Stage.GROUP, "--stage", help="group/R32/R16/QF/SF/F"),
+    stage: Stage = typer.Option(None, "--stage",
+                                help="group/R32/R16/QF/SF/F (default: auto-detect from the fixture feed)"),
     venue: str = typer.Option(None, "--venue", help="Host city — leave blank with -i to pick from list"),
     provider: str = typer.Option(
         None, "--provider", "-p",
@@ -185,7 +186,8 @@ def predict(
             raise typer.Exit(1)
 
     lg = _resolve_league(cfg, league)
-    fx = Fixture(home=home, away=away, stage=stage, venue=venue, kickoff=_parse_date(date))
+    resolved_stage, stage_src = _resolve_fixture_stage(stage, home, away, date, cfg, lg, interactive)
+    fx = Fixture(home=home, away=away, stage=resolved_stage, venue=venue, kickoff=_parse_date(date))
 
     mode = (
         f"LLM: {cfg['llm_provider']} (deep={cfg['deep_think_llm']}, quick={cfg['quick_think_llm']})"
@@ -196,7 +198,9 @@ def predict(
     if cfg.get("season") and lg.kind == "league":
         historic = " (historical)" if cfg["season"] != lg.season else ""
         season_note = f"   season: {cfg['season']}{historic}"
-    stage_label = "league match" if cfg.get("league_kind") == "league" and not fx.knockout else f"stage={fx.stage.value}"
+    stage_src_note = f" [dim](from {stage_src})[/dim]" if stage_src in ("feed", "default (group)") else ""
+    stage_label = ("league match" if cfg.get("league_kind") == "league" and not fx.knockout
+                   else f"stage={fx.stage.value}{stage_src_note}")
     venue_label = fx.venue or ("home/away" if cfg.get("league_kind") == "league" else "TBD")
     console.print(f"[dim]competition: {lg.name}{season_note}{scenario_note}[/dim]")
     console.print(Panel.fit(
@@ -1745,6 +1749,31 @@ def _guided_setup(league, home: str | None, away: str | None, venue: str | None)
             return None
 
     return {"home": home, "away": away, "venue": venue}
+
+
+def _resolve_fixture_stage(stage, home, away, date, cfg, lg, interactive):
+    """Decide a fixture's stage. Precedence: explicit user choice > feed-derived >
+    group fallback. Returns (Stage, source-label for display)."""
+    if stage is not None:
+        return stage, "you"                       # explicit --stage always wins
+    if lg.kind != "tournament":
+        return Stage.GROUP, "league"              # leagues have no knockout stage
+    from worldcupagents.dataflows.fixtures import resolve_stage
+    detected, _ = resolve_stage(home, away, date, cfg)
+    default = detected or Stage.GROUP
+    if interactive and sys.stdin.isatty():
+        return _pick_stage(default), "you"        # guided pick, pre-set to the feed value
+    return default, ("feed" if detected else "default (group)")
+
+
+def _pick_stage(default: Stage) -> Stage:
+    """Arrow-key stage picker (tournaments), pre-selected to the detected stage."""
+    import questionary
+    choices = [questionary.Choice(lbl, value=val) for lbl, val in (
+        ("Group stage", Stage.GROUP), ("Round of 32", Stage.R32), ("Round of 16", Stage.R16),
+        ("Quarter-final", Stage.QF), ("Semi-final", Stage.SF), ("Final / 3rd place", Stage.FINAL))]
+    pick = questionary.select("Stage  (↑/↓ then Enter)", choices=choices, default=default).ask()
+    return pick or default
 
 
 def _pick_team(label: str, groups: dict[str, list[str]], eliminated: set[str], exclude: str | None = None) -> str | None:

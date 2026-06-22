@@ -123,6 +123,11 @@ DEFAULT_CONFIG = _apply_env_overrides({
     "max_scenario_rounds": 1,         # cap = 3 * rounds pundit turns
     # Ensemble: weight on the judge's qualitative read vs the statistical baseline.
     "ensemble_judge_weight": 0.6,
+    # Calibration guardrails. Draw uplift: max P(draw) added for a close, cagey GROUP
+    # game (the Poisson base under-forecasts draws). Contextual clamp: the blended LLM
+    # read may move each probability at most this far from the Tier-1 base.
+    "draw_calibration_max": 0.08,
+    "max_contextual_delta": 0.15,
     # Let the blend weight adapt from the eval log (recency-weighted fit shrunk
     # toward the 0.6 prior; written to data/fitted_weights.json by resolve/refresh).
     # Set False to pin the prior above (calibration.effective_judge_weight).
