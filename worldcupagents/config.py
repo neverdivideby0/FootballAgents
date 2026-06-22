@@ -112,6 +112,9 @@ DEFAULT_CONFIG = _apply_env_overrides({
     "intl_strength_max_age_years": 4.0,
     "intl_strength_type_weights": {"tournament": 1.0, "qualifier": 0.7, "friendly": 0.4},
     "intl_strength_shrinkage_k": 4.0,
+    # Opponent-adjusted (Dixon–Coles) iteration — a goal vs a strong defence counts more.
+    "intl_strength_iters": 50,
+    "intl_strength_tol": 1e-4,
     # Debate (TA topology: analysts → advocate debate → judge → scenario debate → final pundit).
     "max_debate_rounds": 2,
     "enable_analyst_reports": True,   # deterministic digests; zero LLM cost

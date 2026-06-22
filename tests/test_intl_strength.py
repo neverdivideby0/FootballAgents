@@ -83,3 +83,40 @@ def test_min_games_guard_falls_back_to_rank_elo():
     assert guarded == expected_goals(1, 99)           # fell back to rank-Elo
     # Without the guard it would use the (thin) fitted strengths instead.
     assert team_lambdas("A", "B", 1, 99, strength=m, min_games=0) != guarded
+
+
+# ── opponent adjustment: the iteration is what makes a goal-vs-strong-defence count ──
+
+def _opponent_skewed_rows():
+    """EliteDef concedes ~nothing (strong D); Minnow leaks (weak D). TeamA beats
+    EliteDef 2-0, TeamB beats Minnow 2-0 — identical raw output, different opposition."""
+    return [
+        _row("EliteDef", "N1", 0, 0, "2026-06-01"), _row("N2", "EliteDef", 0, 1, "2026-05-20"),
+        _row("EliteDef", "N3", 1, 0, "2026-05-10"),
+        _row("Minnow", "N1", 0, 3, "2026-06-01"), _row("N2", "Minnow", 4, 0, "2026-05-20"),
+        _row("Minnow", "N3", 0, 3, "2026-05-10"),
+        _row("TeamA", "EliteDef", 2, 0, "2026-06-10"),
+        _row("TeamB", "Minnow", 2, 0, "2026-06-10"),
+    ]
+
+
+def test_iteration_rewards_scoring_against_strong_defence():
+    rows = _opponent_skewed_rows()
+    ka = normalize_key(canonical_name("TeamA"))
+    kb = normalize_key(canonical_name("TeamB"))
+
+    one_pass = fit_international_strengths(rows, as_of=AS_OF, shrinkage_k=1.0, iters=1)
+    iterated = fit_international_strengths(rows, as_of=AS_OF, shrinkage_k=1.0, iters=50)
+
+    # One pass ignores opponent quality → identical 2-0 records read identical.
+    assert abs(one_pass.attack[ka] - one_pass.attack[kb]) < 1e-6
+    # Iterating discounts goals scored against a leaky minnow → TeamA rated higher.
+    assert iterated.attack[ka] > iterated.attack[kb] + 0.05
+
+
+def test_iteration_converges_to_a_stable_model():
+    rows = _opponent_skewed_rows()
+    m = fit_international_strengths(rows, as_of=AS_OF, iters=200, tol=1e-9)
+    assert m is not None
+    assert all(v > 0 and v < 100 for v in m.attack.values())   # bounded, finite
+    assert all(v > 0 and v < 100 for v in m.defense.values())

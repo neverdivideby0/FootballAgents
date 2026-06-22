@@ -169,9 +169,14 @@ cutoff** `intl_strength_max_age_years` — older games count zero) × **type**
 `load_strength_model` branch on `_is_international` (kind=="tournament" or fd=="WC");
 **club fixtures keep the per-competition `matches` fit — no club↔international mixing**.
 Spain (52 weighted games) now reads attack 1.68 / defense 0.69 → Spain–Germany λ
-≈ 2.0–1.5 (was 0.18–0.18). Known remaining limitation: the one-pass ratio doesn't
-adjust for **opponent strength**, so minnows who pad stats vs weak regional sides read
-a bit high (e.g. Curaçao) — an opponent-adjusted / iterated fit is the next refinement.
+≈ 2.0–1.5 (was 0.18–0.18). **Opponent-adjusted (2026-06):** the fit is no longer a
+one-pass ratio — it's a **Dixon–Coles fixed-point iteration** (closed-form Poisson
+coordinate updates, no scipy) so a goal vs a strong defence counts more than padding
+stats vs minnows. Curaçao's λ vs Germany dropped (1.5→1.1; the goals were cheap),
+Spain/Argentina stay elite (Argentina best defence 0.42). Validated leak-free on 887
+post-cutoff internationals: **iterated 0.530 Brier vs one-pass 0.565 vs rank-Elo 0.611**
+— it beats both incumbents. Knobs: `intl_strength_iters` (50), `intl_strength_tol`.
+Identifiability fixed by renormalising mean(attack)=1 each step (λ products invariant).
 
 **Data-supervision layer (2026-06):** oversight of the whole data layer, built to
 scale as tables/sources are added. (1) **`footballagents sources`** — deterministic

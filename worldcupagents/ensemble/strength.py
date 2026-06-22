@@ -98,16 +98,20 @@ def fit_international_strengths(
     max_age_years: float = 4.0,
     type_weights: dict[str, float] | None = None,
     shrinkage_k: float = 4.0,
+    iters: int = 50,
+    tol: float = 1e-4,
 ) -> StrengthModel | None:
-    """Weighted attack/defense fit for NATIONAL teams from international history
-    (``wh_matches`` rows: home_team/away_team/home_score/away_score/date/tournament).
+    """Weighted, **opponent-adjusted** attack/defense fit for NATIONAL teams from
+    international history (``wh_matches`` rows).
 
     Each match is weighted by **recency** (exponential decay, ``half_life_years``)
-    × **type** (tournament > qualifier > friendly). Games older than
-    ``max_age_years`` get ZERO weight (hard cutoff). Ratios are shrunk toward the
-    mean by a pseudo-count (``shrinkage_k`` weighted games at league average) so a
-    one-game team reads near-average, not 0. Neutral-venue: ``home_adv = 1.0``.
-    Team keys are canonicalized so alias variants align with the prediction side.
+    × **type** (tournament > qualifier > friendly); games older than ``max_age_years``
+    count zero (hard cutoff). Strengths are then solved by a **Dixon–Coles–style
+    fixed-point iteration** (closed-form Poisson coordinate updates — no scipy), so a
+    rating reflects the quality of the opponents actually faced: scoring against a
+    strong defence counts for more than padding stats against minnows. A shrinkage
+    pseudo-count (``shrinkage_k``) pulls thin samples toward average; neutral-venue
+    (``home_adv = 1.0``); team keys canonicalized to align with the prediction side.
     """
     type_weights = type_weights or _DEFAULT_TYPE_WEIGHTS
     as_of_d = as_of if isinstance(as_of, date) else (_parse_iso(as_of) or date.today())
@@ -115,8 +119,9 @@ def fit_international_strengths(
 
     w_scored: dict[str, float] = defaultdict(float)
     w_conceded: dict[str, float] = defaultdict(float)
-    w_games: dict[str, float] = defaultdict(float)
     games: dict[str, int] = defaultdict(int)
+    # Per-team opponent log for the iteration: (weight, opponent_key).
+    log: dict[str, list[tuple[float, str]]] = defaultdict(list)
     tot_w_goals = tot_w = 0.0
 
     for m in rows:
@@ -132,20 +137,38 @@ def fit_international_strengths(
         h = normalize_key(canonical_name(m["home_team"]))
         a = normalize_key(canonical_name(m["away_team"]))
         hg, ag = int(m["home_score"]), int(m["away_score"])
-        w_scored[h] += w * hg; w_conceded[h] += w * ag; w_games[h] += w; games[h] += 1
-        w_scored[a] += w * ag; w_conceded[a] += w * hg; w_games[a] += w; games[a] += 1
+        w_scored[h] += w * hg; w_conceded[h] += w * ag; games[h] += 1; log[h].append((w, a))
+        w_scored[a] += w * ag; w_conceded[a] += w * hg; games[a] += 1; log[a].append((w, h))
         tot_w_goals += w * (hg + ag); tot_w += w * 2
 
     if tot_w <= 0:
         return None
     mu = (tot_w_goals / tot_w) or 1.0  # weighted mean goals per team-match (guard all-0-0)
     k = shrinkage_k
-    attack, defense = {}, {}
-    for t in w_games:
-        # Shrink the per-game rate toward mu (ratio 1.0) by k pseudo-games at average.
-        attack[t] = ((w_scored[t] + k * mu) / (w_games[t] + k)) / mu
-        defense[t] = ((w_conceded[t] + k * mu) / (w_games[t] + k)) / mu
-    return StrengthModel(attack, defense, mu, home_adv=1.0, teams=set(w_games), games=dict(games))
+    teams = list(log)
+    attack = {t: 1.0 for t in teams}
+    defense = {t: 1.0 for t in teams}
+
+    # Coordinate descent: attack[t] = (weighted goals for + shrink) / (mu · Σ w·defense[opp] + shrink).
+    # With every defense=1 the first step reduces to the one-pass shrunk ratio; further
+    # steps discount goals scored against weak defences (low defense[opp]).
+    for _ in range(max(1, iters)):
+        new_att, new_def = {}, {}
+        for t in teams:
+            opp_def = sum(w * defense[o] for w, o in log[t])
+            opp_att = sum(w * attack[o] for w, o in log[t])
+            new_att[t] = (w_scored[t] + k * mu) / (mu * (opp_def + k))
+            new_def[t] = (w_conceded[t] + k * mu) / (mu * (opp_att + k))
+        # Identifiability: rescale so mean(attack) == 1 (λ products are invariant to this).
+        scale = (sum(new_att.values()) / len(new_att)) or 1.0
+        new_att = {t: v / scale for t, v in new_att.items()}
+        new_def = {t: v * scale for t, v in new_def.items()}
+        delta = max(max(abs(new_att[t] - attack[t]), abs(new_def[t] - defense[t])) for t in teams)
+        attack, defense = new_att, new_def
+        if delta < tol:
+            break
+
+    return StrengthModel(attack, defense, mu, home_adv=1.0, teams=set(teams), games=dict(games))
 
 
 def expected_goals_from_strengths(model: StrengthModel | None, home: str, away: str,
@@ -268,4 +291,6 @@ def _load_international_model(config: dict) -> StrengthModel | None:
         max_age_years=max_age,
         type_weights=config.get("intl_strength_type_weights"),
         shrinkage_k=float(config.get("intl_strength_shrinkage_k", 4.0)),
+        iters=int(config.get("intl_strength_iters", 50)),
+        tol=float(config.get("intl_strength_tol", 1e-4)),
     )
