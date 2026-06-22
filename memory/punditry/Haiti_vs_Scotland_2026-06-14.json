@@ -1,0 +1,23 @@
+{
+  "match_id": "Haiti_vs_Scotland_2026-06-14",
+  "home": "Haiti",
+  "away": "Scotland",
+  "date": "2026-06-14",
+  "home_read": {
+    "team": "Haiti",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Scotland",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/14/haiti-scotland-world-cup-match-report"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "match_id": "Brazil_vs_Haiti_2026-06-20",
+  "home": "Brazil",
+  "away": "Haiti",
+  "date": "2026-06-20",
+  "home_read": {
+    "team": "Brazil",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Haiti",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/20/brazil-haiti-world-cup-match-report"
+  ]
+}

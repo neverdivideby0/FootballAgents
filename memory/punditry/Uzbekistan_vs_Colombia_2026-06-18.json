@@ -1,0 +1,23 @@
+{
+  "match_id": "Uzbekistan_vs_Colombia_2026-06-18",
+  "home": "Uzbekistan",
+  "away": "Colombia",
+  "date": "2026-06-18",
+  "home_read": {
+    "team": "Uzbekistan",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Colombia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/18/uzbekistan-colombia-world-cup-2026-group-k-match-report"
+  ]
+}

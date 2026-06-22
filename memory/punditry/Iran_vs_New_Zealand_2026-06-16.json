@@ -1,0 +1,23 @@
+{
+  "match_id": "Iran_vs_New_Zealand_2026-06-16",
+  "home": "Iran",
+  "away": "New Zealand",
+  "date": "2026-06-16",
+  "home_read": {
+    "team": "Iran",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "New Zealand",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/16/iran-new-zealand-world-cup-2026-group-g-match-report"
+  ]
+}

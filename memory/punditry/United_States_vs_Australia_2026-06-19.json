@@ -1,0 +1,24 @@
+{
+  "match_id": "United_States_vs_Australia_2026-06-19",
+  "home": "United States",
+  "away": "Australia",
+  "date": "2026-06-19",
+  "home_read": {
+    "team": "United States",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Australia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/19/australia-v-usa-socceroos-usmnt-confected-hostility-2026-world-cup",
+    "https://www.theguardian.com/football/2026/jun/20/usa-australia-player-ratings-world-cup-group-d"
+  ]
+}

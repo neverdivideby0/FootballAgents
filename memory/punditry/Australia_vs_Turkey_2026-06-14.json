@@ -1,0 +1,24 @@
+{
+  "match_id": "Australia_vs_Turkey_2026-06-14",
+  "home": "Australia",
+  "away": "Turkey",
+  "date": "2026-06-14",
+  "home_read": {
+    "team": "Australia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Turkey",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/14/australia-turkey-player-ratings-world-cup-group-d",
+    "https://www.theguardian.com/football/2026/jun/14/australia-socceroos-turkey-world-cup-2026-group-d-match-report"
+  ]
+}

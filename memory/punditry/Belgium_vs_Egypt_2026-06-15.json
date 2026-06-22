@@ -1,0 +1,23 @@
+{
+  "match_id": "Belgium_vs_Egypt_2026-06-15",
+  "home": "Belgium",
+  "away": "Egypt",
+  "date": "2026-06-15",
+  "home_read": {
+    "team": "Belgium",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Egypt",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/15/belgium-egypt-world-cup-2026-group-g-match-report"
+  ]
+}

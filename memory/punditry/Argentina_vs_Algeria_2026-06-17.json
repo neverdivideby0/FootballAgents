@@ -1,0 +1,23 @@
+{
+  "match_id": "Argentina_vs_Algeria_2026-06-17",
+  "home": "Argentina",
+  "away": "Algeria",
+  "date": "2026-06-17",
+  "home_read": {
+    "team": "Argentina",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Algeria",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/16/argentina-algeria-world-cup-group-j-match-report"
+  ]
+}

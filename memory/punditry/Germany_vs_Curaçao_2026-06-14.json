@@ -1,0 +1,23 @@
+{
+  "match_id": "Germany_vs_Cura\u00e7ao_2026-06-14",
+  "home": "Germany",
+  "away": "Cura\u00e7ao",
+  "date": "2026-06-14",
+  "home_read": {
+    "team": "Germany",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Cura\u00e7ao",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/14/germany-curacao-world-cup-match-report"
+  ]
+}

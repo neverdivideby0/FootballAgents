@@ -998,3 +998,48 @@ Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the E
 
 <!-- ENTRY_END -->
 
+[2026-06-21 | Spain vs Saudi Arabia | DRAW 0-0 | pending]
+
+PREDICTION:
+I move the verdict slightly toward Spain and away from the draw, but only modestly: the Downside/Neutral pundits were persuasive that Spain's class, depth, and tournament pedigree are being flattened too much by a single 0-0 and an ultra-low xG baseline. At the same time, I do not slash the draw, because the evidence-backed low-scoring profile remains strong and calibration feedback specifically warns that draws are under-forecast in tight matches. So the final shape is Spain lean, draw still very live, and Saudi still a clear underdog rather than a true upset live contender.
+(p_home=0.388, p_draw=0.445, p_away=0.167)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-22 | Spain vs Saudi Arabia | HOME_WIN 2-0 | pending]
+
+PREDICTION:
+I trim Spain only slightly from the provisional read and lift the draw modestly, mainly on the Upside Pundit’s concrete calibration point that draws have been under-forecast and Spain can drift into a low-event game. That said, the downside case is still stronger overall: Spain’s team quality, midfield control, and the recent 4-0 head-to-head make a Saudi win look thin, so the away probability stays near the original level. The most likely outcome remains a controlled Spain win, with 2-0 still the best scoreline call.
+(p_home=0.653, p_draw=0.226, p_away=0.121)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-22 | Belgium vs Iran | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+I trim Belgium slightly from the provisional lean and push that mass mainly into the draw, because the strongest concrete evidence is the repeated low-event recent head-to-head and form pattern. The Neutral Pundit’s case is the one that mattered most: Belgium are still the better side, but not by enough to justify a firm home bias when both teams have already produced 0-0/1-1 type outcomes and Iran can threaten from transition/set plays. I did not move as far as the Upside case on an away upset because the overall squad quality and attacking ceiling remain with Belgium.
+(p_home=0.352, p_draw=0.348, p_away=0.300)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-22 | Uruguay vs Cape Verde | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+I keep Uruguay narrowly favored, but I do move slightly toward the home side versus the provisional read: the 47/31/23 split had the draw/upset risk a touch too high given the still-clear xG and squad-quality edge. The Neutral Pundit’s argument was the most evidence-backed one — class and chance creation remain sturdier than the chaos case — so the final adjustment is modest, not dramatic. Cape Verde’s upset/draw path is real enough to keep the draw near 30%, but not strong enough to displace Uruguay as the likeliest winner.
+(p_home=0.493, p_draw=0.298, p_away=0.208)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-22 | New Zealand vs Egypt | DRAW 1-1 | pending]
+
+PREDICTION:
+I moved only modestly: the judge's 36% away win was a touch too clean for a game this balanced, so I shifted 1 point from Egypt to the draw, following the Neutral Pundit's evidence-backed case that the draw was underpriced more than the upset tail. The Downside Pundit's baseline-strength argument still holds, which is why Egypt remain narrowly the most likely single outcome. A 1-1 is still the most natural scoreline in a match where Egypt are better on paper, but New Zealand have enough aerial/set-piece threat to keep it level.
+(p_home=0.283, p_draw=0.359, p_away=0.358)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+

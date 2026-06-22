@@ -1,0 +1,23 @@
+{
+  "match_id": "Canada_vs_Bosnia-Herzegovina_2026-06-12",
+  "home": "Canada",
+  "away": "Bosnia-Herzegovina",
+  "date": "2026-06-12",
+  "home_read": {
+    "team": "Canada",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Bosnia-Herzegovina",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/12/canada-bosnia-herzegovina-world-cup-2026-group-b-match-report"
+  ]
+}
