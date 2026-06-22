@@ -100,6 +100,15 @@ CREATE TABLE IF NOT EXISTS player_notes (
     source     TEXT,
     updated_at TEXT
 );
+CREATE TABLE IF NOT EXISTS injuries (
+    ikey       TEXT PRIMARY KEY,   -- "{team_norm}|{player_norm}"
+    team       TEXT,
+    player     TEXT NOT NULL,
+    status     TEXT NOT NULL,      -- injured | suspended | doubt
+    note       TEXT,
+    source     TEXT,               -- manual | guardian:punditry
+    updated_at TEXT
+);
 CREATE TABLE IF NOT EXISTS team_coach (
     team_key   TEXT PRIMARY KEY,   -- normalize_key(team)
     team       TEXT,
@@ -637,6 +646,42 @@ class MatchStore:
     def delete_player_note(self, team: str, player: str) -> bool:
         from worldcupagents.dataflows.names import normalize_key
         cur = self.conn.execute("DELETE FROM player_notes WHERE pkey = ?",
+                                [f"{normalize_key(team)}|{normalize_key(player)}"])
+        self.conn.commit()
+        return cur.rowcount > 0
+
+    # --- injuries / availability (manual + best-effort extraction) ---
+
+    def upsert_injury(self, team: str, player: str, status: str, note: str = "",
+                      source: str = "manual", *, overwrite: bool = True) -> bool:
+        """Record a player's availability. ``overwrite=False`` won't clobber an existing
+        row (so a best-effort extract never overrides a manual entry). Returns whether a
+        row was written."""
+        from datetime import datetime, timezone
+        from worldcupagents.dataflows.names import normalize_key
+        ikey = f"{normalize_key(team)}|{normalize_key(player)}"
+        if not overwrite and self.conn.execute(
+                "SELECT 1 FROM injuries WHERE ikey = ?", [ikey]).fetchone():
+            return False
+        self.conn.execute(
+            "INSERT OR REPLACE INTO injuries (ikey, team, player, status, note, source, updated_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [ikey, team, player, status, note, source,
+             datetime.now(timezone.utc).strftime("%Y-%m-%d")],
+        )
+        self.conn.commit()
+        return True
+
+    def injuries_for_team(self, team: str) -> list[dict]:
+        from worldcupagents.dataflows.names import normalize_key
+        return [dict(r) for r in self.conn.execute(
+            "SELECT team, player, status, note, source, updated_at FROM injuries "
+            "WHERE ikey LIKE ? ORDER BY player", [f"{normalize_key(team)}|%"],
+        ).fetchall()]
+
+    def delete_injury(self, team: str, player: str) -> bool:
+        from worldcupagents.dataflows.names import normalize_key
+        cur = self.conn.execute("DELETE FROM injuries WHERE ikey = ?",
                                 [f"{normalize_key(team)}|{normalize_key(player)}"])
         self.conn.commit()
         return cur.rowcount > 0

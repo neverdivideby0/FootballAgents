@@ -90,4 +90,12 @@ def enrich_profile(profile: TeamProfile, config: dict, n: int = 5) -> TeamProfil
     src = f"match_store:{len(rows)}"
     if src not in profile.sources:
         profile.sources.append(src)
+
+    # Availability overlay: mark injured/suspended/doubt players and drop the
+    # unavailable from the probable XI (no free injury feed → manual + punditry).
+    try:
+        from worldcupagents.dataflows.injuries import apply_injuries
+        apply_injuries(profile, config)
+    except Exception:  # noqa: BLE001 — availability overlay must not break enrichment
+        pass
     return profile

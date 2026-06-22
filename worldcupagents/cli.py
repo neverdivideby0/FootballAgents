@@ -877,6 +877,42 @@ def note_player(
         store.close()
 
 
+@app.command(name="note-injury")
+def note_injury(
+    player: str = typer.Argument(..., help="Player name (as it appears in the squad)"),
+    team: str = typer.Option(..., "--team", "-t", help="The player's team"),
+    status: str = typer.Option("injured", "--status",
+                               help="injured | suspended | doubt"),
+    note: str = typer.Option("", "--note", help="Optional detail (e.g. 'tournament-ending muscle injury')"),
+    delete: bool = typer.Option(False, "--delete", help="Clear this player's availability flag"),
+):
+    """Flag a player's availability. The overlay sets their status and drops the
+    unavailable (injured/suspended) from the probable XI, so the debate stops projecting
+    someone who's out. Manual flags always win over auto-detected ones.
+
+    \b
+      footballagents note-injury "Víctor Muñoz" -t Spain --status injured --note "tournament-ending"
+      footballagents note-injury "Víctor Muñoz" -t Spain --delete
+    """
+    if status not in ("injured", "suspended", "doubt"):
+        console.print("[red]✗ --status must be injured / suspended / doubt.[/red]")
+        raise typer.Exit(1)
+    from worldcupagents.dataflows.match_store import MatchStore
+    store = MatchStore.from_config(DEFAULT_CONFIG)
+    try:
+        if delete:
+            ok = store.delete_injury(team, player)
+            console.print(f"[green]✓ cleared[/green] {player} ({team})" if ok
+                          else f"[yellow]No availability flag for {player} ({team}).[/yellow]")
+            return
+        store.upsert_injury(team, player, status, note=note, source="manual")
+        console.print(f"[green]✓ {status}[/green] [bold]{player}[/bold] ({team}). "
+                      f"Removed from the probable XI{' ' if status in ('injured','suspended') else ' (doubt — kept, flagged) '}"
+                      f"in predictions.")
+    finally:
+        store.close()
+
+
 @app.command()
 def odds(
     home: str = typer.Argument(..., help="Home / first team"),

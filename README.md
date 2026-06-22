@@ -98,7 +98,7 @@ Other tools (all default to offline; add `--provider` to use an LLM):
 | `fetch-data` | Download results + odds + per-match stats + (`--xg`) Understat metrics |
 | `hoard-data` | Snapshot public datasets (international results, StatsBomb, Wikipedia totals) |
 | `guardian-guide` / `bbc-guide` / `guardian-experts` | Ingest the Guardian player guide / BBC team guide / Guardian Experts' Network previews (player bios, team profiles, **coach style & pedigree**) |
-| `qual-data` / `note-player` | Add your own article/team/player style notes |
+| `qual-data` / `note-player` / `note-injury` | Add your own article/team/player notes; flag a player injured/suspended/doubt (drops them from the projected XI) |
 | `backtest` | Measure prediction accuracy vs naive + market baselines |
 | `leagues` / `check` / `resolve-name` / `eliminate` | List competitions / data-source status / name resolution / mark teams out |
 

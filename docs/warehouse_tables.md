@@ -17,6 +17,7 @@ whether it's **consumed** at predict time, pure ingest **infra**, or **orphaned*
 | `team_situations` | Set-piece breakdown + most-used XI (Understat) → form analyst, weaknesses | consumed | — |
 | `player_notes` | Manual / Guardian per-player notes → player analyst, dossier | consumed | — |
 | `team_coach` | Coach name + prose → form analyst, dossier | consumed | — |
+| `injuries` | Player availability (manual + punditry-harvested) → status overlay, probable XI filter, form report | consumed | 2026-06-23 |
 | `wh_sources` | Warehouse provenance: registered ingest sources | infra | — |
 | `wh_source_files` | Raw snapshot file ledger per source | infra | — |
 | `wh_ingestion_runs` | Ingest run history (status/counts/timing) | infra | — |

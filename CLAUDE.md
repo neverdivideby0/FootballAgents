@@ -156,6 +156,17 @@ default on): it runs `analyze_punditry` alongside the liveblog tactical report, 
 command grabs the Guardian "Live feed" tab (→ tactical report) AND the "Match report"
 tab (→ `PunditryDigest`).
 
+**Injury / fitness overlay (2026-06, `dataflows/injuries.py`):** player availability is
+in no free real-time feed, so it comes from two sources into an `injuries` store table:
+a **manual** overlay (`footballagents note-injury "Víctor Muñoz" -t Spain --status
+injured|suspended|doubt`, always authoritative) and a **best-effort harvest** of squad
+players named in match-punditry `fatigue_injuries` (surname match → `doubt`, source
+`guardian:punditry`, never overrides a manual row). `apply_injuries` (called in
+`enrich.enrich_profile`) sets each `Player.status` and **drops injured/suspended players
+from `probable_xi`** (doubt stays, flagged) so the debate stops projecting someone who's
+out; `injury_summary` surfaces an "OUT/DOUBT: …" line in the Form report (→ advocates +
+judge). Knob `harvest_punditry_injuries` (default on).
+
 **Bilateral data-parity (2026-06, `ensemble/parity.py`):** the pipeline could act like a
 single-team scout — a data-rich side (Spain) got pages while a thin side (Saudi Arabia)
 came back near-empty, and the LLM could read "more data about A" as "A is better".
