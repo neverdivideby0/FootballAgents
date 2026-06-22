@@ -82,6 +82,17 @@ def make_matchup_context(config: dict):
             "records": records_summary(fx.home, fx.away, config),  # home + H2H-at-home from store
             "notes": "",
         }
+        # Bilateral data-parity: flag a lopsided dossier so the judge/advocates don't
+        # mistake thinner coverage for lower quality (the "single-team scout" failure).
+        hp, ap = state.get("home_profile"), state.get("away_profile")
+        if hp and ap:
+            try:
+                from worldcupagents.ensemble.parity import parity_note
+                note = parity_note(hp, ap, config)
+                if note:
+                    ctx["parity"] = note
+            except Exception:  # noqa: BLE001 — parity is optional
+                pass
         # Live market (bookmaker consensus + crowd) — only worth a network call
         # when an LLM will actually reason about it; eval forces the flag off.
         if config.get("use_llm") and config.get("enable_market_context", True):

@@ -156,6 +156,16 @@ default on): it runs `analyze_punditry` alongside the liveblog tactical report, 
 command grabs the Guardian "Live feed" tab (→ tactical report) AND the "Match report"
 tab (→ `PunditryDigest`).
 
+**Bilateral data-parity (2026-06, `ensemble/parity.py`):** the pipeline could act like a
+single-team scout — a data-rich side (Spain) got pages while a thin side (Saudi Arabia)
+came back near-empty, and the LLM could read "more data about A" as "A is better".
+`parity_note(home, away, config)` scores each team's coverage (squad / form / xg /
+probable_xi / coach / players / weaknesses) and, when lopsided (gap ≥ 3), emits a `DATA
+PARITY` line — computed in `make_matchup_context` (`ctx["parity"]`), injected into the
+**judge + advocate** prompts: "do NOT mistake thinner data for lower quality; judge the
+thin side on its merits (rank, coach, pedigree)." It flags the gap, never fabricates data
+(respects the "no manufactured weaknesses" rule).
+
 **Probability calibration — bounded contextual deltas + draw uplift + reliable stage
 (2026-06):** three guardrails around the Tier-1 base (`ensemble/verdict.py::
 assemble_verdict`; the base stays λ→Poisson, market still reasoning-input only).
