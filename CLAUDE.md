@@ -151,7 +151,10 @@ canonical is "Korea Republic" — the variant failure mode, solved). New
 with `--interval N` wrapping it in an in-process poll loop (`interval=0` default =
 single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provider`
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
-work.
+work. **`analyze-match` also captures the match report** now (`--report/--no-report`,
+default on): it runs `analyze_punditry` alongside the liveblog tactical report, so one
+command grabs the Guardian "Live feed" tab (→ tactical report) AND the "Match report"
+tab (→ `PunditryDigest`).
 
 **Probability calibration — bounded contextual deltas + draw uplift + reliable stage
 (2026-06):** three guardrails around the Tier-1 base (`ensemble/verdict.py::

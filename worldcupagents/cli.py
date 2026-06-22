@@ -1341,6 +1341,8 @@ def analyze_match_cmd(
     model: str = typer.Option(None, "--model", help="Override the analyst model"),
     llm: bool = typer.Option(None, "--llm/--no-llm", help="Run the real LLM analyst (default: offline placeholder)"),
     force: bool = typer.Option(False, "--force", "-f", help="Overwrite an existing populated report"),
+    report: bool = typer.Option(True, "--report/--no-report",
+                                help="Also capture the match report + tactical columns (Guardian 'Match report' tab)"),
     league: str = typer.Option(None, "--league", "-L", help="Competition (default WC2026). See `leagues`."),
 ):
     """Harvest post-game commentary and build a 5-phase tactical report.
@@ -1391,6 +1393,18 @@ def analyze_match_cmd(
             console.print(f"[dim]↩ Loaded existing report (use --force to re-analyse)[/dim]")
         else:
             console.print(f"[green]✓ Saved[/green] {outcome.json_path}  and  {outcome.md_path}")
+
+    # The Guardian match page has 3 tabs: Live feed (the liveblog → the tactical report
+    # above), Match report, Match info. Also capture the MATCH REPORT (+ tactical columns)
+    # into a structured PunditryDigest, so one command grabs the feed AND the report.
+    if report:
+        from worldcupagents.pipelines.punditry import analyze_punditry
+        po = analyze_punditry(home, away, date, cfg, force=force)
+        if po.n_articles:
+            console.print(f"[green]✓ Match report[/green] {po.n_articles} article(s) → {po.json_path}")
+        else:
+            console.print("[dim]No match report/columns found (set GUARDIAN_API_KEY; 2026 WC games "
+                          "have no Guardian articles yet).[/dim]")
 
 
 @app.command()
