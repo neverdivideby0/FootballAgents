@@ -1043,3 +1043,12 @@ SIGNALS: calibration, lessons, punditry, qualitative, tactical
 
 <!-- ENTRY_END -->
 
+[2026-06-22 | Mexico vs South Africa | HOME_WIN 1-0 | pending]
+
+PREDICTION:
+Baseline-only verdict (use_llm off): ensemble of a softened rank prior and the Elo baseline. Enable use_llm for a debate-driven read.
+(p_home=0.442, p_draw=0.337, p_away=0.220)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
