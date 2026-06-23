@@ -1007,12 +1007,13 @@ SIGNALS: calibration, lessons, punditry, qualitative, tactical
 
 <!-- ENTRY_END -->
 
-[2026-06-22 | Spain vs Saudi Arabia | HOME_WIN 2-0 | pending]
+[2026-06-22 | Spain vs Saudi Arabia | HOME_WIN 2-0 | resolved: HOME_WIN 4-0 Brier=0.186]
 
 PREDICTION:
 I trim Spain only slightly from the provisional read and lift the draw modestly, mainly on the Upside Pundit’s concrete calibration point that draws have been under-forecast and Spain can drift into a low-event game. That said, the downside case is still stronger overall: Spain’s team quality, midfield control, and the recent 4-0 head-to-head make a Saudi win look thin, so the away probability stays near the original level. The most likely outcome remains a controlled Spain win, with 2-0 still the best scoreline call.
 (p_home=0.653, p_draw=0.226, p_away=0.121)
 SIGNALS: calibration, lessons, punditry, qualitative, tactical
+RESULT: HOME_WIN 4-0. Predicted HOME_WIN → Brier=0.186 (strong).
 
 <!-- ENTRY_END -->
 
@@ -1034,12 +1035,13 @@ SIGNALS: calibration, lessons, punditry, qualitative, tactical
 
 <!-- ENTRY_END -->
 
-[2026-06-22 | New Zealand vs Egypt | DRAW 1-1 | pending]
+[2026-06-22 | New Zealand vs Egypt | DRAW 1-1 | resolved: AWAY_WIN 1-3 Brier=0.621]
 
 PREDICTION:
 I moved only modestly: the judge's 36% away win was a touch too clean for a game this balanced, so I shifted 1 point from Egypt to the draw, following the Neutral Pundit's evidence-backed case that the draw was underpriced more than the upset tail. The Downside Pundit's baseline-strength argument still holds, which is why Egypt remain narrowly the most likely single outcome. A 1-1 is still the most natural scoreline in a match where Egypt are better on paper, but New Zealand have enough aerial/set-piece threat to keep it level.
 (p_home=0.283, p_draw=0.359, p_away=0.358)
 SIGNALS: calibration, lessons, punditry, qualitative, tactical
+RESULT: AWAY_WIN 1-3. Predicted DRAW → Brier=0.621 (beats coin-flip).
 
 <!-- ENTRY_END -->
 
