@@ -46,7 +46,11 @@ Predictions run under a **live TUI** (`tui.py`, progress/messages/report/stats)
 on a TTY via `Predictor.predict_stream`. The memory loop is **closed**: `resolve
 --provider X` writes an LLM reflection into `prediction_log.md`, and
 `recall.prediction_lessons` (n_same=5, n_cross=3, TA's get_past_context port)
-injects resolved lessons back into the Judge & Final Pundit prompts.
+injects resolved lessons back into the Judge & Final Pundit prompts. The per-team
+**living dossier** (`memory/teams/<TEAM>.md`) — which `resolve` appends to and you can
+edit by hand — is now read back too via `recall.team_dossier_brief` (deduped auto lines
++ your manual notes), so hand-written team learnings flow into the debate (it was
+write-only before).
 
 CLI commands: `predict` (with `--depth`, `--scenario/--no-scenario`,
 `--scenario-rounds`), `analyze-match` (Guardian commentary → 5-phase tactical
