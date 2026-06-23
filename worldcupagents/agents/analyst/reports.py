@@ -77,6 +77,10 @@ def make_form_analyst(config: dict, llm=None, usage_acc: dict | None = None):
             weak = _weakness_line(config, p, opp)
             if weak:
                 lines.append(weak)
+        for p in (home, away):                                  # availability / injuries
+            inj = _injury_line(config, p)
+            if inj:
+                lines.append(inj)
         lam = _lambda_digest(config, home, away)
         if lam:
             lines.append(lam)
@@ -408,6 +412,16 @@ def _coach_line(config: dict, profile) -> str:
         return f"Coach — {profile.team}: {digest} [source: {src}]"
     except Exception as e:  # noqa: BLE001 — coach line must not break predict
         logger.warning("coach line failed for %r (%s)", profile.team, e)
+        return ""
+
+
+def _injury_line(config: dict, profile) -> str:
+    """Availability/injury summary for one team (manual + punditry-harvested)."""
+    try:
+        from worldcupagents.dataflows.injuries import injury_summary
+        s = injury_summary(profile.team, config)
+        return f"{profile.team} — {s}" if s else ""
+    except Exception:  # noqa: BLE001
         return ""
 
 

@@ -36,31 +36,43 @@ def test_explicit_memory_dir_is_respected(tmp_path):
 def _seed_mixed(tmp_path):
     store = MatchStore(tmp_path / "data" / "football.db")
     store.upsert([
-        # Premier League rows
+        # Premier League rows (club path fits on `matches`)
         {"date": "2025-08-16", "comp": "PL", "home": "Arsenal FC", "away": "Chelsea FC",
          "hg": 2, "ag": 0, "xg_home": None, "xg_away": None, "source": "t"},
         {"date": "2025-08-23", "comp": "PL", "home": "Chelsea FC", "away": "Arsenal FC",
          "hg": 1, "ag": 1, "xg_home": None, "xg_away": None, "source": "t"},
-        # A World-Cup row that must NOT leak into the PL model
+        # A World-Cup `matches` row that must NOT leak into the PL model
         {"date": "2022-12-18", "comp": "WC", "home": "Argentina", "away": "France",
          "hg": 3, "ag": 3, "xg_home": None, "xg_away": None, "source": "t"},
     ])
+    # International history for the WC (national) path fits on `wh_matches`.
+    store.conn.execute(
+        "INSERT INTO wh_matches (wh_match_id, date, tournament, home_team_id, away_team_id, "
+        "home_team, away_team, home_score, away_score) VALUES (?,?,?,?,?,?,?,?,?)",
+        ("t:1", "2024-06-01", "FIFA World Cup", "national:argentina", "national:france",
+         "Argentina", "France", 2, 1))
+    store.conn.commit()
     store.close()
 
 
 def test_strength_model_is_competition_scoped(tmp_path):
     _seed_mixed(tmp_path)
 
+    # Club path: fits on `matches` filtered to PL; WC `matches` row excluded.
     pl_cfg = {"data_dir": str(tmp_path / "data"), "fd_competition": "PL"}
     pl_model = load_strength_model(pl_cfg)
     assert pl_model is not None
     assert "arsenal fc" in pl_model.teams and "chelsea fc" in pl_model.teams
-    assert "argentina" not in pl_model.teams        # WC row excluded
+    assert "argentina" not in pl_model.teams        # club model never sees nationals
 
-    wc_cfg = {"data_dir": str(tmp_path / "data"), "fd_competition": "WC"}
+    # National path: fits on `wh_matches` international history — a different table,
+    # so club teams can never contaminate it.
+    wc_cfg = {"data_dir": str(tmp_path / "data"), "fd_competition": "WC",
+              "strength_as_of": "2026-06-22"}
     wc_model = load_strength_model(wc_cfg)
     assert wc_model is not None
-    assert "argentina" in wc_model.teams and "arsenal fc" not in wc_model.teams
+    assert "argentina" in wc_model.teams and "france" in wc_model.teams
+    assert "arsenal fc" not in wc_model.teams       # club never enters the intl model
 
 
 def test_strength_model_none_when_competition_absent(tmp_path):

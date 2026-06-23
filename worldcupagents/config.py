@@ -102,6 +102,19 @@ DEFAULT_CONFIG = _apply_env_overrides({
     # (first LLM-lift eval: baseline hit-rate 27%). Unseen teams (e.g. WC nationals
     # pre-tournament) still fall back to rank-Elo inside team_lambdas.
     "use_stats_lambda": True,
+    # Strength-model guards. A team with fewer than this many fitted games falls back
+    # to rank-Elo (stops 1-game WC samples flooring elite sides to λ≈0.18).
+    "strength_min_games": 2,
+    # National-team strengths are fitted on weighted INTERNATIONAL history (wh_matches):
+    # exponential recency (half-life yrs), a HARD cutoff (nothing older counts),
+    # tournament>qualifier>friendly weighting, and shrinkage toward the mean.
+    "intl_strength_half_life_years": 2.0,
+    "intl_strength_max_age_years": 4.0,
+    "intl_strength_type_weights": {"tournament": 1.0, "qualifier": 0.7, "friendly": 0.4},
+    "intl_strength_shrinkage_k": 4.0,
+    # Opponent-adjusted (Dixon–Coles) iteration — a goal vs a strong defence counts more.
+    "intl_strength_iters": 50,
+    "intl_strength_tol": 1e-4,
     # Debate (TA topology: analysts → advocate debate → judge → scenario debate → final pundit).
     "max_debate_rounds": 2,
     "enable_analyst_reports": True,   # deterministic digests; zero LLM cost
@@ -110,6 +123,11 @@ DEFAULT_CONFIG = _apply_env_overrides({
     "max_scenario_rounds": 1,         # cap = 3 * rounds pundit turns
     # Ensemble: weight on the judge's qualitative read vs the statistical baseline.
     "ensemble_judge_weight": 0.6,
+    # Calibration guardrails. Draw uplift: max P(draw) added for a close, cagey GROUP
+    # game (the Poisson base under-forecasts draws). Contextual clamp: the blended LLM
+    # read may move each probability at most this far from the Tier-1 base.
+    "draw_calibration_max": 0.08,
+    "max_contextual_delta": 0.15,
     # Let the blend weight adapt from the eval log (recency-weighted fit shrunk
     # toward the 0.6 prior; written to data/fitted_weights.json by resolve/refresh).
     # Set False to pin the prior above (calibration.effective_judge_weight).

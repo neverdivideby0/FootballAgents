@@ -1,0 +1,46 @@
+{
+  "match_id": "Portugal_vs_Congo_DR_2026-06-17",
+  "home": "Portugal",
+  "away": "Congo DR",
+  "date": "2026-06-17",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 0-15 Initial Setup: 11 commentary beats; 1 events; goals at 6'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 15-45 First-Half Shift: 21 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 4 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 45-75 Tactical Adjustments: 21 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 26 commentary beats. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/17/portugal-v-dr-congo-world-cup-2026-live"
+  ]
+}

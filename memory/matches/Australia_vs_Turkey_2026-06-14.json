@@ -1,0 +1,46 @@
+{
+  "match_id": "Australia_vs_Turkey_2026-06-14",
+  "home": "Australia",
+  "away": "Turkey",
+  "date": "2026-06-14",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 15-45 First-Half Shift: 18 commentary beats; 1 events; goals at 27'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 34 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 38 commentary beats; 1 events; goals at 75'. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/14/fifa-world-cup-2026-live-socceroos-australia-v-turkey-updates-aus-vs-tur-group-d-match-score-latest"
+  ]
+}

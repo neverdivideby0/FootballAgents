@@ -100,6 +100,15 @@ CREATE TABLE IF NOT EXISTS player_notes (
     source     TEXT,
     updated_at TEXT
 );
+CREATE TABLE IF NOT EXISTS injuries (
+    ikey       TEXT PRIMARY KEY,   -- "{team_norm}|{player_norm}"
+    team       TEXT,
+    player     TEXT NOT NULL,
+    status     TEXT NOT NULL,      -- injured | suspended | doubt
+    note       TEXT,
+    source     TEXT,               -- manual | guardian:punditry
+    updated_at TEXT
+);
 CREATE TABLE IF NOT EXISTS team_coach (
     team_key   TEXT PRIMARY KEY,   -- normalize_key(team)
     team       TEXT,
@@ -641,6 +650,42 @@ class MatchStore:
         self.conn.commit()
         return cur.rowcount > 0
 
+    # --- injuries / availability (manual + best-effort extraction) ---
+
+    def upsert_injury(self, team: str, player: str, status: str, note: str = "",
+                      source: str = "manual", *, overwrite: bool = True) -> bool:
+        """Record a player's availability. ``overwrite=False`` won't clobber an existing
+        row (so a best-effort extract never overrides a manual entry). Returns whether a
+        row was written."""
+        from datetime import datetime, timezone
+        from worldcupagents.dataflows.names import normalize_key
+        ikey = f"{normalize_key(team)}|{normalize_key(player)}"
+        if not overwrite and self.conn.execute(
+                "SELECT 1 FROM injuries WHERE ikey = ?", [ikey]).fetchone():
+            return False
+        self.conn.execute(
+            "INSERT OR REPLACE INTO injuries (ikey, team, player, status, note, source, updated_at) "
+            "VALUES (?, ?, ?, ?, ?, ?, ?)",
+            [ikey, team, player, status, note, source,
+             datetime.now(timezone.utc).strftime("%Y-%m-%d")],
+        )
+        self.conn.commit()
+        return True
+
+    def injuries_for_team(self, team: str) -> list[dict]:
+        from worldcupagents.dataflows.names import normalize_key
+        return [dict(r) for r in self.conn.execute(
+            "SELECT team, player, status, note, source, updated_at FROM injuries "
+            "WHERE ikey LIKE ? ORDER BY player", [f"{normalize_key(team)}|%"],
+        ).fetchall()]
+
+    def delete_injury(self, team: str, player: str) -> bool:
+        from worldcupagents.dataflows.names import normalize_key
+        cur = self.conn.execute("DELETE FROM injuries WHERE ikey = ?",
+                                [f"{normalize_key(team)}|{normalize_key(player)}"])
+        self.conn.commit()
+        return cur.rowcount > 0
+
     # --- head coach / manager (name + a style & pedigree note) ---
 
     def upsert_team_coach(self, team: str, name: str | None = None, note: str | None = None,
@@ -686,6 +731,29 @@ class MatchStore:
 
     def count(self) -> int:
         return self.conn.execute("SELECT COUNT(*) FROM matches").fetchone()[0]
+
+    def international_results(self, since: str | None = None) -> list[dict]:
+        """International results from the warehouse (`wh_matches`) for fitting
+        national-team strengths: date, tournament, teams, scores. ``since`` bounds
+        recency (ISO date). Empty if the warehouse hasn't been hoarded."""
+        q = ("SELECT date, tournament, home_team, away_team, home_score, away_score, neutral "
+             "FROM wh_matches")
+        args: list = []
+        if since is not None:
+            q += " WHERE date >= ?"; args.append(since)
+        try:
+            return [dict(r) for r in self.conn.execute(q, args).fetchall()]
+        except Exception:  # noqa: BLE001 — wh_matches absent (warehouse not hoarded)
+            return []
+
+    def source_coverage(self) -> list[dict]:
+        """Per-``source`` rollup of the matches table: rows + newest date. Cheap
+        (grouped in SQL) — the freshness/coverage signal for the ``sources`` command."""
+        rows = self.conn.execute(
+            "SELECT COALESCE(source, '?') AS source, COUNT(*) AS rows, MAX(date) AS latest "
+            "FROM matches GROUP BY source ORDER BY rows DESC"
+        ).fetchall()
+        return [dict(r) for r in rows]
 
     # --- player stats ---
 

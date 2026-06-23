@@ -1,0 +1,23 @@
+{
+  "match_id": "Sweden_vs_Tunisia_2026-06-15",
+  "home": "Sweden",
+  "away": "Tunisia",
+  "date": "2026-06-15",
+  "home_read": {
+    "team": "Sweden",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Tunisia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/15/sweden-tunisia-world-cup-match-report"
+  ]
+}

@@ -1,0 +1,23 @@
+{
+  "match_id": "Ecuador_vs_Cura\u00e7ao_2026-06-21",
+  "home": "Ecuador",
+  "away": "Cura\u00e7ao",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Ecuador",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Cura\u00e7ao",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/21/curacao-ecuador-world-cup-group-e-match-report"
+  ]
+}

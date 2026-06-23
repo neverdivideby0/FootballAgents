@@ -170,9 +170,11 @@ class Predictor:
         log.parent.mkdir(parents=True, exist_ok=True)
         today = datetime.now(timezone.utc).date()
         tag = f"[{today} | {fixture.home} vs {fixture.away} | {verdict.outcome.value} {verdict.scoreline} | pending]"
+        signals = _signals_present(final)
         entry = (
             f"{tag}\n\nPREDICTION:\n{verdict.rationale}\n"
-            f"(p_home={verdict.p_home:.3f}, p_draw={verdict.p_draw:.3f}, p_away={verdict.p_away:.3f})"
+            f"(p_home={verdict.p_home:.3f}, p_draw={verdict.p_draw:.3f}, p_away={verdict.p_away:.3f})\n"
+            f"SIGNALS: {', '.join(signals) if signals else '(none)'}"
             f"{_ENTRY_SEP}"
         )
         with open(log, "a", encoding="utf-8") as f:
@@ -180,6 +182,28 @@ class Predictor:
 
 
 # ── Helpers ────────────────────────────────────────────────────────────────
+
+# Marker → signal name. Each "extra" signal beyond the statistical baseline that a
+# prediction MAY have carried; recorded on the log entry so `credit` can later ask
+# "did predictions with this signal score better?" (simple, explainable attribution).
+_SIGNAL_MARKERS = {
+    "PUNDITRY SIGNALS": "punditry",
+    "PRE-MATCH TACTICAL BRIEF": "tactical",
+    "LESSONS FROM PAST PREDICTIONS": "lessons",
+    "qualitative notes": "qualitative",
+}
+
+
+def _signals_present(final: dict) -> list[str]:
+    """Which extra signals fed this prediction (from the assembled state)."""
+    pc = final.get("past_context") or ""
+    out = [name for marker, name in _SIGNAL_MARKERS.items() if marker in pc]
+    if (final.get("matchup_context") or {}).get("market"):
+        out.append("market")
+    if final.get("calibration_note"):
+        out.append("calibration")
+    return sorted(out)
+
 
 def _compute_cost(deep_model: str, quick_model: str, usage: dict) -> float | None:
     """Best-effort cost estimate: attribute all output to the deep model (judge) and

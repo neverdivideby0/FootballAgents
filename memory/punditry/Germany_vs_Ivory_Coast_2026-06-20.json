@@ -1,0 +1,23 @@
+{
+  "match_id": "Germany_vs_Ivory_Coast_2026-06-20",
+  "home": "Germany",
+  "away": "Ivory Coast",
+  "date": "2026-06-20",
+  "home_read": {
+    "team": "Germany",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Ivory Coast",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/20/germany-cote-divoire-group-e-match-report"
+  ]
+}

@@ -55,9 +55,21 @@ report in memory/matches/), `scout-report` (stats + tactical memory → report),
 reflection), `backtest` (calibration yardstick), `fetch-data` (populate the
 SQLite match store), `watch` (matchday autopilot: poll → structured-punditry +
 tactical analysis per finished match → auto-resolve; `--interval` to loop),
-`players`, `leagues`, `check`, `resolve-name`, `eliminate`. Exports:
+`credit` (per-signal with-vs-without Brier scoreboard), `sources` (data-source
+health + store coverage), `players`, `leagues`, `check`, `resolve-name`,
+`eliminate`. Exports:
 sectioned markdown (`pipelines/report_export.py`) or txt. All LLM steps are
 offline-by-default; add `--provider`/`--llm` to spend.
+
+**Guided launcher (2026-06):** running `footballagents` with **no command** opens an
+arrow-key menu (`_launch_menu` in `cli.py`, `invoke_without_command=True` on the
+callback) — predict / dossier / odds / watch / refresh / resolve / credit / explore.
+Each choice maps to argv via `_menu_argv` and dispatches the REAL command through
+`_run_argv` (so behaviour is identical to typing it); LLM flows reuse `_guided_select`
+so the user picks provider + model (e.g. `gpt-5.4-mini`, not the cheap default).
+Guarded by `sys.stdin.isatty()` — a non-TTY invocation prints `--help` instead of
+hanging. Note: `analyze-match`/`watch` use the **quick** model by design (cheap
+extraction); pass `--model <id>` (or pick it in the menu) to use a stronger one.
 
 To run with real LLMs: pick a provider at the CLI (`--provider anthropic|openai|
 google|deepseek`) with the matching key in `.env` (DeepSeek routes through the
@@ -139,7 +151,100 @@ canonical is "Korea Republic" — the variant failure mode, solved). New
 with `--interval N` wrapping it in an in-process poll loop (`interval=0` default =
 single tick, ideal for cron/launchd/`/schedule`). Offline by default; `--provider`
 spends. Idempotency is keyed on the digest file, so re-runs/timer polls never repeat
-work.
+work. **`analyze-match` also captures the match report** now (`--report/--no-report`,
+default on): it runs `analyze_punditry` alongside the liveblog tactical report, so one
+command grabs the Guardian "Live feed" tab (→ tactical report) AND the "Match report"
+tab (→ `PunditryDigest`).
+
+**Injury / fitness overlay (2026-06, `dataflows/injuries.py`):** player availability is
+in no free real-time feed, so it comes from two sources into an `injuries` store table:
+a **manual** overlay (`footballagents note-injury "Víctor Muñoz" -t Spain --status
+injured|suspended|doubt`, always authoritative) and a **best-effort harvest** of squad
+players named in match-punditry `fatigue_injuries` (surname match → `doubt`, source
+`guardian:punditry`, never overrides a manual row). `apply_injuries` (called in
+`enrich.enrich_profile`) sets each `Player.status` and **drops injured/suspended players
+from `probable_xi`** (doubt stays, flagged) so the debate stops projecting someone who's
+out; `injury_summary` surfaces an "OUT/DOUBT: …" line in the Form report (→ advocates +
+judge). Knob `harvest_punditry_injuries` (default on).
+
+**Bilateral data-parity (2026-06, `ensemble/parity.py`):** the pipeline could act like a
+single-team scout — a data-rich side (Spain) got pages while a thin side (Saudi Arabia)
+came back near-empty, and the LLM could read "more data about A" as "A is better".
+`parity_note(home, away, config)` scores each team's coverage (squad / form / xg /
+probable_xi / coach / players / weaknesses) and, when lopsided (gap ≥ 3), emits a `DATA
+PARITY` line — computed in `make_matchup_context` (`ctx["parity"]`), injected into the
+**judge + advocate** prompts: "do NOT mistake thinner data for lower quality; judge the
+thin side on its merits (rank, coach, pedigree)." It flags the gap, never fabricates data
+(respects the "no manufactured weaknesses" rule).
+
+**Probability calibration — bounded contextual deltas + draw uplift + reliable stage
+(2026-06):** three guardrails around the Tier-1 base (`ensemble/verdict.py::
+assemble_verdict`; the base stays λ→Poisson, market still reasoning-input only).
+(1) **Contextual clamp** (`baseline.clamp_to_band`, knob `max_contextual_delta=0.15`):
+after the LLM-vs-base blend, the deviation from base is scaled so NO outcome moves more
+than ±Δ — the judge can nudge the prior, never reshape it (deviations sum to zero, so
+scaling stays normalised). (2) **Draw calibration** (`ensemble/draw.py::draw_uplift`,
+knob `draw_calibration_max=0.08`): the Poisson base under-forecasts draws, so P(draw) is
+nudged up for **close** games (scaled by `1−|λh−λa|/(λh+λa)` squared) with a bump when a
+**low-directness favourite meets a solid-defence underdog** (reuses `team_forte` +
+`focus._style` directness); applied to the **base before the blend**, GROUP-stage only.
+(3) **Reliable stage** (`dataflows/fixtures.py::resolve_stage`): the draw uplift and the
+knockout draw-fold both key off `Fixture.knockout`, which used to default to group — a
+knockout predicted without `--stage` would misfire. `predict --stage` now defaults to
+**auto**: explicit flag > feed-derived (football-data `stage`, via the `simulate`
+fixtures reader) > group fallback; `predict -i` gets a stage picker pre-set to the
+detected stage. So the uplift and fold can never disagree.
+
+**National-team λ from weighted international history (2026-06, fixes the "Spain
+0.18" bug):** `use_stats_lambda` was fitting Dixon–Coles strengths on the **active
+competition only** — for WC that's the handful of games played so far (~1/team), so a
+side that drew 0-0 once got `attack=0` → λ floored to `_MIN_LAMBDA` (0.18), flooring
+elite teams (Spain showed 0.18, same as the opponent and as Saudi Arabia). Two fixes:
+(1) **min-games guard** (`strength_min_games=2`) — a team with too few fitted games
+falls back to rank-Elo (`expected_goals_from_strengths(..., min_games)` checks
+`StrengthModel.games`). (2) **National teams now fit on weighted INTERNATIONAL history**
+(`wh_matches`, 49k results — previously orphaned): `fit_international_strengths` weights
+each game by **recency** (exponential, `intl_strength_half_life_years`, **HARD 4-year
+cutoff** `intl_strength_max_age_years` — older games count zero) × **type**
+(`tournament > qualifier > friendly`, via `_match_tier`), shrinks ratios toward the mean
+(`intl_strength_shrinkage_k`), and is **neutral-venue** (`home_adv=1.0`). `team_lambdas`/
+`load_strength_model` branch on `_is_international` (kind=="tournament" or fd=="WC");
+**club fixtures keep the per-competition `matches` fit — no club↔international mixing**.
+Spain (52 weighted games) now reads attack 1.68 / defense 0.69 → Spain–Germany λ
+≈ 2.0–1.5 (was 0.18–0.18). **Opponent-adjusted (2026-06):** the fit is no longer a
+one-pass ratio — it's a **Dixon–Coles fixed-point iteration** (closed-form Poisson
+coordinate updates, no scipy) so a goal vs a strong defence counts more than padding
+stats vs minnows. Curaçao's λ vs Germany dropped (1.5→1.1; the goals were cheap),
+Spain/Argentina stay elite (Argentina best defence 0.42). Validated leak-free on 887
+post-cutoff internationals: **iterated 0.530 Brier vs one-pass 0.565 vs rank-Elo 0.611**
+— it beats both incumbents. Knobs: `intl_strength_iters` (50), `intl_strength_tol`.
+Identifiability fixed by renormalising mean(attack)=1 each step (λ products invariant).
+
+**Data-supervision layer (2026-06):** oversight of the whole data layer, built to
+scale as tables/sources are added. (1) **`footballagents sources`** — deterministic
+(no LLM): every data source with key-set / reachability (`--probe`) / store freshness
++ coverage (`MatchStore.source_coverage` + `warehouse_counts`), reusing
+`data_explorer._sources_with_checks(probe=…)`. (2) Two **dev-time auditor subagents**
+(`.claude/agents/data-auditor.md`, `source-auditor.md`, haiku, single-responsibility,
+may Edit only their registry): given ONE table/source, report written/read/orphaned +
+recommendation. (3) Two **registries** (`docs/warehouse_tables.md`,
+`docs/data_sources.md`) — annotated, audited views; source of truth for the *list* is
+the `CREATE TABLE` statements + the source specs. (4) **`scripts/check_docs.py`** now
+also warns (pre-commit, never blocks) when a table/source has no registry row.
+**Audit-all = main-agent fan-out** (one auditor per item, parallel — never one agent
+looping). Workflow rule: adding a table to `match_store.py` or a source spec → run the
+matching auditor + register it before committing.
+
+**Per-signal credit — "which signals actually helped?" (2026-06, `credit.py`):**
+every shipped prediction now records a `SIGNALS:` line in `prediction_log.md`
+(`predict._signals_present` — the extra inputs it carried beyond the baseline:
+punditry / tactical / lessons / qualitative / market / calibration). `footballagents
+credit` is the **deliberately simple, explainable** scoreboard: for each signal it
+compares the mean Brier of resolved predictions that HAD it vs those that didn't
+(`signal_credit`/`credit_report`), with a per-side `n≥3` gate. It's labelled an
+**association, not proof** (signals cluster on bigger games; no confound control) —
+a readable dial to watch as the tournament fills in, not a live weight. Forward-
+looking: predictions made before SIGNALS tagging have no line and are skipped.
 
 **Live market as a judge feature (2026-06):** with `ODDS_API_KEY` set, the judge
 and Final Pundit are shown the **de-vigged bookmaker consensus** (The Odds API,

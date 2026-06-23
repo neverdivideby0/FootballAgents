@@ -1,0 +1,23 @@
+{
+  "match_id": "Mexico_vs_South_Africa_2026-06-11",
+  "home": "Mexico",
+  "away": "South Africa",
+  "date": "2026-06-11",
+  "home_read": {
+    "team": "Mexico",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "South Africa",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/11/mexico-south-africa-world-cup-2026-group-a-match-report"
+  ]
+}

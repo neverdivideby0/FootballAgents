@@ -1,0 +1,23 @@
+{
+  "match_id": "Tunisia_vs_Japan_2026-06-21",
+  "home": "Tunisia",
+  "away": "Japan",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Tunisia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Japan",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/21/japan-tunisia-world-cup-group-f-match-report"
+  ]
+}

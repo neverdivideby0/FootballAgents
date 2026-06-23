@@ -68,9 +68,19 @@ def _refit_judge_weight_and_report(config: dict | None = None) -> None:
         console.print(f"[dim]judge_weight refit skipped ({e})[/dim]")
 
 
-@app.callback()
-def _main() -> None:
-    """WorldCupAgents CLI."""
+@app.callback(invoke_without_command=True)
+def _main(ctx: typer.Context) -> None:
+    """FootballAgents — predict football matches via an agent debate.
+
+    Run with no command (`footballagents`) for a guided, arrow-key menu.
+    """
+    if ctx.invoked_subcommand is not None:
+        return  # a real command was given — run it normally
+    # No command: show the guided launcher on a TTY, else fall back to --help.
+    if sys.stdin.isatty():
+        _launch_menu()
+    else:
+        typer.echo(ctx.get_help())
 
 
 @app.command()
@@ -78,7 +88,8 @@ def predict(
     home: str = typer.Argument(None, help="Home / first team (leave blank with -i to pick from list)"),
     away: str = typer.Argument(None, help="Away / second team (leave blank with -i to pick from list)"),
     date: str = typer.Option(None, "--date", help="Kickoff date YYYY-MM-DD"),
-    stage: Stage = typer.Option(Stage.GROUP, "--stage", help="group/R32/R16/QF/SF/F"),
+    stage: Stage = typer.Option(None, "--stage",
+                                help="group/R32/R16/QF/SF/F (default: auto-detect from the fixture feed)"),
     venue: str = typer.Option(None, "--venue", help="Host city — leave blank with -i to pick from list"),
     provider: str = typer.Option(
         None, "--provider", "-p",
@@ -175,7 +186,8 @@ def predict(
             raise typer.Exit(1)
 
     lg = _resolve_league(cfg, league)
-    fx = Fixture(home=home, away=away, stage=stage, venue=venue, kickoff=_parse_date(date))
+    resolved_stage, stage_src = _resolve_fixture_stage(stage, home, away, date, cfg, lg, interactive)
+    fx = Fixture(home=home, away=away, stage=resolved_stage, venue=venue, kickoff=_parse_date(date))
 
     mode = (
         f"LLM: {cfg['llm_provider']} (deep={cfg['deep_think_llm']}, quick={cfg['quick_think_llm']})"
@@ -186,7 +198,9 @@ def predict(
     if cfg.get("season") and lg.kind == "league":
         historic = " (historical)" if cfg["season"] != lg.season else ""
         season_note = f"   season: {cfg['season']}{historic}"
-    stage_label = "league match" if cfg.get("league_kind") == "league" and not fx.knockout else f"stage={fx.stage.value}"
+    stage_src_note = f" [dim](from {stage_src})[/dim]" if stage_src in ("feed", "default (group)") else ""
+    stage_label = ("league match" if cfg.get("league_kind") == "league" and not fx.knockout
+                   else f"stage={fx.stage.value}{stage_src_note}")
     venue_label = fx.venue or ("home/away" if cfg.get("league_kind") == "league" else "TBD")
     console.print(f"[dim]competition: {lg.name}{season_note}{scenario_note}[/dim]")
     console.print(Panel.fit(
@@ -329,6 +343,54 @@ def check(team: str = typer.Option(None, "--team", help="Resolve a team against 
         rt.add_row("Style", p.style or "—")
         rt.add_row("Sources", ", ".join(p.sources))
         console.print(rt)
+
+
+@app.command()
+def sources(
+    probe: bool = typer.Option(False, "--probe/--no-probe",
+                               help="Live-ping each source (off by default — key-presence + store freshness only)"),
+):
+    """Supervise every data source: is the key set, is it reachable (--probe), and how
+    fresh/covered is its data in the store. Deterministic, no LLM."""
+    from worldcupagents.dataflows.match_store import MatchStore, db_path
+    from worldcupagents.pipelines.data_explorer import _sources_with_checks
+
+    srcs = _sources_with_checks(probe=probe)
+    icon = {"ok": "🟢", "error": "🔴", "skipped": "⚪", "unprobed": "⚪"}
+    t = Table(title=f"Data sources{' (live probe)' if probe else ''}")
+    t.add_column("Source"); t.add_column("Key"); t.add_column("Status"); t.add_column("Supplies", max_width=58)
+    for s in srcs:
+        keyed = "✅" if s["configured"] else "—"
+        chk = s.get("check") or {}
+        status = f"{icon.get(chk.get('status'), '⚪')} {chk.get('detail', '')}".strip()
+        if chk.get("ms"):
+            status += f" ({chk['ms']}ms)"
+        t.add_row(s["name"], keyed, status, s["provides"])
+    console.print(t)
+
+    healthy = sum(1 for s in srcs if (s.get("check") or {}).get("status") == "ok")
+    missing = sum(1 for s in srcs if not s["configured"])
+    console.print(f"[dim]{len(srcs)} sources · {missing} missing a key"
+                  + (f" · {healthy} reachable" if probe else " · run --probe for live reachability") + "[/dim]")
+
+    # Store coverage — what data actually landed, by source, with freshness.
+    if db_path(DEFAULT_CONFIG).exists():
+        store = MatchStore.from_config(DEFAULT_CONFIG)
+        try:
+            cov, wh = store.source_coverage(), store.warehouse_counts()
+        finally:
+            store.close()
+        if cov:
+            ct = Table(title="Match store — coverage by source")
+            ct.add_column("source"); ct.add_column("rows", justify="right"); ct.add_column("newest")
+            for r in cov:
+                ct.add_row(r["source"], f"{r['rows']:,}", r["latest"] or "—")
+            console.print(ct)
+        live_wh = {k: v for k, v in (wh or {}).items() if v}
+        if live_wh:
+            console.print("[dim]warehouse: " + ", ".join(f"{k}={v:,}" for k, v in live_wh.items()) + "[/dim]")
+    else:
+        console.print("[dim]No match store yet — run `fetch-data` to populate coverage.[/dim]")
 
 
 @app.command()
@@ -815,6 +877,42 @@ def note_player(
         store.close()
 
 
+@app.command(name="note-injury")
+def note_injury(
+    player: str = typer.Argument(..., help="Player name (as it appears in the squad)"),
+    team: str = typer.Option(..., "--team", "-t", help="The player's team"),
+    status: str = typer.Option("injured", "--status",
+                               help="injured | suspended | doubt"),
+    note: str = typer.Option("", "--note", help="Optional detail (e.g. 'tournament-ending muscle injury')"),
+    delete: bool = typer.Option(False, "--delete", help="Clear this player's availability flag"),
+):
+    """Flag a player's availability. The overlay sets their status and drops the
+    unavailable (injured/suspended) from the probable XI, so the debate stops projecting
+    someone who's out. Manual flags always win over auto-detected ones.
+
+    \b
+      footballagents note-injury "Víctor Muñoz" -t Spain --status injured --note "tournament-ending"
+      footballagents note-injury "Víctor Muñoz" -t Spain --delete
+    """
+    if status not in ("injured", "suspended", "doubt"):
+        console.print("[red]✗ --status must be injured / suspended / doubt.[/red]")
+        raise typer.Exit(1)
+    from worldcupagents.dataflows.match_store import MatchStore
+    store = MatchStore.from_config(DEFAULT_CONFIG)
+    try:
+        if delete:
+            ok = store.delete_injury(team, player)
+            console.print(f"[green]✓ cleared[/green] {player} ({team})" if ok
+                          else f"[yellow]No availability flag for {player} ({team}).[/yellow]")
+            return
+        store.upsert_injury(team, player, status, note=note, source="manual")
+        console.print(f"[green]✓ {status}[/green] [bold]{player}[/bold] ({team}). "
+                      f"Removed from the probable XI{' ' if status in ('injured','suspended') else ' (doubt — kept, flagged) '}"
+                      f"in predictions.")
+    finally:
+        store.close()
+
+
 @app.command()
 def odds(
     home: str = typer.Argument(..., help="Home / first team"),
@@ -1211,6 +1309,20 @@ def watch(
         console.print("\n[dim]watch stopped.[/dim]")
 
 
+@app.command()
+def credit():
+    """Which signals actually helped? A simple with-vs-without Brier scoreboard.
+
+    Each shipped prediction records the extra signals it used (punditry, market,
+    tactical history, lessons, qualitative notes, the calibration note). Once they
+    resolve, this compares the average Brier of predictions that carried each signal
+    against those that didn't. It's an association, not proof — read it as a scoreboard
+    that sharpens as the tournament fills in.
+    """
+    from worldcupagents.credit import credit_report
+    console.print(credit_report(DEFAULT_CONFIG))
+
+
 @app.command(name="simulate-tournament")
 def simulate_tournament_cmd(
     n: int = typer.Option(10_000, "-n", "--runs", help="Monte-Carlo tournament runs"),
@@ -1265,6 +1377,8 @@ def analyze_match_cmd(
     model: str = typer.Option(None, "--model", help="Override the analyst model"),
     llm: bool = typer.Option(None, "--llm/--no-llm", help="Run the real LLM analyst (default: offline placeholder)"),
     force: bool = typer.Option(False, "--force", "-f", help="Overwrite an existing populated report"),
+    report: bool = typer.Option(True, "--report/--no-report",
+                                help="Also capture the match report + tactical columns (Guardian 'Match report' tab)"),
     league: str = typer.Option(None, "--league", "-L", help="Competition (default WC2026). See `leagues`."),
 ):
     """Harvest post-game commentary and build a 5-phase tactical report.
@@ -1315,6 +1429,18 @@ def analyze_match_cmd(
             console.print(f"[dim]↩ Loaded existing report (use --force to re-analyse)[/dim]")
         else:
             console.print(f"[green]✓ Saved[/green] {outcome.json_path}  and  {outcome.md_path}")
+
+    # The Guardian match page has 3 tabs: Live feed (the liveblog → the tactical report
+    # above), Match report, Match info. Also capture the MATCH REPORT (+ tactical columns)
+    # into a structured PunditryDigest, so one command grabs the feed AND the report.
+    if report:
+        from worldcupagents.pipelines.punditry import analyze_punditry
+        po = analyze_punditry(home, away, date, cfg, force=force)
+        if po.n_articles:
+            console.print(f"[green]✓ Match report[/green] {po.n_articles} article(s) → {po.json_path}")
+        else:
+            console.print("[dim]No match report/columns found (set GUARDIAN_API_KEY; 2026 WC games "
+                          "have no Guardian articles yet).[/dim]")
 
 
 @app.command()
@@ -1675,6 +1801,31 @@ def _guided_setup(league, home: str | None, away: str | None, venue: str | None)
     return {"home": home, "away": away, "venue": venue}
 
 
+def _resolve_fixture_stage(stage, home, away, date, cfg, lg, interactive):
+    """Decide a fixture's stage. Precedence: explicit user choice > feed-derived >
+    group fallback. Returns (Stage, source-label for display)."""
+    if stage is not None:
+        return stage, "you"                       # explicit --stage always wins
+    if lg.kind != "tournament":
+        return Stage.GROUP, "league"              # leagues have no knockout stage
+    from worldcupagents.dataflows.fixtures import resolve_stage
+    detected, _ = resolve_stage(home, away, date, cfg)
+    default = detected or Stage.GROUP
+    if interactive and sys.stdin.isatty():
+        return _pick_stage(default), "you"        # guided pick, pre-set to the feed value
+    return default, ("feed" if detected else "default (group)")
+
+
+def _pick_stage(default: Stage) -> Stage:
+    """Arrow-key stage picker (tournaments), pre-selected to the detected stage."""
+    import questionary
+    choices = [questionary.Choice(lbl, value=val) for lbl, val in (
+        ("Group stage", Stage.GROUP), ("Round of 32", Stage.R32), ("Round of 16", Stage.R16),
+        ("Quarter-final", Stage.QF), ("Semi-final", Stage.SF), ("Final / 3rd place", Stage.FINAL))]
+    pick = questionary.select("Stage  (↑/↓ then Enter)", choices=choices, default=default).ask()
+    return pick or default
+
+
 def _pick_team(label: str, groups: dict[str, list[str]], eliminated: set[str], exclude: str | None = None) -> str | None:
     """Arrow-key team picker grouped by section. Eliminated teams are disabled."""
     import questionary
@@ -1821,6 +1972,90 @@ def _pick_depth() -> str | None:
         default="medium",
     ).ask()
     return pick
+
+
+def _launch_menu() -> None:
+    """The guided home screen: pick an action, gather the few inputs it needs, run it.
+
+    Shown when `footballagents` is run with no command. Each choice dispatches the
+    real CLI command (so behaviour is identical to typing it), with the interactive
+    flows reusing the same arrow-key pickers as the flags."""
+    import questionary
+
+    console.print("[bold]⚽ FootballAgents[/bold] [dim]— what would you like to do?[/dim]")
+    action = questionary.select(
+        "Choose an action  (↑/↓ then Enter, Esc to quit)",
+        choices=[
+            questionary.Choice("🔮  Predict a match (guided)", value="predict"),
+            questionary.Choice("📋  Pre-match dossier — the data, no LLM", value="dossier"),
+            questionary.Choice("📈  Live odds for a fixture", value="odds"),
+            questionary.Choice("📡  Watch — matchday autopilot", value="watch"),
+            questionary.Choice("🔄  Refresh after a matchday", value="refresh"),
+            questionary.Choice("✅  Resolve played predictions", value="resolve"),
+            questionary.Choice("🎯  Signal credit — which signals helped", value="credit"),
+            questionary.Choice("🧭  Open the data explorer", value="explore"),
+            questionary.Separator(),
+            questionary.Choice("❔  Full command list", value="help"),
+            questionary.Choice("✋  Quit", value="quit"),
+        ],
+    ).ask()
+
+    if action in (None, "quit"):
+        return
+    argv = _menu_argv(action)
+    if argv is None:
+        return  # the user backed out of a sub-prompt
+    _run_argv(argv)
+
+
+def _menu_argv(action: str) -> list[str] | None:
+    """Turn a menu choice into the argv for the real command (gathering inputs)."""
+    import questionary
+
+    simple = {"predict": ["predict", "-i"], "refresh": ["refresh"],
+              "credit": ["credit"], "explore": ["explore"], "help": ["--help"]}
+    if action in simple:
+        return simple[action]
+
+    if action in ("dossier", "odds"):
+        home = questionary.text("Home / first team:").ask()
+        away = questionary.text("Away / second team:").ask()
+        return [action, home.strip(), away.strip()] if home and away else None
+
+    if action == "resolve":
+        argv = ["resolve", "--sync"]
+        sel = _menu_pick_llm("Write an AI reflection on each result? (needs a key)")
+        if sel:
+            argv += ["--provider", sel["provider"]]
+        return argv
+
+    if action == "watch":
+        argv = ["watch"]
+        sel = _menu_pick_llm("Use an LLM to distil punditry/tactics? (needs a key)")
+        if sel:
+            argv += ["--provider", sel["provider"], "--model", sel["quick"]]
+        else:
+            argv += ["--no-llm"]
+        if questionary.confirm("Keep polling every 30 min? (No = one tick now)", default=False).ask():
+            argv += ["--interval", "30"]
+        return argv
+    return None
+
+
+def _menu_pick_llm(prompt: str) -> dict | None:
+    """Yes → the provider+model picker (returns the _guided_select dict, so the user
+    chooses e.g. gpt-5.4-mini over the cheap default); No/Esc → None (offline)."""
+    import questionary
+    if not questionary.confirm(prompt, default=False).ask():
+        return None
+    return _guided_select()
+
+
+def _run_argv(argv: list[str]) -> None:
+    """Dispatch the chosen command through the real Typer app (identical to typing it)."""
+    from typer.main import get_command
+    console.print(f"[dim]→ footballagents {' '.join(argv)}[/dim]\n")
+    get_command(app)(args=argv, prog_name="footballagents")
 
 
 def _guided_select() -> dict | None:

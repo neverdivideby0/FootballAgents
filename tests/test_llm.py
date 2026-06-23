@@ -65,7 +65,10 @@ def test_llm_advocates_and_judge_drive_verdict(tmp_path):
     deep = FakeLLM(content="", read=read)
 
     fx = Fixture(home="Spain", away="Brazil", stage=Stage.GROUP)
-    final, v = Predictor(_cfg(tmp_path), deep_llm=deep, quick_llm=quick).predict(fx)
+    # This test checks the blend/breakdown wiring; disable the contextual clamp so the
+    # exact blend equality below holds (the clamp itself is covered by test_draw_stage).
+    cfg = _cfg(tmp_path); cfg["max_contextual_delta"] = 1.0
+    final, v = Predictor(cfg, deep_llm=deep, quick_llm=quick).predict(fx)
 
     # Advocate text came from the quick LLM.
     assert "Weaknesses:" in final["debate_state"]["history"]

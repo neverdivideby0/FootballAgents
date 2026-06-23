@@ -1,0 +1,24 @@
+{
+  "match_id": "Spain_vs_Cape_Verde_Islands_2026-06-15",
+  "home": "Spain",
+  "away": "Cape Verde Islands",
+  "date": "2026-06-15",
+  "home_read": {
+    "team": "Spain",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Cape Verde Islands",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/15/spain-cape-verde-world-cup-2026-group-h-match-report",
+    "https://www.theguardian.com/football/2026/jun/15/cape-verde-hero-vozinha-in-tears-after-spain-draw-as-cost-of-visa-stopped-his-mother-being-at-game"
+  ]
+}

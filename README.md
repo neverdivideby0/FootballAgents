@@ -28,7 +28,17 @@ uv run footballagents --help
 
 ---
 
-## 2. The easy way — one guided command
+## 2. The easy way — just run it
+
+```bash
+uv run footballagents
+```
+
+With no command, it opens a **guided menu** — arrow-key your way to predict, dossier,
+odds, watch, refresh, resolve, credit, or the data explorer. Each choice asks only for
+what it needs (and the LLM steps let you pick the provider + model, e.g. `gpt-5.4-mini`).
+
+Or jump straight to a prediction:
 
 ```bash
 uv run footballagents predict -i
@@ -75,6 +85,8 @@ Other tools (all default to offline; add `--provider` to use an LLM):
 | `odds` | Live de-vigged bookmaker consensus + Polymarket crowd for a fixture |
 | `simulate-tournament` | 10k Monte-Carlo runs of WC2026 → each team's advancement odds |
 | `evaluate` | Does the LLM debate beat the baseline/market? (Brier scoreboard) |
+| `credit` | Which signals actually helped? Simple with-vs-without Brier per signal (punditry, market, …) |
+| `sources` | Supervise every data source: key set? reachable (`--probe`)? store freshness + coverage |
 | `refresh` | One matchday command (~15s): pull results, auto-resolve, re-simulate, rebuild the explorer |
 | `watch` | Matchday autopilot: poll for finished matches → distil punditry + tactics → auto-resolve. `--interval N` to loop |
 | `analyze-match` | Turn a match's text commentary into a 5-phase tactical report |
@@ -86,7 +98,7 @@ Other tools (all default to offline; add `--provider` to use an LLM):
 | `fetch-data` | Download results + odds + per-match stats + (`--xg`) Understat metrics |
 | `hoard-data` | Snapshot public datasets (international results, StatsBomb, Wikipedia totals) |
 | `guardian-guide` / `bbc-guide` / `guardian-experts` | Ingest the Guardian player guide / BBC team guide / Guardian Experts' Network previews (player bios, team profiles, **coach style & pedigree**) |
-| `qual-data` / `note-player` | Add your own article/team/player style notes |
+| `qual-data` / `note-player` / `note-injury` | Add your own article/team/player notes; flag a player injured/suspended/doubt (drops them from the projected XI) |
 | `backtest` | Measure prediction accuracy vs naive + market baselines |
 | `leagues` / `check` / `resolve-name` / `eliminate` | List competitions / data-source status / name resolution / mark teams out |
 

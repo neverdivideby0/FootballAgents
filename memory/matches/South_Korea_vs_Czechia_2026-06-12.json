@@ -1,0 +1,46 @@
+{
+  "match_id": "South_Korea_vs_Czechia_2026-06-12",
+  "home": "South Korea",
+  "away": "Czechia",
+  "date": "2026-06-12",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 16 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 45-75 Tactical Adjustments: 14 commentary beats; 2 events; goals at 59', 67'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 20 commentary beats; 1 events; goals at 80'. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/12/fifa-world-cup-2026-live-south-korea-v-czechia-updates-kor-vs-cze-group-a-match-score-latest"
+  ]
+}

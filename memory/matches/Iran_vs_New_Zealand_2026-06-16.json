@@ -1,0 +1,46 @@
+{
+  "match_id": "Iran_vs_New_Zealand_2026-06-16",
+  "home": "Iran",
+  "away": "New Zealand",
+  "date": "2026-06-16",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 0-15 Initial Setup: 9 commentary beats; 1 events; goals at 7'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 15-45 First-Half Shift: 18 commentary beats; 1 events; goals at 32'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 7 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 45-75 Tactical Adjustments: 16 commentary beats; 2 events; goals at 55', 64'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 19 commentary beats. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/16/fifa-world-cup-2026-live-iran-v-new-zealand-updates-irn-vs-nzl-group-f-match-score-latest"
+  ]
+}

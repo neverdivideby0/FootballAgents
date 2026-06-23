@@ -100,6 +100,7 @@ def _llm_judge_read(llm, state: MatchState, usage_acc: dict | None = None,
     cal = state.get("calibration_note") or ""
     calibration = (f"\nCALIBRATION FEEDBACK (our own resolved track record — correct for it):\n{cal}\n"
                    if cal else "")
+    parity = f"\n{ctx['parity']}\n" if ctx.get("parity") else ""
     stage_label, stage_rule = stage_line(config or {}, fx)
     prompt = f"""You are a seasoned, neutral football pundit giving the final verdict on \
 {home.team} (home) vs {away.team} (away).
@@ -109,7 +110,7 @@ Venue: {ctx.get('venue_note') or ctx.get('venue') or 'TBD'}.
 
 {home.team}: {profile_brief(home)}
 {away.team}: {profile_brief(away)}
-{rec_line}{market}{focus}{calibration}{reports}{tactical}
+{rec_line}{parity}{market}{focus}{calibration}{reports}{tactical}
 The two team advocates debated:
 {history or '(no debate available)'}
 

@@ -72,6 +72,7 @@ def _llm_argument(llm, label, me, opp, state, debate, usage_acc: dict | None = N
     tactical = f"\nTACTICAL HISTORY & PAST-PREDICTION LESSONS (from memory — use them to support your case):\n{pc}\n" if pc else ""
     records = ctx.get("records") or ""
     rec_line = f"HOME & HEAD-TO-HEAD RECORD: {records}\n" if records else ""
+    parity = f"\n{ctx['parity']}\n" if ctx.get("parity") else ""
     from worldcupagents.agents.judge.pundit import reports_block
     reports = reports_block(state)
     prompt = f"""You are the {label} Team Advocate for {me.team}, debating whether {me.team} \
@@ -80,7 +81,7 @@ will get the better of {opp.team}.
 YOUR TEAM:  {profile_brief(me)}
 OPPONENT:   {profile_brief(opp)}
 MATCH:      {ctx.get('stage_label') or ctx.get('stage')}, venue={ctx.get('venue_note') or ctx.get('venue') or 'TBD'}, knockout={ctx.get('knockout')}
-{rec_line}{reports}{tactical}
+{rec_line}{parity}{reports}{tactical}
 Debate so far:
 {history or '(you are speaking first)'}
 

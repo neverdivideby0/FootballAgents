@@ -1,0 +1,46 @@
+{
+  "match_id": "Mexico_vs_South_Africa_2026-06-11",
+  "home": "Mexico",
+  "away": "South Africa",
+  "date": "2026-06-11",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 0-15 Initial Setup: 12 commentary beats; 1 events; goals at 9'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 15-45 First-Half Shift: 18 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 7 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 45-75 Tactical Adjustments: 19 commentary beats; 1 events; goals at 67'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 29 commentary beats. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/11/mexico-v-south-africa-world-cup-2026-opening-match-live"
+  ]
+}

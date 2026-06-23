@@ -1,0 +1,23 @@
+{
+  "match_id": "Portugal_vs_Congo_DR_2026-06-17",
+  "home": "Portugal",
+  "away": "Congo DR",
+  "date": "2026-06-17",
+  "home_read": {
+    "team": "Portugal",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "away_read": {
+    "team": "Congo DR",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report"
+  ]
+}

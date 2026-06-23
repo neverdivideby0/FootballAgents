@@ -128,6 +128,21 @@ def blend(judge: Probs, base: Probs, judge_weight: float) -> Probs:
     return _normalize(*[w * j + (1 - w) * b for j, b in zip(judge, base)])
 
 
+def clamp_to_band(probs: Probs, base: Probs, delta: float) -> Probs:
+    """Bound the contextual move: scale the deviation from the Tier-1 ``base`` so NO
+    probability shifts more than ±delta. Because the deviations sum to zero, scaling
+    keeps the result a valid (summing-to-1) distribution — the contextual (LLM) layer
+    can NUDGE the prior, never reshape it. delta<=0 disables (identity)."""
+    if delta <= 0:
+        return probs
+    dev = [p - b for p, b in zip(probs, base)]
+    worst = max(abs(d) for d in dev)
+    if worst <= delta:
+        return probs
+    s = delta / worst
+    return tuple(b + s * d for b, d in zip(base, dev))
+
+
 def normalize3(h: float, d: float, a: float) -> Probs:
     """Public normalizer for an (home, draw, away) triple."""
     return _normalize(h, d, a)

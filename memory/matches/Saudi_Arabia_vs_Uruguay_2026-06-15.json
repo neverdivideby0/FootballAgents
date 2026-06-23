@@ -1,0 +1,46 @@
+{
+  "match_id": "Saudi_Arabia_vs_Uruguay_2026-06-15",
+  "home": "Saudi Arabia",
+  "away": "Uruguay",
+  "date": "2026-06-15",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 0-15 Initial Setup: 19 commentary beats; 1 events; goals at 7'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 15-45 First-Half Shift: 15 commentary beats; 2 events; goals at 30', 43'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] Half-Time Brief: 21 commentary beats. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 45-75 Tactical Adjustments: 18 commentary beats; 1 events; goals at 60'. Enable use_llm for tactical extraction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "[placeholder] 75-90+ Crunch Time: 12 commentary beats; 2 events; goals at 86', 90'. Enable use_llm for tactical extraction."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/15/fifa-world-cup-2026-live-sweden-v-tunisia-updates-swe-vs-tun-group-f-match-score-latest"
+  ]
+}

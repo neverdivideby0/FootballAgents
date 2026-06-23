@@ -24,6 +24,7 @@ from worldcupagents.agents.schemas import DecidedBy, JudgeRead, MatchVerdict, Ou
 from worldcupagents.dataflows.world_cup_2026 import VENUE_NOTES as _VENUE_NOTES
 from worldcupagents.ensemble.baseline import (
     blend,
+    clamp_to_band,
     expected_goals,
     grid_outcome_probs,
     most_likely_scoreline,
@@ -42,12 +43,22 @@ def assemble_verdict(config: dict, fixture, home, away,
     grid = score_grid(lam_h, lam_a)
     base = grid_outcome_probs(grid)
 
+    # Draw calibration: nudge P(draw) up for close, cagey GROUP games (the Poisson
+    # base under-forecasts draws). Knockouts fold the draw away below, so skip them.
+    if not fixture.knockout:
+        from worldcupagents.ensemble.draw import draw_uplift
+        base = draw_uplift(base, lam_h, lam_a, home, away, config)
+
     if read is not None:
         judge_read = normalize3(read.p_home, read.p_draw, read.p_away)
     else:
         judge_read = shrink_to_uniform(base, 0.3)  # placeholder read
 
+    # Contextual factors (the judge read) may only NUDGE the Tier-1 base, never
+    # reshape it: clamp the blended result to within ±delta of base, then renormalize.
     p_home, p_draw, p_away = blend(judge_read, base, judge_weight)
+    p_home, p_draw, p_away = clamp_to_band(
+        (p_home, p_draw, p_away), base, float(config.get("max_contextual_delta", 0.15)))
 
     decided_by = DecidedBy.REGULATION
     if fixture.knockout:
@@ -122,7 +133,9 @@ def match_lambdas(config: dict, home, away):
         try:
             from worldcupagents.ensemble.strength import load_strength_model, team_lambdas
             strength = load_strength_model(config)
-            return team_lambdas(home.team, away.team, home.fifa_rank, away.fifa_rank, strength)
+            min_games = int(config.get("strength_min_games", 2))
+            return team_lambdas(home.team, away.team, home.fifa_rank, away.fifa_rank,
+                                strength, min_games=min_games)
         except Exception as e:  # noqa: BLE001
             logger.warning("stats-lambda unavailable (%s); rank-Elo baseline", e)
     return expected_goals(home.fifa_rank, away.fifa_rank)
