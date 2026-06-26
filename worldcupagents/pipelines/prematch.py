@@ -338,8 +338,10 @@ def dossier_markdown(doss: dict) -> str:
         if b.get("qual_notes"):
             out.append("- **Style notes:** " + b["qual_notes"].replace("\n", " ")[:400])
         if b.get("player_notes"):
-            out.append("- **Scouting notes (yours):** " + "; ".join(
-                f"{n['player']} — {n['note']}" for n in b["player_notes"]))
+            out.append("- **Scouting notes (yours):**")
+            for n in b["player_notes"]:
+                note = " ".join((n["note"] or "").split())
+                out.append(f"  - {n['player']} — {note}")
         out.append("")
 
     team_md(doss["home"])

@@ -381,11 +381,13 @@ def squad_club_stats(config: dict, squad: list[str], n: int = 8) -> list[PlayerS
 
 
 def players_digest(players: list[PlayerStat]) -> str:
+    """One player per line (lead with the name) — rich but scannable, not a
+    semicolon wall. Callers put the team label on its own line above this."""
     if not players:
         return "(no player stats on record)"
     out = []
     for p in players:
-        s = f"{p.player} {p.goals}G/{p.assists}A in {p.matches}"
+        s = f"{p.player}: {p.goals}G/{p.assists}A in {p.matches}"
         if p.xg is not None and p.xa is not None:
             s += f" (xG {p.xg:.1f}, xA {p.xa:.1f})"
         if p.key_passes is not None:
@@ -396,8 +398,8 @@ def players_digest(players: list[PlayerStat]) -> str:
             s += f", {p.pass_accuracy:.0f}% pass"
         if p.rating is not None:
             s += f", {p.rating:.2f} rating"
-        out.append(s)
-    return "; ".join(out)
+        out.append(f"  - {s}")
+    return "\n".join(out)
 
 
 def _source_suffix(report: MatchTacticalReport) -> str:

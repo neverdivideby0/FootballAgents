@@ -62,7 +62,7 @@ def test_top_players_empty_without_store(tmp_path):
 
 def test_players_digest_formats():
     ps = [PlayerStat(player="Haaland", team="City", goals=27, assists=8, matches=36)]
-    assert "Haaland 27G/8A in 36" in players_digest(ps)
+    assert "Haaland: 27G/8A in 36" in players_digest(ps)
 
 
 # provider scorers parsing (mocked HTTP)

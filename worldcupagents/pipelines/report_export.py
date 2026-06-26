@@ -48,17 +48,11 @@ def build_markdown_report(fx, v: MatchVerdict, final: dict, predictor, cfg: dict
         lines += ["", f"> {v.rationale.strip()}"]
     lines.append("")
 
-    # 1. Pre-match dossier — the structured data the agents worked from (no LLM),
-    # so the reader can sanity-check the call and form their own opinion.
-    try:
-        from worldcupagents.pipelines.prematch import build_dossier, dossier_markdown
-        doss_md = dossier_markdown(build_dossier(fx.home, fx.away, cfg))
-        if doss_md:
-            lines += ["## 1. Pre-Match Dossier", "_The data behind the call._", "", doss_md, ""]
-    except Exception as e:  # noqa: BLE001 — dossier is a bonus; never break the export
-        lines += [f"_(dossier unavailable: {e})_", ""]
+    # (The pre-match dossier — a no-LLM data dump — is intentionally omitted from the
+    # report. It's an on-demand lookup via `footballagents dossier HOME AWAY`; the data
+    # the agents actually used is reflected in the Analyst Reports below.)
 
-    # 2. Analyst reports — the same data as the analysts framed it for the debate
+    # 1. Analyst reports — the same data as the analysts framed it for the debate
     # (bulletised so it scans, not a wall of text).
     reports = [
         ("Form", final.get("form_report", "")),
@@ -66,27 +60,27 @@ def build_markdown_report(fx, v: MatchVerdict, final: dict, predictor, cfg: dict
         ("Player", final.get("player_report", "")),
     ]
     if any(text for _, text in reports):
-        lines += ["## 2. Analyst Reports", "_How the analysts framed the dossier for the debate._", ""]
+        lines += ["## 1. Analyst Reports", "_How the analysts framed the data for the debate._", ""]
         for name, text in reports:
             if text:
                 lines += [f"**{name} analyst**", "", _bullets(text), ""]
 
-    # 3. Advocate debate
+    # 2. Advocate debate
     debate = (final.get("debate_state") or {}).get("history", "").strip()
-    lines += ["## 3. Advocate Debate", "", debate or "_(no debate — LLM disabled)_", ""]
+    lines += ["## 2. Advocate Debate", "", debate or "_(no debate — LLM disabled)_", ""]
 
-    # 4. Provisional verdict (judge)
+    # 3. Provisional verdict (judge)
     prov = final.get("provisional_verdict")
     if prov is not None:
-        lines += ["## 4. Provisional Verdict (Judge)", "", _verdict_md(prov, fx), ""]
+        lines += ["## 3. Provisional Verdict (Judge)", "", _verdict_md(prov, fx), ""]
 
-    # 5. Scenario debate
+    # 4. Scenario debate
     scenario = (final.get("scenario_debate_state") or {}).get("history", "").strip()
     if scenario:
-        lines += ["## 5. Scenario (Risk) Debate", "", scenario, ""]
+        lines += ["## 4. Scenario (Risk) Debate", "", scenario, ""]
 
-    # 6. Final verdict
-    lines += ["## 6. Final Verdict", "", _verdict_md(v, fx)]
+    # 5. Final verdict
+    lines += ["## 5. Final Verdict", "", _verdict_md(v, fx)]
     if prov is not None and prov != v:
         lines += ["", f"_Adjusted from the judge's provisional read "
                       f"(H {prov.p_home:.0%} / D {prov.p_draw:.0%} / A {prov.p_away:.0%}) "

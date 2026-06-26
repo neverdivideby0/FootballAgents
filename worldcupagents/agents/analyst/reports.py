@@ -14,6 +14,7 @@ and are read by the advocates, the judge, and the scenario pundits.
 from __future__ import annotations
 
 import logging
+import re
 
 from worldcupagents.agents.briefs import profile_brief
 from worldcupagents.graph.state import MatchState
@@ -163,8 +164,14 @@ def _wh_store(config: dict):
 
 
 def _fmt_wh_match(m: dict, team: str) -> str:
-    """'W 3-0 v Chile (2026-03-24, WC qualification)' from the team's perspective."""
-    is_home = m["home_team"] == team
+    """'W 3-0 v Chile (2026-03-24, WC qualification)' from the team's perspective.
+
+    Perspective is decided alias-aware: the warehouse stores 'Korea Republic' while a
+    prediction may carry 'South Korea', so a raw string compare would flip the score AND
+    label the team's own canonical name as the opponent ('lost to Korea Republic')."""
+    from worldcupagents.dataflows.names import canonical_name, normalize_key
+    me = normalize_key(canonical_name(team))
+    is_home = normalize_key(canonical_name(m["home_team"])) == me
     gf, ga = (m["home_score"], m["away_score"]) if is_home else (m["away_score"], m["home_score"])
     opp = m["away_team"] if is_home else m["home_team"]
     wdl = "W" if gf > ga else ("L" if gf < ga else "D")
@@ -300,9 +307,9 @@ def _player_notes_line(config: dict, profile) -> str:
         kept = [n for n in notes if not squad or _fold_name(n["player"]) in squad]
         if not kept:
             return ""
-        parts = "; ".join(f"{n['player']} — {n['note']}" for n in kept)
         srcs = sorted({n.get("source") or "manual" for n in kept})
-        return f"Scouting notes ({profile.team}): {parts} [source: {', '.join(srcs)}]"
+        parts = "\n".join(f"  - {n['player']} — {_one_sentence(n['note'])}" for n in kept)
+        return f"Scouting notes ({profile.team}) [source: {', '.join(srcs)}]:\n{parts}"
     except Exception as e:  # noqa: BLE001
         logger.warning("player notes line failed for %r (%s)", profile.team, e)
         return ""
@@ -311,6 +318,17 @@ def _player_notes_line(config: dict, profile) -> str:
 def _fold_name(name: str) -> str:
     import unicodedata
     return unicodedata.normalize("NFKD", name or "").encode("ascii", "ignore").decode().lower()
+
+
+def _one_sentence(text: str, limit: int = 220) -> str:
+    """Trim a rich note to a single clean sentence so a player line scans — but keep
+    the substance (don't hard-truncate mid-word below ~one sentence)."""
+    t = " ".join((text or "").split())
+    if not t:
+        return ""
+    m = re.search(r"[.!?](\s|$)", t)
+    first = t[: m.start() + 1] if m and m.start() + 1 >= 40 else t
+    return first if len(first) <= limit else first[:limit].rsplit(" ", 1)[0] + "…"
 
 
 def _squad_only(rows: list[dict], squad_names, key: str = "player") -> list[dict]:
@@ -349,9 +367,10 @@ def _wc_player_metrics_line(config: dict, team: str, squad_names=None) -> str:
                 seg.append(f"xG {float(r['xg']):.1f}")
             if r.get("goals"):
                 seg.append(f"{int(r['goals'])}g")
-            parts.append(" ".join(seg[:1]) + ": " + ", ".join(seg[1:]) if len(seg) > 1 else seg[0])
-        return (f"{team} WC event metrics: " + "; ".join(parts)
-                + " [source: StatsBomb open data]")
+            line = (seg[0] + ": " + ", ".join(seg[1:])) if len(seg) > 1 else seg[0]
+            parts.append(f"  - {line}")
+        return (f"{team} WC event metrics [source: StatsBomb open data]:\n"
+                + "\n".join(parts))
     except Exception as e:  # noqa: BLE001
         logger.warning("wc player metrics line failed for %r (%s)", team, e)
         return ""
@@ -372,12 +391,12 @@ def _career_totals_line(config: dict, team: str, squad_names=None) -> str:
             store.close()
         if not totals:
             return ""
-        parts = "; ".join(
-            f"{t['player']} {t['caps']} caps, {t['goals'] or 0} intl goals"
+        parts = "\n".join(
+            f"  - {t['player']}: {t['caps']} caps, {t['goals'] or 0} intl goals"
             + (f" ({t['start_year']}–{t['end_year'] or 'present'})" if t.get("start_year") else "")
             for t in totals)
         src = totals[0].get("source_url") or totals[0].get("source_id") or "wikipedia"
-        return f"{team} career totals: {parts} [source: {src}]"
+        return f"{team} career totals [source: {src}]:\n{parts}"
     except Exception as e:  # noqa: BLE001
         logger.warning("career totals line failed for %r (%s)", team, e)
         return ""
@@ -514,7 +533,7 @@ def make_player_analyst(config: dict, llm=None, usage_acc: dict | None = None):
                 logger.warning("player analyst: top_players failed for %r (%s)", team, e)
                 ps = []
             label = "club form" if (not is_league and ps and any(p.xg is not None for p in ps)) else ""
-            lines.append(f"{team}{' (' + label + ')' if label else ''}: {players_digest(ps)}")
+            lines.append(f"{team}{' (' + label + ')' if label else ''}:\n{players_digest(ps)}")
             for p in ps:
                 if p.source and p.source not in sources:
                     sources.append(p.source)
