@@ -10,11 +10,31 @@ errors degrade visibly (never crash a prediction).
 from __future__ import annotations
 
 import logging
+import re
 
 from worldcupagents.agents.briefs import profile_brief
 from worldcupagents.graph.state import MatchState
 
 logger = logging.getLogger(__name__)
+
+_SCORE = r"\d+\s*[-–]\s*\d+"
+_SCORELINES_RE = re.compile(r"Scorelines?:\s*(.+?)(?:\|\s*Black\s*swan|$)", re.IGNORECASE | re.DOTALL)
+_BLACKSWAN_RE = re.compile(r"Black\s*swan:\s*([^\n]+)", re.IGNORECASE)
+_SCORE_RE = re.compile(_SCORE)
+
+
+def _parse_scorelines(text: str) -> tuple[list[str], str]:
+    """Pull the advocate's required final line — `Scorelines: 2-1, 1-1, 2-0 | Black swan: 1-3
+    (if …)` — into (up to 3 likely scorelines, black-swan line). Empty when absent."""
+    likely: list[str] = []
+    m = _SCORELINES_RE.search(text or "")
+    if m:
+        likely = [s.strip() for s in _SCORE_RE.findall(m.group(1))][:3]
+    bs = ""
+    mb = _BLACKSWAN_RE.search(text or "")
+    if mb:
+        bs = mb.group(1).strip()
+    return likely, bs
 
 
 def make_advocate(side: str, config: dict, llm=None, usage_acc: dict | None = None):
@@ -50,6 +70,13 @@ def make_advocate(side: str, config: dict, llm=None, usage_acc: dict | None = No
             "current_response": argument,
             "count": debate.get("count", 0) + 1,
         })
+        # Capture this side's scoreline call (agents-mode verdict reads these). The
+        # latest round wins — a later argument refines the earlier one.
+        likely, black_swan = _parse_scorelines(text)
+        if likely:
+            debate[f"{side}_scorelines"] = likely
+        if black_swan:
+            debate[f"{side}_black_swan"] = black_swan
         return {"debate_state": debate}
 
     return advocate
@@ -73,6 +100,11 @@ def _llm_argument(llm, label, me, opp, state, debate, usage_acc: dict | None = N
     records = ctx.get("records") or ""
     rec_line = f"HOME & HEAD-TO-HEAD RECORD: {records}\n" if records else ""
     parity = f"\n{ctx['parity']}\n" if ctx.get("parity") else ""
+    knockout_rule = (
+        " This is a KNOCKOUT: a draw is only valid as the FULL-TIME score — if you list a level "
+        "scoreline, say who advances and how (extra time or penalties)."
+        if ctx.get("knockout") else ""
+    )
     from worldcupagents.agents.judge.pundit import reports_block
     reports = reports_block(state)
     prompt = f"""You are the {label} Team Advocate for {me.team}, debating whether {me.team} \
@@ -99,6 +131,14 @@ Write a persuasive, evidence-grounded argument (≤180 words) for why {me.team} 
 - CITE your evidence: when you reference a result, stat, or tactical observation, quote it with
   its date and source tag exactly as it appears in the data above (e.g. "2-1 v Chelsea FC
   (2026-05-24) [fdcouk:PL:2425]"). Uncited specifics will be treated as hallucinations.
+- You MUST include a line beginning "Scorelines:" giving your THREE most likely final scorelines
+  for THIS match (home-away order, most likely first), then " | Black swan:" with ONE
+  low-probability-but-plausible surprise scoreline that breaks the expected result — a draw where
+  a win is expected, or an upset/blowout — and in parentheses ONE clause on how it happens.{knockout_rule}
+  Be DECISIVE, not timid: do NOT default to one-goal margins. If {me.team} is clearly on top,
+  your lead scoreline should reflect a real margin (2-3 goals, occasionally a rout); reserve
+  1-0 / 1-1 for genuinely even games. Pick the score the football actually points to.
+  Example: "Scorelines: 3-1, 2-0, 4-1 | Black swan: 1-2 (if our high line is picked off on the break)".
 - You MUST finish with a line beginning "Weaknesses:" honestly naming {me.team}'s own \
 vulnerabilities in THIS matchup. This is required to keep the debate unbiased."""
     msg = llm.invoke(prompt)

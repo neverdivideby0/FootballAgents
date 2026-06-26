@@ -40,8 +40,12 @@ class Predictor:
 
         if self.config.get("use_llm") and (deep_llm is None or quick_llm is None):
             try:
-                deep_llm  = deep_llm  or create_llm(self.config["llm_provider"], self._deep_model)
-                quick_llm = quick_llm or create_llm(self.config["llm_provider"], self._quick_model)
+                # Higher temperature → bolder, less hedged scorelines from the debate
+                # (the agents stop defaulting to 1-goal margins). None = provider default.
+                temp = self.config.get("llm_temperature")
+                kw = {"temperature": temp} if temp is not None else {}
+                deep_llm  = deep_llm  or create_llm(self.config["llm_provider"], self._deep_model, **kw)
+                quick_llm = quick_llm or create_llm(self.config["llm_provider"], self._quick_model, **kw)
             except Exception as e:  # noqa: BLE001 — missing key/SDK shouldn't crash; degrade to baseline
                 logger.warning(
                     "use_llm is set but the LLM client is unavailable (%s); running baseline-only. "

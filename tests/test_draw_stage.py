@@ -14,6 +14,7 @@ from worldcupagents.ensemble.verdict import assemble_verdict
 def _cfg(tmp_path) -> dict:
     cfg = copy.deepcopy(DEFAULT_CONFIG)
     cfg["data_dir"] = str(tmp_path / "data")   # no store → rank-Elo, hermetic
+    cfg["verdict_mode"] = "stats"              # this file tests the statistical path
     return cfg
 
 

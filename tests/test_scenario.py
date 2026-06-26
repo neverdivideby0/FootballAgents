@@ -95,7 +95,9 @@ def test_final_pundit_read_drives_final_verdict_with_blend(tmp_path):
     quick = FakeQuickLLM("Punchy point. Weaknesses: none.")
 
     fx = Fixture(home="Brazil", away="Mexico", stage=Stage.GROUP)
-    final, v = Predictor(_cfg(tmp_path, use_llm=True), deep_llm=deep, quick_llm=quick).predict(fx)
+    # Blend math is a STATS-path property; agents mode would use the read verbatim.
+    cfg = _cfg(tmp_path, use_llm=True, verdict_mode="stats")
+    final, v = Predictor(cfg, deep_llm=deep, quick_llm=quick).predict(fx)
 
     prov = final["provisional_verdict"]
     assert v != prov                                         # the final pundit moved the verdict

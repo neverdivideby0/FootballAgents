@@ -40,7 +40,8 @@ def make_judge(config: dict, llm=None, usage_acc: dict | None = None):
             except Exception as e:  # noqa: BLE001 — degrade to baseline, visibly
                 logger.warning("Judge LLM error (%s); baseline-only verdict", e)
 
-        verdict = assemble_verdict(config, fx, home, away, read, judge_weight)
+        verdict = assemble_verdict(config, fx, home, away, read, judge_weight,
+                                   debate_state=state.get("debate_state"))
         # provisional_verdict feeds the scenario debate; verdict keeps the graph
         # correct (and identical to today) when the scenario layer is off.
         return {"verdict": verdict, "provisional_verdict": verdict}
@@ -57,6 +58,35 @@ def stage_line(config: dict, fx) -> tuple[str, str]:
     if config.get("league_kind") == "league":
         return "league match", "LEAGUE MATCH — a draw is a valid outcome."
     return fx.stage.value, "GROUP STAGE — a draw is a valid outcome."
+
+
+def scorelines_block(state: MatchState) -> str:
+    """The advocates' proposed scorelines (agents-mode input to the judge): each
+    side's 3 likely scorelines + its black-swan call. '' when none were captured."""
+    debate = state.get("debate_state") or {}
+    home, away = state["home_profile"].team, state["away_profile"].team
+    lines = []
+    for team, side in ((home, "home"), (away, "away")):
+        likely = debate.get(f"{side}_scorelines") or []
+        swan = debate.get(f"{side}_black_swan") or ""
+        if likely or swan:
+            seg = f"{team}: likely {', '.join(likely) or '—'}"
+            if swan:
+                seg += f"; black swan {swan}"
+            lines.append(seg)
+    if not lines:
+        return ""
+    return ("\nADVOCATES' SCORELINE CALLS (decide THE final score from these — you may agree, "
+            "split the difference, or override with reason):\n" + "\n".join(lines) + "\n")
+
+
+def knockout_score_rule(fx) -> str:
+    """Shared instruction: in a knockout a draw is only the full-time score; name the winner."""
+    if not fx.knockout:
+        return ""
+    return ("\nKNOCKOUT RULE: there must be a winner. A level scoreline is allowed ONLY as the "
+            "full-time result — if you call one, set decided_by to extra_time or penalties and make "
+            "the probabilities name who ADVANCES (p_draw ≈ 0).\n")
 
 
 def reports_block(state: MatchState) -> str:
@@ -101,6 +131,8 @@ def _llm_judge_read(llm, state: MatchState, usage_acc: dict | None = None,
     calibration = (f"\nCALIBRATION FEEDBACK (our own resolved track record — correct for it):\n{cal}\n"
                    if cal else "")
     parity = f"\n{ctx['parity']}\n" if ctx.get("parity") else ""
+    scorelines = scorelines_block(state)
+    knockout = knockout_score_rule(fx)
     stage_label, stage_rule = stage_line(config or {}, fx)
     prompt = f"""You are a seasoned, neutral football pundit giving the final verdict on \
 {home.team} (home) vs {away.team} (away).
@@ -110,7 +142,7 @@ Venue: {ctx.get('venue_note') or ctx.get('venue') or 'TBD'}.
 
 {home.team}: {profile_brief(home)}
 {away.team}: {profile_brief(away)}
-{rec_line}{parity}{market}{focus}{calibration}{reports}{tactical}
+{rec_line}{parity}{market}{focus}{calibration}{reports}{tactical}{scorelines}{knockout}
 The two team advocates debated:
 {history or '(no debate available)'}
 
@@ -126,8 +158,13 @@ single player most likely to decide it in x_factors.
 In key_factors and rationale, CITE the evidence you rely on with its date/source tag exactly
 as given above (e.g. "(2026-05-24) [fdcouk:PL:2425]"); treat any advocate claim that lacks a
 source in the data as unverified.
-Return calibrated probabilities for HOME_WIN / DRAW / AWAY_WIN that sum to 1, a likely
-scoreline, your confidence, the decisive factors, and the external x-factors."""
+Return calibrated probabilities for HOME_WIN / DRAW / AWAY_WIN that sum to 1, THE final
+scoreline (decide it from the advocates' scoreline calls above — agree with the stronger case,
+split the difference, or override with reason), decided_by where it's a knockout, your
+confidence, the decisive factors, and the external x-factors.
+The scoreline must MATCH your own read: if you've made one side a clear favourite (winner prob
+≳ 0.55), pick a decisive margin (often 2-0, 3-1, sometimes a rout), not a timid 1-0. Reserve
+one-goal and level scorelines for genuinely tight matches. Don't hedge the score."""
     # include_raw=True lets us capture token usage from the underlying AIMessage
     chain = llm.with_structured_output(JudgeRead, include_raw=True)
     result = chain.invoke(prompt)
