@@ -154,3 +154,13 @@ def test_fetch_match_refuses_unrelated_liveblog():
     feed = _provider_with_response(payload).fetch_match("Uruguay", "Cape Verde Islands", "2026-06-21")
     assert feed.sources == []
     assert feed.lines == []
+
+
+def test_search_url_uses_a_date_window_not_a_single_day():
+    # Liveblogs/reports are stamped night-of or the next morning, and store dates drift,
+    # so the Guardian search must BRACKET the fixture date, not pin a single day.
+    from worldcupagents.dataflows.commentary.guardian import _date_window
+    assert _date_window("2026-06-25") == ("2026-06-23", "2026-06-28")  # [-2, +3]
+    assert _date_window(None) is None and _date_window("not-a-date") is None
+    url = _provider_with_response({"response": {"results": []}})._search_url("Japan", "Sweden", "2026-06-25")
+    assert "from-date=2026-06-23" in url and "to-date=2026-06-28" in url

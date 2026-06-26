@@ -18,6 +18,7 @@ import html
 import logging
 import os
 import re
+from datetime import date as _date_cls, timedelta
 from urllib.parse import quote_plus
 
 from worldcupagents.agents.schemas import MatchEvent
@@ -29,6 +30,21 @@ logger = logging.getLogger(__name__)
 
 BASE = "https://content.guardianapis.com"
 _TTL = 86_400  # 24h; post-game commentary is immutable
+# Search a WINDOW around the fixture date, not a single day: liveblogs / "as it
+# happened" pages and match reports are stamped the night-of or the morning after
+# (late kickoffs cross midnight UTC), and store fixture dates drift by a day vs the
+# Guardian's publication date. A single-day filter silently missed most reports.
+_WINDOW_BACK, _WINDOW_FWD = 2, 3
+
+
+def _date_window(date: str | None) -> tuple[str, str] | None:
+    """(from-date, to-date) bracketing the fixture date, or None if unparseable."""
+    try:
+        base = _date_cls.fromisoformat((date or "")[:10])
+    except (ValueError, TypeError):
+        return None
+    return ((base - timedelta(days=_WINDOW_BACK)).isoformat(),
+            (base + timedelta(days=_WINDOW_FWD)).isoformat())
 _TAG_RE = re.compile(r"<[^>]+>")
 
 # A block body that begins with a minute marker, optionally prefixed "ET" (extra time):
@@ -149,10 +165,11 @@ class GuardianCommentaryProvider:
         q = quote_plus(f"{home} {away}")
         url = (
             f"{BASE}/search?q={q}&section=football&show-blocks=all&show-fields=bodyText"
-            f"&page-size=10&order-by=relevance&api-key={self.api_key}"
+            f"&page-size=20&order-by=relevance&api-key={self.api_key}"
         )
-        if date:
-            url += f"&from-date={date}&to-date={date}"
+        window = _date_window(date)
+        if window:
+            url += f"&from-date={window[0]}&to-date={window[1]}"
         return url
 
     def fetch_articles(self, home: str, away: str, date: str | None = None,
