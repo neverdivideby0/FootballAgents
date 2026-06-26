@@ -31,9 +31,10 @@ from worldcupagents.agents.schemas import (
     PhaseChunk,
 )
 
-# "45+2 min", "90 + 4'", "63 min", "63'" — minute with optional added time.
+# "45+2 mins", "90 + 4'", "63 min", "63'" — minute with optional added time.
+# "mins" (plural) is the Guardian's house style for in-match updates, so accept both.
 _MINUTE_RE = re.compile(
-    r"\b(\d{1,3})\s*(?:\+\s*(\d{1,2}))?\s*(?:min\b|’|'|′)",
+    r"\b(\d{1,3})\s*(?:\+\s*(\d{1,2}))?\s*(?:mins?\b|’|'|′)",
     re.IGNORECASE,
 )
 # Break markers. Order matters: check full/half time words explicitly.

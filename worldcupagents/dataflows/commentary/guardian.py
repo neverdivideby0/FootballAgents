@@ -48,8 +48,9 @@ def _date_window(date: str | None) -> tuple[str, str] | None:
 _TAG_RE = re.compile(r"<[^>]+>")
 
 # A block body that begins with a minute marker, optionally prefixed "ET" (extra time):
-#   "23 min: …", "45+2 min: …", "ET 29 min: …"
-_BODY_MIN = re.compile(r"^\s*(ET\b\s*)?(\d{1,3})(?:\s*\+\s*(\d{1,2}))?\s*min\b", re.IGNORECASE)
+#   "23 min: …", "45+2 mins: …", "ET 29 mins: …". The Guardian writes "mins" (plural)
+#   even for minute 1, so accept both — missing the plural dropped most in-match lines.
+_BODY_MIN = re.compile(r"^\s*(ET\b\s*)?(\d{1,3})(?:\s*\+\s*(\d{1,2}))?\s*mins?\b", re.IGNORECASE)
 # Minute inside a goal title's parens: "(Messi 23 pen)", "(Di Maria 36)", "(Mbappe 118 pen)".
 _PAREN_MIN = re.compile(r"\([^()]*?\b(\d{1,3})(?:\s*\+\s*(\d{1,2}))?\s*(?:pen|og|o\.g\.)?\s*\)", re.IGNORECASE)
 _TITLE_GOAL = re.compile(r"\bGOAL\b", re.IGNORECASE)

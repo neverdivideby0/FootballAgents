@@ -31,6 +31,10 @@ from worldcupagents.dataflows.commentary.chunker import (
         ("45+2 min before the break", "play", 45, 2),
         ("90 + 4' deep into stoppage", "play", 90, 4),
         ("1 min: kick-off", "play", 1, 0),
+        # The Guardian writes "mins" (plural) for every in-match update — must parse.
+        ("1 mins: Czechia play it back", "play", 1, 0),
+        ("14 mins: first save of the night", "play", 14, 0),
+        ("45+2 mins: into the break", "play", 45, 2),
     ],
 )
 def test_parse_minute_play(text, kind, base, added):
