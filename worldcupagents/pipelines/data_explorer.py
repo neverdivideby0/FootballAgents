@@ -354,15 +354,32 @@ def _memory(config: dict) -> dict:
     out: dict = {"dir": str(mem), "tactical": [], "scouting": [], "critic": [],
                  "log": {"pending": 0, "resolved": 0, "avg_brier": None, "with_reflection": 0}}
 
+    pdir = mem / "punditry"
     for f in sorted((mem / "matches").glob("*.json")) if (mem / "matches").exists() else []:
         try:
             d = json.loads(f.read_text(encoding="utf-8"))
-            populated = sum(1 for p in d.get("phases", [])
+            phases = d.get("phases", [])
+            populated = sum(1 for p in phases
                             if p.get("formations_blocks") or p.get("adjustments") or p.get("key_matchups"))
-            out["tactical"].append({"match": d.get("match_id", f.stem), "date": d.get("date"),
-                                    "phases_with_content": populated,
-                                    "source": next((s for s in d.get("sources", []) if s.startswith("http")),
-                                                   (d.get("sources") or ["?"])[0])})
+            mid = d.get("match_id", f.stem)
+            # Offline runs leave every phase summary as a "[placeholder] …" line.
+            placeholder = bool(phases) and all(
+                (p.get("summary") or "").lstrip().startswith("[placeholder]") for p in phases)
+            # The sibling match-report digest (Guardian 'Match report' tab), when present.
+            punditry = None
+            pf = pdir / f"{mid}.json"
+            if pf.exists():
+                try:
+                    punditry = json.loads(pf.read_text(encoding="utf-8"))
+                except Exception:  # noqa: BLE001
+                    punditry = None
+            out["tactical"].append({
+                "match": mid, "date": d.get("date"),
+                "phases_with_content": populated, "placeholder": placeholder,
+                "phases": phases, "punditry": punditry,
+                "source": next((s for s in d.get("sources", []) if s.startswith("http")),
+                               (d.get("sources") or ["?"])[0]),
+            })
         except Exception:  # noqa: BLE001
             continue
 
@@ -818,13 +835,54 @@ def render_html(inv: dict) -> str:
             f"<td>{e(', '.join(r['sources']))}</td></tr>"
             for r in inv["store"].get("wc_coverage", []))
 
+    def _phase_block(p: dict) -> str:
+        seg = [f"<div style='margin:.5em 0'><b>{e(p.get('phase') or '')}</b>"
+               f"<div class=dim style='margin:.15em 0'>{e(p.get('summary') or '(no summary)')}</div>"]
+        for label, key in (("Formations/blocks", "formations_blocks"),
+                           ("Adjustments", "adjustments"), ("Key matchups", "key_matchups")):
+            vals = p.get(key) or []
+            if vals:
+                seg.append(f"<div><i>{label}:</i> {e('; '.join(str(v) for v in vals))}</div>")
+        seg.append("</div>")
+        return "".join(seg)
+
+    def _punditry_block(pu: dict | None) -> str:
+        if not pu:
+            return ""
+        def team_read(r):
+            if not r:
+                return ""
+            bits = []
+            for label, key in (("shape", "tactical_shape"), ("players", "standout_players"),
+                               ("fitness", "fatigue_injuries")):
+                vals = r.get(key) or []
+                if vals:
+                    bits.append(f"<div><i>{label}:</i> {e('; '.join(str(v) for v in vals))}</div>")
+            mom = r.get("momentum") or ""
+            if mom:
+                bits.append(f"<div class=dim>{e(mom)}</div>")
+            return f"<div style='margin:.3em 0'><b>{e(r.get('team') or '')}</b>{''.join(bits)}</div>"
+        return ("<div style='margin-top:.6em;border-top:1px solid #e6e6e6;padding-top:.4em'>"
+                "<b>📰 Match report</b>"
+                f"{team_read(pu.get('home_read'))}{team_read(pu.get('away_read'))}</div>")
+
     def tactical_rows():
         out = []
         for t in inv["memory"]["tactical"]:
             src = t["source"]
-            link = f'<a href="{e(src)}" target="_blank">{e(src[:60])}…</a>' if src.startswith("http") else e(src)
-            out.append(f"<tr><td>{e(t['match'])}</td><td>{e(t['date'] or '—')}</td>"
-                       f"<td>{t['phases_with_content']}/5</td><td>{link}</td></tr>")
+            link = (f'<a href="{e(src)}" target="_blank">source ↗</a>'
+                    if str(src).startswith("http") else e(src))
+            chip = (" <span class=pill style='background:#fff3cd;color:#7a5b00'>"
+                    "offline placeholder — run analyze-match --provider</span>"
+                    if t.get("placeholder") else "")
+            body = "".join(_phase_block(p) for p in t.get("phases") or [])
+            body += _punditry_block(t.get("punditry"))
+            out.append(
+                "<details class='card' style='margin:.45em 0'>"
+                f"<summary style='cursor:pointer'><b>{e(t['match'])}</b> · {e(t['date'] or '—')} · "
+                f"<span class=pill>{t['phases_with_content']}/5 phases</span>{chip} · {link}</summary>"
+                f"<div style='margin-top:.5em'>{body or '<span class=dim>(no content)</span>'}</div>"
+                "</details>")
         return "\n".join(out)
 
     log = inv["memory"]["log"]
@@ -1122,11 +1180,12 @@ def render_html(inv: dict) -> str:
     <span class="pill">avg Brier: {log['avg_brier'] if log['avg_brier'] is not None else '—'}</span>
     <span class="pill">reflections: {log['with_reflection']}</span>
   </div>
-  <h2>Tactical reports</h2>
-  <table>
-    <tr><th>Match</th><th>Date</th><th>Phases with content</th><th>Source</th></tr>
-    {tactical_rows() or '<tr><td colspan=4 class=dim>(none — run analyze-match)</td></tr>'}
-  </table>
+  <h2>Tactical reports <span class="dim">(click a match to read it)</span></h2>
+  <p class="dim" style="max-width:70ch">Scraped from the Guardian live feed (→ the 5-phase tactical report)
+  + match report (→ the punditry digest). The structured shape / adjustments / matchups are filled by an
+  LLM — <code>analyze-match HOME AWAY --provider &lt;p&gt;</code> or <code>analyze-all --provider &lt;p&gt;</code>;
+  offline runs store the commentary but leave the phases as placeholders (hence <code>0/5</code>).</p>
+  {tactical_rows() or '<div class=dim>(none — run analyze-match)</div>'}
 </div>
 
 <!-- CALIBRATION -->
