@@ -15,6 +15,7 @@ If you press Y the file is saved to exports/ with a unique filename.
 from __future__ import annotations
 
 import copy
+import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -1225,6 +1226,24 @@ def refresh(
     console.print(f"[green]✓ explorer[/green] {path}")
 
 
+def _digest_is_placeholder(path: Path) -> bool:
+    """True when a punditry digest exists but is an OFFLINE PLACEHOLDER (no LLM extraction
+    yet) — so an `--provider` run can upgrade it instead of skipping it as 'already done'."""
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 — unreadable → treat as needing (re)analysis
+        return True
+    return any(((d.get(side) or {}).get("momentum") or "").lstrip().startswith("[placeholder]")
+               for side in ("home_read", "away_read"))
+
+
+def _needs_analysis(pdir: Path, m: dict, *, force: bool = False) -> bool:
+    """A finished match needs (re)analysis if it has no digest yet, or only a placeholder."""
+    from worldcupagents.agents.analyst.tactical import make_match_id
+    p = pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json"
+    return force or not p.exists() or _digest_is_placeholder(p)
+
+
 def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
     """One idempotent matchday tick: pull results, distil punditry + tactics for any
     newly-FINISHED match not yet processed, then auto-resolve + re-fit the weight."""
@@ -1249,7 +1268,9 @@ def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
         console.print(f"[green]✓ {lg_key}[/green] results updated "
                       f"(+{res['added']} rows, {res['total']} total)")
 
-    # 2. Finished WC matches whose punditry digest doesn't exist yet = "just finished".
+    # 2. Newly-FINISHED matches (no digest) — plus, when an LLM is on, placeholder digests
+    #    left by an earlier offline tick (so `watch --provider` upgrades them). Offline ticks
+    #    don't re-touch placeholders, to avoid re-scraping Guardian every poll.
     comp = cfg.get("fd_competition")
     store = MatchStore.from_config(cfg)
     try:
@@ -1259,8 +1280,11 @@ def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
         store.close()
     pdir = Path(cfg.get("memory_dir", "memory")) / "punditry"
     from worldcupagents.agents.analyst.tactical import make_match_id
+
+    def _dp(m):
+        return pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json"
     todo = [m for m in finished
-            if not (pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json").exists()]
+            if not _dp(m).exists() or (cfg.get("use_llm") and _digest_is_placeholder(_dp(m)))]
 
     if todo:
         console.print(f"[cyan]▸ {len(todo)} newly-finished match(es) to analyse[/cyan]")
@@ -1485,7 +1509,6 @@ def analyze_all_cmd(
       footballagents analyze-all                     # offline: list finished games to analyse
       footballagents analyze-all --provider openai   # catch memory up on every game so far
     """
-    from worldcupagents.agents.analyst.tactical import make_match_id
     from worldcupagents.dataflows.match_store import MatchStore
     from worldcupagents.pipelines.analyze_match import analyze_match
     from worldcupagents.pipelines.fetch_data import fetch_data
@@ -1512,8 +1535,9 @@ def analyze_all_cmd(
     finally:
         store.close()
     pdir = Path(cfg.get("memory_dir", "memory")) / "punditry"
-    todo = [m for m in finished
-            if force or not (pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json").exists()]
+    # Re-analyse games with no digest OR only a placeholder digest (an offline run leaves
+    # placeholders; a later --provider run should UPGRADE them, not skip them).
+    todo = [m for m in finished if _needs_analysis(pdir, m, force=force)]
     todo.sort(key=lambda m: m["date"])
     if limit and limit > 0:
         todo = todo[:limit]
