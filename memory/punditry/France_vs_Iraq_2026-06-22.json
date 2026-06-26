@@ -1,0 +1,21 @@
+{
+  "match_id": "France_vs_Iraq_2026-06-22",
+  "home": "France",
+  "away": "Iraq",
+  "date": "2026-06-22",
+  "home_read": {
+    "team": "France",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "away_read": {
+    "team": "Iraq",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "sources": []
+}

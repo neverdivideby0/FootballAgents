@@ -1,0 +1,47 @@
+{
+  "match_id": "Belgium_vs_Iran_2026-06-21",
+  "home": "Belgium",
+  "away": "Iran",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Belgium",
+    "tactical_shape": [
+      "4-3-3 / attacking approach with Kevin De Bruyne creating from wide areas and by the byline",
+      "Pressed for control and volume of shots but were blunt in attack; 15 shots to 4 before the late red card",
+      "Lost structure after Nathan Ngoy\u2019s sending-off and were rattled in the closing stages"
+    ],
+    "standout_players": [
+      "Alireza Beiranvand was the decisive opponent, making the outstanding save of the match to deny Maxim De Cuyper",
+      "Kevin De Bruyne glittered in moments, especially with the byline cross/pass that nearly set up the opener",
+      "Thibaut Courtois was alert and made an instinctive save from Hossein Kanaanizadegan",
+      "Romelu Lukaku huffed and puffed on his first start for club or country in more than 12 months; De Cuyper missed a huge chance"
+    ],
+    "fatigue_injuries": [
+      "J\u00e9r\u00e9my Doku was absent through illness",
+      "Nathan Ngoy was reduced to 10 men after wiping out Mehdi Taremi"
+    ],
+    "momentum": "Pressure is building after another disappointing result and Belgium now face a must-win final group match to save their tournament."
+  },
+  "away_read": {
+    "team": "Iran",
+    "tactical_shape": [
+      "Credited for refusing to wilt and staying in the game under pressure",
+      "Used a free-kick routine and long throw threats to create moments; remained disciplined enough to keep Belgium out until the decisive save",
+      "Took advantage of Belgium being reduced to 10 men and finished the match with numerical superiority"
+    ],
+    "standout_players": [
+      "Alireza Beiranvand was the match hero with a miraculous, game-defining save and several other key stops; described by Amir Ghalenoei as one of Iran\u2019s greatest goalkeepers and one of his best days",
+      "Ali Nemati made the critical intervention to stop De Bruyne\u2019s cross before Beiranvand saved from De Cuyper",
+      "Mehdi Taremi had a precise finish ruled out for offside and was the player fouled by Nathan Ngoy",
+      "Hossein Kanaanizadegan tested Courtois with a bouncing effort",
+      "Saeid Ezatolahi forced a full-throttle shot at Courtois after Belgium\u2019s error"
+    ],
+    "fatigue_injuries": [
+      "Ghalenoei noted Iran had only 16 hours\u2019 preparation in LA, two flights and a heavy game"
+    ],
+    "momentum": "Iran\u2019s belief is growing after back-to-back creditable draws, and they remain alive in the group with momentum and a goalkeeper inspiring them."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/21/belgium-iran-world-cup-group-g-match-report"
+  ]
+}

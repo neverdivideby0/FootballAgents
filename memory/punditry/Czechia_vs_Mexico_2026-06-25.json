@@ -1,0 +1,42 @@
+{
+  "match_id": "Czechia_vs_Mexico_2026-06-25",
+  "home": "Czechia",
+  "away": "Mexico",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Czechia",
+    "tactical_shape": [
+      "Koubek left out Patrik Schick and Tomas Soucek and then seemed intent on staying in the game as long as possible",
+      "The side were largely passive and were broken open by Mexico's full-backs rather than imposing a clear attacking shape"
+    ],
+    "standout_players": [
+      "Patrik Schick was omitted from the starting line-up",
+      "Tomas Soucek came on but left the field in obvious distress after landing awkwardly"
+    ],
+    "fatigue_injuries": [
+      "Tomas Soucek landed awkwardly and left the field in obvious distress"
+    ],
+    "momentum": "Czechia depart the tournament without leaving a trace, having failed to put up anything resembling a fight."
+  },
+  "away_read": {
+    "team": "Mexico",
+    "tactical_shape": [
+      "Javier Aguirre made five changes but kept the team competitive rather than heavily rotated",
+      "Mexico attacked through full-backs, with Mateo Ch\u00e1vez and Jorge S\u00e1nchez both surging forward from wide areas",
+      "Gilberto Mora controlled the game from midfield and helped open Czechia up"
+    ],
+    "standout_players": [
+      "Gilberto Mora impressed throughout and was involved in the first two Mexico goals",
+      "Mateo Ch\u00e1vez scored the opener with a calm finish",
+      "Jorge S\u00e1nchez drove through to force the second goal, which Juli\u00e1n Qui\u00f1ones finished",
+      "Juli\u00e1n Qui\u00f1ones tucked in his second of the tournament",
+      "\u00c1lvaro Fidalgo slammed in the third in injury time",
+      "Guillermo Ochoa's introduction was met with a standing ovation; Aguirre called it 'the night of Memo Ochoa'"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Mexico are on a strong surge, winning three straight without conceding and marching on after topping the group."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/25/mexico-czechia-world-cup-2026-match-report"
+  ]
+}

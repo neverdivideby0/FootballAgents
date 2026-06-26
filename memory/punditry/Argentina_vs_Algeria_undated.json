@@ -1,0 +1,29 @@
+{
+  "match_id": "Argentina_vs_Algeria_undated",
+  "home": "Argentina",
+  "away": "Algeria",
+  "date": null,
+  "home_read": {
+    "team": "Argentina",
+    "tactical_shape": [],
+    "standout_players": [
+      "Lionel Messi dazzles; hat-trick to equal World Cup scoring record"
+    ],
+    "fatigue_injuries": [
+      "Messi was recovering from a muscle injury in recent weeks"
+    ],
+    "momentum": "Positive momentum; three points secured, nudging Argentina toward the last 32; Messi poised to add to his history against Austria."
+  },
+  "away_read": {
+    "team": "Algeria",
+    "tactical_shape": [
+      "high-energy approach"
+    ],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "Under pressure after the defeat; must-win upcoming match (vs Jordan); finishing needs to improve."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/16/argentina-algeria-world-cup-group-j-match-report"
+  ]
+}

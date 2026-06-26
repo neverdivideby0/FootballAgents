@@ -1,0 +1,93 @@
+{
+  "match_id": "Belgium_vs_Iran_2026-06-21",
+  "home": "Belgium",
+  "away": "Iran",
+  "date": "2026-06-21",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "Belgium commanding possession and attacking from the start",
+        "Iran defending in a compact, counter-attacking posture",
+        "Belgium sustained attacking wave / onslaught",
+        "Iran trying to counter when they can"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Romelu Lukaku vs Beiranvand",
+        "Romelu Lukaku vs Kanani",
+        "Kevin De Bruyne vs Beiranvand",
+        "Trossard attacking down the left against Iran's defensive line",
+        "De Cuyper delivering from the left"
+      ],
+      "summary": "Belgium begin the phase on the front foot, sustaining long spells of pressure and quickly turning broken Iranian attacks into renewed possession. Their attacks come through left-sided combinations and direct deliveries into the box, with De Bruyne and Lukaku both testing Beiranvand and Iran struggling to get out. Iran\u2019s main response is a compact defensive effort and the occasional counter, but Belgium\u2019s tempo and conviction make it feel like an early onslaught."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "low block",
+        "Belgium boxed Iran in with quick combination play",
+        "Belgium building from wide areas and the left side of the box"
+      ],
+      "adjustments": [
+        "Meunier inverting to create an extra man on the last line"
+      ],
+      "key_matchups": [
+        "Tielemans vs Ezatolahi",
+        "Meunier vs Iran's last line",
+        "Lukaku vs Iran's centre-backs",
+        "Taremi vs Belgium's offside line"
+      ],
+      "summary": "Belgium spent most of the phase pinning Iran back and trying to break a low block through quick combinations and wide delivery, with the main danger coming from Tielemans and Meunier\u2019s right-sided involvement. Iran survived the pressure, then briefly stunned Belgium with Taremi\u2019s disallowed goal before Belgium resumed attacking, now with Meunier inverting to add an extra runner on the last line."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "This phase does not provide any tactical detail about formations, pressing structures, or in-game adjustments. The only football-related point is the half-time scoreline, Belgium 0-0 Iran, alongside a brief comment about Romelu Lukaku\u2019s yellow-card risk and substitution suitability rather than any concrete tactical shift."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Belgium attacking from a wide/right-sided set-piece phase after the break",
+        "Iran potentially shifting from a back four to a back five/defensive four after the Hardani\u2013Jahanbakhsh change"
+      ],
+      "adjustments": [
+        "Iran substituted Hardani for Jahanbakhsh at 46', likely a shape adjustment with an extra attacker coming on for a defender",
+        "Trossard repeatedly moved inside before linking with De Bruyne on Belgium\u2019s right-sided attacks",
+        "De Bruyne remained the main set-piece/crossing source for Belgium"
+      ],
+      "key_matchups": [
+        "Trossard vs Kanani (shot blocked after Trossard moved infield and fed De Bruyne)",
+        "Trossard vs an Iran defender on the foul that left him with a torn sock",
+        "De Bruyne\u2019s deliveries vs Iran\u2019s aerial defence/clearance line",
+        "Saelemaekers vs Iran\u2019s back-post coverage on De Bruyne\u2019s cross"
+      ],
+      "summary": "The second-half opening period was dominated by Belgium, who kept working attacks through De Bruyne\u2019s delivery from the right and Trossard\u2019s drifting inside. Iran\u2019s early substitution suggested a tactical reshuffle, possibly toward a back four, but Belgium still created the best chances from wide free kicks and corners, with Kanani and the back line repelling the danger for the moment."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Belgium sitting back/defending deeper",
+        "Iran chasing the game with more attacking numbers"
+      ],
+      "adjustments": [
+        "Iran made two attacking substitutions: Moghanloo on for Ghoddos, then Hosseinzadeh on for Ezatolahi",
+        "Iran repeatedly moved a striker on for a defender, increasing attacking risk",
+        "Belgium allowed Iran more space by dropping off and looking to protect the lead"
+      ],
+      "key_matchups": [
+        "Jahanbakhsh vs Belgium\u2019s defending in the box",
+        "Ezatolahi vs Courtois (long-range shot saved/held)",
+        "De Bruyne vs Iran\u2019s defensive line on free-kicks and wide delivery",
+        "Castagne vs Iran\u2019s defensive cover on the right-side cross",
+        "Tielemans vs Iran\u2019s box defending at the near side of the cross"
+      ],
+      "summary": "Iran, chasing a result, threw on extra attackers and pushed numbers forward, which in turn left them more exposed at the back. Belgium responded by sitting deeper and trying to exploit the space, while still creating moments through De Bruyne set pieces and Castagne\u2019s excellent low cross; the biggest direct chance for Iran came when Ezatolahi\u2019s long-range effort forced Courtois into an awkward save. The phase ended with Belgium still dangerous in transition/crossing situations and Iran gambling heavily for a goal."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/21/belgium-v-iran-world-cup-2026-live"
+  ]
+}

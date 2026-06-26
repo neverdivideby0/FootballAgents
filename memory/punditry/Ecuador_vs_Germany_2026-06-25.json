@@ -1,0 +1,43 @@
+{
+  "match_id": "Ecuador_vs_Germany_2026-06-25",
+  "home": "Ecuador",
+  "away": "Germany",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Ecuador",
+    "tactical_shape": [
+      "High-intensity, ambitious approach",
+      "Pushed relentlessly down the sides, with attacks coming from both wings",
+      "Dropped back to defend a precious lead after scoring"
+    ],
+    "standout_players": [
+      "Gonzalo Plata \u2014 scored the winner with the outside of his boot",
+      "Mois\u00e9s Caicedo \u2014 imposing presence, led the intensity in midfield",
+      "Nilson Angulo \u2014 found the equaliser from the edge of the box",
+      "John Yeboah \u2014 repeatedly weaved through the Germany midfield",
+      "Kevin Rodr\u00edguez \u2014 involved in the move for the winner and later linked up with Plata"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "A stirring win over full-strength Germany sends Ecuador through to the last 32 and could restore faith in Beccacece after a shaky start to the tournament."
+  },
+  "away_read": {
+    "team": "Germany",
+    "tactical_shape": [
+      "Full-strength side despite having already secured top spot",
+      "Regained control after the hydration break but were largely frustrated",
+      "Main creative outlet came from David Raum deliveries from the left"
+    ],
+    "standout_players": [
+      "Leroy San\u00e9 \u2014 scored Germany\u2019s opener",
+      "Florian Wirtz \u2014 created the opening goal",
+      "Hern\u00e1n Gal\u00edndez \u2014 only forced into a header save by Havertz, otherwise little troubled"
+    ],
+    "fatigue_injuries": [
+      "Only injury-induced changes were made to the starting XI"
+    ],
+    "momentum": "An uninspired, error-prone display leaves Germany beaten and frustrated, with their main warning sign being how little threat they offered for long spells."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/25/ecuador-germany-world-cup-match-report"
+  ]
+}

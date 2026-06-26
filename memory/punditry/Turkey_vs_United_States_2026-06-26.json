@@ -1,0 +1,48 @@
+{
+  "match_id": "Turkey_vs_United_States_2026-06-26",
+  "home": "Turkey",
+  "away": "United States",
+  "date": "2026-06-26",
+  "home_read": {
+    "team": "Turkey",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "Came from behind to win 3-2 with the last kick, giving their tournament a positive ending despite a disastrous campaign."
+  },
+  "away_read": {
+    "team": "United States",
+    "tactical_shape": [
+      "Pochettino used a more familiar-looking shape with Sergi\u00f1o Dest and Alex Freeman as positional alternatives to Joe Scally, and later checked in Dest to pin Turkey back.",
+      "Full-backs bore a greater responsibility for progression than the central routes."
+    ],
+    "standout_players": [
+      "Matt Turner 4/10 \u2014 unable to stop the three shots he faced, though he made a couple of timely sweeper actions.",
+      "Joe Scally 5/10 \u2014 struggled to keep up with the game and was pulled out of position twice on Turkey\u2019s second goal.",
+      "Mark McKenzie 5/10 \u2014 bypassed too easily for Turkey\u2019s first goal, but helped funnel the ball into midfield.",
+      "Miles Robinson 5/10 \u2014 looked unready early, then settled.",
+      "Auston Trusty 7/10 \u2014 headed home the opening goal, helped in build-up and tracking back, but exited with an apparent left ankle injury.",
+      "Sebastian Berhalter 8/10 \u2014 assist for Trusty\u2019s opener, scored, and was the team\u2019s most progressive passer.",
+      "Weston McKennie 7/10 \u2014 led as captain and helped keep spark under teammates.",
+      "Gio Reyna 5/10 \u2014 moved a lot to offer a passing option but recirculated more than he broke lines.",
+      "Tim Weah 5/10 \u2014 too many errant passes, sloppy touches and ineffective dribbles.",
+      "Brenden Aaronson 5/10 \u2014 all industry, but missed an open-net chance.",
+      "Ricardo Pepi 5/10 \u2014 dragged centre-backs deeper but struggled to find box touches.",
+      "Christian Pulisic 6/10 \u2014 looked ready, nearly scored from distance and carried threat quickly after coming on.",
+      "Alex Freeman 5/10 \u2014 caught out of position on the late winner.",
+      "Sergi\u00f1o Dest 6/10 \u2014 pinned Turkey back with his cameo.",
+      "Alejandro Zendejas 6/10 \u2014 little to work with in a quiet debut.",
+      "Malik Tillman 6/10 \u2014 brought on late to balance the midfield split."
+    ],
+    "fatigue_injuries": [
+      "Auston Trusty exited with an apparent left ankle injury.",
+      "Christian Pulisic was not fully in the expected starting rhythm but showed few signs of rust.",
+      "Cristian Roldan was injured, prompting McKennie to go again."
+    ],
+    "momentum": "Despite the late defeat, the US had already topped the group and move into the knockout stage with confidence and some fresh questions after wilting in the decisive moments."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/usa-2-3-turkey-how-maurico-pochettinos-players-rated-in-world-cup-group-d-match",
+    "https://www.theguardian.com/football/2026/jun/26/turkey-usa-world-cup-2026-match-report"
+  ]
+}

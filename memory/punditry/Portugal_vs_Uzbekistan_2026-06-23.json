@@ -1,0 +1,46 @@
+{
+  "match_id": "Portugal_vs_Uzbekistan_2026-06-23",
+  "home": "Portugal",
+  "away": "Uzbekistan",
+  "date": "2026-06-23",
+  "home_read": {
+    "team": "Portugal",
+    "tactical_shape": [
+      "Front-foot attacking play with Jo\u00e3o Cancelo reaching the byline and Nuno Mendes delivering from wide areas",
+      "Set-piece heavy approach, with rehearsed free-kick and corner routines emphasized",
+      "High starting position for Cristiano Ronaldo in the second half to hunt goals"
+    ],
+    "standout_players": [
+      "Cristiano Ronaldo \u2014 scored twice, ended his major-tournament goal drought, and looked relentless",
+      "Nuno Mendes \u2014 provided the free-kick goal with a disguised run and whipped finish",
+      "Jo\u00e3o Cancelo \u2014 supplied the byline cutback for Ronaldo's opener and another delivery that almost produced a hat-trick",
+      "Bruno Fernandes \u2014 central to the second and third goals, exploiting space and delivering set-piece quality",
+      "Rafael Le\u00e3o \u2014 scored the final goal with a rising drive",
+      "Austin McPhee \u2014 credited for Portugal's inventive set-piece work"
+    ],
+    "fatigue_injuries": [
+      "Cristiano Ronaldo took a blow late on but continued"
+    ],
+    "momentum": "Portugal looked rampant and inventive, with Ronaldo back among the goals and the side showing a dangerous set-piece edge going forward."
+  },
+  "away_read": {
+    "team": "Uzbekistan",
+    "tactical_shape": [
+      "Utterly outclassed defensively, unable to cope with Portugal's standard",
+      "Briefly rallied after going behind but were largely overwhelmed"
+    ],
+    "standout_players": [
+      "Abdukodir Khusanov \u2014 made a dramatic intervention to deny Ronaldo a hat-trick and later was involved in the own-goal sequence",
+      "Abduvokhid Nematov \u2014 beaten by Portugal's set-pieces and could only paw the third goal over the line",
+      "Odiljon Khamrobekov \u2014 conceded the foul that led to Portugal's second goal",
+      "Azizjon Ganiev \u2014 had a blast disallowed"
+    ],
+    "fatigue_injuries": [
+      "No injuries or suspensions mentioned"
+    ],
+    "momentum": "A chastening, one-sided defeat that underlined how far they were from Portugal's level."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/23/portugal-uzbekistan-world-cup-group-k-match-report"
+  ]
+}

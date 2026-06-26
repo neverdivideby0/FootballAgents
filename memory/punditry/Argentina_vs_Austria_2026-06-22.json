@@ -1,0 +1,42 @@
+{
+  "match_id": "Argentina_vs_Austria_2026-06-22",
+  "home": "Argentina",
+  "away": "Austria",
+  "date": "2026-06-22",
+  "home_read": {
+    "team": "Argentina",
+    "tactical_shape": [
+      "Controlled spell with minimal second-half threat; relied on Messi\u2019s moments rather than sustained pressure"
+    ],
+    "standout_players": [
+      "Lionel Messi \u2014 scored twice, broke the World Cup scoring record, and was the decisive figure",
+      "Emiliano Mart\u00ednez \u2014 repelled a Marcel Sabitzer free-kick",
+      "Thiago Almada \u2014 intelligently let the ball run for Messi\u2019s record-breaking goal",
+      "Leandro Paredes \u2014 found Messi for the second goal",
+      "Juli\u00e1n \u00c1lvarez \u2014 had an effort saved in the buildup to Messi\u2019s opener",
+      "Lautaro Mart\u00ednez \u2014 won the penalty via the VAR-reviewed foul"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Argentina keep riding Messi\u2019s historic brilliance and carry the aura of a side that can still turn an otherwise blunt match into a memorable result."
+  },
+  "away_read": {
+    "team": "Austria",
+    "tactical_shape": [
+      "Crisp passing and a ferocious, scrappy press",
+      "Pushed for an equaliser in the second half"
+    ],
+    "standout_players": [
+      "Ralf Rangnick\u2019s side were described as competent but blunt",
+      "Alexander Schlager \u2014 saved Messi\u2019s penalty",
+      "David Alaba \u2014 nearly turned a Messi dribble into an own goal",
+      "Xaver Schlager \u2014 caught in the challenge that preceded Messi\u2019s opener",
+      "Marcel Sabitzer \u2014 had a free-kick saved by Emiliano Mart\u00ednez",
+      "Patrick Wimmer \u2014 glanced a late chance wide"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Austria showed enough pressing and passage of play to trouble Argentina, but the defeat leaves them powerless in the face of Messi-inspired destiny."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/22/argentina-austria-world-cup-group-j-match-report"
+  ]
+}

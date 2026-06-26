@@ -1,0 +1,105 @@
+{
+  "match_id": "Norway_vs_Senegal_2026-06-23",
+  "home": "Norway",
+  "away": "Senegal",
+  "date": "2026-06-23",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "Norway early on in an attacking set-piece phase, forcing repeated corners",
+        "Senegal in an organised, compact defending phase that delays Norway settling into rhythm",
+        "Senegal gradually pressing higher through the opening minutes to disrupt Norway's build-up"
+      ],
+      "adjustments": [
+        "Norway make an early right-back change: Julian Ryerson off, Marcus Pedersen on",
+        "Pedersen is described as a more defensive full-back option than Ryerson",
+        "Norway likely losing some right-side chance creation after the substitution"
+      ],
+      "key_matchups": [
+        "Kristoffer Ajer vs \u00c9douard Mendy on Norway's early corner threat",
+        "Ismaila Sarr vs \u00d8rjan Nyland on Senegal's first clear chance",
+        "\u00d8degaard receiving a cross from Marcus Pedersen at the edge of the box"
+      ],
+      "summary": "Norway started aggressively, using a series of early corners to pin Senegal back, but Mendy's save from Ajer helped the visitors survive the opening pressure. Senegal then began to impose themselves more through direct attacking moments and pressure on Norway's half, while Norway's rhythm was interrupted by an early injury substitution at right-back that likely reduced their attacking thrust on that flank."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "Norway central-possession / half-space dominance",
+        "Senegal flank-oriented attacking structure",
+        "Norway struggling to sustain possession beyond their own half after the hydration break"
+      ],
+      "adjustments": [
+        "Senegal initially turned down some right-sided advances to try to establish a central route",
+        "Senegal tried to build the right flank to create space for Sadio Man\u00e9 across the pitch",
+        "Norway attempted to reassert control after a spell of ceding momentum"
+      ],
+      "key_matchups": [
+        "Senegal limiting Norway's passing lanes toward Erling Haaland",
+        "Nicolas Jackson and Sadio Man\u00e9 combining on Norway's left side",
+        "Kr\u00e9pin Diatta and Ismaila Sarr against Norway's right-side defensive coverage"
+      ],
+      "summary": "The phase opened with Norway controlling the central zones and half-spaces, while Senegal found more joy out wide and gradually established themselves in the match. Senegal also did a good job cutting supply to Erling Haaland, who was largely kept out of the game, before Norway tried to regain momentum after the hydration break but became sloppier in possession."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "Senegal attacking through byline crosses",
+        "Norway defending crosses comfortably",
+        "Senegal looking to create from central attacking zones"
+      ],
+      "adjustments": [
+        "Possible early introduction of Iliman Ndiaye to add central chance creation",
+        "Possible tournament debut for Pape Sarr to play more directly and force Norway's midfield deeper"
+      ],
+      "key_matchups": [
+        "Nusa and Haaland getting in each other's way on the same finishing action",
+        "Norway's defense vs Senegal's byline-crossing approach"
+      ],
+      "summary": "At half-time Norway lead 1-0 despite a level share of possession, with the numbers suggesting they have been much more threatening: 3 of the match's 4 big chances and a 1.22-0.32 xG edge. Senegal have tried to attack via byline crosses, but Norway have handled that well, while the commentary suggests Senegal may need more central creativity through Ndiaye or more direct running from Pape Sarr to change the rhythm."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Norway mid-block transitioning quickly into counterattacks",
+        "Senegal pushing forward for an immediate equalizer after halftime",
+        "Senegal attacking through direct long balls and crosses"
+      ],
+      "adjustments": [
+        "Norway made a halftime midfield change: Patrick Berg on for Fredrik Aursnes",
+        "Senegal made double substitutions after conceding: Pape Gueye on for an unspecified outgoing midfielder, Ibrahim Mbaye on for an unspecified outgoing player, and Ismail Jakobs on for Malick Diouf",
+        "Senegal shifted toward a more direct route through the middle and wide deliveries after falling behind"
+      ],
+      "key_matchups": [
+        "Nicolas Jackson vs Torbj\u00f8rn Heggem at the far post",
+        "Sadio Man\u00e9 vs Norway's central defenders in the build-up to Senegal's goal",
+        "Ismaila Sarr vs Norway's defensive cover on the goal"
+      ],
+      "summary": "The phase opens with Senegal chasing an equalizer through crosses and direct attacks, but Norway answer by controlling the transition moments after halftime. Patrick Berg\u2019s introduction stabilizes Norway\u2019s midfield, and a midfield turnover soon produces Haaland\u2019s second via \u00d8degaard\u2019s through ball. Senegal do get back into the game through Sarr, yet Norway immediately restore control with a third goal, again punishing Senegal when they lose structure."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Norway low block / pinned in own third",
+        "Senegal sustained late pressure",
+        "Norway defending deeper after substitutions"
+      ],
+      "adjustments": [
+        "Norway introduced Oscar Bobb for Alexander S\u00f8rloth to restore a more natural right-wing option",
+        "Norway brought on Leo \u00d8stig\u00e5rd along the back",
+        "Senegal sacrificed a center-back, even their captain, for a midfielder to increase upfield initiative"
+      ],
+      "key_matchups": [
+        "Moussa Niakhat\u00e9 blocking Haaland's shot",
+        "Ciss blocking Oscar Bobb's shot to protect an open net",
+        "Koulibaly noted as unusually out of sorts",
+        "Kriostoffer Ajer failing to clear the ball before Senegal's equalizer"
+      ],
+      "summary": "The final phase turned into a classic siege: Norway initially looked set to close it out after late attacking substitutions, but Senegal kept pressing and eventually pinned them deep. Norway's shape and clearances came under constant stress, while Senegal's gamble of adding midfield presence helped sustain the pressure before Ismaila Sarr's stoppage-time equalizer."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/22/norway-v-senegal-world-cup-2026-live"
+  ]
+}

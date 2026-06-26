@@ -1,0 +1,84 @@
+{
+  "match_id": "Argentina_vs_Austria_2026-06-22",
+  "home": "Argentina",
+  "away": "Austria",
+  "date": "2026-06-22",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "high pressing on both sides",
+        "Austria enjoying a sustained spell of pressure after the penalty incident"
+      ],
+      "adjustments": [
+        "Argentina's right-back Molina advancing to initiate attacks",
+        "Austria briefly forcing Argentina into a more reactive, fouling phase"
+      ],
+      "key_matchups": [
+        "Molina vs Wanner on Austria's left edge of the area",
+        "Lautaro Martinez vs Posch and Schlager in the penalty incident",
+        "Messi vs the Austria penalty box on the missed spot-kick"
+      ],
+      "summary": "The opening phase was played at high intensity, with both sides pressing aggressively and Argentina using advancing runs from right-back Molina to progress play. The penalty and Messi\u2019s miss disrupted the rhythm, after which Austria briefly seized momentum, with Danso leading their physical resistance and forcing Argentina into a spell of fouls and defensive pressure."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "Austria pressing high and using midfield pressure to win turnovers and territory",
+        "Argentina in a more controlled, compact phase after taking the lead"
+      ],
+      "adjustments": [
+        "Austria increasing the tempo after falling behind",
+        "Austria trying to get the ball into the box and into shooting positions more often"
+      ],
+      "key_matchups": [
+        "Laimer and Sabitzer on the left vs Argentina's right-sided defending",
+        "Messi vs Danso",
+        "Posch vs Argentina's attacking pressure"
+      ],
+      "summary": "Argentina took the lead through Messi after Almada and Medina combined, but the goal did not reflect a dominant spell; Austria were generating turnovers and territory through their pressing and midfield work. The main tactical issue for Rangnick's side was turning that pressure into box entries and shooting chances, while their discipline began to fray as the half progressed."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "Argentina defending a 1-0 lead with a settled back line",
+        "Austria struggling to break down a compact Argentina defensive block"
+      ],
+      "adjustments": [
+        "Scaloni\u2019s side appear content to manage the game and see out the first half",
+        "Austria start the second half with more hustle and bustle, with Schmid finding pockets and Wanner popping up between the lines"
+      ],
+      "key_matchups": [
+        "Austria vs the Argentina back line",
+        "Schmid vs Argentina\u2019s midfield/defensive screen",
+        "Wanner in the pocket vs Argentina\u2019s central defenders/midfield cover"
+      ],
+      "summary": "Argentina ended the half comfortably ahead and, by the commentary\u2019s description, were happy to sit on the 1-0 lead and prevent Austria from penetrating their back line. Austria\u2019s attacking problem was persistence rather than territory, though the early signs of the second half suggested more activity between the lines through Schmid and Wanner."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Austria were competitive but unimaginative in attack, suggesting a cautious attacking block rather than a sustained high-tempo press",
+        "Argentina managed the closing stages and ultimately broke through late, consistent with a side controlling the game without needing major shape changes"
+      ],
+      "adjustments": [
+        "Argentina searched for a late second goal rather than settling after the opener",
+        "Messi was pushing for more late on, including a free-kick just wide as he chased a hat-trick"
+      ],
+      "key_matchups": [
+        "Lionel Messi vs Austria's defensive resistance"
+      ],
+      "summary": "The closing phase was defined by Argentina\u2019s control and Austria\u2019s lack of imagination in the final third. Messi\u2019s late goal in stoppage time sealed the match, and Argentina finished with the cleaner attacking edge despite the game being imperfect for long stretches."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/22/argentina-v-austria-world-cup-2026-live"
+  ]
+}

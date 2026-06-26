@@ -1,0 +1,21 @@
+{
+  "match_id": "England_vs_Croatia_2026-06-19",
+  "home": "England",
+  "away": "Croatia",
+  "date": "2026-06-19",
+  "home_read": {
+    "team": "England",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "away_read": {
+    "team": "Croatia",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "sources": []
+}

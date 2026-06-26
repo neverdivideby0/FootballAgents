@@ -13,31 +13,71 @@
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 3 commentary beats; 1 events; goals at 41'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Uzbekistan 5-4-1 shell",
+        "Uzbekistan defensive block"
+      ],
+      "adjustments": [
+        "Uzbekistan forced to come out of their 5-4-1 shell after conceding",
+        "Colombia create a couple of forward runs in succession before scoring"
+      ],
+      "key_matchups": [
+        "Munoz drifting in from the right behind the back three",
+        "Lerma\u2019s vertical dinked pass to Munoz"
+      ],
+      "summary": "Colombia broke through after a brief spell of consecutive forward runs, with Lerma finding Munoz via a perfectly weighted vertical pass. Munoz timed his run behind Uzbekistan\u2019s back three and finished superbly, forcing Uzbekistan to abandon their 5-4-1 shell and become more expansive."
     },
     {
       "phase": "Half-Time Brief",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 21 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Colombia possession-heavy keep-ball",
+        "Uzbekistan functional out of possession",
+        "Uzbekistan robust defensive approach / low block"
+      ],
+      "adjustments": [
+        "Colombia repeatedly chose the conservative option instead of attacking the first crossing or second-phase chance",
+        "Uzbekistan made two half-time substitutions: Khamdamov for Nasrullaev and Sayfiev for Urunov"
+      ],
+      "key_matchups": [
+        "Karimov vs Diaz",
+        "Lerma vs Uzbekistan on the late corner"
+      ],
+      "summary": "Colombia were clearly the better side, but their possession was slow, risk-averse and often refused the decisive pass or early cross. Uzbekistan defended in a compact, functional way and looked to counter, but offered little initiative on the ball before making two changes at the break."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 27 commentary beats; 2 events; goals at 60', 65'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "defensive structure to protect a narrow lead",
+        "transition-focused counterattacking phase",
+        "Uzbekistan pushing to open the field with long switches"
+      ],
+      "adjustments": [
+        "Colombia increased the tempo immediately after the equaliser",
+        "Colombia sat into a more protective defensive structure after regaining the lead",
+        "Campaz replaced James at 70'"
+      ],
+      "key_matchups": [
+        "Shomorudov vs Vargas on the equaliser sequence",
+        "Diaz vs Yusupov on the 65' goal",
+        "Diaz vs Khusanov on the 76' free-kick"
+      ],
+      "summary": "Uzbekistan improved after half-time and were rewarded through Fayzullaev\u2019s equaliser, but Colombia responded quickly by raising the tempo and striking in transition through Diaz. After retaking the lead, Colombia were content to slow the game, gift possession back, and settle into a compact defensive shape while Uzbekistan tried to stretch play with long switches without much success."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
+      "formations_blocks": [
+        "slow methodical possession",
+        "low block / holding shape to protect the lead",
+        "late attacking siege from Uzbekistan",
+        "final-minute defensive hold by Colombia"
+      ],
+      "adjustments": [
+        "Eight minutes of stoppage time added for Colombia to manage",
+        "Late substitutions: Sergeev for Somurodov, Castano for Diaz, Gomez for Arias",
+        "Uzbekistan shifted to more direct late pressure with crosses and free-kicks into the box"
+      ],
       "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 11 commentary beats; 1 events; goals at 90'. Enable use_llm for tactical extraction."
+      "summary": "This phase was defined by Colombia protecting a 2-goal lead through slow, risk-averse possession and compact late-game defending, while Uzbekistan threw everything forward in the final minutes. The home side generated a couple of dangerous late moments \u2014 especially a wicked low cross in stoppage time \u2014 but Colombia repeatedly survived before Campaz sealed it at 90+9. "
     }
   ],
   "sources": [

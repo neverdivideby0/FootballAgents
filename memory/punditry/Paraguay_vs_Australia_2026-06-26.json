@@ -1,0 +1,52 @@
+{
+  "match_id": "Paraguay_vs_Australia_2026-06-26",
+  "home": "Paraguay",
+  "away": "Australia",
+  "date": "2026-06-26",
+  "home_read": {
+    "team": "Paraguay",
+    "tactical_shape": [
+      "5-3-2",
+      "central overload from Australia caused Paraguay problems",
+      "Julio Enciso carrying the attack on his own",
+      "Alexandro Maidana provided width from left-back/left side before half-time"
+    ],
+    "standout_players": [
+      "Orlando Gill \u2014 6; crucial saves in opening and closing 10 minutes",
+      "Gustavo G\u00f3mez \u2014 6; steady at the back, helped stifle Irankunda",
+      "Julio Enciso \u2014 7; carried the team forward on his own and caused problems in the second half"
+    ],
+    "fatigue_injuries": [
+      "Omar Alderete suffered a knee injury just after the hour and never really recovered",
+      "Alexandro Maidana was pulled at half-time"
+    ],
+    "momentum": "A hard-fought clean sheet keeps Paraguay in the game, but the punditry suggests they were short of support around Enciso and lacked cutting edge."
+  },
+  "away_read": {
+    "team": "Australia",
+    "tactical_shape": [
+      "5-2-3",
+      "back three with wing-backs/full-backs, including Jordy Bos given licence to attack",
+      "midfield central overload and line-breaking runs from O\u2019Neill and Irvine",
+      "comfortably handled Paraguay\u2019s press at times and progressed the ball through midfield"
+    ],
+    "standout_players": [
+      "Patrick Beach \u2014 6; calm and confident, including a stoppage-time save",
+      "Alessandro Circati \u2014 7; tidy on the right of the back three and kept Enciso largely quiet",
+      "Harry Souttar \u2014 7; anchored the back three with assurance and physicality",
+      "Jordy Bos \u2014 8; his most impressive game so far, with more licence to gallop forward",
+      "Aiden O\u2019Neill \u2014 7; more present, linked well with Irvine",
+      "Jackson Irvine \u2014 7; midfield general, crucial in breaking out of Paraguay\u2019s press",
+      "Cristian Volpato \u2014 7; Australia\u2019s best player in the first hour, lively on the right"
+    ],
+    "fatigue_injuries": [
+      "Jacob Italiano was injured and unavailable, with Jordy Bos starting in his place",
+      "Jackson Irvine picked up a silly yellow early in the second half",
+      "Connor Metcalfe was hit in the face after the first hydration break and lost momentum"
+    ],
+    "momentum": "Australia look organised and resilient, with their structure and midfield control earning a respectable result despite lacking a final breakthrough."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/paraguay-australia-player-ratings-world-cup-group-d"
+  ]
+}

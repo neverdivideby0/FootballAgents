@@ -1,0 +1,102 @@
+{
+  "match_id": "New_Zealand_vs_Egypt_2026-06-22",
+  "home": "New Zealand",
+  "away": "Egypt",
+  "date": "2026-06-22",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "New Zealand long-ball / direct approach",
+        "Egypt counter-attacking shape",
+        "Midfield congestion"
+      ],
+      "adjustments": [
+        "New Zealand repeatedly hit long balls downfield to Wood and then follow up for second balls",
+        "Egypt respond by looking to play through New Zealand on the counter",
+        "Egypt take a short corner before delivering into the box"
+      ],
+      "key_matchups": [
+        "Just vs Egypt defence",
+        "Wood vs Egypt centre-backs / aerial duels",
+        "Singh vs Egypt break outlets",
+        "Marmoush vs Crocombe"
+      ],
+      "summary": "New Zealand\u2019s early goal came from a basic set-piece delivery and poor Egyptian marking, after which the All Whites leaned into a direct long-ball game aimed at Wood and second balls. Egypt struggled to cope with that approach but found some success when New Zealand\u2019s forward commitment left space to counter, with Marmoush forcing a save and the game becoming increasingly congested in midfield."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "New Zealand in a compact defensive third / low block after halftime",
+        "Egypt dominating possession and territory in the second half",
+        "New Zealand using a direct long-ball approach toward Wood",
+        "Egypt building through wide areas, especially down the right"
+      ],
+      "adjustments": [
+        "Salah appears to have moved into a more central role in the second half",
+        "Egypt increasing their use of right-sided combinations through Hany and Ziko",
+        "New Zealand continuing to target Wood with long balls and second-ball support from Just and McCowatt"
+      ],
+      "key_matchups": [
+        "Wood vs Egypt\u2019s aerial/central defenders under the long ball",
+        "Just vs Egypt\u2019s recovery and ball retention in midfield/left-sided transitions",
+        "McCowatt vs Shobeir on the near-post chance",
+        "Salah vs Boxall in the penalty area"
+      ],
+      "summary": "New Zealand led at half-time thanks to a direct, efficient plan: go long to Wood and use Just and McCowatt to attack the spaces and second balls. Egypt looked slicker in possession after the restart and pinned New Zealand back, but their movement remained slow and their attacking structure still looked disjointed despite more width and a more central Salah. "
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Egypt dominant in possession",
+        "New Zealand retreating into a more passive defensive phase after conceding, then circulating possession along the back four",
+        "Egypt standing off a bit more once level before reasserting control between the lines"
+      ],
+      "adjustments": [
+        "Egypt\u2019s wide delivery becomes a key attacking route, with Hany crossing first time for the equaliser",
+        "Ashour grows into the role of linking the lines",
+        "New Zealand slow the game by padding possession across their back four",
+        "New Zealand substitute Old on for McCowatt (66')",
+        "Salah finds space between the lines, with Marmoush drifting left and cutting in to shoot"
+      ],
+      "key_matchups": [
+        "Hany vs New Zealand\u2019s defensive line for the cross to Ziko",
+        "Ziko vs New Zealand centre-backs/goalkeeper Crocombe on the equaliser",
+        "Ashour vs New Zealand\u2019s midfield as a link between the lines",
+        "Marmoush vs Bell, who wins the ball before he can shoot",
+        "Salah vs New Zealand\u2019s central defenders/midfield line when receiving between the lines"
+      ],
+      "summary": "Egypt controlled possession after the restart and eventually turned that dominance into an equaliser through a wide attack: Hany crossed first time and Ziko headed in unmarked. New Zealand briefly slowed the tempo with safe back-four circulation, but Egypt remained the more threatening side, finding space between the lines before Salah finished the move for the winner after Marmoush was denied by Bell."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Egypt defending in numbers / low block",
+        "New Zealand chasing with balls hoisted into the box and set-piece pressure"
+      ],
+      "adjustments": [
+        "Egypt used a double substitution at 84' with Salah and Ashour off for Zizo and Hossam to protect the lead",
+        "New Zealand introduced Binden and De Vries at 85' in a more direct chase",
+        "Egypt shifted to more conservative game management after the third goal, effectively 'putting the cue in the rack'"
+      ],
+      "key_matchups": [
+        "Trezeguet vs New Zealand's near-post marking on the corner",
+        "Randall vs Egypt's right-side defender/substitute in the 86' attack",
+        "Binden vs Egypt's penalty-area defenders on the late set pieces",
+        "Wood vs Egypt's defending against lofted crosses",
+        "Zizo vs Crocombe on the 90+3 one-on-one"
+      ],
+      "summary": "Egypt\u2019s third goal from a poorly defended near-post corner ended the contest as a competitive tactical phase, after which they dropped into a compact defensive shell and managed the game with substitutions. New Zealand responded with direct pressure, long throws, and repeated set pieces, but Egypt held firm while also spurning a huge late chance through Zizo on the break."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/22/fifa-world-cup-2026-live-new-zealand-v-egypt-updates-nzl-vs-egy-group-g-match-score-latest"
+  ]
+}

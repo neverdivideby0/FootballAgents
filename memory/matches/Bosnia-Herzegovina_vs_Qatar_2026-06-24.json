@@ -1,0 +1,66 @@
+{
+  "match_id": "Bosnia-Herzegovina_vs_Qatar_2026-06-24",
+  "home": "Bosnia-Herzegovina",
+  "away": "Qatar",
+  "date": "2026-06-24",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [
+        "Dzeko vs the Qatar back line at the back post",
+        "Alajbegovic vs multiple Qatar defenders in the buildup to the opener",
+        "Al Haydos attacking Bosnia and Herzegovina's defensive line for Qatar's response"
+      ],
+      "summary": "Bosnia and Herzegovina seized control after a lively start, turning the game with a superb Alajbegovic strike and then a second goal from a whipped cross that ended in an own goal. Qatar initially looked dangerous on the break, but their threat faded before they briefly re-entered the match with a six-yard-box finish from Al Haydos just before halftime."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "Bosnia and Herzegovina dominating possession",
+        "Qatar spending periods in the final third"
+      ],
+      "adjustments": [
+        "Bosnia and Herzegovina substitutions: Memic for Malic, Tahirovic for Sunjic",
+        "Qatar substitution: Hatem for Gaber",
+        "Bosnia and Herzegovina later substitutions: Mahmic for Katic, Had\u017eikadunic for Dzeko"
+      ],
+      "key_matchups": [
+        "Al Ganehi vs Bosnia and Herzegovina's left side on the break",
+        "Afif vs Bosnia and Herzegovina's defense in the box",
+        "Demirovic and Dzeko combining against Qatar's back line"
+      ],
+      "summary": "Bosnia and Herzegovina began the second half on the front foot, keeping more of the ball and looking the more controlled side, though their attacks were often slow and slightly undercooked. Qatar carried a threat through Al Ganehi and Afif, while Bosnia made multiple changes, including the removal of Dzeko, as the match became more stop-start with injuries and substitutions."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Bosnia and Herzegovina in a comfortable defending shape after going 3-1 up",
+        "Qatar in late-possession attacking mode"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Miguel vs Qatar goalkeeper (90+4)"
+      ],
+      "summary": "Bosnia and Herzegovina\u2019s 80th-minute goal effectively settled the contest, and the rest of the phase became a managed stretch of game control rather than a tactical battle. Qatar held the majority of the ball in stoppage time, but Bosnia were happy to sit off, absorb pressure, and see the match out as cramp and fatigue set in."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/24/bosnia-and-herzegovina-v-qatar-world-cup-2026-live"
+  ]
+}

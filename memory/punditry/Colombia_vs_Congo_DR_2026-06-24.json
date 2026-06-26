@@ -1,0 +1,44 @@
+{
+  "match_id": "Colombia_vs_Congo_DR_2026-06-24",
+  "home": "Colombia",
+  "away": "Congo DR",
+  "date": "2026-06-24",
+  "home_read": {
+    "team": "Colombia",
+    "tactical_shape": [
+      "controlled midfield in the early stages",
+      "structured attacking play with creativity between the lines",
+      "used wide pressure and repeated attacks against a low block"
+    ],
+    "standout_players": [
+      "Daniel Mu\u00f1oz \u2014 broke the deadlock with his second goal in as many games",
+      "Lionel Mpasi (opposition keeper) repeatedly denied Colombia",
+      "Luis D\u00edaz had two goals ruled out for offside and remained a threat",
+      "James Rodr\u00edguez forced a good save early",
+      "Johan Mojica tested the keeper from distance",
+      "Jhon Arias was denied early and later missed the rebound chance"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Back-to-back win secures a place in the knockout rounds, and Colombia can still top the group if they avoid defeat against Portugal."
+  },
+  "away_read": {
+    "team": "Congo DR",
+    "tactical_shape": [
+      "settled into a low block after an early spell",
+      "tightened up the midfield after a hydration break",
+      "back five defended deep for most of the match",
+      "midfield three protected the defence, with Yoane Wissa linking to a lone centre-forward"
+    ],
+    "standout_players": [
+      "Lionel Mpasi \u2014 described by S\u00e9bastien Desabre as excellent; made a string of saves",
+      "Noah Sadiki \u2014 prodigious engine after coming on at half-time, helped prevent fatigue in the midfield shield",
+      "Edo Kayembe flashed the first shot just wide",
+      "Nathana\u00ebl Mbuku drew a late save from Camilo Vargas"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Despite being broken late, Congo DR showed superb resistance and defiance; a win over Uzbekistan in the final game would almost certainly take them through."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/colombia-dr-congo-world-cup-group-k-match-report"
+  ]
+}

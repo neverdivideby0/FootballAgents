@@ -1,0 +1,50 @@
+{
+  "match_id": "Switzerland_vs_Canada_2026-06-24",
+  "home": "Switzerland",
+  "away": "Canada",
+  "date": "2026-06-24",
+  "home_read": {
+    "team": "Switzerland",
+    "tactical_shape": [
+      "Shrewd, well-organised side that never took Canada\u2019s 'decoy' bait",
+      "Made key second-half changes through Murat Yakin, with Ruben Vargas and Johan Manzambi starting and both goals coming in a 12-minute burst",
+      "Right side/back-post attack used effectively, with Manzambi supplying from the left and Vargas finishing at the back post",
+      "Relied on a richly experienced midfield to control a dogfight against Canada"
+    ],
+    "standout_players": [
+      "Ruben Vargas \u2014 scored the opener and rewarded Yakin\u2019s faith",
+      "Johan Manzambi \u2014 scored the second goal and was a key beneficiary of Switzerland\u2019s sharp start to the second half",
+      "Granit Xhaka \u2014 anchored a richly experienced Swiss midfield",
+      "Ricardo Rodriguez \u2014 sparked the game with a driven ball through Canada\u2019s defence",
+      "Nico Elvedi \u2014 made a heroic block to deny Jonathan David",
+      "Gregor Kobel \u2014 produced a good first-half save from Ali Ahmed"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Impressive and deserved winners who topped the group, with momentum strong heading into the knockout stages in Vancouver."
+  },
+  "away_read": {
+    "team": "Canada",
+    "tactical_shape": [
+      "Jesse Marsch used Alphonso Davies as a 'decoy' rather than playing him",
+      "Started with Nathan Saliba and Mathieu Choini\u00e8re after Stephen Eust\u00e1quio was not fit enough to start",
+      "Looked to create pressure through hydration-break momentum swings and late substitutions",
+      "Pushed for a response after going behind, with Promise David coming off the bench to score"
+    ],
+    "standout_players": [
+      "Promise David \u2014 supersub who scored Canada\u2019s goal one minute after coming on",
+      "Maxime Cr\u00e9peau \u2014 made himself big to deny Breel Embolo early",
+      "Ali Ahmed \u2014 had Canada\u2019s best first-half shot, though it was scuffed",
+      "Jonathan David \u2014 came close before being denied by Nico Elvedi, then had to settle for a late impact from the other David"
+    ],
+    "fatigue_injuries": [
+      "Alphonso Davies was not ready to play and was used as a decoy",
+      "Isma\u00ebl Kon\u00e9 was absent after having his leg shattered six days earlier",
+      "Stephen Eust\u00e1quio was not fit enough to start",
+      "The team is described as injury-hit and facing a shorter four-day turnaround"
+    ],
+    "momentum": "A damaging defeat that sends Canada to Los Angeles on a short turnaround, though Promise David\u2019s goal briefly revived hope and Marsch still frames the trip as a chance to 'electrify the nation'."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/canada-switzerland-group-b-2026-world-cup-match-report"
+  ]
+}

@@ -1,0 +1,37 @@
+{
+  "match_id": "Scotland_vs_Brazil_2026-06-24",
+  "home": "Scotland",
+  "away": "Brazil",
+  "date": "2026-06-24",
+  "home_read": {
+    "team": "Scotland",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "No punditry on Scotland is provided in the text, so no structured read is supported."
+  },
+  "away_read": {
+    "team": "Brazil",
+    "tactical_shape": [
+      "Ancelotti is expected to use Neymar as a false nine if he features, so as not to have so many marking assignments",
+      "Vin\u00edcius J\u00fanior and Rodrygo were used as wide attackers in a system with Cunha dropping deep, allowing the two wingers to play as strikers",
+      "Brazil improved defensively against Haiti, keeping a clean sheet"
+    ],
+    "standout_players": [
+      "Vin\u00edcius J\u00fanior saved Brazil with a moment of individual brilliance against Morocco and has two goals and an assist at the tournament",
+      "Casemiro is portrayed as a key figure but with critics questioning the midfield's mobility",
+      "Matheus Cunha scored twice against Haiti",
+      "Neymar remains the biggest-name talking point, though pundits question his fitness and form"
+    ],
+    "fatigue_injuries": [
+      "Neymar has been out with a calf strain / injury layoff and has not played a minute at the tournament",
+      "Raphinha picked up a hamstring injury against Haiti",
+      "Rodrygo is missing the entire tournament",
+      "There are concerns Neymar lacks rhythm and physical condition after a long layoff"
+    ],
+    "momentum": "Brazil arrive under scrutiny and with little public faith at home; pundits think they are still short of convincing World Cup form and may need to improve during the tournament."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/view-brazil-scotland-neymar-casemiro-endrick-world-cup-2026"
+  ]
+}

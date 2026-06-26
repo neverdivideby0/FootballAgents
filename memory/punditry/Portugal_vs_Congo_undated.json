@@ -1,0 +1,47 @@
+{
+  "match_id": "Portugal_vs_Congo_undated",
+  "home": "Portugal",
+  "away": "Congo",
+  "date": null,
+  "home_read": {
+    "team": "Portugal",
+    "tactical_shape": [
+      "controlled but lacking tempo",
+      "relied on seeking Ronaldo via the flanks",
+      "Francisco Concei\u00e7\u00e3o brought penetration down the right after coming on"
+    ],
+    "standout_players": [
+      "Jo\u00e3o Neves \u2014 rising in front of Axel Tuanzebe to score in the sixth minute",
+      "Pedro Neto \u2014 provided the cross for the opening goal",
+      "Nuno Mendes \u2014 burst forward, only stopped by a last-ditch Aaron Wan-Bissaka intervention",
+      "Francisco Concei\u00e7\u00e3o \u2014 offered penetration down the right after his introduction",
+      "Cristiano Ronaldo \u2014 peripheral, had two half-chances and later stabbed two crosses wide"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Portugal were frustrated by a draw, looked loose and skittish after conceding, and the punditry questions whether they can go all the way with Ronaldo occupying space for games on end."
+  },
+  "away_read": {
+    "team": "Congo",
+    "tactical_shape": [
+      "experienced side stayed competitive after falling behind",
+      "dug in and remained organized",
+      "used short-corner routine leading to an inswinging delivery from Arthur Masuaku"
+    ],
+    "standout_players": [
+      "Yoane Wissa \u2014 exceptional shift and scored the equaliser with a well-taken header",
+      "C\u00e9dric Bakambu \u2014 tireless performance; twice threatened to deepen Portuguese discomfort",
+      "Samuel Moutoussamy \u2014 tireless in midfield and sparked the move that led to the goal",
+      "Arthur Masuaku \u2014 delivered the inswinging ball for the equaliser",
+      "Axel Tuanzebe \u2014 beaten by Jo\u00e3o Neves for the opener but part of a competitive DRC back line",
+      "Aaron Wan-Bissaka \u2014 made a last-ditch intervention to stop Nuno Mendes"
+    ],
+    "fatigue_injuries": [
+      "three weeks in Belgium observing quarantine due to the Ebola outbreak back home",
+      "little travelling support because of the same reason"
+    ],
+    "momentum": "Congo earned their first World Cup point and the performance is cast as tough, competitive and morale-boosting despite difficult circumstances."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report"
+  ]
+}
