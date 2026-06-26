@@ -245,23 +245,6 @@ CREATE TABLE IF NOT EXISTS wh_goals (
     FOREIGN KEY(team_id) REFERENCES wh_teams(team_id)
 );
 
-CREATE TABLE IF NOT EXISTS wh_shootouts (
-    shootout_id   TEXT PRIMARY KEY,
-    wh_match_id   TEXT,
-    date          TEXT,
-    home_team_id  TEXT,
-    away_team_id  TEXT,
-    home_team     TEXT,
-    away_team     TEXT,
-    winner_team_id TEXT,
-    winner        TEXT,
-    first_shooter TEXT,
-    source_id     TEXT,
-    snapshot      TEXT,
-    source_row    INTEGER,
-    FOREIGN KEY(wh_match_id) REFERENCES wh_matches(wh_match_id)
-);
-
 CREATE TABLE IF NOT EXISTS wh_lineups (
     lineup_id   TEXT PRIMARY KEY,
     wh_match_id TEXT,
@@ -422,6 +405,7 @@ class MatchStore:
         self.conn.executescript(_SITUATIONS_SCHEMA)
         self.conn.executescript(_WAREHOUSE_SCHEMA)
         self.conn.executescript(_PLAYER_NOTES_SCHEMA)
+        self.conn.execute("DROP TABLE IF EXISTS wh_shootouts")  # removed 2026-06 (sparse/noisy)
         self._migrate("player_stats", _PLAYER_MIGRATIONS)
         self._migrate("matches", _MATCH_MIGRATIONS)
         self._migrate("team_situations", _SITU_MIGRATIONS)
@@ -495,14 +479,43 @@ class MatchStore:
         self.conn.commit()
         return n
 
+    # ── alias-aware team matching ────────────────────────────────────────────
+    # The `matches` table can hold the SAME nation under different vendor spellings
+    # ("South Korea" from football-data.org AND "Korea Republic" from .co.uk). These
+    # helpers funnel every read through the alias table so a team resolves to itself
+    # whatever the spelling — otherwise a side can look like it "lost to" itself.
+
+    @staticmethod
+    def _same_team(name, team) -> bool:
+        """True if a stored name is the same nation as `team` (canonical/alias-aware)."""
+        from worldcupagents.dataflows.names import canonical_name, normalize_key
+        return normalize_key(canonical_name(name or "")) == normalize_key(canonical_name(team or ""))
+
+    @staticmethod
+    def _side_sql(col: str, team: str) -> tuple[str, list]:
+        """(clause, params) matching ONE column against any surface spelling of `team`."""
+        from worldcupagents.dataflows.names import canonical_name, surface_forms
+        keys = sorted(surface_forms(team))                  # normalized aliases (LOWER match)
+        disp = sorted({team, canonical_name(team)})          # exact display spellings (accents/punct)
+        kph, dph = ", ".join("?" * len(keys)), ", ".join("?" * len(disp))
+        return f"(LOWER(TRIM({col})) IN ({kph}) OR {col} IN ({dph}))", keys + disp
+
+    @classmethod
+    def _team_match_sql(cls, team: str) -> tuple[str, list]:
+        """(clause, params) matching `team` (any spelling) on either home or away."""
+        hc, hp = cls._side_sql("home", team)
+        ac, ap = cls._side_sql("away", team)
+        return f"({hc} OR {ac})", hp + ap
+
     def team_stat_profile(self, team: str, comp: str | None = None,
                           since: str | None = None, limit: int = 38) -> dict | None:
         """Per-match averages (for AND against) of shots, shots-on-target, fouls,
         corners, cards over a team's most recent matches — the 'tempo & discipline'
         profile mined from football-data.co.uk stat columns. ``since`` bounds
         recency (ISO date); None if the team has no stat-bearing rows."""
-        clauses = ["(home = ? OR away = ?)", "sh_home IS NOT NULL"]
-        args: list = [team, team]
+        tclause, targs = self._team_match_sql(team)
+        clauses = [tclause, "sh_home IS NOT NULL"]
+        args: list = list(targs)
         if comp is not None:
             clauses.append("comp = ?"); args.append(comp)
         if since is not None:
@@ -517,7 +530,7 @@ class MatchStore:
                                 "shots_a", "sot_a", "fouls_a", "corners_a")}
         n = 0
         for r in rows:
-            home = r["home"] == team
+            home = self._same_team(r["home"], team)
             def fa(stat):  # (for, against) picking the team's side
                 h, a = r[f"{stat}_home"], r[f"{stat}_away"]
                 return (h, a) if home else (a, h)
@@ -536,7 +549,8 @@ class MatchStore:
         perspective (shots/SoT/corners/fouls/cards from football-data.co.uk + xG
         from Understat). Stats are None for competitions that don't carry them
         (e.g. internationals)."""
-        clauses, args = ["(home = ? OR away = ?)"], [team, team]
+        tclause, targs = self._team_match_sql(team)
+        clauses, args = [tclause], list(targs)
         if comp is not None:
             clauses.append("comp = ?"); args.append(comp)
         if since is not None:
@@ -547,7 +561,7 @@ class MatchStore:
         ).fetchall()
         out = []
         for r in rows:
-            home = r["home"] == team
+            home = self._same_team(r["home"], team)
             def side(stat):
                 h, a = r[f"{stat}_home"], r[f"{stat}_away"]
                 return (h, a) if home else (a, h)
@@ -571,7 +585,8 @@ class MatchStore:
                      since: str | None = None) -> dict:
         """(W, D, L) split by home vs away over the team's matches — for spotting
         a soft home record or poor travelling form."""
-        clauses, args = ["(home = ? OR away = ?)"], [team, team]
+        tclause, targs = self._team_match_sql(team)
+        clauses, args = [tclause], list(targs)
         if comp is not None:
             clauses.append("comp = ?"); args.append(comp)
         if since is not None:
@@ -581,7 +596,7 @@ class MatchStore:
         ).fetchall()
         rec = {"home": [0, 0, 0], "away": [0, 0, 0]}   # W, D, L
         for r in rows:
-            at = "home" if r["home"] == team else "away"
+            at = "home" if self._same_team(r["home"], team) else "away"
             gf, ga = (r["hg"], r["ag"]) if at == "home" else (r["ag"], r["hg"])
             rec[at][0 if gf > ga else 2 if gf < ga else 1] += 1
         return rec
@@ -590,8 +605,12 @@ class MatchStore:
                since: str | None = None, limit: int = 8) -> dict:
         """The team's record against ONE specific opponent (most recent first) —
         for flagging a bogey side."""
-        clauses = ["((home = ? AND away = ?) OR (home = ? AND away = ?))"]
-        args = [team, opponent, opponent, team]
+        home_t, hp_t = self._side_sql("home", team)
+        away_o, ap_o = self._side_sql("away", opponent)
+        home_o, hp_o = self._side_sql("home", opponent)
+        away_t, ap_t = self._side_sql("away", team)
+        clauses = [f"(({home_t} AND {away_o}) OR ({home_o} AND {away_t}))"]
+        args = hp_t + ap_o + hp_o + ap_t
         if comp is not None:
             clauses.append("comp = ?"); args.append(comp)
         if since is not None:
@@ -602,26 +621,17 @@ class MatchStore:
         ).fetchall()
         wdl = [0, 0, 0]
         for r in rows:
-            gf, ga = (r["hg"], r["ag"]) if r["home"] == team else (r["ag"], r["hg"])
+            gf, ga = (r["hg"], r["ag"]) if self._same_team(r["home"], team) else (r["ag"], r["hg"])
             wdl[0 if gf > ga else 2 if gf < ga else 1] += 1
         return {"n": len(rows), "wdl": wdl}
-
-    def shootout_record(self, team_id: str) -> dict:
-        """Penalty-shootout wins/losses from the warehouse — the 'falls short in
-        extra time / on penalties' weakness for national teams."""
-        rows = self.conn.execute(
-            "SELECT home_team_id, away_team_id, winner_team_id FROM wh_shootouts "
-            "WHERE home_team_id = ? OR away_team_id = ?", [team_id, team_id],
-        ).fetchall()
-        won = sum(1 for r in rows if r["winner_team_id"] == team_id)
-        return {"n": len(rows), "won": won, "lost": len(rows) - won}
 
     # --- per-player scouting/style notes (user-authored qualitative layer) ---
 
     def upsert_player_note(self, team: str, player: str, note: str, source: str = "manual") -> None:
         from datetime import datetime, timezone
-        from worldcupagents.dataflows.names import normalize_key
-        pkey = f"{normalize_key(team)}|{normalize_key(player)}"
+        from worldcupagents.dataflows.names import canonical_name, normalize_key
+        # Key by the CANONICAL nation so 'South Korea' and 'Korea Republic' share notes.
+        pkey = f"{normalize_key(canonical_name(team))}|{normalize_key(player)}"
         self.conn.execute(
             "INSERT OR REPLACE INTO player_notes (pkey, team, player, note, source, updated_at) "
             "VALUES (?, ?, ?, ?, ?, ?)",
@@ -631,8 +641,8 @@ class MatchStore:
         self.conn.commit()
 
     def player_notes_for_team(self, team: str) -> list[dict]:
-        from worldcupagents.dataflows.names import normalize_key
-        tk = normalize_key(team)
+        from worldcupagents.dataflows.names import canonical_name, normalize_key
+        tk = normalize_key(canonical_name(team))  # alias-aware: 'South Korea' → 'korea republic'
         return [dict(r) for r in self.conn.execute(
             "SELECT team, player, note, source, updated_at FROM player_notes "
             "WHERE pkey LIKE ? ORDER BY player", [f"{tk}|%"],
@@ -644,9 +654,9 @@ class MatchStore:
             "ORDER BY team, player").fetchall()]
 
     def delete_player_note(self, team: str, player: str) -> bool:
-        from worldcupagents.dataflows.names import normalize_key
+        from worldcupagents.dataflows.names import canonical_name, normalize_key
         cur = self.conn.execute("DELETE FROM player_notes WHERE pkey = ?",
-                                [f"{normalize_key(team)}|{normalize_key(player)}"])
+                                [f"{normalize_key(canonical_name(team))}|{normalize_key(player)}"])
         self.conn.commit()
         return cur.rowcount > 0
 
@@ -893,7 +903,7 @@ class MatchStore:
     def upsert_wh_rows(self, table: str, rows: list[dict]) -> int:
         allowed = {
             "wh_teams", "wh_team_aliases", "wh_competitions", "wh_matches",
-            "wh_match_sources", "wh_goals", "wh_shootouts", "wh_lineups",
+            "wh_match_sources", "wh_goals", "wh_lineups",
             "wh_events", "wh_team_match_stats", "wh_player_match_stats",
             "wh_unresolved_names", "wh_players", "wh_player_aliases",
             "wh_player_career_totals", "wh_qual_documents", "wh_qual_segments",
@@ -928,7 +938,7 @@ class MatchStore:
             "DELETE FROM wh_match_sources WHERE source_id = ? AND file_id LIKE ?",
             [source_id, file_like],
         )
-        for table in ("wh_goals", "wh_shootouts", "wh_matches"):
+        for table in ("wh_goals", "wh_matches"):
             self.conn.execute(
                 f"DELETE FROM {table} WHERE source_id = ? AND snapshot = ?",
                 [source_id, snapshot],
@@ -939,7 +949,7 @@ class MatchStore:
         tables = [
             "wh_sources", "wh_source_files", "wh_ingestion_runs", "wh_teams",
             "wh_team_aliases", "wh_competitions", "wh_matches", "wh_match_sources",
-            "wh_goals", "wh_shootouts", "wh_lineups", "wh_events",
+            "wh_goals", "wh_lineups", "wh_events",
             "wh_team_match_stats", "wh_player_match_stats", "wh_qual_documents",
             "wh_players", "wh_player_aliases", "wh_player_career_totals",
             "wh_qual_segments", "wh_qual_claims", "wh_qual_links",

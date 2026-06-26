@@ -23,7 +23,7 @@ from urllib.parse import quote_plus
 from worldcupagents.agents.schemas import MatchEvent
 from worldcupagents.dataflows.commentary.base import RawMatchFeed
 from worldcupagents.dataflows.http_cache import HTTPCache
-from worldcupagents.dataflows.names import canonical_name, normalize_key, surface_forms
+from worldcupagents.dataflows.names import normalize_key, surface_forms
 
 logger = logging.getLogger(__name__)
 
@@ -204,24 +204,31 @@ class GuardianCommentaryProvider:
         if not results:
             return None
 
-        h = normalize_key(canonical_name(home))
-        a = normalize_key(canonical_name(away))
+        home_forms, away_forms = surface_forms(home), surface_forms(away)
 
         def names_match(r: dict) -> bool:
             t = normalize_key(r.get("webTitle", ""))
-            return bool(h and a and h in t and a in t)
+            return (
+                any(f in t for f in home_forms)
+                and any(f in t for f in away_forms)
+            )
 
         def block_count(r: dict) -> int:
             return len((r.get("blocks") or {}).get("body") or [])
 
-        def rank(r: dict) -> tuple:
-            return (names_match(r), r.get("type") == "liveblog", block_count(r))
+        candidates = [r for r in results if names_match(r)]
+        if not candidates:
+            logger.warning("guardian: no matching liveblog for %s v %s", home, away)
+            return None
 
-        best = max(results, key=rank)
-        if names_match(best) or best.get("type") == "liveblog":
-            return best
-        logger.warning("guardian: no confident liveblog match; using top result")
-        return results[0]
+        def rank(r: dict) -> tuple:
+            return (r.get("type") == "liveblog", block_count(r))
+
+        best = max(candidates, key=rank)
+        if best.get("type") != "liveblog" and block_count(best) == 0:
+            logger.warning("guardian: matching results for %s v %s contained no liveblog", home, away)
+            return None
+        return best
 
     @staticmethod
     def _chronological(blocks: list[dict]) -> list[dict]:

@@ -132,3 +132,25 @@ def test_fetch_articles_handles_name_variants():
     ]}}
     arts = _provider_with_response(payload).fetch_articles("USA", "Korea Republic", "2026-06-20")
     assert [a["url"] for a in arts] == ["u/usa-kor"]
+
+
+def test_fetch_match_uses_name_variants_for_liveblog():
+    payload = {"response": {"results": [
+        {"webTitle": "Uruguay 2-2 Cape Verde: World Cup 2026 – as it happened",
+         "type": "liveblog", "webUrl": "u/uru-cpv",
+         "blocks": {"body": [{"bodyTextSummary": "1 min: Uruguay kick off."}]}},
+    ]}}
+    feed = _provider_with_response(payload).fetch_match("Uruguay", "Cape Verde Islands", "2026-06-21")
+    assert feed.sources == ["u/uru-cpv"]
+    assert feed.lines == ["1 min: Uruguay kick off."]
+
+
+def test_fetch_match_refuses_unrelated_liveblog():
+    payload = {"response": {"results": [
+        {"webTitle": "Belgium 0-0 Iran: World Cup 2026 – as it happened",
+         "type": "liveblog", "webUrl": "u/bel-iran",
+         "blocks": {"body": [{"bodyTextSummary": "1 min: Belgium kick off."}]}},
+    ]}}
+    feed = _provider_with_response(payload).fetch_match("Uruguay", "Cape Verde Islands", "2026-06-21")
+    assert feed.sources == []
+    assert feed.lines == []

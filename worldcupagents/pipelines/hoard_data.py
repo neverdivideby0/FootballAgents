@@ -33,7 +33,7 @@ SOURCE_INTERNATIONAL_RESULTS = "international_results"
 SOURCE_WIKIPEDIA_PLAYER_TOTALS = "wikipedia_player_totals"
 SOURCE_STATSBOMB_OPEN_DATA = "statsbomb_open_data"
 _BASE = "https://raw.githubusercontent.com/martj42/international_results/master"
-_FILES = ("results.csv", "shootouts.csv", "goalscorers.csv", "former_names.csv")
+_FILES = ("results.csv", "goalscorers.csv", "former_names.csv")
 _STATSBOMB_BASE = "https://raw.githubusercontent.com/statsbomb/open-data/master/data"
 
 
@@ -203,7 +203,7 @@ def hoard_international_results(
             "name": "martj42/international_results",
             "homepage": "https://github.com/martj42/international_results",
             "license": "CC0-1.0",
-            "notes": "Men's full international football results, goalscorers, shootouts, and former names.",
+            "notes": "Men's full international football results, goalscorers, and former names.",
         })
         fetched_at = _now()
         for name in _FILES:
@@ -220,7 +220,6 @@ def hoard_international_results(
             })
 
         result_rows = [r for r in _read_csv(raw_dir / "results.csv", limit_source) if _completed(r)]
-        shootout_rows = _read_csv(raw_dir / "shootouts.csv", limit_source)
         goal_rows = _read_csv(raw_dir / "goalscorers.csv", limit_source)
         former_rows = _read_csv(raw_dir / "former_names.csv", limit_source)
 
@@ -324,29 +323,12 @@ def hoard_international_results(
             if mid:
                 item["matches"].add(mid)
 
-        wh_shootouts = []
-        for idx, r in enumerate(shootout_rows, start=1):
-            mid = matches_by_key.get(_match_lookup_key(r.get("date"), r.get("home_team"), r.get("away_team")))
-            wh_shootouts.append({
-                "shootout_id": f"{source_id}:{snapshot}:shootout:{idx}",
-                "wh_match_id": mid, "date": r.get("date"),
-                "home_team_id": _team_id(r.get("home_team") or ""),
-                "away_team_id": _team_id(r.get("away_team") or ""),
-                "home_team": _team_resolution(r.get("home_team") or "").canonical_name,
-                "away_team": _team_resolution(r.get("away_team") or "").canonical_name,
-                "winner_team_id": _team_id(r.get("winner") or ""),
-                "winner": _team_resolution(r.get("winner") or "").canonical_name,
-                "first_shooter": _team_resolution(r.get("first_shooter") or "").canonical_name,
-                "source_id": source_id, "snapshot": snapshot, "source_row": idx,
-            })
-
         counts["wh_teams"] = store.upsert_wh_rows("wh_teams", list(teams.values()))
         counts["wh_team_aliases"] = store.upsert_wh_rows("wh_team_aliases", list(aliases.values()))
         counts["wh_competitions"] = store.upsert_wh_rows("wh_competitions", list(comps.values()))
         counts["wh_matches"] = store.upsert_wh_rows("wh_matches", wh_matches)
         counts["wh_match_sources"] = store.upsert_wh_rows("wh_match_sources", wh_match_sources)
         counts["wh_goals"] = store.upsert_wh_rows("wh_goals", wh_goals)
-        counts["wh_shootouts"] = store.upsert_wh_rows("wh_shootouts", wh_shootouts)
 
         if populate_summary:
             existing = {
