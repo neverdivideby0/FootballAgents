@@ -24,7 +24,7 @@ from urllib.parse import quote_plus
 from worldcupagents.agents.schemas import MatchEvent
 from worldcupagents.dataflows.commentary.base import RawMatchFeed
 from worldcupagents.dataflows.http_cache import HTTPCache
-from worldcupagents.dataflows.names import normalize_key, surface_forms
+from worldcupagents.dataflows.names import canonical_name, normalize_key, surface_forms
 
 logger = logging.getLogger(__name__)
 
@@ -162,8 +162,22 @@ class GuardianCommentaryProvider:
 
     # --- internals ---
 
+    @staticmethod
+    def _search_terms(home: str, away: str) -> str:
+        """Query spanning each team's input AND canonical (warehouse) spelling, so the
+        Guardian surfaces the right article whichever name it uses — e.g. a report titled
+        'Côte d'Ivoire' for our 'Ivory Coast'. The alias-aware title match then confirms it."""
+        seen, terms = set(), []
+        for n in (home, away):
+            for form in (n, canonical_name(n)):
+                key = (form or "").strip().lower()
+                if key and key not in seen:
+                    seen.add(key)
+                    terms.append(form.strip())
+        return " ".join(terms)
+
     def _search_url(self, home: str, away: str, date: str | None) -> str:
-        q = quote_plus(f"{home} {away}")
+        q = quote_plus(self._search_terms(home, away))
         url = (
             f"{BASE}/search?q={q}&section=football&show-blocks=all&show-fields=bodyText"
             f"&page-size=20&order-by=relevance&api-key={self.api_key}"

@@ -164,3 +164,14 @@ def test_search_url_uses_a_date_window_not_a_single_day():
     assert _date_window(None) is None and _date_window("not-a-date") is None
     url = _provider_with_response({"response": {"results": []}})._search_url("Japan", "Sweden", "2026-06-25")
     assert "from-date=2026-06-23" in url and "to-date=2026-06-28" in url
+
+
+def test_search_terms_span_input_and_canonical_warehouse_name():
+    # The query must include each team's CANONICAL (warehouse) spelling too, so the
+    # Guardian surfaces a report titled 'Côte d'Ivoire' for our 'Ivory Coast'.
+    from worldcupagents.dataflows.commentary.guardian import GuardianCommentaryProvider as G
+    from worldcupagents.dataflows.names import canonical_name
+    q = G._search_terms("Ivory Coast", "Ecuador")
+    assert "Ivory Coast" in q and canonical_name("Ivory Coast") in q and "Ecuador" in q
+    # input == canonical collapses (no 'Ecuador Ecuador')
+    assert G._search_terms("Ecuador", "Ecuador").split().count("Ecuador") == 1
