@@ -5,20 +5,43 @@
   "date": "2026-06-15",
   "home_read": {
     "team": "Spain",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Dominant possession and territorial pressure, but struggled to break down a deep, organised defensive block",
+      "Introduced Lamine Yamal on 70 minutes to change the mood, but not the outcome"
+    ],
+    "standout_players": [
+      "Unai Sim\u00f3n: saved Diney Borges\u2019 late header",
+      "Dani Olmo: made a crucial block from Kevin Pina",
+      "Mikel Oyarzabal: had a header saved by Vozinha",
+      "Ferran Torres: hit the bar and was denied by Vozinha",
+      "Aymeric Laporte: had a header saved by Vozinha",
+      "Lamine Yamal: changed the mood on introduction, but did not alter history"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A damaging and unexpected setback, but the message from Merino is to stay calm and avoid panic; Spain still see themselves as capable of responding."
   },
   "away_read": {
     "team": "Cape Verde Islands",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Courageous, compact and extremely well-organised without the ball",
+      "Defended with bodies on the line while still carrying a threat on the break and in late moments"
+    ],
+    "standout_players": [
+      "Bubista: praised for preparing a team that resisted Spain and deserved the draw",
+      "Pico Lopes: produced an astonishing late block to deny Dani Olmo",
+      "Vozinha: made a series of saves, including from Oyarzabal, Torres and Laporte",
+      "Diney Borges: had a 90th-minute header saved by Unai Sim\u00f3n",
+      "Ryan Mendes: had a late chance as Cape Verde pressed for more",
+      "Kevin Pina: forced a block from Dani Olmo"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Historic debut draw against one of the favourites gives Cape Verde huge belief and a story that will live for ever."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/15/spain-cape-verde-world-cup-2026-group-h-match-report",
-    "https://www.theguardian.com/football/2026/jun/15/cape-verde-hero-vozinha-in-tears-after-spain-draw-as-cost-of-visa-stopped-his-mother-being-at-game"
+    "https://www.theguardian.com/football/2026/jun/17/no-time-to-panic-mikel-merino-spain-cape-verde-setback",
+    "https://www.theguardian.com/football/2026/jun/16/pico-lopes-cape-verde-football-daily-newsletter",
+    "https://www.theguardian.com/football/2026/jun/16/after-cape-verdes-heroics-against-spain-more-great-world-cup-underdog-stories",
+    "https://www.theguardian.com/football/2026/jun/16/roberto-lopes-cape-verde-spain-draw-world-cup-2026"
   ]
 }

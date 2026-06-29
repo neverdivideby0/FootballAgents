@@ -5,17 +5,40 @@
   "date": "2026-06-22",
   "home_read": {
     "team": "France",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Started with sustained early pressure and a high defensive squeeze that kept Iraq pinned back",
+      "Built attacks down the right, with Kound\u00e9 involved in the move for the opening goal",
+      "Recovered quickly after the stoppage and punished Iraq on transitions / simple finishes after defensive errors"
+    ],
+    "standout_players": [
+      "Kylian Mbapp\u00e9: two goals, including a long-range opener and a second after the restart; dominant and central to the win",
+      "Ousmane Demb\u00e9l\u00e9: scored the third, his first goal at a major tournament, and assisted Mbapp\u00e9 for the second",
+      "Michael Olise: assisted the first goal and later teed up Demb\u00e9l\u00e9 for the third",
+      "Jules Kound\u00e9: part of the right-sided buildup for the opener"
+    ],
+    "fatigue_injuries": [
+      "Demb\u00e9l\u00e9 and Michael Olise were withdrawn on the hour to preserve them for tougher matches"
+    ],
+    "momentum": "Qualified for the knockout rounds with six points and looked comfortably in control despite the extraordinary stoppage."
   },
   "away_read": {
     "team": "Iraq",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Largely pinned deep, with the defensive line unable to move beyond the six-yard box during France\u2019s first-half siege",
+      "Preferred to keep the ball and out-possess France rather than press aggressively",
+      "Showed brief threat after the restart through direct crossing, including a header from Ali al-Hamadi"
+    ],
+    "standout_players": [
+      "Ali al-Hamadi: replaced the injured captain and immediately threatened with a header just wide",
+      "Merchas Doski: delivered the cross for that early post-restart chance"
+    ],
+    "fatigue_injuries": [
+      "Captain Aymen Hussein was injured and replaced by Ali al-Hamadi",
+      "The two-hour stoppage was said by the coach to have made things harder and may have contributed to mistakes"
+    ],
+    "momentum": "Out-possessed France but were ultimately undone by poor defending and the restart disruption; left with the sense they competed but were outscored by a superior side."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/23/france-iraq-world-cup-group-i-match-report"
+  ]
 }

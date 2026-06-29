@@ -6,38 +6,78 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 6 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Netherlands appear to be in a possession-based attacking shape, with Van de Ven temporarily at right-back",
+        "Japan are active in a compact but proactive midfield setup, pressing and combining down the left"
+      ],
+      "adjustments": [
+        "Van de Ven temporarily playing right-back",
+        "Japan repeatedly overload the left side with Maeda, Kubo and Nakamura linking up"
+      ],
+      "key_matchups": [
+        "Malen vs Taniguchi",
+        "Nakamura vs Van de Ven",
+        "Maeda vs Dumfries",
+        "Maeda vs Van Dijk",
+        "Nakamura vs Van Hecke"
+      ],
+      "summary": "The opening phase is bright and open, with both teams looking to attack rather than settle into a cautious block. The Netherlands create the clearest chance through a long, winding move that frees Malen, while Japan look sharper in possession and repeatedly threaten down the left with Maeda, Kubo and Nakamura combining. A notable early wrinkle is Van de Ven appearing at right-back, which Japan immediately target through direct wing play."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 19 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "slow-slow-quick attacking rhythm",
+        "Japan defending compactly enough to force shots/crosses from the edge and wide areas",
+        "Netherlands enjoying a good spell with sustained attacking pressure"
+      ],
+      "adjustments": [
+        "Netherlands attacking more through their left side with Gakpo involved",
+        "Japan creating from the right via Doan, with Maeda dropping off to link play",
+        "Van de Ven pushing high from left-back to join attacks",
+        "Gakpo cutting inside to deliver from the left half-space",
+        "Dumfries positioning very deep/appropriately to block shooting lanes and attack the far post"
+      ],
+      "key_matchups": [
+        "Summerville vs Nakamura",
+        "Dumfries vs Nakamura",
+        "Gakpo vs Japan's right side",
+        "Maeda vs the Dutch back line",
+        "Van de Ven vs Japan's defensive right flank"
+      ],
+      "summary": "This phase is defined by a pronounced slow-slow-quick rhythm, with both sides finding most of their danger down the left and the Netherlands growing into their strongest spell of the half. Japan\u2019s best moments came from quick combinations on the right and Maeda\u2019s link play, but Dutch defensive positioning repeatedly smothered the final action, while the Oranje threatened through overlaps, cutbacks and set-piece pressure. "
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 3 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "The match reaches half-time level at 0-0 between the Netherlands and Japan, with no tactical detail provided in the commentary beyond the scoreline. The brief also notes that neither side made any half-time changes, so there is no evidence here of a shift in shape, pressing scheme, or specific matchups."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 20 commentary beats; 3 events; goals at 51', 57', 64'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "deep/cagey setup from both sides",
+        "Japan defending with a compact back line/low block",
+        "Netherlands attacking through wide areas and crosses"
+      ],
+      "adjustments": [
+        "Netherlands increased pressure after the break",
+        "Gravenberch advancing down the right to deliver crosses",
+        "Summerville running in behind and attacking the byline",
+        "Japan responded enough to level the game after falling behind"
+      ],
+      "key_matchups": [
+        "Ueda between Van Dijk and Van de Ven",
+        "Van Dijk vs Watanabe"
+      ],
+      "summary": "The phase begins as a tight, cautious contest with Japan threatening from direct balls into Ueda, while the Netherlands look to exploit wide areas and second balls. After the interval, the Dutch grow stronger, generating crosses and back-post danger, which leads to Van Dijk\u2019s opener before Japan equalize shortly after. The match then swings again as the Netherlands\u2019 right-sided pressure and runs in behind keep Japan under sustained stress."
     },
     {
       "phase": "75-90+ Crunch Time",
       "formations_blocks": [],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 32 commentary beats; 1 events; goals at 89'. Enable use_llm for tactical extraction."
+      "summary": "This phase is dominated by late drama rather than identifiable tactical shifts, with the Netherlands rescuing a draw through Kamada\u2019s 89th-minute goal to make it 2-2 against Japan. The other listed result is Germany\u2019s 7-1 win over Cura\u00e7ao at full time, but the text provides no formation or pressing details for either match."
     }
   ],
   "sources": [

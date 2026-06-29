@@ -5,19 +5,38 @@
   "date": "2026-06-18",
   "home_read": {
     "team": "Canada",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "more proactive approach with Alphonso Davies back, using him as an outlet out wide to aid build-up play",
+      "kept their block of possession in Qatar's half and pressed/pinned Qatar back from the start",
+      "crowd-driven high-pressure approach with an expected 12th-man atmosphere"
+    ],
+    "standout_players": [
+      "Alphonso Davies \u2014 Canada\u2019s best player; return was expected to help build-up play",
+      "Jonathan David \u2014 hat-trick in the 6-0 win",
+      "Isma\u00ebl Kon\u00e9 \u2014 helped pull the strings in midfield, but suffered a horror leg injury in the second half",
+      "Stephen Eust\u00e1quio \u2014 named as one of the midfielders to pull the strings",
+      "Cyle Larin \u2014 scored the opening breakthrough after Qatar failed to clear Ali Ahmed\u2019s service",
+      "Ali Ahmed \u2014 delivered the service for the first goal"
+    ],
+    "fatigue_injuries": [
+      "Isma\u00ebl Kon\u00e9 suffered a horror leg injury in the second half"
+    ],
+    "momentum": "Historic first men\u2019s World Cup win, with a dominant performance and strong belief they can reach the knockout round."
   },
   "away_read": {
     "team": "Qatar",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "familiar with Concacaf travel and the physical style typically associated with Concacaf soccer",
+      "were pinned back for long spells and only briefly found balance after an Akram Afif break"
+    ],
+    "standout_players": [
+      "Akram Afif \u2014 produced a scamper and won a foul to help Qatar briefly settle"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A heavy 6-0 defeat leaves them overpowered and searching for a response after being outclassed in Vancouver."
   },
   "sources": [
-    "https://www.theguardian.com/football/2026/jun/17/canada-qatar-world-cup-team-news-alphonso-davies"
+    "https://www.theguardian.com/football/2026/jun/17/canada-qatar-world-cup-team-news-alphonso-davies",
+    "https://www.theguardian.com/football/2026/jun/18/canada-qatar-world-cup-2026-group-b-match-report"
   ]
 }

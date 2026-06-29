@@ -6,40 +6,39 @@
   "home_read": {
     "team": "Belgium",
     "tactical_shape": [
-      "4-3-3 / attacking approach with Kevin De Bruyne creating from wide areas and by the byline",
-      "Pressed for control and volume of shots but were blunt in attack; 15 shots to 4 before the late red card",
-      "Lost structure after Nathan Ngoy\u2019s sending-off and were rattled in the closing stages"
+      "4-3-3 / attacking approach implied, with Kevin De Bruyne wide delivery and Leandro Trossard creating byline chances",
+      "Pushed forward and generated 15 shots, but were blunt in attack and struggled to break Iran down"
     ],
     "standout_players": [
-      "Alireza Beiranvand was the decisive opponent, making the outstanding save of the match to deny Maxim De Cuyper",
-      "Kevin De Bruyne glittered in moments, especially with the byline cross/pass that nearly set up the opener",
-      "Thibaut Courtois was alert and made an instinctive save from Hossein Kanaanizadegan",
-      "Romelu Lukaku huffed and puffed on his first start for club or country in more than 12 months; De Cuyper missed a huge chance"
+      "Thibaut Courtois \u2014 alert early, made an instinctive save from Taremi",
+      "Kevin De Bruyne \u2014 glittered in moments; the byline pass to De Cuyper was singled out as brilliant",
+      "Romelu Lukaku \u2014 huffed and puffed on his first start for club or country in more than 12 months",
+      "Nathan Ngoy \u2014 saw red after wiping out Mehdi Taremi",
+      "Maxim De Cuyper \u2014 twice involved in the biggest Belgium chances, but denied by Beiranvand"
     ],
     "fatigue_injuries": [
       "J\u00e9r\u00e9my Doku was absent through illness",
-      "Nathan Ngoy was reduced to 10 men after wiping out Mehdi Taremi"
+      "Romelu Lukaku was making his first start for club or country for more than 12 months"
     ],
-    "momentum": "Pressure is building after another disappointing result and Belgium now face a must-win final group match to save their tournament."
+    "momentum": "Pressure is mounting after another disappointing result; Belgium are in bother and must beat New Zealand to keep their hopes alive."
   },
   "away_read": {
     "team": "Iran",
     "tactical_shape": [
-      "Credited for refusing to wilt and staying in the game under pressure",
-      "Used a free-kick routine and long throw threats to create moments; remained disciplined enough to keep Belgium out until the decisive save",
-      "Took advantage of Belgium being reduced to 10 men and finished the match with numerical superiority"
+      "Set up to absorb pressure and threaten in transition / from set-piece situations, with a long throw and organized defending",
+      "Stayed resilient under pressure and were willing to suffer without wilt"
     ],
     "standout_players": [
-      "Alireza Beiranvand was the match hero with a miraculous, game-defining save and several other key stops; described by Amir Ghalenoei as one of Iran\u2019s greatest goalkeepers and one of his best days",
-      "Ali Nemati made the critical intervention to stop De Bruyne\u2019s cross before Beiranvand saved from De Cuyper",
-      "Mehdi Taremi had a precise finish ruled out for offside and was the player fouled by Nathan Ngoy",
-      "Hossein Kanaanizadegan tested Courtois with a bouncing effort",
-      "Saeid Ezatolahi forced a full-throttle shot at Courtois after Belgium\u2019s error"
+      "Alireza Beiranvand \u2014 the moment of the match; made a miraculous save and had one of his best days",
+      "Amir Ghalenoei praised Beiranvand as one of Iran's greatest goalkeepers and extremely experienced, intelligent",
+      "Ali Nemati \u2014 stopped De Bruyne's cross with his legs splayed",
+      "Hossein Kanaanizadegan \u2014 forced Courtois into an alert save",
+      "Mehdi Taremi \u2014 had a precise finish ruled out for offside and won the red-card incident"
     ],
     "fatigue_injuries": [
-      "Ghalenoei noted Iran had only 16 hours\u2019 preparation in LA, two flights and a heavy game"
+      "Sixteen hours to prepare in LA, two flights and a heavy game were cited as taxing conditions"
     ],
-    "momentum": "Iran\u2019s belief is growing after back-to-back creditable draws, and they remain alive in the group with momentum and a goalkeeper inspiring them."
+    "momentum": "Iran believe they can progress, with two creditable draws and growing confidence after resisting Belgium under severe conditions."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/21/belgium-iran-world-cup-group-g-match-report"

@@ -5,17 +5,35 @@
   "date": "2026-06-14",
   "home_read": {
     "team": "Netherlands",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Carefully metered possession, controlling the tempo and geometry of the game",
+      "Pressed higher after the opening phase and found pockets of space between the lines"
+    ],
+    "standout_players": [
+      "Frenkie de Jong was measured and stately on the ball",
+      "Donyell Malen started in the centre of attack and produced an early powerful shot that forced a save",
+      "Virgil van Dijk scored with a finely angled header off the far post",
+      "Crysencio Summerville made it 2-1 with a lovely curled left-foot shot after gliding inside",
+      "Ryan Gravenberch supplied the ball for Summerville's goal"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Looked in control for long spells and regained the lead, but were denied late; still appear strong in a wide-open group."
   },
   "away_read": {
     "team": "Japan",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Set up with attacking midfielders in the wing-back spots and a defensive three",
+      "Used high-pressing flurries and responded quickly after conceding",
+      "Found most of their threat from the left flank and from right-sided combinations"
+    ],
+    "standout_players": [
+      "Hajime Moriyasu said the point was very meaningful and that Japan could learn from the Dutch",
+      "Zion Suzuki made early saves to deny Malen and another close header",
+      "Keito Nakamura had Japan's best chance before half-time and later scored via a deflection off Jan Paul van Hecke",
+      "Daichi Kamada scored the 89th-minute equaliser"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Rescued a late draw from a position where they looked flat, suggesting resilience and keeping Group F open."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/14/netherlands-japan-world-cup-match-report"

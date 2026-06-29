@@ -5,20 +5,47 @@
   "date": "2026-06-14",
   "home_read": {
     "team": "Australia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Disciplined, balanced team that defended compactly and stayed well organised",
+      "Tight midfield shape that suffocated Turkey and protected a 2-0 lead",
+      "Defence-first approach after going ahead, with substitutes sitting deep to help preserve the result"
+    ],
+    "standout_players": [
+      "Patrick Beach 8/10 \u2014 dream World Cup debut; tipped Bardakci's shot onto the post and made two crucial free-kick saves",
+      "Alessandro Circati 7/10 \u2014 calm, strong in individual challenges, powerful in the air",
+      "Harry Souttar 8/10 \u2014 captained the side and headed or booted away anything that entered the box",
+      "Cameron Burgess 7/10 \u2014 muscled away attackers; described as a brick wall on the left",
+      "Jacob Italiano 8/10 \u2014 kept Yilmaz quiet, blocked crosses and shots, earned a standing ovation",
+      "Jordan Bos 7/10 \u2014 defensively disciplined and kept Arda Guler quiet for 45 minutes",
+      "Aiden O\u2019Neill 6/10 \u2014 tidy circuit-breaker who kept the team ticking",
+      "Paul Okon-Engstler 7/10 \u2014 grew in confidence and played the long ball for Irankunda's opener",
+      "Connor Metcalfe 8/10 \u2014 huge energy and pressing, scored Australia's second",
+      "Nestory Irankunda 8/10 \u2014 scored a stunning solo goal with lightning pace"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A convincing 2-0 win and a highly disciplined defensive performance leave Australia with confidence and momentum after spoiling the pre-match hype."
   },
   "away_read": {
     "team": "Turkey",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Controlled tempo through Hakan Calhanoglu as main ball-carrier",
+      "Attacked more through transitions and right-back forward runs from Zeki Celik",
+      "Looked more dangerous after the break when Kenan Yildiz came on and immediately lifted the attack down the left"
+    ],
+    "standout_players": [
+      "Ugurcan Cakir 7/10 \u2014 commanding in the box and barely put a foot wrong aside from the goals",
+      "Abdulkerim Bardakci 7/10 \u2014 calm under pressure and Turkey's best defender",
+      "Hakan Calhanoglu 7/10 \u2014 main ball-carrier who controlled the tempo and connected lines",
+      "Arda Guler 8/10 \u2014 Turkey's most creative attacking player, though short of clear openings",
+      "Kenan Yildiz 7/10 \u2014 immediately elevated Turkey's attack down the left",
+      "Zeki Celik 6/10 \u2014 made threatening forward runs from right-back but was beaten for the opener"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Despite pre-match talk of being more talented, Turkey were frustrated and largely blunted; the loss exposes a lack of cutting edge even if the more dynamic substitutes hinted at upside."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/14/australia-turkey-player-ratings-world-cup-group-d",
+    "https://www.theguardian.com/football/2026/jun/14/australia-socceroos-world-cup-turkey-preview-more-talented-spoil-the-party",
     "https://www.theguardian.com/football/2026/jun/14/australia-socceroos-turkey-world-cup-2026-group-d-match-report"
   ]
 }

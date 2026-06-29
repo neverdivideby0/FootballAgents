@@ -6,38 +6,97 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 12 commentary beats; 1 events; goals at 6'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Netherlands high press",
+        "Sweden pushed back into a deeper defensive block"
+      ],
+      "adjustments": [
+        "Dutch press and offside line used early to pin Sweden back",
+        "Midfielders bursting on from deep, with De Jong pulling strings from deep"
+      ],
+      "key_matchups": [
+        "Dumfries vs Sweden's left side",
+        "Malen vs Sweden's defensive line",
+        "Brobbey vs Sweden's center-backs",
+        "Gyokeres vs Verbruggen",
+        "Hien vs Gravenberch",
+        "Gakpo vs Sweden's covering defender"
+      ],
+      "summary": "The Netherlands started on the front foot, using a high press and aggressive vertical runs to trap Sweden deep and force hurried clearances. Their early energy paid off with Brobbey\u2019s sixth-minute goal, while Sweden\u2019s best responses came through Gyokeres and an attempted set-piece routine, but they were largely pinned back by Dutch intensity and the threat from Dumfries and Malen."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 23 commentary beats; 1 events; goals at 17'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Netherlands high-tempo attacking shape, repeatedly getting men into the Sweden box",
+        "Sweden initially under pressure in a disorganized defensive shape",
+        "Sweden's planned switch to a back four with Gudmundsson moving into the back line"
+      ],
+      "adjustments": [
+        "Sweden\u2019s Potter plan to change to a back four, with Gudmundsson into the four",
+        "Netherlands continuing to target runs into the Sweden box rather than settling into possession"
+      ],
+      "key_matchups": [
+        "Brobbey vs Lagerbielke",
+        "Gyokeres vs the Netherlands flank/defensive line",
+        "Reijnders attacking the Sweden box"
+      ],
+      "summary": "The phase is dominated by Dutch pressure, with Reijnders making repeated bursts into the box and Brobbey scoring to leave Sweden scrambling. Sweden look badly stretched and, in response, Potter\u2019s side prepare a shift to a back four, which briefly creates a route for Gyokeres to escape down the flank and force a half-chance. The overall tactical story is one of Netherlands control and Sweden trying to re-balance their shape after being pulled in multiple directions."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 5 commentary beats. Enable use_llm for tactical extraction."
+      "adjustments": [
+        "Isak\u2019s movement is dragging defenders away from Gyokeres, creating space between the two forwards"
+      ],
+      "key_matchups": [
+        "Isak vs Netherlands defenders",
+        "Gyokeres vs Netherlands defenders",
+        "Verbruggen vs Sweden attackers"
+      ],
+      "summary": "The main tactical note is Isak\u2019s intelligent movement, which repeatedly pulls defenders away from Gyokeres and helps Sweden create a better chance on goal. The sequence ends with Gyokeres forcing a save from Verbruggen, suggesting Sweden were improving just before half-time despite the scoreline of 2-0 to the Netherlands."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 23 commentary beats; 3 events; goals at 47', 54', 59'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Dutch attacking overloads",
+        "Sweden deep defensive block under pressure",
+        "Sweden counterattacking moments after the restart"
+      ],
+      "adjustments": [
+        "Netherlands: Summerville on for Malen at 46'",
+        "Sweden: Bergvall, Elanga and Zeneli introduced at 55'",
+        "Sweden: Karlstrom, Nygren and Bernhardsson departed at 56'",
+        "Netherlands: Koopmeiners and Guus Til on for Reijnders and De Jong at 60'"
+      ],
+      "key_matchups": [
+        "Gudmunsson vs Summerville",
+        "Ayari vs the Dutch box/defensive screen",
+        "Elanga vs the Netherlands right side",
+        "Lindelof vs Brobbey"
+      ],
+      "summary": "Netherlands resumed with immediate control, using repeated overloads to create easy chances and Gakpo\u2019s quick-fire goals to stretch the game to 4-0 by 54'. Sweden briefly found a response through Elanga after a set of substitutions, but their attacking moments were isolated, while the Dutch continued to menace through Brobbey and wide pressure."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 21 commentary beats; 1 events; goals at 89'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Dutch closing down space",
+        "Sweden pushing forward aggressively",
+        "patient buildup from the Netherlands"
+      ],
+      "adjustments": [
+        "79' Sweden substitute Taha Ali for Ayari, changing from a midfielder to a winger",
+        "Sweden continue to seek width and pace through Elanga and Ali",
+        "Dutch defend deeper and try to compact space late on"
+      ],
+      "key_matchups": [
+        "Ayari vs Gravenberch",
+        "Isak vs Dutch defenders",
+        "Lindelof vs Memphis",
+        "Ali vs Van Hecke",
+        "Elanga vs Gravenberch",
+        "Isak vs Verbruggen"
+      ],
+      "summary": "This late phase was defined by Sweden chasing the game and trying to generate momentum through pace wide, with Elanga and later Taha Ali repeatedly testing the Dutch back line. The Netherlands largely managed the space well, defended with discipline in key moments, and remained dangerous enough in transition and patient buildup to finish with Summerville\u2019s late goal."
     }
   ],
   "sources": [

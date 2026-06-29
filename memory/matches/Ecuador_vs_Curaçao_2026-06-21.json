@@ -6,38 +6,86 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 10 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Cura\u00e7ao pressing high early",
+        "Ecuador using a direct counter/long-ball approach",
+        "Cura\u00e7ao looking to attack in transition"
+      ],
+      "adjustments": [
+        "Ecuador repeatedly trying to draw Cura\u00e7ao forward before playing over the top",
+        "Cura\u00e7ao pressing after Ecuador's early backline mistake"
+      ],
+      "key_matchups": [
+        "Enner Valencia vs Cura\u00e7ao center backs",
+        "Eloy Room vs Enner Valencia",
+        "Tahith Chong vs Ecuador's back line",
+        "Yeboah vs Cura\u00e7ao defense",
+        "Vite and Yeboah combining down Ecuador's right"
+      ],
+      "summary": "The opening phase is defined by Ecuador trying to lure Cura\u00e7ao up the pitch and then hit long balls over the top, which immediately created a major early chance for Enner Valencia. Cura\u00e7ao are not passive: they press early, look confident in transition, and generate a few warning shots of their own, even if one key effort was ruled offside. "
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 18 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Ecuador aggressive press",
+        "Cura\u00e7ao under sustained multi-wave press",
+        "Cura\u00e7ao attempting to play through pressure rather than sit in a low block"
+      ],
+      "adjustments": [
+        "Mois\u00e9s Caicedo dropping almost behind the center-backs to help build play and dictate tempo",
+        "Cura\u00e7ao occasionally breaking pressure with line-breaking passes and quicker circulation"
+      ],
+      "key_matchups": [
+        "Mois\u00e9s Caicedo vs Cura\u00e7ao's first line of pressure",
+        "Gonzalo Plata vs Cura\u00e7ao's defensive line on the edge of the box",
+        "Tahith Chong vs Ecuador's box defense"
+      ],
+      "summary": "This phase was defined by Ecuador\u2019s aggressive pressing game, which repeatedly forced Cura\u00e7ao to battle through multiple waves of pressure just to advance the ball. Mois\u00e9s Caicedo became the control point for Ecuador, at times dropping deep to orchestrate buildup, while Cura\u00e7ao\u2019s best moments came only when they managed to break the press and find space in the final third. Cura\u00e7ao remained willing to attack rather than just sit deep, but Ecuador\u2019s pressure largely dictated the flow."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
-      "adjustments": [],
+      "adjustments": [
+        "Ecuador made a half-time substitution: Kevin Rodr\u00edguez replaced Jordy Alc\u00edvar."
+      ],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 4 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "The half-time brief offers very little tactical detail beyond the match remaining goalless at the interval. The only concrete change mentioned is Ecuador's substitution at the restart, with Kevin Rodr\u00edguez coming on for Jordy Alc\u00edvar, while the sides also switched ends for the second half."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 23 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Ecuador pushing high for an equalizer",
+        "Cura\u00e7ao defending and countering from a deeper block",
+        "end-to-end transition phase after the restart"
+      ],
+      "adjustments": [
+        "Ecuador increasing attacking urgency and volume of shots",
+        "Cura\u00e7ao absorbing pressure and breaking quickly on turnovers",
+        "set-piece pressure from Ecuador via free kicks and corners"
+      ],
+      "key_matchups": [
+        "Eloy Room vs Ecuador's aerial/set-piece pressure",
+        "Galindez vs Cura\u00e7ao's counterattacking shots (Leandro Bacuna, Comenencia, Locadia)",
+        "Enner Valencia vs the Cura\u00e7ao defensive setup"
+      ],
+      "summary": "After the interval, Ecuador took control of territory and pressed harder for a goal, but their attacks became increasingly hurried and frustrated, with several speculative shots and a lack of clear ideas. Cura\u00e7ao sat deeper, then repeatedly threatened in transition, forcing big saves from both Eloy Room and Galindez and turning the match into a chaotic end-to-end contest with high stakes for Ecuador."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 32 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Cura\u00e7ao limiting Ecuador\u2019s opportunities with a disciplined defensive setup",
+        "Ecuador pressing around the edge of the box and looking to create a clear opening"
+      ],
+      "adjustments": [
+        "Tahith Chong introduced as a substitute",
+        "Juninho Bacuna stepping into shooting range at the top of the penalty area"
+      ],
+      "key_matchups": [
+        "Juninho Bacuna vs Gal\u00edndez",
+        "Cura\u00e7ao attack vs Ecuador\u2019s chance suppression",
+        "Ecuador\u2019s attacking quality vs Cura\u00e7ao\u2019s tenacity"
+      ],
+      "summary": "The closing stages are defined by Cura\u00e7ao\u2019s stubborn resistance, with the commentary emphasizing their ability to limit Ecuador\u2019s chances despite being clearly outmatched in talent. Cura\u00e7ao then carve out a rare opening through Juninho Bacuna, whose shot from the top of the box is blocked by Gal\u00edndez, underscoring the contrast between Ecuador\u2019s pressure and Cura\u00e7ao\u2019s limited but dangerous counter-threat."
     }
   ],
   "sources": [

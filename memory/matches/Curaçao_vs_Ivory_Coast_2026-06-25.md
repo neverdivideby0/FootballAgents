@@ -1,33 +1,33 @@
 # Tactical Report — Curaçao vs Ivory Coast (2026-06-25)
 
-_Generated 2026-06-26 16:44 UTC_  
+_Generated 2026-06-26 18:41 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/25/curacao-v-cote-divoire-world-cup-2026-live_
 
 ## 0-15 Initial Setup
-The opening phase is played at a high tempo, with Curaçao creating the first shot on target before Côte d’Ivoire respond with a goal from Pepe after Curaçao fail to clear. Curaçao continue to break forward and get into promising areas, but they repeatedly lose the ball or fail to keep possession in the final third, while Côte d’Ivoire show better defensive recovery and efficiency in transition.
-- **Formations / blocks:** high-energy open play; Curaçao attacking in the final third; Côte d’Ivoire defending after the lead and clearing threats
-- **Key matchups:** Chong vs Fofana; Pepe vs Curaçao's defensive line; Diallo vs J Bacuna
+The opening phase is played at high tempo, with both sides creating early moments and Curaçao getting the first shot on target through Chong. Côte d’Ivoire grow into the game by pressing errors and poor clearances, with Pepe capitalizing on a defensive lapse for the 7th-minute opener. Curaçao continue to find attacking positions, but their inability to keep the ball in the final third prevents sustained pressure.
+- **Formations / blocks:** high-energy open play; Curaçao attacking in the final third but struggling to sustain possession; Côte d’Ivoire clearing and recovering defensively after losing the ball
+- **Key matchups:** Curaçao's Chong vs Fofana; Pepe vs Curaçao's defending/clearance line; J Bacuna vs Diallo
 - **Events:** 7′ goal: GOAL! Curaçao 0-1 Côte d’Ivoire (Pepe 7)
 
 ## 15-45 First-Half Shift
-This phase is defined by Côte d’Ivoire's patient control of possession and repeated attacks, while Curaçao spend long stretches absorbing pressure in a compact defensive block. Curaçao do create a few promising moments in transition and around the box, but Côte d’Ivoire’s defensive reactions and pressure around the ball repeatedly blunt those attacks, leaving the visitors with the clearer territorial advantage.
-- **Formations / blocks:** Curaçao in a compact defensive shape/low block under sustained pressure; Côte d’Ivoire in a patient possession-based build-up, often dominating territory and forcing Curaçao back; Both sides briefly in a more open back-and-forth phase, with transition moments and set-piece pressure
-- **Adjustments:** Curaçao increasingly relying on clearances, recovery defending and counters as pressure builds; Côte d’Ivoire using short corners and recycled possession to keep attacks alive; Hydration break interrupts momentum around the 23rd-27th minute
-- **Key matchups:** Pepe vs Fornville; L Bacuna vs Côte d’Ivoire’s attacking pressure in the box; Fofana clearing/duelling against Curaçao’s attacks; Diallo vs Curaçao’s recovering defenders, with Gaari twice involved around his shots
+This phase tilted toward Côte d’Ivoire, who settled into patient possession and spent long spells pressing and circulating the ball around Curaçao’s defensive shape. Curaçao had a few brief attacking flashes and counters, but mostly had to absorb pressure, rely on timely tackling, and survive repeated balls into the box and set-piece situations.
+- **Formations / blocks:** Curaçao in a reactive, absorbing phase under sustained Côte d’Ivoire pressure; Côte d’Ivoire controlling possession through patient build-up and territory
+- **Adjustments:** Curaçao increasingly defending deeper after early attacking moments; Curaçao countering from defensive moments to win set pieces/corners
+- **Key matchups:** Pepe vs Fornville; L Bacuna vs the Côte d’Ivoire attack in the box; Diallo vs Curaçao’s defenders, including Gaari
 
 ## Half-Time Brief
-Côte d’Ivoire went into half-time leading 1-0 over Curaçao, with the main tactical development being a second-half personnel change before the restart. The commentary does not provide enough detail to identify specific formations, pressing blocks, or matchups in this phase.
-- **Adjustments:** Côte d’Ivoire made a substitution: Oulai on for Diallo
+Côte d’Ivoire went into half-time leading 1-0 and then made an early second-half change, bringing on Oulai for Diallo. The commentary frames the tactical question for the restart as whether Côte d’Ivoire can protect their lead or Curaçao can find a way back into the game.
+- **Adjustments:** Côte d’Ivoire made a substitution: Oulai on for Diallo at the start of the second half
 
 ## 45-75 Tactical Adjustments
-Curaçao began the phase on the front foot, creating momentum through Chong and L Bacuna, but lacked the final quality to convert chances. Côte d'Ivoire weathered that spell, handled the pressure well, and then punished Curaçao with a decisive Pepe goal on 64 minutes after a brief period of end-to-end play. The only clear tactical change mentioned was Diallo being replaced or repositioned tactically, while Curaçao’s Antonisse-for-Comenencia substitution came just before the second goal but did not alter the momentum.
-- **Formations / blocks:** Curaçao building momentum with more sustained attacking pressure; Côte d'Ivoire managing Curaçao's momentum with controlled defending and counter-attacking phases; End-to-end open play in the middle of the half
-- **Adjustments:** 47' tactical change involving Diallo; 62' Curaçao substitution: Antonisse on for Comenencia
-- **Key matchups:** Chong vs Côte d'Ivoire defenders, with Chong noted as Curaçao's main threat; Doue vs Fornville on the right flank; Pepe in a decisive attacking position for Côte d'Ivoire
+Curaçao started the second half with more intent and had a couple of promising moments, but Côte d’Ivoire repeatedly managed the pressure and then struck through a well-placed Pepe finish on 64'. The phase reads as a shift from Curaçao’s growing momentum to Côte d’Ivoire’s efficiency in transition and key attacking moments, with the substitution of Antonisse offering Curaçao a fresh attacking option but not changing the game’s direction.
+- **Formations / blocks:** End-to-end open play; Côte d’Ivoire controlling momentum without fully abandoning defensive control; Curaçao building momentum and pressing forward after the restart
+- **Adjustments:** 47' Diallo appears to be a tactical change rather than an injury-related substitution; 62' Curaçao substitute Antonisse on for Comenencia; Curaçao briefly increase their attacking momentum after halftime and again after 56'-58'
+- **Key matchups:** Chong vs the space/coverage around his runs; Doue vs Fornville; Pepe vs Curaçao’s defensive line/goalkeeper area
 - **Events:** 64′ goal: GOAL! Curaçao 0-2 Côte d’Ivoir (Pepe 64)
 
 ## 75-90+ Crunch Time
-Curaçao’s best spell came in the final 15 minutes, driven largely by the impact of substitute Noslin, who repeatedly won fouls and delivered dangerous crosses and shots. Côte d’Ivoire responded by controlling tempo, managing possession, and surviving late pressure with Fofana and Obispo making key interventions, before seeing out a 2-0 win and historic qualification.
-- **Formations / blocks:** Curaçao pushing forward in the closing stages; Côte d’Ivoire managing the game and slowing play down; Curaçao committing bodies forward in search of a goal; Côte d’Ivoire defending late set pieces and corners
-- **Adjustments:** Curaçao introduced Noslin as a lively substitute, giving them more threat from wide/advanced areas; Côte d’Ivoire repeatedly took quick free kicks before slowing possession to control the tempo; Côte d’Ivoire pushed for a third goal in transition/late attacking phases
-- **Key matchups:** Chong vs Fofana; Noslin vs Côte d’Ivoire's defensive line and Fofana; Oulai vs J Bacuna; Obispo vs Côte d’Ivoire's crossing attack; Antonisse vs Côte d’Ivoire’s late corner defense
+The closing phase was shaped by Côte d’Ivoire’s game management and Curaçao’s improved urgency after Noslin’s introduction. Curaçao created their best spell through crosses, free kicks and long-range efforts, but Fofana and the Ivorian back line handled the pressure while Côte d’Ivoire remained dangerous on the counter and from late set pieces.
+- **Formations / blocks:** Côte d’Ivoire patient possession/control phase; Curaçao push forward in a late attacking phase; Côte d’Ivoire defend deeper in closing minutes
+- **Adjustments:** Noslin introduced as a lively late substitute and immediately increases Curaçao’s threat from wide areas and set pieces; Côte d’Ivoire slow the game down after the yellow card and quick free kick, managing the clock rather than forcing attacks; Curaçao commit more players forward after 90+4 in search of a late goal
+- **Key matchups:** Noslin vs Fofana; Room vs Côte d’Ivoire’s late pressure and shots; Obispo vs Côte d’Ivoire’s crossing threat; Antonisse clearing Côte d’Ivoire’s late corner

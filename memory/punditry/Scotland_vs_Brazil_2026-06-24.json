@@ -5,33 +5,41 @@
   "date": "2026-06-24",
   "home_read": {
     "team": "Scotland",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "No punditry on Scotland is provided in the text, so no structured read is supported."
+    "tactical_shape": [
+      "Obdurate, functional side that is often defensive through a lack of attacking talent",
+      "Should not attack with gay abandon against Brazil; likely to be safety-first if pressed",
+      "Need to show a little more invention rather than being one-dimensional"
+    ],
+    "standout_players": [
+      "Andy Robertson: captain and key voice, said he couldn't care less about third-place permutations before the game",
+      "Ben Gannon-Doak: described as 'almost an old-school winger'"
+    ],
+    "fatigue_injuries": [
+      "Aaron Hickey injured and unavailable; hoped to be ready for the knockout stages"
+    ],
+    "momentum": "In control of their own destiny and on the brink of historic knockout qualification, but under pressure to avoid being pummelled by Brazil and to show more invention."
   },
   "away_read": {
     "team": "Brazil",
     "tactical_shape": [
-      "Ancelotti is expected to use Neymar as a false nine if he features, so as not to have so many marking assignments",
-      "Vin\u00edcius J\u00fanior and Rodrygo were used as wide attackers in a system with Cunha dropping deep, allowing the two wingers to play as strikers",
-      "Brazil improved defensively against Haiti, keeping a clean sheet"
+      "A hugely dangerous, quality-packed team with a strong attacking identity; 'the characteristics of a Brazil team is that they have to attack'",
+      "Expected to threaten in every position, with Neymar potentially starting or coming off the bench to lift them",
+      "Regarded as one of the best teams in the world and a likely last-four side"
     ],
     "standout_players": [
-      "Vin\u00edcius J\u00fanior saved Brazil with a moment of individual brilliance against Morocco and has two goals and an assist at the tournament",
-      "Casemiro is portrayed as a key figure but with critics questioning the midfield's mobility",
-      "Matheus Cunha scored twice against Haiti",
-      "Neymar remains the biggest-name talking point, though pundits question his fitness and form"
+      "Neymar: returning from injury, described by Steve Clarke as an 'icon', 'superstar of the modern era' and a dangerous opponent even off the bench",
+      "Vin\u00edcius J\u00fanior, Endrick, Martinelli: named by Robertson as part of Brazil's many quality options"
     ],
     "fatigue_injuries": [
-      "Neymar has been out with a calf strain / injury layoff and has not played a minute at the tournament",
-      "Raphinha picked up a hamstring injury against Haiti",
-      "Rodrygo is missing the entire tournament",
-      "There are concerns Neymar lacks rhythm and physical condition after a long layoff"
+      "Neymar is returning from injury"
     ],
-    "momentum": "Brazil arrive under scrutiny and with little public faith at home; pundits think they are still short of convincing World Cup form and may need to improve during the tournament."
+    "momentum": "Viewed as a formidable, elite opponent with serious tournament ambitions; even from the bench Neymar would give them a lift."
   },
   "sources": [
-    "https://www.theguardian.com/football/2026/jun/24/view-brazil-scotland-neymar-casemiro-endrick-world-cup-2026"
+    "https://www.theguardian.com/football/2026/jun/23/steve-clarke-warns-scotland-of-threat-posed-by-returning-brazil-icon-neymar",
+    "https://www.theguardian.com/football/2026/jun/23/scotland-brazil-world-cup-group-steve-clarke-history-beckons",
+    "https://www.theguardian.com/football/2026/jun/25/scotland-brazil-world-cup-2026-football-daily",
+    "https://www.theguardian.com/football/2026/jun/24/view-brazil-scotland-neymar-casemiro-endrick-world-cup-2026",
+    "https://www.theguardian.com/football/2026/jun/25/clarke-robertson-fear-scotland-world-cup-journey-over-brazil-defeat"
   ]
 }

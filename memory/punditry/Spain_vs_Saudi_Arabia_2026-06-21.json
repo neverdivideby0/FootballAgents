@@ -6,45 +6,43 @@
   "home_read": {
     "team": "Spain",
     "tactical_shape": [
-      "Intense, aggressive, high-possession approach with purpose",
-      "Full-backs very high, especially Pedro Porro and Marc Cucurella",
-      "Controlled the game through Rodri in midfield and Pedri/Olmo finding spaces",
-      "Pressed and counter-pressed aggressively, with even Lamine Yamal tracking back to help defend"
+      "Intense, aggressive high-possession approach",
+      "Full-backs very high",
+      "Dominant control through Rodri and Pedri, with Olmo finding pockets between lines"
     ],
     "standout_players": [
-      "Lamine Yamal: scored inside 10 minutes on first start since hamstring injury; lively, contagious influence, withdrawn at half-time to be protected",
-      "Mikel Oyarzabal: 2 goals and 1 assist in the first 23 minutes; praise for his overall output, 14 goals and 7 assists in his past 13 Spain games",
-      "Rodri: controlled the game, completing 113 passes",
+      "Lamine Yamal: scored inside 10 minutes on his first start since hamstring injury; ever-present threat and set the tone",
+      "Mikel Oyarzabal: one assist and two goals within 23 minutes; exceptional all-round contribution",
+      "Rodri: controlled the match, completing 113 passes",
       "Pau Cubars\u00ed: 98 of 99 passes completed",
-      "\u00c1lex Baena: neat outside-of-the-boot pass for the opener and an impact from the start",
-      "Dani Olmo: found spaces and helped create the third goal",
-      "Marc Cucurella: forced the fourth goal and was part of the high full-back threat",
-      "Pedro Porro: curling cross contributed to the third goal",
-      "Aymeric Laporte: provided clarity from a chaotic corner with the knockdown for Oyarzabal's second"
+      "Dani Olmo: found spaces where they seemed not to exist",
+      "Pedro Porro: made an impact and provided the curling cross for the third goal",
+      "Marc Cucurella: forced the fourth and scored the fourth off a defender",
+      "Aymeric Laporte: crucially nodded down for Oyarzabal's second",
+      "Unai Sim\u00f3n: little to do, no significant save until the 80th minute"
     ],
     "fatigue_injuries": [
-      "Lamine Yamal was making his first start since a hamstring injury in April and was taken off after 45 minutes to be protected",
-      "Mikel Oyarzabal was also withdrawn at half-time because his work was done",
-      "De la Fuente made changes to protect players and give minutes to others"
+      "Lamine Yamal was withdrawn at 45 minutes, having just returned from a hamstring injury in April",
+      "Oyarzabal was also taken off at half-time to protect him",
+      "De la Fuente made changes early to protect players and give minutes to others"
     ],
-    "momentum": "Spain answered the criticism from the opening draw in emphatic style, looking like themselves again and generating strong momentum after a dominant, confidence-restoring win."
+    "momentum": "Spain were 'Spain again' \u2014 response to criticism was emphatic, confidence restored, and the performance sends a strong statement going forward."
   },
   "away_read": {
     "team": "Saudi Arabia",
     "tactical_shape": [
-      "Struggled to cope with Spain's intensity and high-possession game",
-      "Unable to deal with Spain's wide play and set-piece situations",
-      "Made a mess of a corner for Spain's second goal"
+      "Deeply unable to cope with Spain's intensity and wide overloads",
+      "Defensive set-piece issues repeatedly exposed",
+      "Rare attacks, largely contained"
     ],
     "standout_players": [
-      "Salem al-Dawsari: the main Saudi outlet, briefly led a rare attack before halftime",
-      "Mohammed al-Owais: beaten for Spain's chances, including Oyarzabal's shot off the bar"
+      "Salem al-Dawsari: led the rare Saudi attack and was involved in the early battles with Lamine Yamal",
+      "Mohammed al-Owais: beaten four times; also denied Oyarzabal's curling effort by the bar"
     ],
     "fatigue_injuries": [
-      "No injuries or suspensions mentioned",
-      "The side looked tired by half-time"
+      "No injuries or suspensions mentioned"
     ],
-    "momentum": "A heavy defeat and an inability to find a way through left Saudi Arabia with a damaging setback and little positive narrative from the match."
+    "momentum": "Overrun and exposed, with little evidence in the punditry of a positive immediate takeaway beyond the experience of facing elite opposition."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/21/spain-saudi-arabia-world-cup-group-h-match-report"

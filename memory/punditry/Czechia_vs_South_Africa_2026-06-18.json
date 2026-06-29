@@ -5,17 +5,38 @@
   "date": "2026-06-18",
   "home_read": {
     "team": "Czechia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Direct, straight play with long/looped balls and throw-ins as a source of goals",
+      "They dominated early, then became more cautious and let South Africa in",
+      "Looked to reassert after halftime but created little for long spells"
+    ],
+    "standout_players": [
+      "Michal Sadilek scored the opener after a throw-in move",
+      "Patrik Schick had an early chance and later had a header saved by Ronwen Williams",
+      "Adam Hlozek created the opener with his escape and cross",
+      "Matej Kovar dropped a ball to Thapelo Maseko but later the piece notes David Zima stopped a late shot, suggesting the defensive unit had to work",
+      "Pavel Sulc gave away the late penalty with a handball"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A frustrating draw after a promising start; still alive, but the punditry suggests Czechia remain short of fluency and vulnerable despite having chances to win."
   },
   "away_read": {
     "team": "South Africa",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "More about rescue and survival than control; improved after a poor start and offered more in the second half",
+      "Used a direct approach at times, with chances coming from wide/right-side attacks and long-range efforts"
+    ],
+    "standout_players": [
+      "Teboho Mokoena scored the equaliser from the penalty spot",
+      "Oswin Appollis produced South Africa's first shot with a deflected effort that hit the side-netting and was their liveliest attacker for spells",
+      "Thapelo Maseko had a shot blocked after Kovar dropped the ball to him",
+      "Evidence Makgopa missed a late chance from close range",
+      "Aubrey Modiba forced a 96th-minute stop from David Zima"
+    ],
+    "fatigue_injuries": [
+      "Teboho Mokoena will miss the next game through a second yellow card"
+    ],
+    "momentum": "A rescue point that keeps them alive and lifts morale after the Mexico defeat, though they still need to improve to finish the job."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/18/czechia-south-africa-world-cup-group-a-match-report"

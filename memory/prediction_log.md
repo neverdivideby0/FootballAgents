@@ -1237,3 +1237,111 @@ SIGNALS: calibration, lessons, punditry, qualitative, tactical
 
 <!-- ENTRY_END -->
 
+[2026-06-26 | Norway vs France | AWAY_WIN 1-2 | pending]
+
+PREDICTION:
+I trim France down from 62% to 54% because the debate surfaced a concrete, evidence-backed volatility case: Norway’s repeatable set-piece pressure and Haaland’s current scoring burst create a real draw/upset channel. That said, I do not move far, because the downside case was stronger overall — France’s structural edge, defensive solidity, and Deschamps’ game management still make them the likelier winner. The final read is therefore France by a narrow 1-2, with the draw meaningfully live but not enough to overturn the favourite.
+(p_home=0.230, p_draw=0.230, p_away=0.540)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-26 | Senegal vs Iraq | HOME_WIN 2-0 | pending]
+
+PREDICTION:
+I moved the provisional read only modestly: I trimmed Senegal a few points and lifted the draw, which is justified by the Neutral/Downside pundit’s evidence-backed point that Iraq’s set-piece/header-and-break template can manufacture a 1-1 even in a low-xG match. I did not go further because that path is still lower-frequency than Senegal’s clearer squad, xG, and chance-quality edge, and the market remains heavily with the home side. So the final is still a Senegal win, but with slightly more draw insurance than the judge’s 67/20/13.
+(p_home=0.640, p_draw=0.220, p_away=0.140)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-26 | Cape Verde vs Saudi Arabia | AWAY_WIN 1-1 | pending]
+
+PREDICTION:
+I keep the game essentially even, but I did make one small adjustment from the provisional line: I shifted a point from the draw into Saudi Arabia’s win bucket, following the Upside/Neutral argument that the away side’s set-piece and one-swing variance path is concrete enough to be slightly under-priced. I did not move toward a big away win because Cape Verde’s low-event profile is real and strongly supported by the evidence, which keeps the most likely exact score at 1-1. Overall, this is still a narrow-regulation match with Saudi only marginally more likely to win than Cape Verde and the draw just behind.
+(p_home=0.340, p_draw=0.300, p_away=0.360)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-26 | Uruguay vs Spain | AWAY_WIN 1-1 | pending]
+
+PREDICTION:
+I trim the provisional away edge slightly and move a small slice into the draw, because the debate surfaced concrete evidence that Uruguay’s transition vulnerability and recent reshuffles can turn Spain’s control into a 1-1 type game. The move is modest rather than dramatic: I’m following the Neutral/Downside line that the draw is a bit under-priced, but I’m not buying the full 30-33% draw case because Spain’s underlying quality and possession control still make them the likelier side to avoid defeat. So the only adjustment is a few points from Spain win into draw, leaving Spain ahead overall but by a narrower margin than the provisional verdict.
+(p_home=0.240, p_draw=0.320, p_away=0.440)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-26 | New Zealand vs Belgium | AWAY_WIN 0-2 | pending]
+
+PREDICTION:
+I end at a firmer Belgium win than the provisional call, moving the away probability up from 67% to 70% and trimming the draw from 19% to 18%. That change is justified by the Downside Pundit’s evidence-backed point: Belgium have repeatedly shown they can control game state and tempo, while New Zealand’s direct style is more likely to create moments than sustained pressure. I do not fully follow the bookmaker to 80%, because the Upside Pundit’s concerns about blunt Belgian finishing and the Lukaku/Doku uncertainty are real enough to keep some draw/upset tail alive.
+(p_home=0.120, p_draw=0.180, p_away=0.700)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-26 | Egypt vs Iran | HOME_WIN 1-1 | pending]
+
+PREDICTION:
+I move the provisional line only modestly: Egypt comes down from 41% to 38%, Iran up from 26% to 29%, with the draw left at 33%. The concrete adjustment is the downside pundit's and neutral pundit's point that Iran's transition/set-piece route is more real than the provisional read allowed, while Egypt's recent control has not translated into a commanding edge. That leaves this as a tight, draw-leaning group-stage game, with 1-1 the most coherent scoreline rather than a forced Egypt win.
+(p_home=0.380, p_draw=0.330, p_away=0.290)
+SIGNALS: calibration, lessons, market, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | Panama vs England | AWAY_WIN 2-0 | pending]
+
+PREDICTION:
+I only made a modest adjustment from the provisional read: I nudged a little probability from England-win mass into the draw, because the scenario debate gave concrete evidence that the exact 2-0 is a touch overconfident and that low-block variance is real. I did not change the overall verdict, because the downside pundit’s case is stronger on the fundamentals: England’s xG edge, tactical control versus deep blocks, and the one-sided historical matchup all still point to an away win. The exact scoreline stays 2-0 because a clear favourite with a strong edge should be read as a two-goal away win rather than a timid one-goal call.
+(p_home=0.070, p_draw=0.180, p_away=0.750)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | Croatia vs Ghana | HOME_WIN 2-1 | pending]
+
+PREDICTION:
+I only made one adjustment: I nudged the draw up from the provisional 26% to 27%, following the Neutral/Upside point that Ghana's Queiroz compactness and Croatia's occasional wide-heavy, stop-start phases make a stalemate slightly more live than the original read suggested. I did not materially change the Croatia-win view because the Downside point was stronger on evidence: Croatia still have the clearer chance base and the better overall attacking profile. The final read is still Croatia by a single goal in regulation, with 2-1 the likeliest scoreline.
+(p_home=0.550, p_draw=0.270, p_away=0.180)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | Colombia vs Portugal | HOME_WIN 1-1 | pending]
+
+PREDICTION:
+I have moved the provisional read only slightly: the scenario debate’s evidence-backed point was Colombia's 0-0 against Portugal at home, which makes the away-win lean a bit too confident and lifts the draw/home upset chances. I therefore trim Portugal back from a narrow edge to dead even with Colombia, rather than buying the stronger home-upset case. The most likely outcome becomes a level, tactical game, with 1-1 the cleanest scoreline for a match where neither side has a convincing separation.
+(p_home=0.350, p_draw=0.300, p_away=0.350)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | DR Congo vs Uzbekistan | HOME_WIN 1-1 | pending]
+
+PREDICTION:
+I’ve only made a small calibration shift: down 1 point on home win and up 2 points on the draw, with away trimmed by 1. The downside/neutral pundits were more convincing because Congo DR's low-block control is the more repeatable, evidence-backed pattern, while the upside case leans on a single documented set-piece/discipline episode for Uzbekistan rather than a broader matchup edge. A 1-1 remains the cleanest scoreline for a genuinely even group-stage game, with the draw now slightly more respected than in the provisional read.
+(p_home=0.430, p_draw=0.320, p_away=0.250)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | Algeria vs Austria | HOME_WIN 1-1 | pending]
+
+PREDICTION:
+I’ve trimmed Algeria slightly from the provisional read: HOME_WIN moves from 39% to 37%, with the extra two points going mainly to the draw rather than to Austria. That adjustment is justified by the Neutral Pundit’s evidence-based point that the xG gap is tiny and the match profiles suggest a fairly stable even game, so there isn’t enough concrete support to inflate Algeria’s edge. I’m not upgrading Austria much because the Upside case leans too heavily on variance narrative, while the safer conclusion is that this stays level-ish and most likely ends 1-1.
+(p_home=0.370, p_draw=0.310, p_away=0.320)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+
+[2026-06-28 | Algeria vs Argentina | AWAY_WIN 1-2 | pending]
+
+PREDICTION:
+I mostly hold the provisional shape, but I nudge a few points from the draw to Argentina because the concrete evidence still favors the away side: stronger model/xG signals and the 3-0 head-to-head in this exact matchup. The Upside Pundit's chaos case justifies keeping Algeria's upset path alive, but not enough to raise the draw further; if anything, the draw was the more likely overstatement. So I move slightly from D to A, leaving the final read as a narrow Argentina win, 1-2 in regulation.
+(p_home=0.240, p_draw=0.230, p_away=0.530)
+SIGNALS: calibration, lessons, punditry, qualitative, tactical
+
+<!-- ENTRY_END -->
+

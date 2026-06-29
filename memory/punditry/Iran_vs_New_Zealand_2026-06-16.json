@@ -5,17 +5,34 @@
   "date": "2026-06-16",
   "home_read": {
     "team": "Iran",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "fast start",
+      "all-action, open contest with plenty of openings",
+      "attacked directly and surged from deep"
+    ],
+    "standout_players": [
+      "Mehdi Taremi \u2014 hit the post after a surging run from inside his own half",
+      "Ramin Rezaeian \u2014 36-year-old rewarded for his forward burst with an equaliser",
+      "Saman Ghoddos \u2014 first-time pass to Moghanloo described as sumptuous",
+      "Shahriar Moghanloo \u2014 made a goal-saving block and was involved in the equaliser"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Despite a chaotic buildup, Iran twice came from behind to draw and emerged with a positive, spirited performance in a politically charged opener."
   },
   "away_read": {
     "team": "New Zealand",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "direct approach",
+      "used long kick downfield as a route into attack",
+      "combined well through Wood and Eli Just in a loose, open game"
+    ],
+    "standout_players": [
+      "Eli Just \u2014 scored a double and looked sharp throughout",
+      "Chris Wood \u2014 linked play well and repeatedly combined with Just",
+      "Max Crocombe \u2014 his long kick downfield began the move for the opener"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "New Zealand showed enough to suggest they can surprise people, but letting two leads slip leaves them with a strong sense of 'what if?'"
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/16/iran-new-zealand-world-cup-2026-group-g-match-report"

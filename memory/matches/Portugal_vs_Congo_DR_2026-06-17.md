@@ -1,20 +1,31 @@
 # Tactical Report — Portugal vs Congo DR (2026-06-17)
 
-_Generated 2026-06-21 16:31 UTC_  
+_Generated 2026-06-26 18:30 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/17/portugal-v-dr-congo-world-cup-2026-live_
 
 ## 0-15 Initial Setup
-[placeholder] 0-15 Initial Setup: 11 commentary beats; 1 events; goals at 6'. Enable use_llm for tactical extraction.
+Portugal begin by keeping possession from kickoff and establishing a patient attack-against-defence pattern, while DR Congo sit in a back five and press up collectively when Portugal build in their own half. Portugal show more ingenuity in circulation and crossing, with Cancelo creating one dangerous low ball across the face of goal before Neves scores the opener on 6 minutes. The early goal reinforces a game state where Portugal control the ball and DR Congo likely remain compact rather than opening up.
+- **Formations / blocks:** DR Congo back five; Portugal sustained possession attack against defence; DR Congo stepping up quickly as a unit when Portugal have the ball in their own half
+- **Key matchups:** Cancelo's low cross across goal against DR Congo's defensive line; Ronaldo versus DR Congo's back five in aerial/box situations
 - **Events:** 6′ goal: GOAL! Portugal 1-0 DR Congo (Neves 6)
 
 ## 15-45 First-Half Shift
-[placeholder] 15-45 First-Half Shift: 21 commentary beats. Enable use_llm for tactical extraction.
+Portugal controlled the game through long possession spells and were largely allowed to circulate the ball without much resistance. When DRC did step up, Portugal found space behind them, with the main warning sign for DRC being the first goal they had conceded too easily and another one likely to end the contest. The commentary also hints that Portugal’s best setup may be a more central, diamond-like midfield with Bruno at the tip and full-backs providing width.
+- **Formations / blocks:** Portugal in possession with a dominant possession phase; DRC not pressing aggressively, allowing Portugal to knock it about; DRC pressing higher at times, leaving space in behind; Commentary suggestion of a possible Portugal 4-3-1-2 with Bruno as the central creator and Neto alongside him
+- **Adjustments:** Possible tactical idea mentioned: Bernardo dropping deeper from the right into midfield in later phases; Portugal using full-backs for width; Portugal attacking with lofted balls and direct runs into channels behind the press
+- **Key matchups:** Mendes vs Wan-Bissaka; Neto vs the DRC back line on the right channel; Ronaldo as the target for Neto’s low cross
 
 ## Half-Time Brief
-[placeholder] Half-Time Brief: 4 commentary beats. Enable use_llm for tactical extraction.
+At half-time the match is level at 1-1, with the commentary contrasting Portugal’s more direct, crowded approach around set pieces with DR Congo’s cleaner, more aesthetic goal. The tactical takeaway is less about specific shapes and more about the stylistic balance between set-piece efficiency and open-play quality.
 
 ## 45-75 Tactical Adjustments
-[placeholder] 45-75 Tactical Adjustments: 21 commentary beats. Enable use_llm for tactical extraction.
+Portugal came out early in the second half with a more direct, wide approach, reinforced by Martinez’s substitution of Conceicao for Bernardo to add pace and dribbling on the outside. DRC responded by circulating possession more cleanly, drawing Portugal out and threatening through midfield-to-box transitions and corners, while Portugal twice thought they had broken through only to be denied by offside and defending at key moments.
+- **Formations / blocks:** Portugal pushing early after the restart with width and direct attacks; DRC working the ball in midfield and getting Portugal chasing; DRC defending in a compact shape around their box on set pieces
+- **Adjustments:** Martinez sends on Conceicao for Bernardo to add dribbling and speed wide; Portugal using Neto high and wide to deliver crosses; Portugal’s attacking pattern includes Ronaldo standing still/peeling off and Bruno Fernandes finding him from set pieces and open play
+- **Key matchups:** Conceicao vs Masuaku; Bakambu vs Diogo Costa; Ronaldo vs Kapaudi; Mendes vs Tuanzebe (with Kapaudi helping); Neves vs DRC back line on the offside goal sequence
 
 ## 75-90+ Crunch Time
-[placeholder] 75-90+ Crunch Time: 26 commentary beats. Enable use_llm for tactical extraction.
+Portugal pushed hard in the closing stages, with Bruno Fernandes increasingly dictating from midfield and the team turning to corners, crosses and a late switch to a front two. DRC stayed disciplined in a compact defensive block, but remained dangerous on the counter through Sadiki and Bakambu, showing the balance of control and threat that made them look comfortable despite the pressure.
+- **Formations / blocks:** DRC low block / compact defensive shape; Portugal sustained attacking pressure with wide deliveries and crosses; DRC counterattacking block, springing forward when possible; Portugal front two after introducing Goncalo Ramos
+- **Adjustments:** Portugal bring on Goncalo Ramos for Vitinha to add a second striker; DRC make two changes: Kalulu for Wan-Bissaka and Banza for Bakambu; Portugal increasingly rely on crosses and balls over the top; DRC continue to counter rather than sit entirely passive, retaining an outlet up front
+- **Key matchups:** Araujo vs Wissa; Kapaudi vs Conceicao; Kalulu vs Leao; Mpasi vs Cancelo's low cross; Sadiki as the main DRC forward outlet against Portugal's midfield

@@ -5,17 +5,42 @@
   "date": "2026-06-23",
   "home_read": {
     "team": "Panama",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "5-4-1, invited opponents deep and packed the middle",
+      "bunker-and-counter approach with speculative early balls wide",
+      "relied on deep defending, physicality, and breaks rather than sustained possession"
+    ],
+    "standout_players": [
+      "Orlando Mosquera denied Budimir and made a rebound save",
+      "Dominik Livakovic was the main obstacle for Panama's attacks",
+      "Jos\u00e9 Fajardo was isolated up front and outnumbered",
+      "Amir Murillo created Panama's best first-half chance with a through ball and cross",
+      "Jos\u00e9 Luis Rodr\u00edguez's header was saved/deflected onto the bar"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Eliminated and still without a point at this World Cup; the article frames the side as proud, physical, but limited by lack of attacking quality."
   },
   "away_read": {
     "team": "Croatia",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Sought to play through Panama's compact block and used crosses when that failed",
+      "Counter-counterattacked when Panama broke, then attacked space after the goal",
+      "Second-half width from Josip Stanisic's overlap and Marco Pasalic's through ball produced the winner"
+    ],
+    "standout_players": [
+      "Ante Budimir scored the only goal after coming on at half-time",
+      "Luka Modric orchestrated play, was celebrated for his 200th senior cap, and subbed off to a hero's ovation after 81 minutes",
+      "Josip Stanisic provided the overlap and cross for the goal",
+      "Marco Pasalic supplied the through ball and later had a shot/attempt on the break",
+      "Dominik Livakovic made several reliable close-range saves"
+    ],
+    "fatigue_injuries": [
+      "Luka Modric is 40 and was subbed off after 81 minutes",
+      "Ivan Perisic is described as 37-year-old"
+    ],
+    "momentum": "A needed win after the opening defeat, leaving Croatia a point behind the leaders and able to move on with renewed relief and confidence."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/croatia-panama-world-cup-2026-match-report"
+  ]
 }

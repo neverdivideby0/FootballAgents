@@ -5,17 +5,38 @@
   "date": "2026-06-17",
   "home_read": {
     "team": "Portugal",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Controlled possession but lacking tempo",
+      "Sought Ronaldo via the flanks",
+      "Introduced Francisco Concei\u00e7\u00e3o to add penetration down the right"
+    ],
+    "standout_players": [
+      "Jo\u00e3o Neves scored with a sixth-minute header",
+      "Pedro Neto provided the cross for the opener",
+      "Nuno Mendes had a bursting run that was stopped by Aaron Wan-Bissaka",
+      "Francisco Concei\u00e7\u00e3o brought more penetration after coming on",
+      "Cristiano Ronaldo had two half-chances and later two headers/crosses wide, but was largely peripheral",
+      "Bernardo Silva was described as disappointing"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A frustrating draw that exposed Portugal's lack of pace and dependence on Ronaldo, leaving questions over whether they can turn control into goals."
   },
   "away_read": {
     "team": "Congo DR",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Dug in after falling behind and stayed competitive",
+      "Used a short corner routine for the equaliser",
+      "Played with Premier League nous and an experienced, compact approach"
+    ],
+    "standout_players": [
+      "Yoane Wissa scored the equaliser with a well-taken header and was praised for an exceptional shift",
+      "C\u00e9dric Bakambu was tireless and twice threatened to deepen Portuguese discomfort",
+      "Samuel Moutoussamy was tireless in midfield",
+      "Arthur Masuaku delivered the inswinging corner for the goal",
+      "Aaron Wan-Bissaka made a last-ditch intervention on Nuno Mendes"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A positive, historic result: Congo DR earned their first World Cup point and looked tough, organised and capable against a favoured opponent."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/17/portugal-dr-congo-world-cup-2026-group-k-match-report"

@@ -5,17 +5,39 @@
   "date": "2026-06-14",
   "home_read": {
     "team": "Germany",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Julian Nagelsmann\u2019s side were described as procedural and dominant, with threats emanating from all around the pitch",
+      "They created a stream of opportunities after the drinks break and finished ruthlessly against a front-foot Cura\u00e7ao"
+    ],
+    "standout_players": [
+      "Kai Havertz \u2014 efficient, rounded things off with his second goal and converted the penalty nonchalantly",
+      "Felix Nmecha \u2014 finished beautifully for the opener and won the penalty",
+      "Jamal Musiala \u2014 chopped in a confidence-boosting angled finish",
+      "Nathaniel Brown \u2014 impressive left-back, crossed for Schlotterbeck\u2019s goal and steered in a deft volley",
+      "Deniz Undav \u2014 tapped in off the bench",
+      "Joshua Kimmich \u2014 supplied the slide-rule pass for Musiala",
+      "Florian Wirtz \u2014 provided the smart return pass for the opener",
+      "Nico Schlotterbeck \u2014 glanced in from a corner"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Germany look comfortably on course for the knockouts, though the piece stresses tougher tests are still to come."
   },
   "away_read": {
     "team": "Cura\u00e7ao",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Dick Advocaat set them up to give it a go and they tried to play more offensively despite the risks",
+      "They worked spaces with clever footwork and continued to attempt a front-foot approach even after falling behind"
+    ],
+    "standout_players": [
+      "Livano Comenencia \u2014 equalised against Germany and scored a historic goal",
+      "Tahith Chong \u2014 used clever footwork to help Cura\u00e7ao warm into the game",
+      "J\u00fcrgen Locadia \u2014 seized on the loose ball before Comenencia\u2019s equaliser",
+      "Eloy Room \u2014 busy, denied Schlotterbeck earlier",
+      "Leandro Bacuna \u2014 had a late chance to score",
+      "Jearl Margaritha \u2014 also had a late chance to score"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A heavy defeat, but the goal and the support generated a memorable, emotional moment that the article treats as a proud chapter for Cura\u00e7ao."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/14/germany-curacao-world-cup-match-report"

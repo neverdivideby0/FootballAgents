@@ -5,17 +5,32 @@
   "date": "2026-06-19",
   "home_read": {
     "team": "Mexico",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Functional, cautious approach with little risk or adventure",
+      "Used an offside trap and managed the game after taking the lead"
+    ],
+    "standout_players": [
+      "Luis Romo \u2014 hooked in the winning goal, his fifth international goal in his 64th appearance",
+      "Ra\u00fal Rangel \u2014 made a remarkable double save late on to preserve the lead",
+      "Ra\u00fal Jim\u00e9nez \u2014 had a close-range effort blocked by Kim Seung-gyu"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Two wins from two and through to the knockout stage, but the punditry says they have shown little beyond functional competence."
   },
   "away_read": {
     "team": "South Korea",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Lacked urgency and adventure; long spells of passing without end product",
+      "Did not cope well with Mexico\u2019s offside trap"
+    ],
+    "standout_players": [
+      "Kim Seung-gyu \u2014 made the error that gifted Mexico the goal; later produced a fine close-range block from Ra\u00fal Jim\u00e9nez",
+      "Son Heung-min \u2014 struggled again, looked diminished and was substituted"
+    ],
+    "fatigue_injuries": [
+      "Son Heung-min \u2014 looks older than 33, struggling physically to cope with Mexico's offside trap"
+    ],
+    "momentum": "A disappointing defeat, with the mistake and limited showing leaving doubts about how far they can go, though a draw in the final game would still be enough to advance."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/19/mexico-south-korea-world-cup-2026-group-a-match-report"

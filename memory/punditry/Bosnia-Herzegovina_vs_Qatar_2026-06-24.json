@@ -5,17 +5,37 @@
   "date": "2026-06-24",
   "home_read": {
     "team": "Bosnia-Herzegovina",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "4-3-3 / attacking approach with young wide threats and a direct, pressing style",
+      "Faded after taking the lead and were forced into a halftime adjustment, with Amar Memic and Benjamin Tahirovic introduced at the break"
+    ],
+    "standout_players": [
+      "Kerim Alajbegovic \u2014 the goal of the game, an exciting 18-year-old who scored a beauty from 20 yards into the top corner",
+      "Edin Dzeko \u2014 involved in the second goal build-up, hit a post with a low effort, and reached his 150th cap",
+      "Ermin Mahmic \u2014 scored the crucial third goal to seal the win",
+      "Sead Kolasinac \u2014 one of only two players from the 2014 World Cup squad, part of the jubilant celebrations"
+    ],
+    "fatigue_injuries": [
+      "The side faded after the opening period, prompting halftime changes"
+    ],
+    "momentum": "Euphoric and through to the knockout stage; the win, and the third goal, boosted belief and confirmed progression as one of the best third-placed sides."
   },
   "away_read": {
     "team": "Qatar",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Played some neat stuff going forward despite defensive vulnerability",
+      "Threatened from set pieces and quick combinations, including rehearsed corners and sharp passing around Akram Afif and Edmilson Junior"
+    ],
+    "standout_players": [
+      "Hassan al-Haydos \u2014 on his first World Cup start, scored Qatar\u2019s goal",
+      "Pedro Miguel \u2014 almost equalised with a shot that hit the post after reading Akram Afif\u2019s pass",
+      "Boualem Khoukhi \u2014 forced panic with a volley from a rehearsed corner",
+      "Akram Afif \u2014 provided a smart pass in the move that nearly brought an equaliser"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Eliminated, but they showed more in attack than against Canada and briefly threatened Bosnia after the break."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/bosnia-herzegovina-qatar-group-b-world-cup-2026-match-report"
+  ]
 }

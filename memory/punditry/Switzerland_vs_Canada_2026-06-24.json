@@ -6,43 +6,42 @@
   "home_read": {
     "team": "Switzerland",
     "tactical_shape": [
-      "Shrewd, well-organised side that never took Canada\u2019s 'decoy' bait",
-      "Made key second-half changes through Murat Yakin, with Ruben Vargas and Johan Manzambi starting and both goals coming in a 12-minute burst",
-      "Right side/back-post attack used effectively, with Manzambi supplying from the left and Vargas finishing at the back post",
-      "Relied on a richly experienced midfield to control a dogfight against Canada"
+      "Shrewd side that never bit on Canada's Alphonso Davies decoy",
+      "4-? not specified; used key second-half changes effectively",
+      "Attacked through the left side and the back post after halftime, with Manzambi and Vargas combining in a 12-minute burst"
     ],
     "standout_players": [
-      "Ruben Vargas \u2014 scored the opener and rewarded Yakin\u2019s faith",
-      "Johan Manzambi \u2014 scored the second goal and was a key beneficiary of Switzerland\u2019s sharp start to the second half",
-      "Granit Xhaka \u2014 anchored a richly experienced Swiss midfield",
-      "Ricardo Rodriguez \u2014 sparked the game with a driven ball through Canada\u2019s defence",
+      "Ruben Vargas \u2014 scored after the restart",
+      "Johan Manzambi \u2014 scored and was rewarded for Yakin's faith",
+      "Ricardo Rodriguez \u2014 initiated the move that led to Switzerland's early second-half chance",
+      "Breel Embolo \u2014 controlled the ball and threatened early",
       "Nico Elvedi \u2014 made a heroic block to deny Jonathan David",
-      "Gregor Kobel \u2014 produced a good first-half save from Ali Ahmed"
+      "Gregor Kobel \u2014 saved Ali Ahmed's shot late in the first half"
     ],
     "fatigue_injuries": [],
-    "momentum": "Impressive and deserved winners who topped the group, with momentum strong heading into the knockout stages in Vancouver."
+    "momentum": "Impressive Nati who delivered as a team, won the group, and return to Vancouver with knockout momentum."
   },
   "away_read": {
     "team": "Canada",
     "tactical_shape": [
-      "Jesse Marsch used Alphonso Davies as a 'decoy' rather than playing him",
-      "Started with Nathan Saliba and Mathieu Choini\u00e8re after Stephen Eust\u00e1quio was not fit enough to start",
-      "Looked to create pressure through hydration-break momentum swings and late substitutions",
-      "Pushed for a response after going behind, with Promise David coming off the bench to score"
+      "Jesse Marsch used Alphonso Davies as a decoy, but he was never going to play",
+      "Deployed Nathan Saliba and Mathieu Choini\u00e8re in midfield after Stephen Eust\u00e1quio was not fit enough to start",
+      "Looked to chase the draw after halftime, then made changes to spark a response",
+      "Relied on high energy at home in a humid, pressurised atmosphere"
     ],
     "standout_players": [
-      "Promise David \u2014 supersub who scored Canada\u2019s goal one minute after coming on",
-      "Maxime Cr\u00e9peau \u2014 made himself big to deny Breel Embolo early",
-      "Ali Ahmed \u2014 had Canada\u2019s best first-half shot, though it was scuffed",
-      "Jonathan David \u2014 came close before being denied by Nico Elvedi, then had to settle for a late impact from the other David"
+      "Promise David \u2014 supersub who scored Canada's goal on his World Cup debut",
+      "Maxime Cr\u00e9peau \u2014 raced out to deny Embolo early",
+      "Ali Ahmed \u2014 had a scuffed low shot saved by Kobel",
+      "Jonathan David \u2014 denied by Elvedi, then later made an impact with the goal assist from Saliba's touch and cross"
     ],
     "fatigue_injuries": [
-      "Alphonso Davies was not ready to play and was used as a decoy",
-      "Isma\u00ebl Kon\u00e9 was absent after having his leg shattered six days earlier",
-      "Stephen Eust\u00e1quio was not fit enough to start",
-      "The team is described as injury-hit and facing a shorter four-day turnaround"
+      "Alphonso Davies \u2014 not ready yet and unused",
+      "Isma\u00ebl Kon\u00e9 \u2014 injured, with his leg shattered earlier in the tournament",
+      "Stephen Eust\u00e1quio \u2014 not fit enough to start",
+      "Short four-day turnaround for the last-32 trip to Los Angeles"
     ],
-    "momentum": "A damaging defeat that sends Canada to Los Angeles on a short turnaround, though Promise David\u2019s goal briefly revived hope and Marsch still frames the trip as a chance to 'electrify the nation'."
+    "momentum": "Defeat ends their Vancouver stay and sends them to Los Angeles, but Marsch insists they still have a massive chance to electrify the nation."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/24/canada-switzerland-group-b-2026-world-cup-match-report"

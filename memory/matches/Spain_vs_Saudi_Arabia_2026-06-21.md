@@ -1,36 +1,34 @@
 # Tactical Report — Spain vs Saudi Arabia (2026-06-21)
 
-_Generated 2026-06-23 15:14 UTC_  
+_Generated 2026-06-26 18:35 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/21/spain-v-saudi-arabia-world-cup-2026-live_
 
 ## 0-15 Initial Setup
-Spain began on the front foot, controlling the ball and pinning Saudi Arabia back with wide overloads and aggressive full-back positioning. Lamine Yamal was the main attacking outlet, repeatedly dragging defenders out of shape, taking set pieces, and eventually scoring the opener in the 11th minute. Saudi Arabia offered brief breaks forward, but the phase was mostly Spain pressure, corners, and speculative finishing rather than clean chances.
-- **Formations / blocks:** Spain dominant in possession; Saudi Arabia defending and clearing under pressure; Spain using an attacking overload with full-backs/wide players high
-- **Adjustments:** Cucurella essentially playing as a winger; Pedro Porro pushed high and shooting from advanced areas; Yamal taking corners short and then delivering
-- **Key matchups:** Lamine Yamal vs Al Harbi; Lamine Yamal drawing Saudi defenders; Spain attackers vs Saudi aerial defense on corners
+Spain controlled the opening phase, with Yamal immediately drawing defenders and driving the attack from the right. Saudi Arabia were mostly in a reactive, clearing mode and looked strongest in the air against Spain's early corners, but the visitors still struggled to contain Spain's wide overloads and inside movements, culminating in Yamal's 11th-minute opener.
+- **Formations / blocks:** Spain dominant in possession; Saudi Arabia defending and clearing in a compact block; Spain using overloads high up the pitch
+- **Adjustments:** Cucurella effectively playing as a winger; Pedro Porro also pushing on like a winger; Yamal drifting inside from the right to shoot and create
+- **Key matchups:** Lamine Yamal vs Al Harbi; Saudi defenders vs Yamal's attacking dribbles and crosses; Spain's aerial attacks vs Saudi back line at corners
 - **Events:** 11′ goal: Goal! Spain 1-0 Saudi Arabia (Lamine Yamal, 11)
 
 ## 15-45 First-Half Shift
-Spain dominated the phase with relentless pressure and rapid attacking circulation, turning early control into a three-goal lead by the 24th minute. Saudi Arabia spent most of the spell under heavy defensive strain, with their keeper busy and their back line repeatedly exposed by Spain’s movement, especially Oyarzabal’s runs and Yamal’s influence. The standout tactical theme was Spain’s ability to keep attacks alive through advanced full/centre-backs while maintaining pressure high up the pitch.
-- **Formations / blocks:** Spain relentless from the first whistle, sustaining an aggressive attacking block; Saudi Arabia appearing to drop into a deep, passive defensive block under sustained pressure
-- **Adjustments:** Spain increasing shot volume and vertical threat through Yamal, Olmo and Oyarzabal; Cubarsi and Laporte stepping forward to keep attacks alive from deep; Yamal chasing back to the goal line, indicating Spain’s front players were working in the press
-- **Key matchups:** Lamine Yamal vs Al Harbi; Pedro Porro vs Salem Al Dawsar
+Spain dominated the phase with relentless pressure and much sharper finishing, turning territorial control into quick goals through Oyarzabal. Saudi Arabia were forced into survival mode, spending long spells defending deep and trying to slow the game down, while Al Owais was kept busy by Spain’s constant attacking waves.
+- **Formations / blocks:** Spain relentless attacking pressure; Saudi Arabia retreating into a defensive posture/low block
+- **Adjustments:** Spain increasing efficiency in the final third after earlier wastefulness; Saudi Arabia slowing restarts to catch their breath; Yamal tracking back aggressively to the byline
+- **Key matchups:** Lamine Yamal vs Al Harbi; Pedro Porro vs Salem Al Dawsar; Saudi goalkeeper Al Owais vs Spain's attacking wave (including Oyarzabal and Olmo)
 - **Events:** 21′ goal: Goal! Spain 2-0 Saudi Arabia (Oyarzabal, 21); 24′ goal: Goal! Spain 3-0 Saudi Arabia (Oyarzabal, 24)
 
 ## Half-Time Brief
-Spain went into the break 3-0 up after a first half described as exceptional, with Mikel Oyarzabal the standout and Alex Baena also impressing. Luis de la Fuentes framed the performance as a continuation of a larger project, praising Rodri and both centre-backs, while noting the team’s aim to maintain consistency for tougher upcoming matches.
-- **Formations / blocks:** Spain dominant in possession; no explicit opposing block stated
-- **Adjustments:** No clear tactical shape change described; only half-time reflection on maintaining consistency; Victor Munoz unavailable through injury
+Spain went into half-time leading 3-0, with the first half described as belonging to Mikel Oyarzabal and Alex Baena also drawing praise. Luis de la Fuente framed the performance as a statement of intent and emphasized the strong contributions of Rodri and both centre-backs, while noting the need to maintain consistency for tougher matches ahead.
 
 ## 45-75 Tactical Adjustments
-Spain’s tactical story in this phase is one of continued territorial control after half-time, even as they rotated attacking personnel. The substitutions did not alter the dominant pattern: Spain kept pushing wide and forward, and sustained pressure immediately produced a fourth goal via Al-Tambakti’s own goal. Saudi Arabia’s changes suggest damage limitation more than a successful reshaping of the game.
-- **Formations / blocks:** Spain in a fluid attacking shape with Pedro Porro advancing like a winger; Saudi Arabia absorbing pressure after multiple substitutions, with no clear pressing block explicitly described
-- **Adjustments:** Spain made two attacking substitutions at half-time: Oyarzabal and Lamine Yamal off, Yeremy Pino and Ferran Torres on; Saudi Arabia made two substitutions at half-time: Al Juwayr and Abdullah Al-Khaibari off, Abdullah Al-Hamdan and Mohamed Kanno on; Pedro Porro moved high and wide, effectively occupying the space left by Yamal; Spain continued to exploit wide areas and set-piece pressure, leading to the own goal
-- **Key matchups:** Pedro Porro vs the space on Spain’s right/attack flank; Cucurella involved in the move that drew the own goal
+Spain began the second half with changes on both sides, removing Oyarzabal and Yamal for Yeremy Pino and Ferran Torres while Saudi Arabia also refreshed midfield and attack. The tactical shape remained Spain-dominant, with Pedro Porro pushing high and wide like a winger to exploit the right flank, and that sustained pressure quickly forced a damaging own goal for 4-0.
+- **Formations / blocks:** Spain sustained attacking possession after the break, with Pedro Porro advancing like a winger from the right side.; Saudi Arabia remained in a reactive, defensive posture after conceding, but the text does not specify a named block or shape.
+- **Adjustments:** Spain made a double substitution at 46': Oyarzabal and Lamine Yamal off, with Yeremy Pino and Ferran Torres on.; Saudi Arabia also made a double substitution at 46': Al Juwayr and Abdullah Al-Khaibari off, with Abdullah Al-Hamdan and Mohamed Kanno on.; Pedro Porro stepped into the vacated wide space and played more like a winger after Yamal's departure.; Spain continued to press forward immediately after the restart, culminating in a 49' own goal from Al-Tambakti.; Pedri appeared to have taken a knock at 48' but continued.
+- **Key matchups:** Pedro Porro vs the space on Spain's right flank after Yamal's withdrawal.; Cubarsi's pass into Pedro Porro's run.; Saudi defender Al-Tambakti under pressure leading to the own goal.
 - **Events:** 49′ goal: Goal! Spain 4-0 Saudi Arabia (Al-Tambakti, 49 OG)
 
 ## 75-90+ Crunch Time
-Spain dominated the ball late on, but their earlier high press had given way to a much calmer, almost passive defensive stance, with Saudi Arabia content to slow the game and reduce damage. The only real late moments were speculative Saudi shots, a near own-goal, and a lengthy VAR delay that denied Ferran Torres a stoppage-time tap-in.
-- **Formations / blocks:** Spain recycle possession against a Saudi low block / score-protection posture; Saudi look to sit deeper and keep the score down rather than press high; Spain’s high press from the first half has eased into a more passive possession setup; Late phase becomes very slow-tempo, with both teams effectively walking pace
-- **Adjustments:** Spain allow Saudi Arabia to have sustained possession rather than forcing turnovers; Spain’s attacking intensity drops, with Pino and Ferran Torres trying to link but without the earlier movement; Kanno’s injury stoppage leads to a Saudi substitution: Nasser Al Dawsari goes off, with Al Ghannam mentioned as the replacement option but not taking place
-- **Key matchups:** Ferran Torres vs Al-Owais (Torres’ late tap-in is ruled out after VAR; Al-Owais makes an earlier save to deny an own-goal); Al-Hamdan vs Unai Simon (speculative shot saved); Al Tambakti vs his own goal / Al-Owais cover (saved from an own-goal situation, though offside had already been flagged); Pino and Ferran Torres combining in attack
+This phase is defined by Spain lowering the intensity and Saudi Arabia spending more time in possession as both sides drift toward full-time. The most notable tactical change is Spain’s switch from an earlier high press to a more passive, controlled endgame, while Saudi Arabia’s deep, damage-limiting approach becomes even more apparent. A late Spain goal is then ruled out by VAR, reinforcing the stop-start, low-tempo feel of the closing minutes.
+- **Formations / blocks:** Spain allowing Saudi Arabia to have longer spells of possession; Saudi Arabia in a more passive, score-protecting defensive posture; Spain no longer pressing as aggressively as in the first half; walking-pace endgame / low-tempo possession phase
+- **Adjustments:** Spain step off their first-half high press and let Saudi Arabia build more freely; Spain continue recycling possession rather than forcing tempo; Saudi Arabia make a late substitution: Nasser Al Dawsari off, Al Ghannam initially mentioned as a possible replacement before the change settles on a different sub context; VAR intervention disallows Ferran Torres' late goal
+- **Key matchups:** Unai Simon vs Al-Hamdan; Al Owais vs an own-goal attempt by Al Tambakti; Ferran Torres vs Saudi offside/VAR line; Fabian Ruiz delivering for Ferran Torres

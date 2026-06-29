@@ -6,78 +6,93 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "structured as expected",
+        "Colombia back four in possession",
+        "Uzbekistan organised block",
+        "conservative possession structure from Colombia",
+        "direct, more vertical Uzbek approach"
+      ],
       "adjustments": [],
-      "key_matchups": [],
-      "summary": "(no commentary for this phase)"
+      "key_matchups": [
+        "Fayzullaev vs Mojica",
+        "Khusanov vs Mojica",
+        "James on the ball against Uzbekistan's organised shape"
+      ],
+      "summary": "The opening quarter was cagey and measured, with Colombia comfortable circulating possession across their back four while staying conservative enough to avoid transition danger. Uzbekistan were compact and disciplined without the ball, then more direct when they had it, looking early for long or medium passes into their creative attackers. Set pieces provided the main early chances, but neither side settled into a rhythm."
     },
     {
       "phase": "15-45 First-Half Shift",
       "formations_blocks": [
-        "Uzbekistan 5-4-1 shell",
-        "Uzbekistan defensive block"
+        "Uzbekistan 5-4-1 block",
+        "Colombia controlling tempo with sustained possession"
       ],
       "adjustments": [
-        "Uzbekistan forced to come out of their 5-4-1 shell after conceding",
-        "Colombia create a couple of forward runs in succession before scoring"
+        "Colombia looking for runners between Uzbekistan's three centre-halves",
+        "Arias dropping into between-the-lines pockets and combining with James and Puerta",
+        "Colombia attempting more down-the-right overlap and near-post crossing"
       ],
       "key_matchups": [
-        "Munoz drifting in from the right behind the back three",
-        "Lerma\u2019s vertical dinked pass to Munoz"
+        "Arias vs Uzbekistan's defensive block between the lines",
+        "Suarez vs Uzbekistan's near-post defending",
+        "Shomurodov vs Lucumi"
       ],
-      "summary": "Colombia broke through after a brief spell of consecutive forward runs, with Lerma finding Munoz via a perfectly weighted vertical pass. Munoz timed his run behind Uzbekistan\u2019s back three and finished superbly, forcing Uzbekistan to abandon their 5-4-1 shell and become more expansive."
+      "summary": "Colombia gradually took control of possession and the tempo, but in a slow, low-threat rhythm that repeatedly ran into Uzbekistan\u2019s compact 5-4-1. Their best moments came when Arias found space between the lines or when they advanced down the right, yet Uzbekistan remained organized and difficult to break down, with Lucumi later forced into an important recovery against Shomurodov. The breakthrough eventually arrived via Munoz\u2019s goal in the 41st minute after a phase still largely defined by sterile Colombia circulation and disciplined Uzbek defending."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [
-        "Colombia possession-heavy keep-ball",
-        "Uzbekistan functional out of possession",
-        "Uzbekistan robust defensive approach / low block"
+        "Uzbekistan 5-4-1 low block",
+        "Colombia possession-heavy control"
       ],
       "adjustments": [
-        "Colombia repeatedly chose the conservative option instead of attacking the first crossing or second-phase chance",
-        "Uzbekistan made two half-time substitutions: Khamdamov for Nasrullaev and Sayfiev for Urunov"
+        "Uzbekistan started to expand their shape as the game wore on",
+        "Uzbekistan showed more initiative on the ball after initially sitting back"
       ],
-      "key_matchups": [
-        "Karimov vs Diaz",
-        "Lerma vs Uzbekistan on the late corner"
-      ],
-      "summary": "Colombia were clearly the better side, but their possession was slow, risk-averse and often refused the decisive pass or early cross. Uzbekistan defended in a compact, functional way and looked to counter, but offered little initiative on the ball before making two changes at the break."
+      "key_matchups": [],
+      "summary": "Uzbekistan spent much of the first half in a compact 5-4-1, prioritising defensive organisation and limiting space, while Colombia dominated territory and possession without being especially incisive. By half-time the Uzbeks were being urged to take more risks in possession, having offered little threat beyond rare breaks and a few failed attempts to find channel runners."
     },
     {
       "phase": "45-75 Tactical Adjustments",
       "formations_blocks": [
-        "defensive structure to protect a narrow lead",
-        "transition-focused counterattacking phase",
-        "Uzbekistan pushing to open the field with long switches"
+        "Colombia keep-ball / possession control",
+        "Colombia low block",
+        "Uzbekistan attacking in Colombia\u2019s half",
+        "Transition-heavy exchanges"
       ],
       "adjustments": [
-        "Colombia increased the tempo immediately after the equaliser",
-        "Colombia sat into a more protective defensive structure after regaining the lead",
-        "Campaz replaced James at 70'"
+        "Uzbekistan substituted Khamdamov and Sayfiev on for Nasrullaev and Urunov at half-time",
+        "Uzbekistan switched Fayzullaev from the right flank to the left to exploit space in behind Munoz",
+        "Colombia continued their conservative keep-ball approach before dropping into a low block",
+        "Both teams looked to counter after turnovers in transition"
       ],
       "key_matchups": [
-        "Shomorudov vs Vargas on the equaliser sequence",
-        "Diaz vs Yusupov on the 65' goal",
-        "Diaz vs Khusanov on the 76' free-kick"
+        "Fayzullaev vs Munoz",
+        "Arias vs Uzbekistan's ball-carriers / counterattacks",
+        "Mojica vs Ashurmatov"
       ],
-      "summary": "Uzbekistan improved after half-time and were rewarded through Fayzullaev\u2019s equaliser, but Colombia responded quickly by raising the tempo and striking in transition through Diaz. After retaking the lead, Colombia were content to slow the game, gift possession back, and settle into a compact defensive shape while Uzbekistan tried to stretch play with long switches without much success."
+      "summary": "The second half began with Uzbekistan making a clear attacking adjustment, bringing on fresh legs at the break and moving Fayzullaev from the right to the left to attack the space behind Munoz. Colombia remained patient in possession, then spent spells in a low block as Uzbekistan pushed into their half, with the match turning on transition moments and set-piece pressure. Fayzullaev was central to Uzbekistan\u2019s threat, but Colombia\u2019s defensive responses and conservative ball circulation helped them stay in control until the decisive goals arrived."
     },
     {
       "phase": "75-90+ Crunch Time",
       "formations_blocks": [
-        "slow methodical possession",
-        "low block / holding shape to protect the lead",
-        "late attacking siege from Uzbekistan",
-        "final-minute defensive hold by Colombia"
+        "Colombia sitting off in a deeper defensive block, allowing Uzbekistan midfield possession",
+        "Uzbekistan trying to sustain possession in midfield but struggling to progress",
+        "Late-phase stoppage-heavy, low-tempo open play with both sides largely in settled shape"
       ],
       "adjustments": [
-        "Eight minutes of stoppage time added for Colombia to manage",
-        "Late substitutions: Sergeev for Somurodov, Castano for Diaz, Gomez for Arias",
-        "Uzbekistan shifted to more direct late pressure with crosses and free-kicks into the box"
+        "Uzbekistan made a double substitution: Ashurmatov and Fayzullaev off, Urozov and Amonov on",
+        "Colombia made a double substitution: Puerta and Suarez off, Rios and Hernandez on",
+        "Colombia became more passive after the drinks break, hanging back and inviting Uzbekistan on",
+        "Colombia slowed the game down at set pieces, taking time over a corner"
       ],
-      "key_matchups": [],
-      "summary": "This phase was defined by Colombia protecting a 2-goal lead through slow, risk-averse possession and compact late-game defending, while Uzbekistan threw everything forward in the final minutes. The home side generated a couple of dangerous late moments \u2014 especially a wicked low cross in stoppage time \u2014 but Colombia repeatedly survived before Campaz sealed it at 90+9. "
+      "key_matchups": [
+        "Diaz vs Khusanov on the left leading to a free-kick",
+        "Munoz vs Shomorudov in the duel that ended with an interception and a needless slide",
+        "Khamdamov vs Colombia\u2019s defensive set-up on the edge of the box",
+        "Mozgovoy vs Colombia\u2019s defensive line/box protection in the 90th-minute chance"
+      ],
+      "summary": "This phase was dominated by stoppages, substitutions and a noticeable drop in tempo, with Colombia happy to sit deeper and concede midfield possession. Uzbekistan could not turn that territorial control into meaningful pressure, while Colombia remained the more dangerous side in transition and from set plays, eventually killing the game late with another goal."
     }
   ],
   "sources": [

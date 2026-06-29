@@ -5,17 +5,34 @@
   "date": "2026-06-16",
   "home_read": {
     "team": "France",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Second-half positional tweak with Michael Olise moved more centrally to improve connection and create more danger.",
+      "High-intensity, technically strong, dominant after the break; more direct attacking play through central combinations and through balls."
+    ],
+    "standout_players": [
+      "Kylian Mbapp\u00e9 \u2014 ruthless efficient, scored twice, including the winner and a record-breaking 58th France goal.",
+      "Michael Olise \u2014 superlative playmaking; the more he touched the ball, the better; central role created more danger.",
+      "Mike Maignan \u2014 made a good save from Sadio Man\u00e9 in the first half.",
+      "Bradley Barcola \u2014 off the bench and scored the third.",
+      "Adrien Rabiot \u2014 assertive play leading to Barcola\u2019s goal."
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A statement win for the World Cup favourites; despite a poor first half, France\u2019s second-half quality and Mbapp\u00e9\u2019s record give them strong momentum."
   },
   "away_read": {
     "team": "Senegal",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Keenly fought contest in the first half, with Senegal threatening on the break and in attack before France took control.",
+      "Looked dangerous enough to lead at half-time had chances been taken, but were then exposed by losing the ball cheaply and France\u2019s technical quality."
+    ],
+    "standout_players": [
+      "Sadio Man\u00e9 \u2014 had a good first-half chance saved by Maignan.",
+      "Isma\u00efla Sarr \u2014 wasted a clear opportunity from 10 yards.",
+      "Ibrahim Mbaye \u2014 as a Senegal substitute, scored with a rising drive in added time.",
+      "\u00c9douard Mendy \u2014 beaten twice by Mbapp\u00e9; should have dealt better with the second."
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A warning about efficiency and level-hitting, but not fatal; Senegal still have two matches left and qualification remains possible."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/16/france-senegal-world-cup-group-i-match-report"

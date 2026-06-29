@@ -5,17 +5,39 @@
   "date": "2026-06-20",
   "home_read": {
     "team": "Netherlands",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Used Brian Brobbey as a focal point up front",
+      "Attacked strongly down the flanks, with Denzel Dumfries repeatedly crossing from the right",
+      "Cody Gakpo and Crysencio Summerville operated in advanced wide roles and combined effectively",
+      "Took advantage when Sweden loosened into a back four after the first hydration break"
+    ],
+    "standout_players": [
+      "Brian Brobbey \u2014 scored twice in the opening 17 minutes and was impossible to handle; brought strength, touch and finishing",
+      "Cody Gakpo \u2014 scored twice and was heavily involved in the first goal",
+      "Denzel Dumfries \u2014 supplied several marvellous, snaking crosses from the right",
+      "Crysencio Summerville \u2014 sparkled after half-time, then scored late",
+      "Bart Verbruggen \u2014 made smart saves when Sweden briefly threatened",
+      "Ronald Koeman \u2014 his selection of Brobbey was vindicated"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A statement win that should do wonders for morale; the team looks improved and capable of hurting opponents with its attacking quality."
   },
   "away_read": {
     "team": "Sweden",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Started in a shape that left Viktor Gy\u00f6keres and Alexander Isak isolated early on",
+      "Switched to a back four after the first-half hydration break, which loosened their setup",
+      "Were repeatedly exposed and torn apart down the flanks",
+      "Sent balls across the box from both flanks after the break but lacked a killer touch"
+    ],
+    "standout_players": [
+      "Viktor Gy\u00f6keres \u2014 tested Bart Verbruggen multiple times",
+      "Alexander Isak \u2014 also tested the keeper but was criticised for needless squandering of possession",
+      "Yasin Ayari \u2014 forced a smart save and had a shot go narrowly over",
+      "Anthony Elanga \u2014 scored after being played through by Isak"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A damaging defeat that left them dizzy and vulnerable, with their World Cup hopes needing a quick response against Japan."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/20/netherlands-sweden-world-cup-group-f-match-report"

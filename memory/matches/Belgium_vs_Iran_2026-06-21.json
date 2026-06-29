@@ -7,84 +7,82 @@
     {
       "phase": "0-15 Initial Setup",
       "formations_blocks": [
-        "Belgium commanding possession and attacking from the start",
-        "Iran defending in a compact, counter-attacking posture",
-        "Belgium sustained attacking wave / onslaught",
-        "Iran trying to counter when they can"
+        "Belgium sustained early attacking pressure / onslaught",
+        "Iran attempted to counter after defending deep spells"
       ],
-      "adjustments": [],
+      "adjustments": [
+        "Lukaku introduced into aerial/central attacking duels on set pieces and crosses",
+        "Trossard drifting/wriggling down the left to create cut-backs"
+      ],
       "key_matchups": [
-        "Romelu Lukaku vs Beiranvand",
-        "Romelu Lukaku vs Kanani",
-        "Kevin De Bruyne vs Beiranvand",
-        "Trossard attacking down the left against Iran's defensive line",
-        "De Cuyper delivering from the left"
+        "Mechele vs Taremi",
+        "De Cuyper vs Taremi (first-contact defending on the corner)",
+        "De Bruyne vs Beiranvand",
+        "Lukaku vs Beiranvand",
+        "Kanani vs Lukaku"
       ],
-      "summary": "Belgium begin the phase on the front foot, sustaining long spells of pressure and quickly turning broken Iranian attacks into renewed possession. Their attacks come through left-sided combinations and direct deliveries into the box, with De Bruyne and Lukaku both testing Beiranvand and Iran struggling to get out. Iran\u2019s main response is a compact defensive effort and the occasional counter, but Belgium\u2019s tempo and conviction make it feel like an early onslaught."
+      "summary": "Belgium began strongly, pinning Iran back with sustained pressure, quick regains, and repeated entries into the box. Their attacks came through left-sided dribbles and cut-backs as well as crosses and shots from De Bruyne, while Iran were largely reduced to defensive interventions and the occasional counter attempt."
     },
     {
       "phase": "15-45 First-Half Shift",
       "formations_blocks": [
-        "low block",
-        "Belgium boxed Iran in with quick combination play",
-        "Belgium building from wide areas and the left side of the box"
+        "Iran low block",
+        "Belgium attacking against a compact defensive block"
       ],
       "adjustments": [
+        "Belgium using quick combination play to deconstruct the low block",
         "Meunier inverting to create an extra man on the last line"
       ],
       "key_matchups": [
         "Tielemans vs Ezatolahi",
-        "Meunier vs Iran's last line",
-        "Lukaku vs Iran's centre-backs",
-        "Taremi vs Belgium's offside line"
+        "Meunier vs Iran's back line",
+        "Lukaku attacking through balls and crosses",
+        "Taremi vs Belgium's defensive line"
       ],
-      "summary": "Belgium spent most of the phase pinning Iran back and trying to break a low block through quick combinations and wide delivery, with the main danger coming from Tielemans and Meunier\u2019s right-sided involvement. Iran survived the pressure, then briefly stunned Belgium with Taremi\u2019s disallowed goal before Belgium resumed attacking, now with Meunier inverting to add an extra runner on the last line."
+      "summary": "Belgium dominate the ball and repeatedly try to break down Iran's low block with quick combination play, although the final pass is often overhit. Iran survive a scare after a disallowed Taremi goal, then threaten from set pieces and transitions, while Belgium respond by pushing Meunier inside to add an extra body on the last line."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "This phase does not provide any tactical detail about formations, pressing structures, or in-game adjustments. The only football-related point is the half-time scoreline, Belgium 0-0 Iran, alongside a brief comment about Romelu Lukaku\u2019s yellow-card risk and substitution suitability rather than any concrete tactical shift."
+      "summary": "There is no real tactical analysis in this phase beyond the scoreline at the break: Belgium and Iran are level at 0-0. The only football-specific comment is a brief discussion of Lukaku's disciplinary risk and whether he should be withdrawn at half-time, but no formations, block structure, or matchup detail is given."
     },
     {
       "phase": "45-75 Tactical Adjustments",
       "formations_blocks": [
-        "Belgium attacking from a wide/right-sided set-piece phase after the break",
-        "Iran potentially shifting from a back four to a back five/defensive four after the Hardani\u2013Jahanbakhsh change"
+        "Iran defensive shape implied to be adjusted after the substitution, possibly shifting from a back five to a four-at-the-back structure",
+        "Belgium attacking in sustained possession/territorial pressure from wide areas and set pieces"
       ],
       "adjustments": [
-        "Iran substituted Hardani for Jahanbakhsh at 46', likely a shape adjustment with an extra attacker coming on for a defender",
-        "Trossard repeatedly moved inside before linking with De Bruyne on Belgium\u2019s right-sided attacks",
-        "De Bruyne remained the main set-piece/crossing source for Belgium"
+        "Iran replace Hardani with Jahanbakhsh at 46', with the commentary explicitly suggesting this may signal a move to four at the back",
+        "Belgium continue to target the right side and the back post from free kicks and corners through De Bruyne",
+        "Trossard moves infield to link with De Bruyne, indicating Belgium\u2019s left-sided attacker operating more centrally"
       ],
       "key_matchups": [
-        "Trossard vs Kanani (shot blocked after Trossard moved infield and fed De Bruyne)",
-        "Trossard vs an Iran defender on the foul that left him with a torn sock",
-        "De Bruyne\u2019s deliveries vs Iran\u2019s aerial defence/clearance line",
-        "Saelemaekers vs Iran\u2019s back-post coverage on De Bruyne\u2019s cross"
+        "Trossard vs the Iran defender who clipped him, leading to a free-kick deep in Iran\u2019s half",
+        "De Bruyne vs Iran\u2019s defensive set-piece coverage, repeatedly delivering into the box",
+        "Saelemaekers at the back post arriving against Iran\u2019s retreating defenders on De Bruyne\u2019s cross"
       ],
-      "summary": "The second-half opening period was dominated by Belgium, who kept working attacks through De Bruyne\u2019s delivery from the right and Trossard\u2019s drifting inside. Iran\u2019s early substitution suggested a tactical reshuffle, possibly toward a back four, but Belgium still created the best chances from wide free kicks and corners, with Kanani and the back line repelling the danger for the moment."
+      "summary": "The opening of the second half suggests Iran may have altered their structure, with the substitution of Hardani for Jahanbakhsh possibly indicating a switch to a back four. Belgium respond by leaning on territorial pressure and set pieces, with De Bruyne repeatedly delivering dangerous balls and Trossard and Saelemaekers finding half-chances in the box.\n\nThe main tactical pattern is Belgium probing from the right and via dead balls, while Trossard drifts inside to connect play with De Bruyne. Iran\u2019s defensive block is under strain, but the commentary only directly confirms their shape change as a possibility rather than a certainty."
     },
     {
       "phase": "75-90+ Crunch Time",
       "formations_blocks": [
-        "Belgium sitting back/defending deeper",
-        "Iran chasing the game with more attacking numbers"
+        "Belgium are sitting back",
+        "Iran are chasing the game with an attacking posture"
       ],
       "adjustments": [
-        "Iran made two attacking substitutions: Moghanloo on for Ghoddos, then Hosseinzadeh on for Ezatolahi",
-        "Iran repeatedly moved a striker on for a defender, increasing attacking risk",
-        "Belgium allowed Iran more space by dropping off and looking to protect the lead"
+        "Iran make attacking substitutions, bringing on Moghanloo for Ghoddos and later Hosseinzadeh for Ezatolahi",
+        "Iran go from a more balanced shape to an all-out attacking setup in search of a winner/qualifier",
+        "Belgium respond by protecting space and absorbing pressure"
       ],
       "key_matchups": [
-        "Jahanbakhsh vs Belgium\u2019s defending in the box",
-        "Ezatolahi vs Courtois (long-range shot saved/held)",
-        "De Bruyne vs Iran\u2019s defensive line on free-kicks and wide delivery",
-        "Castagne vs Iran\u2019s defensive cover on the right-side cross",
-        "Tielemans vs Iran\u2019s box defending at the near side of the cross"
+        "Ezatolahi vs Courtois on the long-range shot that the goalkeeper cannot hold",
+        "De Bruyne vs Iran's box-defending line on the wide free-kick and later the build-up to Castagne's cross",
+        "Tielemans vs Iran's defensive recovery on the low cross from Castagne"
       ],
-      "summary": "Iran, chasing a result, threw on extra attackers and pushed numbers forward, which in turn left them more exposed at the back. Belgium responded by sitting deeper and trying to exploit the space, while still creating moments through De Bruyne set pieces and Castagne\u2019s excellent low cross; the biggest direct chance for Iran came when Ezatolahi\u2019s long-range effort forced Courtois into an awkward save. The phase ended with Belgium still dangerous in transition/crossing situations and Iran gambling heavily for a goal."
+      "summary": "This phase turns into an end-to-end, crunch-time tactical battle after the red card, with Iran pushing men forward and Belgium retreating into a more conservative stance. Iran\u2019s substitutions reinforce the chase, but that ambition also opens space for Belgium, who threaten through De Bruyne-led service wide and into the box. The clearest chance comes from Ezatolahi\u2019s long-ranger, while Belgium\u2019s best late opening is Castagne\u2019s low cross that Tielemans can only glance away."
     }
   ],
   "sources": [

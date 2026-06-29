@@ -5,17 +5,39 @@
   "date": "2026-06-23",
   "home_read": {
     "team": "Norway",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Pressed from the start",
+      "Won a series of corners and positioned their taller players at the back of the box on corners",
+      "Used a high-energy attacking approach with \u00d8degaard carrying play and Haaland attacking in behind"
+    ],
+    "standout_players": [
+      "Erling Haaland \u2014 scored twice, taking his World Cup tally to four; described as a 'phenomenon' and executioner-like finisher",
+      "Martin \u00d8degaard \u2014 orchestrated attacks, including the pass for Haaland's second",
+      "Marcus Holmgren Pedersen \u2014 came on for the injured Ryerson and scored after Koulibaly's mistake",
+      "Antonio Nusa \u2014 curled the diagonal cross for the chance that led to \u00d8degaard's saved volley",
+      "Patrick Berg \u2014 cut the ball back for Haaland's second"
+    ],
+    "fatigue_injuries": [
+      "Julian Ryerson limped off on 12 minutes with what looked like a muscular injury"
+    ],
+    "momentum": "Celebratory and buoyant: Norway have qualified for the knockout phase for the first time since France 1998 and look like a strong, well-rounded side with Haaland at the centre of it."
   },
   "away_read": {
     "team": "Senegal",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Pressed on the right for a while, but without real precision",
+      "Played a high-risk, error-prone game at the back under Norway's pressure"
+    ],
+    "standout_players": [
+      "Nicolas Jackson \u2014 lively and mobile, but usually offside",
+      "Sadio Man\u00e9 \u2014 involved in Senegal's goal, easing the ball into Sarr's path",
+      "Isma\u00efla Sarr \u2014 scored Senegal's goal",
+      "Kalidou Koulibaly \u2014 had a nightmare, making mistakes that contributed to all three Norway goals"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Discouraging and shaky: after two defeats and six goals conceded, Senegal look badly exposed and error-prone despite briefly rallying to score."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/23/senegal-norway-world-cup-group-i-match-report"
+  ]
 }

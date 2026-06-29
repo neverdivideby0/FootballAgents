@@ -5,19 +5,37 @@
   "date": "2026-06-11",
   "home_read": {
     "team": "Mexico",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Better team in the opening game; controlled enough to keep South Africa under pressure",
+      "Lost the ball in midfield before South Africa's goal, suggesting a midfield turnover rather than a stated formation"
+    ],
+    "standout_players": [
+      "\u00d3scar P\u00e9rez was beaten for Tshabalala's goal",
+      "Rafael M\u00e1rquez equalised with 11 minutes left",
+      "Mexico were described as the better team and created the disallowed goal / early pressure"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Started as the stronger side and still rescued a point, but the draw felt like a missed chance after being unable to hold the lead South Africa briefly took."
   },
   "away_read": {
     "team": "South Africa",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Began the game tightly and awkwardly",
+      "After the break, regained possession in midfield and scored through three slick passes into a left-channel attack",
+      "Celebratory, high-energy, collective approach rather than a detailed formation"
+    ],
+    "standout_players": [
+      "Itumeleng Khune kept Mexico out with brilliant goalkeeping",
+      "Kagisho Dikgacoi played the defence-splitting pass for Tshabalala's goal",
+      "Siphiwe Tshabalala scored the opener with a left-footed finish",
+      "Katlego Mphela hit the woodwork late",
+      "Rafael M\u00e1rquez's back-post equaliser denied South Africa the win"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "The opening result created a huge burst of national belief and joy, even if the team later faded in the tournament."
   },
   "sources": [
+    "https://www.theguardian.com/football/2026/jun/10/golden-goal-siphiwe-tshabalala-south-africa-mexico-2010-world-cup",
     "https://www.theguardian.com/football/2026/jun/11/mexico-south-africa-world-cup-2026-group-a-match-report"
   ]
 }

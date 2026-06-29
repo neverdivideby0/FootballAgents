@@ -1,33 +1,33 @@
 # Tactical Report — England vs Ghana (2026-06-23)
 
-_Generated 2026-06-25 15:24 UTC_  
+_Generated 2026-06-26 18:37 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/23/england-v-ghana-world-cup-2026-live_
 
 ## 0-15 Initial Setup
-The opening phase is dominated by England on the ball against a very deep, well-organised Ghana low block. England show patience and intensity in possession, but the main challenge is finding penetration against Carlos Queiroz’s compact defensive structure. Their best move comes when Madueke finds the underlapping James, while Bellingham is later denied by Mensah and Rice’s free-kick from range goes just over.
-- **Formations / blocks:** England attacking against Ghana's defence; Ghana in a very deep defensive block / parked-bus low block; England in a patient attacking setup with intensity in possession
-- **Adjustments:** Underlapping run from James on the right/inside channel; Madueke playing a clever pass into the right-sided attacking move
-- **Key matchups:** Jude Bellingham vs Mensah; England attack vs Ghana defence
+England dominated possession and spent the opening phase probing a very deep, well-organised Ghana block. Tuchel’s side combined patience with intensity but initially lacked penetration, before their best move came when Madueke found the underlapping James, whose low delivery was blocked. Ghana’s shape was compact enough to frustrate England, with Mensah making an important tackle on Bellingham and Rice later testing the keeper from distance.
+- **Formations / blocks:** England sustained attack against Ghana's defence; Ghana deep defensive block / parked bus
+- **Adjustments:** England showing patience with intensity in possession; England creating their best chance through an underlapping full-back run from James
+- **Key matchups:** England attack vs Ghana defence; Bellingham vs Mensah
 
 ## 15-45 First-Half Shift
-England dominated the ball and repeatedly probed against a well-set Ghana low block, but clear chances were scarce and the first shot on target never arrived in the opening phase. Ghana’s defensive work, especially from Adjetey and the overall compactness of the block, frustrated England’s attempts to find space in the final third. Late in the phase, Madueke’s inside running offered a bit more directness, but the tactical picture remained England on top in possession and Ghana resisting stubbornly.
-- **Formations / blocks:** England sustained possession against a low block; Ghana defended in a compact low block; England struggled to create in the final third despite 88% possession
-- **Adjustments:** Madueke began to add urgency by running infield from the right
-- **Key matchups:** Kane vs Adjetey in the air; Spence vs Adjetey on the near-post cross and ensuing block; Rice vs Adjetey on the follow-up shot; James vs Ayew in an aerial clash
+England controlled the ball almost completely and spent this phase trying to break down a compact Ghana low block, but clear chances were scarce. Ghana’s defensive structure, shaped by a Queiroz-style approach, held firm through key interventions from Adjetey, while England looked frustrated despite relentless pressure and 88% possession. Madueke’s inside run briefly added urgency, but the main story was England struggling to find space in the final third.
+- **Formations / blocks:** England dominant in possession against a Ghana low block; Queiroz-style compact defensive block from Ghana; England probing in the final third with sustained pressure
+- **Adjustments:** Madueke injecting urgency with a run infield from the right
+- **Key matchups:** Kane vs Adjetey in the air; Spence's cross vs Adjetey at the near post; Rice's follow-up shot vs Adjetey's block; James vs Ayew in an aerial clash
 
 ## Half-Time Brief
-Ghana have defended very deep and compactly, with the spaces heavily condensed and rapid pressure applied whenever gaps appeared. England's main challenge has been patience against the low block while maintaining a stable structure to guard against Ghana's strong counter-attacking options, which they have managed to contain so far.
-- **Formations / blocks:** deep low block; compact defensive block; stable attacking base; counter-attacking setup
-- **Adjustments:** England need to continue attacking patiently; England have so far negated Ghana's counter-attack threat
-- **Key matchups:** Djed Spence vs Thomas Partey (pre-match handshake moment)
+The tactical picture is England probing against a very deep Ghana block, with the spaces heavily condensed and closed down quickly whenever they appear. Anthony Barry’s message was for England to stay patient and keep attacking from a stable base, while remaining alert to Ghana’s exceptional counter-attack options, which have been kept quiet so far.
+- **Formations / blocks:** deep block; condensed defensive block
+- **Adjustments:** England urged to continue attacking with a stable base; Ghana are defending even deeper than in their previous two games; Ghana quickly close down any spaces that appear; England have so far negated Ghana's counter-attack threat
+- **Key matchups:** Djed Spence vs Thomas Partey
 
 ## 45-75 Tactical Adjustments
-The phase is defined by Ghana starting the second half on the front foot, forcing England to defend their area and rely on cover from players like Bellingham and Spence. England respond with quicker circulation and a couple of shots from the edge of the box, but their wide forwards look ineffective, prompting discussion about potential changes on the flanks.
-- **Formations / blocks:** England in possession with sharp left-to-right circulation around the edge of the area; Ghana appearing more aggressive in the second half, driving forward from midfield/into the England area; England defending in and around their own box during Ghana pressure
-- **Adjustments:** Bellingham dropping in defensively with a well-timed tackle just outside the England area; Ghana increasing attacking intensity after the break and probing with crossfield switches; England attacking quicker across the front line, with wide forwards and edge-of-box shots becoming the main route; Possible consideration of changing England’s wide forwards, with Saka mentioned as a possible help on the right and Rashford as a possible replacement
-- **Key matchups:** Bellingham vs Semenyo; Spence vs Senaya; Opoku vs Bellingham
+This phase shows Ghana starting the second half on the front foot, forcing England into a few urgent defensive interventions and a blocked chance in the box. England respond by circulating possession quickly across the edge of the area, but their wide forwards Gordon and Madueke look below the required level, leaving their attack somewhat blunt despite some dangerous moments.
+- **Formations / blocks:** England attacking in a more structured, central-to-wide circulation around the edge of the area; Ghana appearing to push on in the second half and threatening from open play
+- **Adjustments:** Bellingham dropping in to make a key defensive tackle near England's box; England switching the ball sharply from left to right to work shooting positions; Wide forwards Gordon and Madueke struggling to impose themselves, prompting discussion of a possible change with Rashford coming on for width
+- **Key matchups:** Bellingham vs Semenyo; Senaya vs Spence; Opoku vs Bellingham; Gordon and Madueke vs Ghana's defensive structure
 
 ## 75-90+ Crunch Time
-This late phase is defined by transition moments rather than settled team shapes, with Ghana breaking quickly through the middle and England responding in attacking possession. The clearest tactical change noted is England’s attacking substitution of Rashford for Madueke, while the standout individual duels are Adu’s run at Konsa/Pickford and Saka’s long-range attempt saved by Asare.
-- **Adjustments:** England substitute Marcus Rashford for Noni Madueke; Ghana’s direct break into transition attacks from a 4-on-4 situation
-- **Key matchups:** Adu vs Konsa; Adu vs Pickford; Saka vs Asare
+The late phase is defined by transitional chaos, with Ghana breaking four-on-four and creating their best chance when Adu ran in behind before the move ended in a blocked shot and an offside flag. England then responded through individual quality rather than a clear structural change, as Saka drove in from the right and forced Asare into a smart save, while Rashford replaced Madueke in the 83rd minute to refresh England's attack.
+- **Adjustments:** 83' England substitution: Marcus Rashford on for Noni Madueke; England attacking through Saka from the right, with him cutting inside to shoot
+- **Key matchups:** Adu vs Konsa; Adu vs Pickford; Semenyo vs England goal-line defense; Saka vs Asare

@@ -5,17 +5,37 @@
   "date": "2026-06-21",
   "home_read": {
     "team": "Tunisia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Retained the same basic shape as Lamouchi",
+      "Tightened things up after the break, but only after Japan had already taken control",
+      "Lacked defensive organisation and conviction"
+    ],
+    "standout_players": [
+      "Aymen Dahmen replaced Mouhib Chamakh in goal; made a sprawling save to deny Takehiro Tomiyasu before half-time",
+      "Dylan Bronn made a last-gasp clearing challenge to stop Japan increasing their lead early",
+      "Montassar Talbi was beaten for Ayase Ueda's second goal",
+      "Mohamed Amine Ben Hmida was caught playing Ito onside for Japan's third"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A heavy defeat leaves Tunisia out already; the punditry frames them as a side in disarray, with little evidence the coaching change has altered the underlying problems."
   },
   "away_read": {
     "team": "Japan",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Poured forward in waves with tactical tweaks from the draw with the Netherlands",
+      "Used the left side well early, with Keito Nakamura crossing low from a wingback position",
+      "Conserved energy and played within themselves in the second half once in control"
+    ],
+    "standout_players": [
+      "Ayase Ueda inspired Japan, scored twice and led the line with intelligence and imagination",
+      "Daichi Kamada scored the opener, albeit via a goal off his heel after a low cross",
+      "Keito Nakamura created the opener from the left",
+      "Takefusa Kubo was absent through injury"
+    ],
+    "fatigue_injuries": [
+      "Takefusa Kubo was injured"
+    ],
+    "momentum": "A very good side with a landmark win and record margin for an Asian team at the World Cup; Japan look confidently set up and in control of their group fate."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/21/japan-tunisia-world-cup-group-f-match-report"

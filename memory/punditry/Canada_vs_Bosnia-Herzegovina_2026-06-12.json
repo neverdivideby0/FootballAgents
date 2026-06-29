@@ -5,17 +5,38 @@
   "date": "2026-06-12",
   "home_read": {
     "team": "Canada",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Jesse Marsch's side with early gusto, lots of pressure and substitutes used to replenish the frontline",
+      "Broadly carried on where they left off, with promising moves fizzling in the final phase",
+      "Triple substitution on the hour to refresh the attack",
+      "Needed a late box presence; Larin was told to get into the box and score"
+    ],
+    "standout_players": [
+      "Cyle Larin: supersub, scored with his first touch and rescued the point",
+      "Jonathan David: missed a golden opportunity / sitter in the first half but helped create the equaliser",
+      "Richie Laryea: had a goal-bound effort superbly blocked onto the crossbar by Kolasinac; later had a sidefoot effort saved/cleared after slick interchange",
+      "Tani Oluwaseyi: replaced before Larin came on; Nikola Katic headed off the line to deny him"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "First point at a World Cup on home soil; a spirited response that left Canada believing, though Marsch said improvements are needed to beat Qatar."
   },
   "away_read": {
     "team": "Bosnia-Herzegovina",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Started with Jovo Lukic, Ermedin Demirovic and Amar Memic up top / in attack, with Edin Dzeko short of fitness on the sidelines",
+      "Scored from a training-ground routine and then defended under sustained Canada pressure",
+      "Held a more reactive shape after taking the lead, with clearances and goal-line defending"
+    ],
+    "standout_players": [
+      "Jovo Lukic: first international goal, header from a set-piece routine",
+      "Sead Kolasinac: produced an extraordinary block to stop Laryea and prevent a goal, influential in defence",
+      "Nikola Katic: headed off the line to deny Oluwaseyi",
+      "Edin Dzeko: short of fitness, on the sidelines in a warmup bib encouraging teammates"
+    ],
+    "fatigue_injuries": [
+      "Edin Dzeko short of fitness"
+    ],
+    "momentum": "A creditable away draw in a hostile opening-night atmosphere; Barbarez will take pride that Bosnia did not succumb to the pressure."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/12/canada-bosnia-herzegovina-world-cup-2026-group-b-match-report"

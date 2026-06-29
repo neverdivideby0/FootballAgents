@@ -1,36 +1,37 @@
 # Tactical Report — Turkey vs United States (2026-06-26)
 
-_Generated 2026-06-26 16:44 UTC_  
+_Generated 2026-06-26 18:41 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/26/turkey-v-usa-world-cup-2026-live_
 
 ## 0-15 Initial Setup
-The opening phase is played at a high tempo, with the USA pressing, building through the right, and creating early set-piece danger before Trusty scores from a corner. Turkey respond by working through pressure and equalize through Güler, but the USA continue to look dangerous in transition, especially via McKennie’s right-sided runs and Reyna’s involvement in the buildup.
-- **Formations / blocks:** USA playing a proactive, pressing setup with early right-sided buildup; Turkey working slowly through US pressure
-- **Adjustments:** USA using long play at times after pressure; McKennie dropping back repeatedly to help recover possession; McKennie driving forward from midfield/right in transition; Turkey briefly finding a way through USA pressure before the equalizer
-- **Key matchups:** Miles Robinson vs his own error/recovery under pressure; McKennie vs Turkey's midfield/defensive recovery on the right; Gio Reyna vs Turkey's pressing block and foul by Kökçü; Scally vs Alper Yılmaz
+The opening phase is played at high tempo, with the USA pressing aggressively and attacking through the right before striking first from a set piece. Turkey then settle enough to play through pressure and equalize, but the US continue to create danger through direct running and quick combinations, especially down the right.
+- **Formations / blocks:** USA pressing high and attacking quickly after buildup on the right; Turkey working their way through US pressure and later gaining more of the ball
+- **Adjustments:** Turkey slowly work through the US press around the 10' mark; USA repeatedly use right-sided buildup and quick combinations through Reyna, Aaronson, and McKennie
+- **Key matchups:** Trusty vs Turkey on the far post at the corner; McKennie vs Turkey’s retreating defenders on his right-side run; Reyna vs Kökçü in the aerial foul sequence; Scally vs Alper Yılmaz
 - **Events:** 3′ goal: Goal! USA 1-0 Turkey (Trusty 3); 8′ goal: Goal! USA 2-3 Turkey (Ayhan 90 min +8); 10′ goal: Goal! USA 1-1 Turkey (Güler 10)
 
 ## 15-45 First-Half Shift
-This phase is marked by a very open game: the USA’s second-string-plus-McKennie attack creates moments, but their defensive structure is repeatedly exposed by turnovers and Turkish pressure through the middle. Turkey’s greater control in transition and cleaner central attacks eventually tell, with Kökçü’s 31' goal rewarding their momentum after USA giveaways and rushed defending. The USA briefly regain some calm possession late in the phase, but it comes after several chaotic spells and a disallowed scramble goal.
-- **Formations / blocks:** USA second-string-plus-McKennie attacking setup; Turkey countering and pushing through the middle; USA scrambling into a numbers-back defensive shape after turnovers
-- **Adjustments:** Reyna joins Scally and McKennie in an attack on the right; Weah takes throws after the right-sided advance; USA settle into calmer possession after a frantic stretch
-- **Key matchups:** Mark McKenzie vs Turkish attackers in the box/scramble phase; Berhalter vs Turkish midfield/ball carriers in repeated physical duels; Weah vs Turkey's goalkeeper on the offside shot
+This phase was played at a high tempo with the USA’s rotated side showing real attacking punch but serious defensive fragility, as both teams repeatedly traded transitions and half-chances. Turkey were able to exploit central openings and eventually punished the USA with Kökçü’s 31st-minute goal, while the Americans had moments of threat, including a disallowed scramble goal and a brief spell of calmer possession near the end of the phase.
+- **Formations / blocks:** second-string-plus-McKennie lineup; Turkey pushing through the middle; USA defending with numbers back out of desperation; USA calm possession spells
+- **Adjustments:** Reyna joins Scally and McKennie in an attack on the right; Weah takes and then receives involvement in attacking sequence; USA transition from rushed clearances to a brief period of calmer possession; Turkey use a trick free-kick routine
+- **Key matchups:** Mark McKenzie vs Turkish defenders in the scramble for the disallowed goal; Berhalter vs Turkish midfield/defensive challenges in repeated fouls and 50-50s; Weah vs the Turkish goalkeeper on the offside shot; Kökçü vs the USA defense on the 31' goal
 - **Events:** 31′ goal: Goal! USA 1-2 Turkey (Kökçü 31)
 
 ## Half-Time Brief
-The halftime discussion frames the match as a chaotic, end-to-end contest rather than a controlled tactical battle. The main concern is that USA’s aggressive, numbers-forward attacking style is leaving them open in midfield, where Arda Güler is repeatedly breaking them apart. At the other end, Weah’s struggles to control the ball and stay onside are blunting the USA’s attacks, while the commentary also suggests the referee’s management has added to the disorder.
-- **Adjustments:** USA attacking with more than 2.5 players instead of controlling possession; team continuing a helter-skelter, throw-haymakers approach rather than slowing the pace; Turkey repeatedly exploiting midfield openings, with Arda Güler tearing the midfield apart
-- **Key matchups:** Arda Güler vs the USA midfield; Weah vs his own ball control/offside positioning issues
+The halftime read is that the game has been wildly open, with the USA attacking in a chaotic, all-out manner rather than controlling tempo. Turkey, led by Arda Güler’s influence in midfield, are exploiting that openness, while the USA’s front line is also being hurt by poor control and offside issues, especially from Weah.
+- **Formations / blocks:** helter-skelter attacking phase with the USA committing more than 2.5 players forward
+- **Adjustments:** USA are urged to slow the game and have a player 'put his foot on the ball and control the pace'; commentary notes the USA were attacking with more numbers rather than controlling possession
+- **Key matchups:** Arda Güler vs the USA midfield; Weah vs Turkey's defensive organization/discipline
 
 ## 45-75 Tactical Adjustments
-The USA begin the half looking to increase tempo and vary their attack, mixing slow buildup with direct balls to Weah and short-set-piece routines. Their off-ball intensity stands out too, with Aaronson and McKennie immediately hunting second balls and turnovers, while Turkey are forced into dealing with repeated crosses and aerial situations. Berhalter’s equalizer comes from this phase of pressure and circulation, with the U.S. continuing to probe through central and wide channels afterward.
-- **Formations / blocks:** US slow build-up in possession; Turkey defensive shape not clearly specified in the text
-- **Adjustments:** USA start the half with more direct play to Weah from Berhalter; short-corner routine to Berhalter and an over-the-top attempt; Aaronson and McKennie active in counterpressing after turnovers
-- **Key matchups:** Weah vs his marker on the left; McKennie vs Turkish pressure in midfield; Scally marking a Turkish long cross into the box; Trusty attacking aerial duels on set pieces
+The second half begins with the USA looking to reassert itself through quicker ball wins, left-side attacks, and set-piece variation, culminating in Berhalter's 49th-minute equalizer. Turkey remain dangerous enough to force defensive moments from Scally and Turner, but the main tactical theme is the US trying to stretch play wide left while also using Berhalter from deeper areas as a creator and finisher. Weah's repeated offside runs and Pepi being kept at arm's length show that the final-ball timing is still not fully clean despite the improved tempo.
+- **Formations / blocks:** US building slowly from possession; Turkey defending against US corners and crosses; Turkey/USA transitions after turnovers
+- **Adjustments:** US repeatedly working attacks through the left with Weah; short-corner routine with Berhalter stepping in to receive and deliver; US using Berhalter as a deeper, withdrawn midfielder who can still arrive with end product
+- **Key matchups:** Weah vs his marker on the left; Scally vs Aydin on Turkey's long cross; Trusty vs Turkish defenders on US corners; Pepi vs Turkey's back line/center backs; Aaronson vs the Turkish pressure after his knockdown
 - **Events:** 49′ goal: Goal! USA 2-2 Turkey (Berhalter 49)
 
 ## 75-90+ Crunch Time
-This phase is defined by late-game substitutions and a shift in personnel as the USA refreshes the attack and midfield, while Turkey respond with their own changes. The tactical picture is one of the USA trying to sustain pressure through buildup, corners, and combinations, while Turkey alternate between deep possession and quick breaks, creating a few dangerous moments before the end.
-- **Formations / blocks:** USA attacking buildup with sustained possession and set-piece pressure; Turkey sitting in their own half and keeping the ball in a deeper possession phase; Turkey counterattacking through the right before switching play
-- **Adjustments:** USA make a triple substitution: Reyna off, Aaronson off, Scally off; Alex Freeman, Sergiño Dest, and Alex Zendejas on; USA make a final substitution: McKennie off for Malik Tillman, with Pulisic taking the armband; Turkey make two substitutions: Çelik and Velfiz off, Uzun and Söyüncü on; Dest appears to add high-energy pressure on the right; Turkey’s shape appears to become more forward-oriented with Uzun entering as a forward
-- **Key matchups:** Dest vs Turkey possession on the right flank; Turner vs Yildiz; McKennie vs the developing Turkey defensive scramble; Berhalter vs Güler; Trusty vs Alper Yılmaz
+This phase is shaped by heavy substitution activity and a late push from both sides. The USA shift personnel to inject pace and creativity, while Turkey respond with their own changes and try to build patiently, but much of the action comes from broken attacks, turnovers, and scrappy defensive moments. The tactical tone is end-to-end but slightly chaotic, with the US trying to force chances through Pulisic, Dest and Zendejas while Turkey threaten on the break and from wide areas.
+- **Formations / blocks:** Turkey keep possession in their own half and are unable to progress beyond roughly 30 yards, suggesting a patient buildup against a compact US defensive shape.; USA apply pressure after turnovers and look to transition quickly, especially through Pulisic, Dest and McKennie.
+- **Adjustments:** Triple US substitution at 76' with Reyna, Aaronson and Scally off; Alex Freeman, Sergiño Dest and Alex Zendejas on.; McKennie is removed at 86' for Malik Tillman, with Pulisic taking the armband.; Turkey make two substitutions at 84' with Çelik and Velfiz off, Uzun and Söyüncü on.; Pulisic and Zendejas combine more directly after the subs, indicating a more aggressive attacking look on the right/advanced areas.
+- **Key matchups:** Dest vs Turkey possession on the flank/pressing battle; Trusty vs Alper Yılmaz; Turner vs Yıldız; Robinson vs Güler

@@ -6,41 +6,88 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "high-paced open play",
+        "C\u00f4te d\u2019Ivoire slowing the tempo after an early fast start"
+      ],
       "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 9 commentary beats; 1 events; goals at 6'. Enable use_llm for tactical extraction."
+      "key_matchups": [
+        "Ecuador vs Franck Kessi\u00e9",
+        "Enner Valencia vs the C\u00f4te d\u2019Ivoire defense around Agbadou"
+      ],
+      "summary": "The opening phase is played at a high tempo, with Ecuador generating the more notable shooting opportunities while C\u00f4te d\u2019Ivoire settle into a slower rhythm after the initial burst. The commentary suggests Ecuador are pressing enough to unsettle the Ivorians, who are also being sloppy in possession and not stringing many passes together. Despite the chances, Ecuador\u2019s finishing is poor, with several efforts going well over or wide rather than testing the goalkeeper."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 24 commentary beats; 1 events; goals at 38'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Ecuador pressing and counter-pressing after turnovers",
+        "C\u00f4te d\u2019Ivoire defending in a compact shape and leaving Ecuador chasing the ball",
+        "Ecuador building through quick restarts and recycled possession"
+      ],
+      "adjustments": [
+        "P\u00e9p\u00e9 choosing to drive centrally rather than release wide to Diomande",
+        "Ecuador taking a free kick backwards, then playing quickly upfield to exploit the moment",
+        "Diomande stopping, pausing, then beating his man with a single touch to win a corner"
+      ],
+      "key_matchups": [
+        "P\u00e9p\u00e9 vs Diomande on the right/inside channel",
+        "Bazoumana Tour\u00e9 vs Gal\u00edndez",
+        "Diomande vs his direct defender",
+        "Minda vs Gal\u00edndez"
+      ],
+      "summary": "This phase was open and transitional, with Ecuador repeatedly recovering second balls and turning possession into immediate shots, while C\u00f4te d\u2019Ivoire looked dangerous when they could attack directly after turnovers. The game featured several isolated duels and individual actions, including Diomande\u2019s quick-feet break, P\u00e9p\u00e9\u2019s central dribble, and Ecuador\u2019s repeated attempts that twice struck the bar."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 6 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "The interval arrives with C\u00f4te d\u2019Ivoire and Ecuador locked at 0-0, and the commentary offers little in the way of concrete tactical detail from the first half itself. The main takeaway is contextual: both sides are being discussed as capable of progressing, and notably they are not appearing to play cautiously for a draw despite the tournament format incentives. C\u00f4te d\u2019Ivoire are also framed as an underrated attacking side, with Yan Diomande singled out as a player who can trouble defenses."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 21 commentary beats; 3 events; goals at 45', 47', 68'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "counterattacking phase",
+        "possession-based build-up",
+        "slow-tempo possession after counter threat"
+      ],
+      "adjustments": [
+        "C\u00f4te d\u2019Ivoire used Yahia Fofana to spring counters after Ecuador pressure",
+        "Diamonde moved into the center around the 50' mark",
+        "Ecuador slowed the tempo after being exposed to Ivorian counterattacks",
+        "Ecuador substituted Nilson Angulo for Minda",
+        "C\u00f4te d\u2019Ivoire substituted Amad Diallo and Ange-Yoan Bonny for Wahi and Tour\u00e9"
+      ],
+      "key_matchups": [
+        "Wahi vs the Ecuador goal frame on the 52' counter chance",
+        "Singo vs the cleared corner delivery on the bicycle-kick attempt",
+        "Diamonde operating on the right, drawing attention in transition"
+      ],
+      "summary": "This phase was defined by swings between Ecuador\u2019s possession and C\u00f4te d\u2019Ivoire\u2019s direct counters, with both teams creating danger mainly from transitional moments rather than sustained control. C\u00f4te d\u2019Ivoire repeatedly threatened quickly after regains, prompting Ecuador to become more cautious in possession and slow the game down, while substitutions on both sides added fresh attacking legs without fundamentally changing the open, chance-heavy pattern."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 24 commentary beats; 2 events; goals at 78', 88'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "patient buildup",
+        "dangerous set-piece phase",
+        "stunned/disorganized defensive phase after goal"
+      ],
+      "adjustments": [
+        "C\u00f4te d\u2019Ivoire: Oula\u00ef and Sangar\u00e9 on for Seko Fofana and P\u00e9p\u00e9",
+        "Ecuador: Rodr\u00edguez on for Enner Valencia",
+        "C\u00f4te d\u2019Ivoire: Kossounou on for Dou\u00e9 after a risky yellow-card situation",
+        "Ecuador leaning on wide delivery/crosses and a late free kick/corner sequence"
+      ],
+      "key_matchups": [
+        "Diallo vs trio of Ecuadorian defenders",
+        "Diamonde vs Ecuadorian defenders on the left",
+        "Konan vs Ord\u00f3\u00f1ez",
+        "Angulo vs Dou\u00e9"
+      ],
+      "summary": "The closing phase was cagey at first, with both sides appearing content to play patiently and avoid overcommitting until a late goal might decide it. Ecuador generated their best threat through left-sided dribbling and dead-ball pressure, but C\u00f4te d\u2019Ivoire survived the dangerous moments, made a defensive substitution after Dou\u00e9 flirted with a second yellow, and then snatched the winner through Diallo in the 90th minute. Ecuador looked stunned afterward and nearly lost structure immediately after conceding."
     }
   ],
   "sources": [
-    "https://www.theguardian.com/football/live/2026/jun/14/germany-v-curacao-world-cup-2026-live"
+    "https://www.theguardian.com/football/live/2026/jun/14/cote-d-ivoire-v-ecuador-world-cup-2026-live"
   ]
 }

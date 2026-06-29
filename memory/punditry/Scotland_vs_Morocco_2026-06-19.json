@@ -5,17 +5,38 @@
   "date": "2026-06-19",
   "home_read": {
     "team": "Scotland",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "May not line up in the 4-4-2 used against Haiti",
+      "Clarke may use a different system; a back three was used against C\u00f4te d\u2019Ivoire and may be a clue to the plan",
+      "Expected to be under pressure with Morocco likely having more of the ball and possession",
+      "Need to be compact and threat on the ball when they have possession"
+    ],
+    "standout_players": [
+      "Lewis Ferguson praised by Steve Clarke for a second game in succession",
+      "John McGinn felt he was taken out in a penalty incident",
+      "Scott McTominay appealed for a penalty"
+    ],
+    "fatigue_injuries": [
+      "Kieran Tierney departed after a second-half problem; Clarke said it was only cramp"
+    ],
+    "momentum": "Devastated by the defeat but proud of the performance; belief remains that Scotland can compete at this level and now look toward the Brazil game and a possible first-ever knockout qualification."
   },
   "away_read": {
     "team": "Morocco",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Likely to have more of the ball and more possession",
+      "Described as a really good, top side with power, pace and skill that can open up a game"
+    ],
+    "standout_players": [
+      "Issa Diop could have been sent off early, according to Clarke",
+      "Morocco as a group were said to have a bit of class"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Came through a difficult game and are viewed as the real deal; a strong side with confidence from results and performances."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/20/scotland-morocco-world-cup-reaction",
+    "https://www.theguardian.com/football/2026/jun/18/clarke-warns-scotland-morocco-real-deal-world-cup",
+    "https://www.theguardian.com/football/2026/jun/20/scotland-morocco-world-cup-match-report"
+  ]
 }

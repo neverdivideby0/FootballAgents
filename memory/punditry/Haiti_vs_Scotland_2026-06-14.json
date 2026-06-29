@@ -5,19 +5,37 @@
   "date": "2026-06-14",
   "home_read": {
     "team": "Haiti",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Dynamic attacking players; carried menace but looked erratic and lacked composure",
+      "Pushed Scotland by attacking the gaps left in defense, but without seriously looking like scoring"
+    ],
+    "standout_players": [
+      "Johny Placide produced a fine save to deny Ch\u00e9 Adams",
+      "Jean-Ricner Bellegarde deflected McGinn's goal with an outstretched foot"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Showed threat and pace, but the punditry frames them as lacking composure and not quite sharp enough to punish Scotland."
   },
   "away_read": {
     "team": "Scotland",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Looked impressive in moments moving forward but left gaps for Haiti to attack",
+      "Used long balls/direct build-up at times, including Hanley launching a fine long ball to Ch\u00e9 Adams",
+      "Ben Gannon-Doak provided crucial attacking influence from the right/forward areas"
+    ],
+    "standout_players": [
+      "Scott McTominay came within the width of a post of scoring",
+      "Ben Gannon-Doak's attacking influence was crucial",
+      "John McGinn scored the winner, though it was described as a scuffed goal",
+      "Ch\u00e9 Adams was involved in the move and thought he had scored before McGinn's rebound"
+    ],
+    "fatigue_injuries": [
+      "Scott McTominay sat out training on Thursday with a stomach complaint but returned on Friday and was said to be in 'perfect' condition"
+    ],
+    "momentum": "Returned to the World Cup with a win, but the display was unconvincing and the narrative is that tougher tests against Morocco and Brazil will demand more."
   },
   "sources": [
+    "https://www.theguardian.com/football/2026/jun/12/scotland-traitors-world-cup-2026-opener-haiti-andy-robertson",
     "https://www.theguardian.com/football/2026/jun/14/haiti-scotland-world-cup-match-report"
   ]
 }

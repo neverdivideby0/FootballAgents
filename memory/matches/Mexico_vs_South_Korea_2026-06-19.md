@@ -1,20 +1,34 @@
 # Tactical Report — Mexico vs South Korea (2026-06-19)
 
-_Generated 2026-06-21 16:31 UTC_  
-_Sources: https://www.theguardian.com/football/live/2026/jun/19/usa-v-australia-world-cup-2026-live_
+_Generated 2026-06-26 18:32 UTC_  
+_Sources: https://www.theguardian.com/football/live/2026/jun/19/fifa-world-cup-2026-live-mexico-v-south-korea-updates-mex-vs-kor-group-a-match-score-latest_
 
 ## 0-15 Initial Setup
-[placeholder] 0-15 Initial Setup: 12 commentary beats. Enable use_llm for tactical extraction.
+The opening phase is played at a brisk tempo, with South Korea initially the quicker side and repeatedly trying to stretch Mexico through early long diagonals and quick wide attacks, especially toward Seol on the left. Mexico respond with a disciplined, physical approach, winning 50:50s, defending robustly, and building their own left-sided attacks through Gallardo and Romo. A notable individual battle develops between Quinones and Kim Min-jae, while Korea’s midfield rhythm is disrupted by misplaced passes and an early yellow for Lee Kang-in.
+- **Formations / blocks:** high tempo open play; Mexico compact and robust in defensive duels; both teams building patiently from the back before waiting for forward runs
+- **Adjustments:** Korea using early long diagonals from the goalkeeper to Seol on the left; Korea looking to move the ball quickly into wide areas
+- **Key matchups:** Quinones vs Kim Min-jae; Romo vs Lee Kang-in; Gallardo and Romo combining on Mexico’s left against Korea’s defence; Seol vs Alvarado
 
 ## 15-45 First-Half Shift
-[placeholder] 15-45 First-Half Shift: 22 commentary beats; 1 events; goals at 43'. Enable use_llm for tactical extraction.
-- **Events:** 43′ goal: Goal! USA 2-0 Australia (Freeman 43)
+Korea retreated into a compact 5-3-2 and let Mexico have the ball, but El Tri’s initial patient possession was too loose and the final-third combinations kept breaking down. As the half wore on, Mexico raised the tempo and found some better moments through Alvarado’s right-sided delivery and Gallardo’s left-side triangles, yet Korea’s committed defensive shape and a few offside calls prevented sustained danger.
+- **Formations / blocks:** Korea compact 5-3-2; Mexico patient possession with greater urgency in midfield; Korea committed defensive block
+- **Adjustments:** Korea dropped into a compact 5-3-2 to cede possession; Mexico increased urgency and forced the issue after a patient build-up phase; Mexico repeatedly tried to create triangles to release Gallardo on the left; Mexico used right-sided progression through Alvarado cutting in onto his left and delivering crosses
+- **Key matchups:** Alvarado vs Korea's back line on the right-to-left crossing lane; Quinones vs Kim on the 20' header/save; Son vs Mexico's offside trap and recovering defenders; Gallardo as Mexico's left-side outlet against Korea's compact block
 
 ## Half-Time Brief
-[placeholder] Half-Time Brief: 8 commentary beats. Enable use_llm for tactical extraction.
+A very flat first half ended 0-0, with both sides producing almost nothing of note and matching each other at just 0.11 xG apiece. Mexico did little going forward but stayed organised and defensively solid, while the half-time tone suggests a desire for more incision and one-versus-one threat after the break.
+- **Formations / blocks:** stalled, low-event first half; defended stoutly and managed the game superbly
+- **Adjustments:** need for the introduction of a dribbler or two to take the game on; teams back out for the second half
 
 ## 45-75 Tactical Adjustments
-[placeholder] 45-75 Tactical Adjustments: 28 commentary beats. Enable use_llm for tactical extraction.
+South Korea began the second half with more possession, but their forward play remained blunt and Mexico continued to threaten by winning and exploiting transitions. Mexico struck first from a messy goalmouth sequence, after which Korea were forced to chase and immediately turned to substitutions to add pace and penetration, replacing Son and Lee with Hwang Hee-chan and Oh Hyeon-gyu.
+- **Formations / blocks:** Korea dominated possession after the interval; Mexico remained compact enough to spring on turnovers; South Korea chasing the game after conceding
+- **Adjustments:** No changes at the break; Mexico continued to use overlapping width through Gallardo on the left; South Korea introduced Hwang Hee-chan and Oh Hyeon-gyu for Son Heung-min and Lee Jae-sung; South Korea became more direct after going behind
+- **Key matchups:** Kim Seung-gyu vs Jorde Romo on the goal sequence; Quinones vs the Korean defensive line on the left-sided cross; Son Heung-min vs Mexico's marking in the box; Romo vs midfield pressure and immediate ball recovery
+- **Events:** 50′ goal: GOAL! Mexico 1-0 South Korea (Romo, 50)
 
 ## 75-90+ Crunch Time
-[placeholder] 75-90+ Crunch Time: 32 commentary beats. Enable use_llm for tactical extraction.
+Mexico controlled the closing stages by compressing space, defending with a deeper block, and still threatening on transitions and crosses, while Korea struggled to create anything clean through the lines. Korea’s best moments came from individual actions and wide deliveries, but Mexico’s back line and Kim repeatedly snuffed them out, leaving South Korea without a shot on target until the very end when Cho nearly equalised.
+- **Formations / blocks:** Mexico retreating into a deeper defensive block; Mexico pressing high at times after going long; Korea building with central defenders on the halfway line / possession between the centre-backs; Korea attempting a vertical attacking setup with crosses and direct balls from wide areas
+- **Adjustments:** Korea introduced Cho Gue-sung for Paik Seung-ho, adding a more direct central striker; Mexico replaced Jimenez with Santiago Gimenez and Alvarado with Israel Reyes; Mexico later brought on Cesar Huerta for Quinones; Mexico dropped deeper after the lead, then alternated with long balls forward when pressing
+- **Key matchups:** Quinones vs Korea's right side in the lead-up to Jimenez's chance; Jimenez vs Kim on the 75th-minute half-volley save; Hwang Hee-chan vs the Mexican press in midfield; Kim Min-jae vs Mexico's long ball to Santiago Gimenez; Vargas vs Kim on the long-range shot; Cho Gue-sung vs Rangel on the late headed chance

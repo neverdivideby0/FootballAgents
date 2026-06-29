@@ -6,38 +6,71 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "Mexico dominant in possession",
+        "South Africa sitting back in shape / keeping it tight"
+      ],
       "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 12 commentary beats; 1 events; goals at 9'. Enable use_llm for tactical extraction."
+      "key_matchups": [
+        "Reyes vs South Africa's left-sided defender/cover on the right flank",
+        "Raul Jimenez vs Williams (shot saved)",
+        "Alvarado vs Modiba (foul at 3')"
+      ],
+      "summary": "Mexico controlled the ball from the start, with South Africa largely staying compact and looking to limit early damage. The home side created the clearer openings through wide right-sided attacks and a near-post/edge-of-box pattern, before Quinones\u2019 9th-minute goal rewarded their early pressure. South Africa offered little as an attacking force in this phase, appearing focused on absorbing pressure and settling into shape."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 18 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Mexico dominant in possession, attacking repeatedly down the right",
+        "South Africa defending deeper and absorbing pressure"
+      ],
+      "adjustments": [
+        "South Africa\u2019s spell of better possession after a poor opening 20 minutes",
+        "Mexico continue to funnel attacks through the right side and into inside-right areas"
+      ],
+      "key_matchups": [
+        "Gutierrez vs Mokoena on Mexico\u2019s right",
+        "Gutierrez vs Mokoena in duels down the right flank",
+        "Mbokazi vs Mexico\u2019s right-sided crosses",
+        "Okon vs Gutierrez"
+      ],
+      "summary": "Mexico controlled the opening of this phase, repeatedly working attacks down the right and creating the better chances, while South Africa spent much of the time defending and clearing crosses. The game became more stop-start as bookings accumulated, before South Africa briefly improved and pushed forward a little more in the last few minutes of the excerpt."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 7 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "The commentary does not provide any tactical information about formations, pressing structures, or player matchups during the half-time brief. It simply confirms the score at the interval, with Mexico leading South Africa 1-0, and contains unrelated email/chat discussion rather than match analysis."
     },
     {
       "phase": "45-75 Tactical Adjustments",
       "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 19 commentary beats; 1 events; goals at 67'. Enable use_llm for tactical extraction."
+      "adjustments": [
+        "Mexico continue pushing higher after the restart, with Gutierrez repeatedly attacking the space in behind",
+        "South Africa are forced toward game-management after the red card to Sithole, effectively playing a man down from 50' onward",
+        "South Africa\u2019s immediate priority shifts to surviving pressure rather than building attacks"
+      ],
+      "key_matchups": [
+        "Gutierrez vs Sithole"
+      ],
+      "summary": "The phase turns sharply after the break: South Africa make a major mistake straight away, then lose Sithole to a red card on 50', leaving them heavily compromised. Mexico respond by increasing pressure and attacking the space in behind, eventually converting that control into Raul Jimenez\u2019s goal on 67'."
     },
     {
       "phase": "75-90+ Crunch Time",
       "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 29 commentary beats. Enable use_llm for tactical extraction."
+      "adjustments": [
+        "Mexico made late attacking changes with Alvarez on for Lira, Gonzalez for Jimenez, and Vega for Quinones.",
+        "South Africa also changed personnel with Makgopa for Rayners and Modiba for Appollis.",
+        "Appollis briefly moved inside for a rare South Africa attack.",
+        "After Zwane\u2019s red card, South Africa were reduced to 10 men for the closing minutes."
+      ],
+      "key_matchups": [
+        "Appollis vs Rangel",
+        "Zwane vs Alvarado",
+        "Mudau vs Montes"
+      ],
+      "summary": "This phase was shaped first by late substitutions, then by South Africa\u2019s collapse after Zwane was sent off for slapping Alvarado. Mexico saw out the game with their changes while South Africa, already producing very little going forward, were forced into a desperate finish with ten men. A late Mudau break offered a rare threat, but Montes\u2019 tactical foul halted it and underlined South Africa\u2019s frustrations."
     }
   ],
   "sources": [
