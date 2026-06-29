@@ -5,17 +5,38 @@
   "date": "2026-06-15",
   "home_read": {
     "team": "Saudi Arabia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Defended stoically and relied on set-pieces",
+      "Hung in the game with a compact, resilient approach"
+    ],
+    "standout_players": [
+      "Abdulelah al-Amri scored the opener and was quickest to react for the goal",
+      "Hassan al-Tambakti helped create the goal with a header and defended well",
+      "Mohammed al-Owais made several good saves, including from Vi\u00f1as, Ugarte, de la Cruz and Valverde"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "They took a point off a strong Uruguay side\u2019s momentum early on, but the draw leaves them needing to respond against Spain."
   },
   "away_read": {
     "team": "Uruguay",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Dominated possession from the outset",
+      "Attacked down the flanks",
+      "Marcelo Bielsa changed shape tactically by moving Federico Valverde into a more central role at half-time"
+    ],
+    "standout_players": [
+      "Ronald Ara\u00fajo had Uruguay\u2019s early chance and later rescued the point with the equaliser",
+      "Federico Valverde improved after being moved centrally and was involved in late chances",
+      "Fernando Muslera was beaten on Saudi Arabia\u2019s goal and will have been annoyed at not catching the ball cleanly",
+      "Federico Vi\u00f1as was involved in the key attacking moments, including the cross for Ara\u00fajo and the headed assist in the equaliser"
+    ],
+    "fatigue_injuries": [
+      "Darwin N\u00fa\u00f1ez looked off the pace throughout and was removed at half-time",
+      "Uruguay\u2019s preparations were disrupted by a delayed flight from Canc\u00fan to Fort Lauderdale"
+    ],
+    "momentum": "They recovered to earn a deserved draw and look set up to press on, despite an underwhelming first half and travel disruption."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/16/saudi-arabia-uruguay-world-cup-match-report"
+  ]
 }

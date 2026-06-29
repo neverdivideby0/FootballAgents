@@ -5,17 +5,43 @@
   "date": "2026-06-16",
   "home_read": {
     "team": "Iraq",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Underdogs who defended deep at times and tried to stay in the game",
+      "Relied on quick moments and set-piece threat rather than sustained control"
+    ],
+    "standout_players": [
+      "Ali al-Hamadi \u2014 had a decent early chance, scooped over the bar",
+      "Ali Jasim \u2014 found Amir al-Ammari for Iraq\u2019s equaliser build-up",
+      "Amir al-Ammari \u2014 stood up the cross for Hussein\u2019s header",
+      "Aymen Hussein \u2014 scored a magnificent headed equaliser, Iraq\u2019s finest World Cup moment",
+      "Ibrahim Bayesh \u2014 unlucky to be denied by M\u00f8ller Wolfe\u2019s block",
+      "Akam Hashem \u2014 half-volley just over the bar",
+      "Jalal Hassan \u2014 at fault for Norway\u2019s second after pausing on a back-pass"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Took huge credit from pushing Norway hard and producing a historic World Cup equaliser, but the closing outlook is still gloomy with expectations they may finish bottom of the group."
   },
   "away_read": {
     "team": "Norway",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Front-foot attacking side with Haaland as the focal point",
+      "Used wide service and high passing, with Nusa and M\u00f8ller Wolfe supplying chances",
+      "Looked occasionally shaky defensively"
+    ],
+    "standout_players": [
+      "Erling Haaland \u2014 match-defining double, ruthless finisher, 11 goals in his last 11 recent competitive Norway games",
+      "Antonio Nusa \u2014 particularly lively, bamboozled Iraq with his touch and supplied the opening danger",
+      "Martin \u00d8degaard \u2014 less visible than Haaland but created Norway\u2019s third goal",
+      "David M\u00f8ller Wolfe \u2014 provided the cross for Haaland\u2019s opener",
+      "Leo \u00d8stig\u00e5rd \u2014 scored from \u00d8degaard\u2019s corner",
+      "Kristoffer Ajer \u2014 delivered the cross for Haaland\u2019s stoppage-time own-goal forcing header",
+      "Oscar Bobb \u2014 named among the substitutes and described as a player who would walk into decent international teams",
+      "\u00d8rjan H\u00e5skjold Nyland \u2014 beat a header from Hussein but not much else is said positively"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "A win built around Haaland gives Norway a strong platform, but the punditry warns they still need to improve, especially defensively, before sterner tests."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/17/iraq-norway-world-cup-group-i-match-report"
+  ]
 }

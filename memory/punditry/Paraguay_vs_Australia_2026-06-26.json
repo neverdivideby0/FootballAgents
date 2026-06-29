@@ -1,0 +1,57 @@
+{
+  "match_id": "Paraguay_vs_Australia_2026-06-26",
+  "home": "Paraguay",
+  "away": "Australia",
+  "date": "2026-06-26",
+  "home_read": {
+    "team": "Paraguay",
+    "tactical_shape": [
+      "5-3-2",
+      "Australia's central overload caused Paraguay problems in midfield",
+      "Julio Enciso carried the attack largely on his own, with limited support around him"
+    ],
+    "standout_players": [
+      "Julio Enciso 7/10 \u2014 carried the team forward on his own and caused more problems in the second half",
+      "Orlando Gill 6/10 \u2014 made a handful of crucial saves, especially early and late",
+      "Gustavo G\u00f3mez 6/10 \u2014 steady at the back and helped stifle Irankunda",
+      "Gustavo Velazquez 6/10 \u2014 man-marked Irankunda well",
+      "Omar Alderete 5/10 \u2014 struggled against Volpato and later injured"
+    ],
+    "fatigue_injuries": [
+      "Omar Alderete suffered a knee injury just after the hour and never really recovered"
+    ],
+    "momentum": "Enciso offered Paraguay their main threat, but the team lacked support and struggled to control midfield, leaving them with a frustrating goalless draw."
+  },
+  "away_read": {
+    "team": "Australia",
+    "tactical_shape": [
+      "5-2-3",
+      "Used central midfield progression and line-breaking runs to break out of Paraguay's press",
+      "Back three with wing-backs/full-backs given licence, especially Jordy Bos on the right"
+    ],
+    "standout_players": [
+      "Jordy Bos 8/10 \u2014 most impressive game so far, given more licence to attack",
+      "Jackson Irvine 7/10 \u2014 midfield general, covered every blade of grass and helped Australia progress the ball",
+      "Cristian Volpato 7/10 \u2014 Australia's best player in the first hour, dangerous in pockets on the right",
+      "Alessandro Circati 7/10 \u2014 tidy on the right side of the back three and kept Enciso quiet",
+      "Harry Souttar 7/10 \u2014 anchored the back three with assurance and physicality",
+      "Aiden O\u2019Neill 7/10 \u2014 confident, more present, combined well with Irvine",
+      "Patrick Beach 6/10 \u2014 calm and confident, including a stoppage-time save",
+      "Connor Metcalfe 6/10 \u2014 wider role limited his impact",
+      "Lucas Herrington 6/10 \u2014 calm but largely untested",
+      "Aziz Behich 6/10 \u2014 largely ineffective but composed",
+      "Nestory Irankunda 6/10 \u2014 marked out of the game and rarely got service"
+    ],
+    "fatigue_injuries": [
+      "Jacob Italiano was ruled out with an adductor injury",
+      "Mat Leckie suffered a hamstring strain against the USA",
+      "Jackson Irvine earned a silly yellow early in the second half"
+    ],
+    "momentum": "Australia look organised and resilient, with midfield control and a clean sheet point to a side that can adapt even with enforced changes."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/paraguay-australia-player-ratings-world-cup-group-d",
+    "https://www.theguardian.com/football/2026/jun/24/australia-changes-world-cup-paraguay",
+    "https://www.theguardian.com/football/2026/jun/26/how-to-watch-socceroos-vs-paraguay-today-australia-game-kick-off-time-sbs-tv-guide-2026-world-cup"
+  ]
+}

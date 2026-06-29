@@ -1,0 +1,46 @@
+{
+  "match_id": "Ecuador_vs_Germany_2026-06-25",
+  "home": "Ecuador",
+  "away": "Germany",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Ecuador",
+    "tactical_shape": [
+      "High-intensity, aggressive pressing approach",
+      "Pushed on relentlessly down the sides with Alan Franco and Nilson Angulo",
+      "Counterattacking through midfield with Mois\u00e9s Caicedo leading the intensity",
+      "Dropped back to defend a precious lead after scoring"
+    ],
+    "standout_players": [
+      "Gonzalo Plata \u2014 match-winner with the 77th-minute strike; prodded home the winner with the outside of his boot",
+      "Mois\u00e9s Caicedo \u2014 imposing, led Ecuador\u2019s intensity and ambition in midfield",
+      "Nilson Angulo \u2014 one of the new faces; scored the equaliser from the edge of the box",
+      "John Yeboah \u2014 at the heart of the action, weaved through the Germany midfield several times",
+      "Kevin Rodr\u00edguez \u2014 involved in the build-up to Plata\u2019s winner and nearly scored earlier",
+      "Hern\u00e1n Gal\u00edndez \u2014 largely untroubled; made sure Germany were kept at bay"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "A stirring win over Germany restores belief and sends Ecuador into the last 32, with the performance offering a potential lift for Beccacece\u2019s scrutiny-hit side."
+  },
+  "away_read": {
+    "team": "Germany",
+    "tactical_shape": [
+      "Started with a full-strength side despite only injury-induced changes",
+      "Regained a grip after the hydration break but were otherwise largely frustrated",
+      "David Raum\u2019s left-side deliveries were the main creative threat"
+    ],
+    "standout_players": [
+      "Leroy San\u00e9 \u2014 scored Germany\u2019s opener",
+      "Florian Wirtz \u2014 set up the opener",
+      "Kai Havertz \u2014 had a header straight at Gal\u00edndez",
+      "Deniz Undav \u2014 top scorer but only introduced on the hour mark"
+    ],
+    "fatigue_injuries": [
+      "Julian Nagelsmann made only injury-induced changes to the starting XI"
+    ],
+    "momentum": "An error-prone, uninspired display ends with a defeat; Germany\u2019s main narrative is frustration despite already having secured top spot in the group."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/25/ecuador-germany-world-cup-match-report"
+  ]
+}

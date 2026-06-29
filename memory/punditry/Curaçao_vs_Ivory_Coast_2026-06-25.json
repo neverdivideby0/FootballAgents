@@ -1,0 +1,39 @@
+{
+  "match_id": "Cura\u00e7ao_vs_Ivory_Coast_2026-06-25",
+  "home": "Cura\u00e7ao",
+  "away": "Ivory Coast",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Cura\u00e7ao",
+    "tactical_shape": [
+      "Moved their block upfield in the second half and pressed more boldly",
+      "Played with a spirited, competitive underdog approach; lacked an effective striker and lively forwards beyond Tahith Chong"
+    ],
+    "standout_players": [
+      "Eloy Room made 15 saves against Ecuador earlier in the tournament; here he again prevented heavier damage",
+      "Tahith Chong threatened several times",
+      "Leandro Bacuna threatened several times"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Leave their first World Cup with pride after competing well in most halves, but still need more quality in key attacking positions."
+  },
+  "away_read": {
+    "team": "Ivory Coast",
+    "tactical_shape": [
+      "Came through a 2-0 win in an imprecise contest",
+      "Leaned on wingers and quick transitions through Yan Diomande and Nicolas P\u00e9p\u00e9",
+      "At times declined to fully engage the wingers to close the game out"
+    ],
+    "standout_players": [
+      "Nicolas P\u00e9p\u00e9 scored both goals, including a simple early finish and a curled second goal",
+      "Yan Diomande created the opener with pace and a cutback",
+      "Ibrahim Sangar\u00e9 played P\u00e9p\u00e9 through for the second goal",
+      "Amad Diallo was cited as one of the artistry/wing threats in the tournament context"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Celebrate historic first World Cup knockout qualification, with a young, united group now looking to go further."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/25/pepe-at-the-double-as-cote-divoire-beat-curacao-and-claim-place-in-last-32"
+  ]
+}

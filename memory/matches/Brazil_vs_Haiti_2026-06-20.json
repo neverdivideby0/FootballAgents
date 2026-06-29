@@ -6,38 +6,99 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "(no commentary for this phase)"
+      "formations_blocks": [
+        "Brazil circulating possession from a back four",
+        "Haiti settled into a compact defensive shape / low block"
+      ],
+      "adjustments": [
+        "Vinicius drifting infield from the left to start moves",
+        "Cunha operating down the right",
+        "Casemiro dropping deep to control tempo",
+        "Raphinha providing the main running-in-behind threat on the right",
+        "Brazil forced to recycle across the back four when forward options were blocked"
+      ],
+      "key_matchups": [
+        "Vinicius vs Haiti\u2019s right-sided defenders",
+        "Cunha vs Haiti\u2019s right-side pressure",
+        "Raphinha vs Haiti\u2019s back line on the right channel",
+        "Douglas vs Haiti\u2019s challenge leading to Arcus\u2019s yellow card"
+      ],
+      "summary": "Brazil started slowly and lacked clear verticality, with many players coming deep to receive and only Raphinha consistently looking to run behind. Haiti were organised, comfortable, and quick to clear or break when possible, keeping Brazil at arm\u2019s length despite the early pressure. The phase hinted that Brazil\u2019s best route would be direct balls into the space behind Haiti\u2019s static defence rather than patient circulation."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 21 commentary beats; 2 events; goals at 23', 36'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Brazil laboured in possession and passive in defence",
+        "Haiti defended compactly before trying to counter",
+        "Brazil attacking through corners and over-the-top passes"
+      ],
+      "adjustments": [
+        "Vinicius Jr cut in from the left",
+        "Casemiro repeatedly looked for Raphinha over the top",
+        "Haiti briefly threatened down the right on transition"
+      ],
+      "key_matchups": [
+        "Casemiro vs Haiti's back line with balls over the top to Raphinha",
+        "Vinicius Jr vs Placide",
+        "Raphinha vs Placide on the one-on-one chance",
+        "Haiti's right-sided overlap attempt vs Brazil's offside line"
+      ],
+      "summary": "Brazil began this phase flat in possession and passive without the ball, while Haiti looked to break quickly down the right when space opened. The deadlock was eventually broken by Brazil\u2019s individual quality: Vinicius Jr drove inside to force a save, and Cunha finished the resulting rebound scramble for 1-0 before scoring again later in the half. "
     },
     {
       "phase": "Half-Time Brief",
-      "formations_blocks": [],
-      "adjustments": [],
+      "formations_blocks": [
+        "Brazil in a control-oriented attacking setup",
+        "Haiti in a defensive setup that limited them to zero xG"
+      ],
+      "adjustments": [
+        "Two Haiti substitutions at the break: Arcus off for Simon, Pierrot off for Isidor",
+        "Brazil described as effective in transition and in behind through Matheus Cunha",
+        "Casemiro breaking up play and Guimar\u00e3es advancing the ball from midfield",
+        "Paquet\u00e1 providing direct, over-the-top moments of quality"
+      ],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 41 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "Brazil go into half-time 3-0 up, but the performance is described as functional rather than sparkling. The tactical theme is Brazil\u2019s midfield control and vertical threat through Cunha and Paquet\u00e1, alongside Casemiro\u2019s ball-winning and Guimar\u00e3es\u2019 progression, while Haiti offered little attacking threat and registered zero xG. Haiti\u2019s two changes at the break suggest a search for a response after being largely contained."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 0 commentary beats; 1 events; goals at 45'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Haiti back four",
+        "Haiti 4-4-2",
+        "Brazil passive 4-4-2 without the ball"
+      ],
+      "adjustments": [
+        "Haiti switched from a setup with Simon at the base of midfield to a back four",
+        "Haiti moved into a 4-4-2 to apply extra pressure on Brazil's midfield",
+        "Brazil became notably passive out of possession, allowing Haiti more of the ball"
+      ],
+      "key_matchups": [
+        "Isidor vs Douglas",
+        "Isidor vs Alisson",
+        "Gabriel vs Haiti's right-channel attacks",
+        "Vinicius vs Haiti's defensive line"
+      ],
+      "summary": "The key tactical change after the break was Haiti\u2019s shift into a 4-4-2, with Simon anchoring from midfield and the aim of pressing Brazil\u2019s midfield more aggressively than in the first half. That brought more territory and possession for Haiti, but Brazil\u2019s passive 4-4-2 out of possession and occasional stepping out to intercept still prevented clear chances, while Brazil remained dangerous in transition and through Vinicius on the left."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 8 commentary beats. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Brazil in a compact defensive shape, protecting their box and clearing danger quickly",
+        "Haiti circulating possession around Brazil\u2019s box but struggling to break through a settled defensive block",
+        "Brazil transitioning into a methodical counterattacking shape when they win it back"
+      ],
+      "adjustments": [
+        "Brazil make late substitutions: Ederson and Danilo Santos on for Vinicius and Guimaraes",
+        "Haiti substitute Etienne for Bellegarde",
+        "Brazil adopt a more conservative late-game approach after the subs, with less attacking intent"
+      ],
+      "key_matchups": [
+        "Joseph vs Danilo",
+        "Rayan vs Haiti\u2019s pressure in midfield/transition",
+        "Isidor vs Alisson at the near post",
+        "Deedson vs Brazil\u2019s marking on the left"
+      ],
+      "summary": "Brazil spend this phase managing the game, defending their own danger zone smartly and using the occasional counterattack to threaten, while Haiti repeatedly get the ball into useful wide areas without finding penetration. Haiti\u2019s best moments come from long balls and left-sided entries, but Brazil\u2019s compact defending, plus Alisson\u2019s smart stop at the near post, keep them at arm\u2019s length as the match winds down."
     }
   ],
   "sources": [

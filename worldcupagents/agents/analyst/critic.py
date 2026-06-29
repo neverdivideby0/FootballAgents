@@ -44,7 +44,7 @@ def _players_line(players) -> str:
     if not players:
         return ""
     from worldcupagents.recall import players_digest
-    return "PLAYER METRICS: " + players_digest(players)
+    return "PLAYER METRICS:\n" + players_digest(players)
 
 
 # ── digests shared by both paths ─────────────────────────────────────────────

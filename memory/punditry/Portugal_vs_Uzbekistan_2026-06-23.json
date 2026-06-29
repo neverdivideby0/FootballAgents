@@ -1,0 +1,42 @@
+{
+  "match_id": "Portugal_vs_Uzbekistan_2026-06-23",
+  "home": "Portugal",
+  "away": "Uzbekistan",
+  "date": "2026-06-23",
+  "home_read": {
+    "team": "Portugal",
+    "tactical_shape": [
+      "Attacked through full-backs and wide service, with Jo\u00e3o Cancelo reaching the byline and Nuno Mendes delivering from the left.",
+      "Used set-piece routines creatively, including a rehearsed free-kick trick and low-swinging corner deliveries.",
+      "Bruno Fernandes operated with freedom in midfield, exploiting a vacant central area on one goal."
+    ],
+    "standout_players": [
+      "Cristiano Ronaldo: back on the scoresheet with a first-half brace; the focal point of the attack and the loudest headline act.",
+      "Jo\u00e3o Cancelo: provided the byline cross for Ronaldo's opener.",
+      "Nuno Mendes: supplied the disguised free-kick that became Ronaldo's second goal.",
+      "Bruno Fernandes: influential creator, playing in Ronaldo for the third and delivering the corner that led to the fourth.",
+      "Rafael Le\u00e3o: scored Portugal's final goal with a rising drive.",
+      "Austin McPhee (set-piece coach): credited alongside Mart\u00ednez for successful set-piece work."
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Portugal looked rampant and comfortable, with creative set pieces and Ronaldo rediscovering his scoring touch, though the match raises few answers about tougher tests ahead."
+  },
+  "away_read": {
+    "team": "Uzbekistan",
+    "tactical_shape": [
+      "Set up to defend against a far superior opponent but were described as utterly unequipped to repel Portugal's quality.",
+      "Briefly rallied after going behind, but offered little sustained resistance."
+    ],
+    "standout_players": [
+      "Abdukodir Khusanov: made a dramatic intervention to prevent Ronaldo's hat-trick and was later unlucky in the own-goal sequence.",
+      "Abduvokhid Nematov: beaten by the set-piece trick and then involved in the corner goal concession; could not keep Portugal out."
+    ],
+    "fatigue_injuries": [
+      "Odiljon Khamrobekov conceded the free-kick after a desperate foul on Pedro Neto."
+    ],
+    "momentum": "A heavy defeat and a performance judged well below the level required, with little sign they could cope with elite opposition."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/23/portugal-uzbekistan-world-cup-group-k-match-report"
+  ]
+}

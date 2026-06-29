@@ -5,17 +5,31 @@
   "date": "2026-06-17",
   "home_read": {
     "team": "Argentina",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Excellent defensively throughout the match",
+      "Controlled the game and punished Algeria's backline with direct, efficient attacks"
+    ],
+    "standout_players": [
+      "Lionel Messi: scored a hat-trick on his 200th cap and was the clear match star",
+      "Rodrigo De Paul: supplied the pass for Messi's opening goal",
+      "Alexis Mac Allister: his shot led directly to Messi's second goal"
+    ],
+    "fatigue_injuries": [
+      "Lionel Messi had been recovering from a muscle injury in recent weeks"
+    ],
+    "momentum": "A comfortable opening win and three points leave Argentina moving toward the last 32, with Messi continuing to drive the narrative."
   },
   "away_read": {
     "team": "Algeria",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "High-energy approach, particularly in the closing moments of the first half",
+      "Promising exchanges but ultimately lacked competitiveness"
+    ],
+    "standout_players": [
+      "Far\u00e8s Cha\u00efbi: had an early finish ruled out for offside"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Despite some lively spells, Algeria were undone by poor finishing and now face a must-win feel to their next match against Jordan."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/16/argentina-algeria-world-cup-group-j-match-report"

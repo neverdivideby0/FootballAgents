@@ -1,0 +1,39 @@
+{
+  "match_id": "Turkey_vs_United_States_2026-06-26",
+  "home": "Turkey",
+  "away": "United States",
+  "date": "2026-06-26",
+  "home_read": {
+    "team": "Turkey",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "Came from behind to win late, leaving the impression of a team that could punish opponents and finish strongly."
+  },
+  "away_read": {
+    "team": "United States",
+    "tactical_shape": [
+      "Rotated heavily after clinching progression, with several first-choice players rested and fringe/debut players used",
+      "Pochettino made second-half use of Christian Pulisic after he missed the Australia match with a calf injury",
+      "The US were more vulnerable to disruption when rotating, but still created chances and played with confidence in a more open, rotated lineup"
+    ],
+    "standout_players": [
+      "Sebastian Berhalter \u2014 arguably the standout on the night; assisted Auston Trusty\u2019s opener from a corner and then scored the US\u2019s second",
+      "Auston Trusty \u2014 opened his international goalscoring account",
+      "Matt Turner \u2014 surprise start; made some timely sweeper actions but was unable to stop the three shots he faced (4/10)",
+      "Joe Scally \u2014 struggled to keep up at times, was pulled out of position on Turkey\u2019s second goal, and his crossing lacked danger (5/10)",
+      "Mark McKenzie \u2014 bypassed too easily for Turkey\u2019s first goal and struggled in long distribution, though he kept the ball moving into midfield (5/10)"
+    ],
+    "fatigue_injuries": [
+      "Auston Trusty\u2019s rolled left ankle, though he said it had already been treated",
+      "Christian Pulisic was coming back from a calf injury and missed the Australia match",
+      "The cautioned quartet were rested/suspended from selection for this match to avoid yellow-card risk: Chris Richards, Antonee Robinson, Folarin Balogun and Tyler Adams"
+    ],
+    "momentum": "The defeat did not seem to dent belief; the players emphasized good vibes, lessons learned, and confidence heading into the knockout stage."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/usmnt-turkey-momentum",
+    "https://www.theguardian.com/football/2026/jun/26/usa-2-3-turkey-how-maurico-pochettinos-players-rated-in-world-cup-group-d-match",
+    "https://www.theguardian.com/football/2026/jun/26/turkey-usa-world-cup-2026-match-report"
+  ]
+}

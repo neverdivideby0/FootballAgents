@@ -1,0 +1,45 @@
+{
+  "match_id": "Colombia_vs_Congo_DR_2026-06-24",
+  "home": "Colombia",
+  "away": "Congo DR",
+  "date": "2026-06-24",
+  "home_read": {
+    "team": "Colombia",
+    "tactical_shape": [
+      "Controlled midfield early on",
+      "Played with creativity but struggled to find spaces against a structured low block",
+      "Used wide/attacking pressure to create chances, but the punditry mainly describes persistence rather than a fixed formation"
+    ],
+    "standout_players": [
+      "Daniel Mu\u00f1oz: scored the winner, his second goal in as many games",
+      "Lionel Mpasi (opposition goalkeeper) repeatedly denied Colombia, especially Jhon Arias, James Rodr\u00edguez and Luis D\u00edaz",
+      "James Rodr\u00edguez: had an early shot saved",
+      "Jhon Arias: had chances saved and later missed the rebound wide",
+      "Luis D\u00edaz: had two goals ruled out for offside and was repeatedly denied",
+      "Johan Mojica: tested Mpasi with a long-range effort"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Qualified for the World Cup knockouts with a second straight win, but the punditry says they must become more efficient against compact low blocks and still have work to do to top the group."
+  },
+  "away_read": {
+    "team": "Congo DR",
+    "tactical_shape": [
+      "Sat in a low block / retreating behind the barricades",
+      "Switched to a tightened-up midfield after early pressure",
+      "Used a back five for the final three-quarters of the game",
+      "Midfield three protected the defence, with Yoane Wissa linking to a lone centre-forward"
+    ],
+    "standout_players": [
+      "Lionel Mpasi: 'excellent today' and made an outrageous string of saves",
+      "S\u00e9bastien Desabre: credited for tweaks that tightened the midfield",
+      "Noah Sadiki: introduced at half-time; his engine helped prevent the side running out of legs",
+      "Edo Kayembe: had the first shot of the game, just wide",
+      "Nathana\u00ebl Mbuku: late long-range drive forced Camilo Vargas into a save"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Defiant and hard to break down, but eventually beaten; still alive in the group and likely need to take more risks in the final game."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/24/colombia-dr-congo-world-cup-group-k-match-report"
+  ]
+}

@@ -28,7 +28,6 @@ whether it's **consumed** at predict time, pure ingest **infra**, or **orphaned*
 | `wh_matches` | International results history → form/H2H for tournament fixtures | consumed | — |
 | `wh_match_sources` | Provenance link: match → source | infra | — |
 | `wh_goals` | Minute-level goal events (scorer, minute) | **orphaned** | 2026-06-22 |
-| `wh_shootouts` | Penalty-shootout records → weaknesses (nationals) | consumed | — |
 | `wh_lineups` | Historical XIs (StatsBomb) | **orphaned** | 2026-06-22 |
 | `wh_events` | StatsBomb pass/carry/shot event aggregates | **orphaned** | 2026-06-22 |
 | `wh_team_match_stats` | Per-team granular match stats | **orphaned** | 2026-06-22 |

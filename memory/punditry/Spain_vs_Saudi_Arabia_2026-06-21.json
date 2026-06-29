@@ -1,0 +1,50 @@
+{
+  "match_id": "Spain_vs_Saudi_Arabia_2026-06-21",
+  "home": "Spain",
+  "away": "Saudi Arabia",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Spain",
+    "tactical_shape": [
+      "Intense, aggressive high-possession approach",
+      "Full-backs very high",
+      "Dominant control through Rodri and Pedri, with Olmo finding pockets between lines"
+    ],
+    "standout_players": [
+      "Lamine Yamal: scored inside 10 minutes on his first start since hamstring injury; ever-present threat and set the tone",
+      "Mikel Oyarzabal: one assist and two goals within 23 minutes; exceptional all-round contribution",
+      "Rodri: controlled the match, completing 113 passes",
+      "Pau Cubars\u00ed: 98 of 99 passes completed",
+      "Dani Olmo: found spaces where they seemed not to exist",
+      "Pedro Porro: made an impact and provided the curling cross for the third goal",
+      "Marc Cucurella: forced the fourth and scored the fourth off a defender",
+      "Aymeric Laporte: crucially nodded down for Oyarzabal's second",
+      "Unai Sim\u00f3n: little to do, no significant save until the 80th minute"
+    ],
+    "fatigue_injuries": [
+      "Lamine Yamal was withdrawn at 45 minutes, having just returned from a hamstring injury in April",
+      "Oyarzabal was also taken off at half-time to protect him",
+      "De la Fuente made changes early to protect players and give minutes to others"
+    ],
+    "momentum": "Spain were 'Spain again' \u2014 response to criticism was emphatic, confidence restored, and the performance sends a strong statement going forward."
+  },
+  "away_read": {
+    "team": "Saudi Arabia",
+    "tactical_shape": [
+      "Deeply unable to cope with Spain's intensity and wide overloads",
+      "Defensive set-piece issues repeatedly exposed",
+      "Rare attacks, largely contained"
+    ],
+    "standout_players": [
+      "Salem al-Dawsari: led the rare Saudi attack and was involved in the early battles with Lamine Yamal",
+      "Mohammed al-Owais: beaten four times; also denied Oyarzabal's curling effort by the bar"
+    ],
+    "fatigue_injuries": [
+      "No injuries or suspensions mentioned"
+    ],
+    "momentum": "Overrun and exposed, with little evidence in the punditry of a positive immediate takeaway beyond the experience of facing elite opposition."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/21/spain-saudi-arabia-world-cup-group-h-match-report"
+  ]
+}

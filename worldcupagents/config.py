@@ -33,6 +33,8 @@ _ENV_OVERRIDES = {
     "WCA_ENSEMBLE_JUDGE_WEIGHT": "ensemble_judge_weight",
     "WCA_USE_LLM": "use_llm",
     "WCA_USE_STATS_LAMBDA": "use_stats_lambda",
+    "WCA_VERDICT_MODE": "verdict_mode",
+    "WCA_LLM_TEMPERATURE": "llm_temperature",
     "WCA_LEAGUE": "league",
     "WCA_SEASON": "season",
     "WCA_CACHE_DIR": "cache_dir",
@@ -121,6 +123,21 @@ DEFAULT_CONFIG = _apply_env_overrides({
     "analyst_reports_llm": False,     # quick-LLM polish of the three reports (3 extra calls)
     "enable_scenario_debate": True,   # risk-team debate + Final Pundit (TA-like out of the box)
     "max_scenario_rounds": 1,         # cap = 3 * rounds pundit turns
+    # How the verdict's SCORELINE + probabilities are formed:
+    #   "agents" (default) — the advocates name 3 likely scorelines + 1 black swan,
+    #            the judge picks the final score and STATES the W/D/L probabilities;
+    #            no Poisson/blend (the resolve/Brier/calibration loop still scores them).
+    #   "stats"  — the statistical path (fitted-strength λ → Poisson grid → blend with
+    #            the judge read). Kept as a clickable choice and the AUTOMATIC fallback
+    #            whenever there is no usable LLM judge read (offline / missing key / error),
+    #            so predict never crashes and simulate/backtest/evaluate stay on the math.
+    "verdict_mode": "agents",
+    # Sampling temperature for the DEBATE LLMs (advocates + judge + scenario pundits).
+    # Higher = bolder, less hedged scorelines (the agents stop defaulting to 1-goal
+    # margins). Applied in Predictor only — extraction commands (analyze-match/watch)
+    # keep their own deterministic clients. Note: some OpenAI reasoning models only
+    # accept temperature=1; set this to 1.0 (or via WCA_LLM_TEMPERATURE) for those.
+    "llm_temperature": 0.9,
     # Ensemble: weight on the judge's qualitative read vs the statistical baseline.
     "ensemble_judge_weight": 0.6,
     # Calibration guardrails. Draw uplift: max P(draw) added for a close, cagey GROUP

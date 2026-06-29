@@ -1,0 +1,102 @@
+{
+  "match_id": "Panama_vs_Croatia_2026-06-23",
+  "home": "Panama",
+  "away": "Croatia",
+  "date": "2026-06-23",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "Croatia keeping most of the ball",
+        "Panama looking to play direct and then advance its lines in Croatia's half"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Stani\u0161i\u0107 vs Panama's right side on the overlap",
+        "Modri\u0107 attacking a cross from Stani\u0161i\u0107",
+        "Kova\u010di\u0107 vs Carlos Harvey in the foul duel",
+        "Yoel B\u00e1rcenas' free-kick delivery vs Croatia's aerial defense"
+      ],
+      "summary": "Croatia establish early territorial control, circulating possession and getting the first crossing chance through Stani\u0161i\u0107 on the right. Panama respond with a more direct approach, aiming to bypass pressure and push their lines up once in the attacking half, while the opening minutes are marked by physical duels and set-piece threats rather than sustained chances."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "Panama compact defensive lines / low block",
+        "Croatia forced wide by Panama's defensive shape",
+        "Panama higher-pressure transition waves / direct breaks"
+      ],
+      "adjustments": [
+        "Croatia resorting to speculative through balls and crosses due to lack of half-space access",
+        "Panama briefly increasing pressure after the hydration-break window",
+        "Croatia speeding up progression after Panama's pressure spells"
+      ],
+      "key_matchups": [
+        "Amir Murillo vs Croatia's left-sided defensive recovery and crossing channels",
+        "Jos\u00e9 Luis Rodr\u00edguez vs Dominik Livakovi\u0107 on the crossbar chance",
+        "Luka Modri\u0107 vs Panama's defensive set-piece resistance",
+        "Petar Musa vs Panama's aerial defending"
+      ],
+      "summary": "Panama's compact, well-drilled lines deny Croatia access to the half-spaces, forcing them into low-value through balls and wide, speculative crossing. After a couple of direct Panama surges and a major chance off Murillo's service, the game stretches slightly, but Croatia still struggles to create centrally and is repeatedly pushed wide or repelled on set pieces."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "wide/full-back-driven attack",
+        "limited chance creation despite crossing volume"
+      ],
+      "adjustments": [
+        "Croatia made two half-time substitutions: Josko Gvardiol off for Ante Budimir, and Petar Musa off for Andrej Kramaric",
+        "the changes were made to address Panama\u2019s threat down Croatia\u2019s flank and Croatia\u2019s ineffective centre-forward play",
+        "Croatia\u2019s shape may have shifted slightly after the substitutions"
+      ],
+      "key_matchups": [
+        "Amir Murillo vs Croatia\u2019s left flank/Josko Gvardiol zone",
+        "Ante Budimir vs Panama\u2019s central defenders and goalkeeper"
+      ],
+      "summary": "The first half was a stop-start, flank-heavy affair in which both teams relied on crosses but produced almost nothing in the way of clear chances. Croatia reacted at halftime with two changes, one to deal with Panama\u2019s success on the wing and another to replace an ineffective striker, and that freshened the attack enough to unlock the game shortly after the break. A through ball and an early cross created the breakthrough for Budimir, turning a sterile contest into a Croatian lead."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Croatia in a compact defensive shape, blocking central channels",
+        "Panama forcing play wide with looping crosses from wide areas",
+        "Panama attacking phase with numbers committed forward after conceding"
+      ],
+      "adjustments": [
+        "Croatia gumming up the central channels and steering Panama into wide areas",
+        "Panama continued to lean on short-corner and wide-cross routines despite limited box targets",
+        "After the goal, Panama pushed numbers forward in search of an equalizer"
+      ],
+      "key_matchups": [
+        "Modri\u0107 vs B\u00e1rcenas (B\u00e1rcenas booked for a shoulder into Modri\u0107)",
+        "Pasali\u0107 vs Mosquera",
+        "Croatia defense vs Panama\u2019s wide crossing"
+      ],
+      "summary": "Croatia managed the phase by denying Panama access through the middle, forcing them into predictable wide deliveries that rarely became real chances. After Budimir\u2019s 54th-minute opener, Croatia nearly doubled the lead on a direct central break, while Panama\u2019s more urgent push after the goal produced some in-box pressure but still met a crowded Croatian defense and several blocked attempts."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Croatia first-half possession routine to eat up clock",
+        "Panama pushing with sustained right-flank attacks",
+        "scrappy endgame with both sides blocking shots and Panama pressing for an equalizer"
+      ],
+      "adjustments": [
+        "Panama substituted Cecilio Waterman on for Jiovany Ramos to add attacking threat",
+        "Croatia substituted Mario Pasali\u0107 for Luka Modri\u0107 on his 200th cap",
+        "Panama later made multiple attacking changes: Azar\u00edas Lodo\u00f1o, Tom\u00e1s Rodr\u00edguez, and \u00c9ric Davis on for Fajardo, B\u00e1rcenas, and Blackman",
+        "Panama shifted away from short corners after wasted deliveries and went more direct on set pieces"
+      ],
+      "key_matchups": [
+        "Amir Murillo vs the Croatian defensive set-up on the right flank",
+        "Carlos Harvey attacking the far post from Rodr\u00edguez\u2019s corner",
+        "Petar Suci\u0107 conceding a late free kick near the box"
+      ],
+      "summary": "In the closing stages, Croatia tried to slow the game by returning to its possession rhythm, while Panama kept driving primarily down the right and searched for a late equalizer. The match became increasingly scrappy, with blocked shots, repeated dead balls, and Panama throwing on more attackers, but Croatia\u2019s box held firm and limited clear chances."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/23/panama-v-croatia-world-cup-2026-live-updates"
+  ]
+}

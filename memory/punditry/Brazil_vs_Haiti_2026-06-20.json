@@ -5,17 +5,40 @@
   "date": "2026-06-20",
   "home_read": {
     "team": "Brazil",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "High, wide attacking play; early pressure down the flanks",
+      "Craft-laden midfield of Bruno Guimar\u00e3es, Lucas Paquet\u00e1 and Casemiro",
+      "Matheus Cunha used as the central attacker",
+      "Vin\u00edcius J\u00fanior and Raphinha operating as wide forwards"
+    ],
+    "standout_players": [
+      "Vin\u00edcius J\u00fanior \u2014 sharp, buzzy and hungry; drove the wide threat",
+      "Raphinha \u2014 high-grade wide play before going off injured; dangerous in space",
+      "Matheus Cunha \u2014 slick and inventive in the centre; scored a quickfire double",
+      "Bruno Guimar\u00e3es \u2014 part of a really good midfield",
+      "Lucas Paquet\u00e1 \u2014 part of a really good midfield",
+      "Casemiro \u2014 part of a really good midfield",
+      "Carlo Ancelotti \u2014 kept Brazil calm and flexible, noncommittal on a fixed identity"
+    ],
+    "fatigue_injuries": [
+      "Raphinha suffered a hamstring injury, described as a genuine structural threat to Brazil's progress"
+    ],
+    "momentum": "Brazil look dangerous and full of elite talent, but still a strange, unsettled side whose ceiling is unclear."
   },
   "away_read": {
     "team": "Haiti",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Deep, dogged low block",
+      "Defended cautiously but left huge open spaces in the wrong places",
+      "Occasionally advanced up the pitch, exposing the flanks"
+    ],
+    "standout_players": [
+      "Johny Placide \u2014 beaten for the goals after making the initial block on Vin\u00edcius's shot",
+      "Hannes Delcroix \u2014 involved in the deflection that led to Cunha's first goal",
+      "Pierrot \u2014 shifted weight the wrong way on Cunha's second"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Bottom of Group C with no goals and no points; their tournament is effectively over, and they now move to a final fixture against Morocco."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/20/brazil-haiti-world-cup-match-report"

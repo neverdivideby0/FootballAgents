@@ -5,17 +5,35 @@
   "date": "2026-06-18",
   "home_read": {
     "team": "Uzbekistan",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "notional 3-4-2-1, often resembling a 5-4-1 with two banks sitting deep",
+      "compact team that absorbed pressure and looked to counter through possession"
+    ],
+    "standout_players": [
+      "Eldor Shomurodov did a lot of chasing",
+      "Abbosbek Fayzullaev nodded in the equaliser from close range"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "They stayed in the game until the end, but the punditry suggests beating stronger sides will be difficult if they remain mostly defensive."
   },
   "away_read": {
     "team": "Colombia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "dominated possession for most of the game",
+      "sideways passing early on before improving after the hydration break",
+      "dropped deep after regaining the lead and invited pressure"
+    ],
+    "standout_players": [
+      "Luis D\u00edaz \u2013 man of the match, provided a goal and an assist",
+      "Daniel Mu\u00f1oz \u2013 scored a brilliant opening goal",
+      "Jefferson Lerma \u2013 controlling figure in midfield",
+      "Camilo Vargas \u2013 partly at fault for Uzbekistan's equaliser after the ball deflected off his thighs",
+      "Gustavo Puerta \u2013 laid on D\u00edaz for the winning goal",
+      "Jaminton Campaz \u2013 sealed the win with a header in added time",
+      "Juan Camilo Hern\u00e1ndez \u2013 tenacious work helped create the third goal"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A winning start puts Colombia in charge of the group, though the punditry says they still need to be more clinical and may be hard to judge until tested by a more proactive opponent."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/18/uzbekistan-colombia-world-cup-2026-group-k-match-report"

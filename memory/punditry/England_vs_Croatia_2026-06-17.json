@@ -5,17 +5,48 @@
   "date": "2026-06-17",
   "home_read": {
     "team": "England",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 5 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "4-2-3-1",
+      "powerful on corners",
+      "fast and loose in buildup play",
+      "responded with a powerhouse second-half display"
+    ],
+    "standout_players": [
+      "Harry Kane 9/10 \u2014 scored twice and equalled England\u2019s World Cup finals scoring record; played like a quarterback at times",
+      "Jude Bellingham 7/10 \u2014 lost the ball for Croatia\u2019s first goal but then scored a brilliant match-turning goal",
+      "Noni Madueke 8/10 \u2014 won the penalty and was very dangerous down the right flank",
+      "Elliot Anderson 8/10 \u2014 kept things ticking over and assisted Bellingham",
+      "Declan Rice 7/10 \u2014 delivered a pinpoint corner for Kane\u2019s header, though not at his dominant best",
+      "Jordan Pickford 6/10 \u2014 shaky overall but made a crucial late save",
+      "Marcus Rashford 7/10 \u2014 came off the bench and finished clinically",
+      "Bukayo Saka 7/10 \u2014 returned from injury concerns and helped create the clincher",
+      "Nico O\u2019Reilly 7/10 \u2014 got forward well, work in progress defensively"
+    ],
+    "fatigue_injuries": [
+      "Declan Rice looked fatigued after a long season",
+      "Bukayo Saka was a surprise substitute given injury concerns"
+    ],
+    "momentum": "England are up and running after thriving under pressure and showing they have too much for Croatia."
   },
   "away_read": {
     "team": "Croatia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "3-4-2-1",
+      "direct approach",
+      "lively down the right flank",
+      "open and generous defending at times"
+    ],
+    "standout_players": [
+      "Dominik Livakovic 9/10 \u2014 produced unbelievable stops and kept Croatia in it",
+      "Martin Baturina 7/10 \u2014 took his goal brilliantly and caused England problems",
+      "Petar Musa 7/10 \u2014 scored neatly and was a real handful",
+      "Petar Sucic 7/10 \u2014 supplied a brilliant assist for Baturina",
+      "Ivan Perisic 7/10 \u2014 clever header for the second equaliser and still full of energy",
+      "Josip Stanisic 7/10 \u2014 lively on the right and often got the better of O\u2019Reilly",
+      "Luka Modric 7/10 \u2014 gave away the early penalty but still oozed class"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 5 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Croatia showed resilience and threat in a high-quality contest, but England\u2019s power and depth eventually told."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/17/england-4-2-croatia-world-cup-2026-group-l-player-ratings",

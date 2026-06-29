@@ -5,17 +5,39 @@
   "date": "2026-06-21",
   "home_read": {
     "team": "Ecuador",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Dominated possession but were blunt in attack",
+      "Wingbacks pushed high",
+      "Pressed hard enough to force Cura\u00e7ao back, but left space wide"
+    ],
+    "standout_players": [
+      "Enner Valencia \u2014 should have scored early but wasted the best chance to win it",
+      "Mois\u00e9s Caicedo \u2014 had a shot saved by Room",
+      "Pedro Vite \u2014 curled wide",
+      "Willian Pacho \u2014 had efforts saved and went close",
+      "Piero Hincapi\u00e9 \u2014 headed over from a corner"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Another performance to forget; despite 27 shots they could not score and now must beat Germany to keep qualification hopes alive."
   },
   "away_read": {
     "team": "Cura\u00e7ao",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Recovered into a disciplined, deep defensive shape after early pressure",
+      "Looked dangerous on the break",
+      "Found space down the flanks when Ecuador\u2019s wingbacks pushed high"
+    ],
+    "standout_players": [
+      "Eloy Room \u2014 heroic performance, made a World Cup-record number of stops in 90 minutes, including an early save on Valencia",
+      "Tahith Chong \u2014 driving run lifted the tempo",
+      "Juninho Bacuna \u2014 shot wide",
+      "Leandro Bacuna \u2014 involved in a dangerous break after a brilliant back-heel from his brother",
+      "Hern\u00e1n Gal\u00edndez \u2014 had to make a triple save from Cura\u00e7ao pressure",
+      "Livano Comenencia \u2014 part of the attack that forced Gal\u00edndez into action",
+      "J\u00fcrgen Locadia \u2014 part of the attack that forced Gal\u00edndez into action"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Historic first World Cup point, with a spirited response after the heavy defeat to Germany and a performance that showed they are not here to make up the numbers."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/21/curacao-ecuador-world-cup-group-e-match-report"

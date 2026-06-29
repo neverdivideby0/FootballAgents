@@ -76,12 +76,37 @@ uv run footballagents predict "Arsenal FC" "Liverpool FC" -L PL
 uv run footballagents predict "Arsenal FC" "Liverpool FC" -L PL --provider openai
 ```
 
+**Who decides the score?** By default the *agents* do — each advocate names its 3 most
+likely scorelines plus one "black swan" upset, and the judge picks the final score and the
+win/draw/loss probabilities (no maths). Prefer the statistical model? Add `--verdict-mode
+stats` (or pick it in the `-i` menu). Offline (no LLM key) always uses the stats model.
+
+### The matchday learning loop
+
+The system gets smarter as the tournament plays out — feed it finished games, then predict:
+
+```bash
+# 1. pull the newest results, then analyse EVERY finished game into memory (no fixtures to type)
+uv run footballagents analyze-all --provider openai        # tactical report + match-report digest per game
+#    (offline `analyze-all` just lists which games it WOULD analyse)
+
+# 2. predict the next fixture — the analysed history feeds the debate automatically
+uv run footballagents predict "New Zealand" "Mexico" --provider openai   # quote multi-word names
+
+# 3. after the result lands, score it (writes a lesson into memory/teams/<TEAM>.md → next game)
+uv run footballagents resolve --sync
+```
+
+`footballagents watch` chains steps 1+3 for you on every finished match (`--interval N` to
+keep polling). That's the whole loop: **watch (or analyze-all) → predict → resolve.**
+
 Other tools (all default to offline; add `--provider` to use an LLM):
 
 | Command | What it does |
 |---|---|
-| `predict` | Debate + verdict for one fixture (with an upset watch + live market) |
-| `dossier` | **The pre-match brief** — line-up, squad player stats, recent games *with stats*, style of play, weaknesses, scouting notes, market. No LLM. |
+| `predict` | Debate + verdict for one fixture (with an upset watch + live market). `--verdict-mode agents`(default)`/stats` |
+| `analyze-all` | Backfill memory for **every** finished game — no fixtures typed (offline lists what it would run) |
+| `dossier` | **The pre-match brief** — line-up, squad player stats, recent games *with stats*, style of play, weaknesses, scouting notes, market. No LLM. (On-demand lookup; no longer dumped into the prediction report.) |
 | `odds` | Live de-vigged bookmaker consensus + Polymarket crowd for a fixture |
 | `simulate-tournament` | 10k Monte-Carlo runs of WC2026 → each team's advancement odds |
 | `evaluate` | Does the LLM debate beat the baseline/market? (Brier scoreboard) |
@@ -186,8 +211,10 @@ uv run footballagents dossier "Arsenal FC" "Liverpool FC" -L PL --season 2025-26
 It shows line-up, squad player stats (club form for national teams), **recent games
 with per-match stats** (shots/SoT/corners/fouls/cards/xG), attack-vs-defence forte,
 set pieces, playing style, the **head coach's style & pedigree**, **data-backed
-weaknesses**, your scouting notes, the live market, and head-to-head. The same
-dossier is embedded as §0 of every exported report.
+weaknesses**, your scouting notes, the live market, and head-to-head. It's an
+**on-demand lookup** — the exported prediction report no longer dumps the full
+dossier (it was an info-heavy wall); the data the agents used is reflected in the
+report's Analyst Reports section instead.
 
 **Free qualitative sources — one command each** (everything flows into the debate):
 

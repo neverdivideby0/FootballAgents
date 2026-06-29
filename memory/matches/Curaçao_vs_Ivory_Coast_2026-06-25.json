@@ -1,0 +1,91 @@
+{
+  "match_id": "Cura\u00e7ao_vs_Ivory_Coast_2026-06-25",
+  "home": "Cura\u00e7ao",
+  "away": "Ivory Coast",
+  "date": "2026-06-25",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "high-energy open play",
+        "Cura\u00e7ao attacking in the final third but struggling to sustain possession",
+        "C\u00f4te d\u2019Ivoire clearing and recovering defensively after losing the ball"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Cura\u00e7ao's Chong vs Fofana",
+        "Pepe vs Cura\u00e7ao's defending/clearance line",
+        "J Bacuna vs Diallo"
+      ],
+      "summary": "The opening phase is played at high tempo, with both sides creating early moments and Cura\u00e7ao getting the first shot on target through Chong. C\u00f4te d\u2019Ivoire grow into the game by pressing errors and poor clearances, with Pepe capitalizing on a defensive lapse for the 7th-minute opener. Cura\u00e7ao continue to find attacking positions, but their inability to keep the ball in the final third prevents sustained pressure."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "Cura\u00e7ao in a reactive, absorbing phase under sustained C\u00f4te d\u2019Ivoire pressure",
+        "C\u00f4te d\u2019Ivoire controlling possession through patient build-up and territory"
+      ],
+      "adjustments": [
+        "Cura\u00e7ao increasingly defending deeper after early attacking moments",
+        "Cura\u00e7ao countering from defensive moments to win set pieces/corners"
+      ],
+      "key_matchups": [
+        "Pepe vs Fornville",
+        "L Bacuna vs the C\u00f4te d\u2019Ivoire attack in the box",
+        "Diallo vs Cura\u00e7ao\u2019s defenders, including Gaari"
+      ],
+      "summary": "This phase tilted toward C\u00f4te d\u2019Ivoire, who settled into patient possession and spent long spells pressing and circulating the ball around Cura\u00e7ao\u2019s defensive shape. Cura\u00e7ao had a few brief attacking flashes and counters, but mostly had to absorb pressure, rely on timely tackling, and survive repeated balls into the box and set-piece situations."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [
+        "C\u00f4te d\u2019Ivoire made a substitution: Oulai on for Diallo at the start of the second half"
+      ],
+      "key_matchups": [],
+      "summary": "C\u00f4te d\u2019Ivoire went into half-time leading 1-0 and then made an early second-half change, bringing on Oulai for Diallo. The commentary frames the tactical question for the restart as whether C\u00f4te d\u2019Ivoire can protect their lead or Cura\u00e7ao can find a way back into the game."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "End-to-end open play",
+        "C\u00f4te d\u2019Ivoire controlling momentum without fully abandoning defensive control",
+        "Cura\u00e7ao building momentum and pressing forward after the restart"
+      ],
+      "adjustments": [
+        "47' Diallo appears to be a tactical change rather than an injury-related substitution",
+        "62' Cura\u00e7ao substitute Antonisse on for Comenencia",
+        "Cura\u00e7ao briefly increase their attacking momentum after halftime and again after 56'-58'"
+      ],
+      "key_matchups": [
+        "Chong vs the space/coverage around his runs",
+        "Doue vs Fornville",
+        "Pepe vs Cura\u00e7ao\u2019s defensive line/goalkeeper area"
+      ],
+      "summary": "Cura\u00e7ao started the second half with more intent and had a couple of promising moments, but C\u00f4te d\u2019Ivoire repeatedly managed the pressure and then struck through a well-placed Pepe finish on 64'. The phase reads as a shift from Cura\u00e7ao\u2019s growing momentum to C\u00f4te d\u2019Ivoire\u2019s efficiency in transition and key attacking moments, with the substitution of Antonisse offering Cura\u00e7ao a fresh attacking option but not changing the game\u2019s direction."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "C\u00f4te d\u2019Ivoire patient possession/control phase",
+        "Cura\u00e7ao push forward in a late attacking phase",
+        "C\u00f4te d\u2019Ivoire defend deeper in closing minutes"
+      ],
+      "adjustments": [
+        "Noslin introduced as a lively late substitute and immediately increases Cura\u00e7ao\u2019s threat from wide areas and set pieces",
+        "C\u00f4te d\u2019Ivoire slow the game down after the yellow card and quick free kick, managing the clock rather than forcing attacks",
+        "Cura\u00e7ao commit more players forward after 90+4 in search of a late goal"
+      ],
+      "key_matchups": [
+        "Noslin vs Fofana",
+        "Room vs C\u00f4te d\u2019Ivoire\u2019s late pressure and shots",
+        "Obispo vs C\u00f4te d\u2019Ivoire\u2019s crossing threat",
+        "Antonisse clearing C\u00f4te d\u2019Ivoire\u2019s late corner"
+      ],
+      "summary": "The closing phase was shaped by C\u00f4te d\u2019Ivoire\u2019s game management and Cura\u00e7ao\u2019s improved urgency after Noslin\u2019s introduction. Cura\u00e7ao created their best spell through crosses, free kicks and long-range efforts, but Fofana and the Ivorian back line handled the pressure while C\u00f4te d\u2019Ivoire remained dangerous on the counter and from late set pieces."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/25/curacao-v-cote-divoire-world-cup-2026-live"
+  ]
+}

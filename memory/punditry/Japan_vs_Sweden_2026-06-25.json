@@ -1,0 +1,45 @@
+{
+  "match_id": "Japan_vs_Sweden_2026-06-25",
+  "home": "Japan",
+  "away": "Sweden",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Japan",
+    "tactical_shape": [
+      "sterile first half before turning up the dial after the break",
+      "head-spinning interplays in the second half",
+      "Ritsu Doan creating from the right to spark the opener"
+    ],
+    "standout_players": [
+      "Daizen Maeda \u2014 recalled Celtic forward, took his chance with an unerring finish",
+      "Ritsu Doan \u2014 woke up and created the opener with a rapier-like pass",
+      "Ayase Ueda \u2014 held the ball cleverly in the build-up",
+      "Zion Suzuki \u2014 increasingly busy, made a stretching save and got a touch to Elanga's shot onto the woodwork",
+      "Keita Nakamura \u2014 late first-half shot forced a stretching save",
+      "Koki Ogawa \u2014 substitute who scooped over a late chance"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Already through as runners-up and heading into a mouthwatering last-32 clash with Brazil, with confidence drawn from recent history and a belief they can compete with anyone."
+  },
+  "away_read": {
+    "team": "Sweden",
+    "tactical_shape": [
+      "started slowly in a strangely open but low-pulse first half",
+      "finished the stronger in the second half",
+      "relied on Viktor Gy\u00f6keres\u2019s selfless running and centre-forward work to create the equaliser"
+    ],
+    "standout_players": [
+      "Anthony Elanga \u2014 scored with a stunning long-range strike",
+      "Viktor Gy\u00f6keres \u2014 outstanding performance with his back to goal, hard yards throughout",
+      "Alexander Isak \u2014 quiet overall but nearly won it with a late near-post flick that hit the bar",
+      "Jacob Widell Zetterstr\u00f6m \u2014 surprise choice in goal, made a stretching save"
+    ],
+    "fatigue_injuries": [
+      "Isak Hien \u2014 apparent hamstring injury, with longer-term repercussions possible"
+    ],
+    "momentum": "Qualified for the last 32 and ended the game stronger, though the Hien injury and the uncertainty over their next opponent leave some complications."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/japan-sweden-world-cup-2026-match-report"
+  ]
+}

@@ -1,23 +1,36 @@
 # Tactical Report — Sweden vs Tunisia (2026-06-15)
 
-_Generated 2026-06-21 16:31 UTC_  
+_Generated 2026-06-26 18:27 UTC_  
 _Sources: https://www.theguardian.com/football/live/2026/jun/15/fifa-world-cup-2026-live-sweden-v-tunisia-updates-swe-vs-tun-group-f-match-score-latest_
 
 ## 0-15 Initial Setup
-[placeholder] 0-15 Initial Setup: 19 commentary beats; 1 events; goals at 7'. Enable use_llm for tactical extraction.
+Tunisia began by sitting in a compact 5-3-2 and looking to counter down their right, while Sweden used a back three to circulate possession and control tempo. The game opened up briefly through Tunisia's right-sided raids and Sweden's direct running in transition, before Sweden's patience paid off for Ayari's opener after a loose defensive setup left space for runs in behind. After the goal, Sweden slowed the match again by switching play across the back line, while Tunisia still threatened through quick central breaks.
+- **Formations / blocks:** Tunisia 5-3-2 out of possession; Sweden using a back three in possession; Tunisia allowing Sweden to circulate the ball in innocuous areas
+- **Adjustments:** Sweden recycling play from right to left to take the sting out of the game; The two Swedish strikers instructed to retain possession where possible
+- **Key matchups:** Valery vs Gudmundsson; Gyokeres vs Tunisia's right-sided defensive cover; Isak vs Chamakh on the run in behind; Saad vs Nordfelt; Ben Slimane vs the Swedish goalkeeper after Saad's break
 - **Events:** 7′ goal: GOAL! Sweden 1-0 Tunisia (Ayari, 7)
 
 ## 15-45 First-Half Shift
-[placeholder] 15-45 First-Half Shift: 15 commentary beats; 2 events; goals at 30', 43'. Enable use_llm for tactical extraction.
+Sweden controlled the phase by slowing the game, drawing Tunisia out, and then attacking the space left behind. Tunisia offered little sustained pressure, with their best moments coming from isolated counters or brief spells of possession, but they struggled to turn those situations into danger until late in the half. Sweden's second goal underlined the pattern: patient buildup, a decisive break, and efficient use of the forward line, though Tunisia did pull one back before the interval to stay in touch.
+- **Formations / blocks:** Sweden back three; Tunisia defensive structure; Tunisia on the counter; Tunisia back four; holding/controlled possession in midfield
+- **Adjustments:** Sweden lower the tempo to walking pace and bait Tunisia forward; Tunisia drop back and play on the counter; Hannibal drops back to collect from the back four; Sweden remain proactive but allow Tunisia longer spells of possession before breaking
+- **Key matchups:** Saad vs the retreating Swedish defence; Hannibal vs Sweden's midfield pressure/second-ball structure; Abdi vs the left touchline in Tunisia's counter; Gyokeres holding up to release Isak on the break
 - **Events:** 30′ goal: GOAL! Sweden 2-0 Tunisia (Isak, 30); 43′ goal: GOAL! Sweden 2-1 Tunisia (Rekik, 43)
 
 ## Half-Time Brief
-[placeholder] Half-Time Brief: 21 commentary beats. Enable use_llm for tactical extraction.
+Sweden led 2-1 at the interval after a half in which Tunisia offered very little ambition without the ball and showed almost no willingness to chase the game. The commentary suggests Sweden were comfortable and dominant, with Tunisia’s only meaningful spark coming from Hannibal Mejbri rather than from any broader tactical cohesion.
+- **Formations / blocks:** Tunisia spent almost the entire first half behind the ball, indicating a low block
 
 ## 45-75 Tactical Adjustments
-[placeholder] 45-75 Tactical Adjustments: 18 commentary beats; 1 events; goals at 60'. Enable use_llm for tactical extraction.
+Sweden began the half content to drop into a mid block, allowing Tunisia controlled possession but not immediately jumping on the ball until it entered the final third. Tunisia tried to build pressure through Hannibal, second balls, and set pieces, but Sweden also threatened in transition, with Gyokeres driving forward after turnovers and Isak offered as a running option. The commentary suggests Tunisia’s main tactical issue was Sweden’s passivity around Hannibal, with a potential man-marking adjustment floated to stop him dictating play.
+- **Formations / blocks:** Sweden mid block; Tunisia possession against a passive Sweden block; Tunisia attacking phase with packed six-yard box on set pieces
+- **Adjustments:** Sweden sit back after halftime rather than pressing high; Tunisia look to use second balls and wide switches to progress; Consideration mentioned for Sweden to assign a man-marker to Hannibal
+- **Key matchups:** Hannibal vs Sweden's midfield/block; Gyokeres vs Tunisia's back line on transitions; Isak vs Tunisia's defensive line on the 56' counter
 - **Events:** 60′ goal: GOAL! Sweden 3-1 Tunisia (Gyokeres, 60)
 
 ## 75-90+ Crunch Time
-[placeholder] 75-90+ Crunch Time: 12 commentary beats; 2 events; goals at 86', 90'. Enable use_llm for tactical extraction.
+Sweden dominated the final phase territorially and creatively, using their fullbacks, direct balls into Gyokeres, and sustained pressure to keep Tunisia pinned back. Tunisia offered very little ambition in possession, with Hannibal dropping deep to collect the ball but repeatedly failing to progress attacks, while Sweden eventually turned control into late goals through Svanberg and Ayari.
+- **Formations / blocks:** Sweden in an attacking, front-foot shape, regularly building through the lines and using the fullbacks to progress play; Tunisia in a passive, retreating defensive block with little ambition to press, often settling into slower circulation and recovery defending
+- **Adjustments:** Hannibal dropping into left-back to try to start attacks; Sweden using Gyokeres as the direct target with longer balls; Sweden substitution: Karlstrom off, Svanberg on; Tunisia substitutions: Khedira off, Ben Slimane off, Gharbi on, Chaouat on
+- **Key matchups:** Sweden's right fullback vs Tounekti; Gyokeres vs Tunisia's central defenders; Gyokeres' pullback leading to chances against Chamakh; Isak vs Chamakh; Bergvall vs chance creation after Gyokeres' layoff
 - **Events:** 86′ goal: GOAL! Sweden 4-1 Tunisia (Svanberg, 86); 90′ goal: GOAL! Sweden 5-1 Tunisia (Ayari, 90+6)

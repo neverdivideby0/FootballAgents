@@ -1,0 +1,49 @@
+{
+  "match_id": "Norway_vs_Senegal_2026-06-23",
+  "home": "Norway",
+  "away": "Senegal",
+  "date": "2026-06-23",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "(no commentary for this phase)"
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [],
+      "adjustments": [
+        "Nico Schlotterbeck ruled out of the World Cup, prompting discussion of how Germany may need to adjust their build-up structure",
+        "Antonio R\u00fcdiger is suggested as the direct replacement, though the text notes he does not offer Schlotterbeck\u2019s same ability to build play"
+      ],
+      "key_matchups": [],
+      "summary": "This phase is not a live tactical passage but a commentary update on Germany\u2019s squad issue: Nico Schlotterbeck is ruled out, which affects their ability to progress the ball from the back. The discussion centres on how Julian Nagelsmann might compensate, with Antonio R\u00fcdiger named as the likely replacement but not an equivalent in build-up terms."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/22/world-cup-2026-cape-verde-continue-remarkable-story-messi-mbappe-and-haaland-return-live"
+  ]
+}

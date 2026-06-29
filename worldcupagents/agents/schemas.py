@@ -137,7 +137,16 @@ class JudgeRead(BaseModel):
     p_home: float = Field(ge=0, le=1, description="Probability HOME team wins")
     p_draw: float = Field(ge=0, le=1, description="Probability of a draw (≈0 for knockouts)")
     p_away: float = Field(ge=0, le=1, description="Probability AWAY team wins")
-    scoreline: str = Field(description="Most likely scoreline, e.g. '2-1'")
+    scoreline: str = Field(description="Most likely scoreline, e.g. '2-1'. In a KNOCKOUT this is "
+                                       "the FULL-TIME score; a level score (e.g. '1-1') is allowed "
+                                       "only if you also set decided_by to extra_time or penalties.")
+    decided_by: DecidedBy = Field(
+        default=DecidedBy.REGULATION,
+        description="How a KNOCKOUT is settled: regulation (decisive in 90'), extra_time, or "
+                    "penalties. Ignored for group games. If your full-time scoreline is level in a "
+                    "knockout, this MUST be extra_time or penalties and the probabilities must name "
+                    "who advances.",
+    )
     confidence: Literal["low", "medium", "high"] = "medium"
     key_factors: list[str] = Field(default_factory=list, description="Decisive factors from the debate")
     x_factors: list[str] = Field(default_factory=list, description="External angles the advocates under-weighted")

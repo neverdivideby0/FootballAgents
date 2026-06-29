@@ -6,38 +6,95 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 19 commentary beats; 1 events; goals at 7'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Tunisia 5-3-2 out of possession",
+        "Sweden using a back three in possession",
+        "Tunisia allowing Sweden to circulate the ball in innocuous areas"
+      ],
+      "adjustments": [
+        "Sweden recycling play from right to left to take the sting out of the game",
+        "The two Swedish strikers instructed to retain possession where possible"
+      ],
+      "key_matchups": [
+        "Valery vs Gudmundsson",
+        "Gyokeres vs Tunisia's right-sided defensive cover",
+        "Isak vs Chamakh on the run in behind",
+        "Saad vs Nordfelt",
+        "Ben Slimane vs the Swedish goalkeeper after Saad's break"
+      ],
+      "summary": "Tunisia began by sitting in a compact 5-3-2 and looking to counter down their right, while Sweden used a back three to circulate possession and control tempo. The game opened up briefly through Tunisia's right-sided raids and Sweden's direct running in transition, before Sweden's patience paid off for Ayari's opener after a loose defensive setup left space for runs in behind. After the goal, Sweden slowed the match again by switching play across the back line, while Tunisia still threatened through quick central breaks."
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 15 commentary beats; 2 events; goals at 30', 43'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Sweden back three",
+        "Tunisia defensive structure",
+        "Tunisia on the counter",
+        "Tunisia back four",
+        "holding/controlled possession in midfield"
+      ],
+      "adjustments": [
+        "Sweden lower the tempo to walking pace and bait Tunisia forward",
+        "Tunisia drop back and play on the counter",
+        "Hannibal drops back to collect from the back four",
+        "Sweden remain proactive but allow Tunisia longer spells of possession before breaking"
+      ],
+      "key_matchups": [
+        "Saad vs the retreating Swedish defence",
+        "Hannibal vs Sweden's midfield pressure/second-ball structure",
+        "Abdi vs the left touchline in Tunisia's counter",
+        "Gyokeres holding up to release Isak on the break"
+      ],
+      "summary": "Sweden controlled the phase by slowing the game, drawing Tunisia out, and then attacking the space left behind. Tunisia offered little sustained pressure, with their best moments coming from isolated counters or brief spells of possession, but they struggled to turn those situations into danger until late in the half. Sweden's second goal underlined the pattern: patient buildup, a decisive break, and efficient use of the forward line, though Tunisia did pull one back before the interval to stay in touch."
     },
     {
       "phase": "Half-Time Brief",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "Tunisia spent almost the entire first half behind the ball, indicating a low block"
+      ],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 21 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "Sweden led 2-1 at the interval after a half in which Tunisia offered very little ambition without the ball and showed almost no willingness to chase the game. The commentary suggests Sweden were comfortable and dominant, with Tunisia\u2019s only meaningful spark coming from Hannibal Mejbri rather than from any broader tactical cohesion."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 18 commentary beats; 1 events; goals at 60'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Sweden mid block",
+        "Tunisia possession against a passive Sweden block",
+        "Tunisia attacking phase with packed six-yard box on set pieces"
+      ],
+      "adjustments": [
+        "Sweden sit back after halftime rather than pressing high",
+        "Tunisia look to use second balls and wide switches to progress",
+        "Consideration mentioned for Sweden to assign a man-marker to Hannibal"
+      ],
+      "key_matchups": [
+        "Hannibal vs Sweden's midfield/block",
+        "Gyokeres vs Tunisia's back line on transitions",
+        "Isak vs Tunisia's defensive line on the 56' counter"
+      ],
+      "summary": "Sweden began the half content to drop into a mid block, allowing Tunisia controlled possession but not immediately jumping on the ball until it entered the final third. Tunisia tried to build pressure through Hannibal, second balls, and set pieces, but Sweden also threatened in transition, with Gyokeres driving forward after turnovers and Isak offered as a running option. The commentary suggests Tunisia\u2019s main tactical issue was Sweden\u2019s passivity around Hannibal, with a potential man-marking adjustment floated to stop him dictating play."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 12 commentary beats; 2 events; goals at 86', 90'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Sweden in an attacking, front-foot shape, regularly building through the lines and using the fullbacks to progress play",
+        "Tunisia in a passive, retreating defensive block with little ambition to press, often settling into slower circulation and recovery defending"
+      ],
+      "adjustments": [
+        "Hannibal dropping into left-back to try to start attacks",
+        "Sweden using Gyokeres as the direct target with longer balls",
+        "Sweden substitution: Karlstrom off, Svanberg on",
+        "Tunisia substitutions: Khedira off, Ben Slimane off, Gharbi on, Chaouat on"
+      ],
+      "key_matchups": [
+        "Sweden's right fullback vs Tounekti",
+        "Gyokeres vs Tunisia's central defenders",
+        "Gyokeres' pullback leading to chances against Chamakh",
+        "Isak vs Chamakh",
+        "Bergvall vs chance creation after Gyokeres' layoff"
+      ],
+      "summary": "Sweden dominated the final phase territorially and creatively, using their fullbacks, direct balls into Gyokeres, and sustained pressure to keep Tunisia pinned back. Tunisia offered very little ambition in possession, with Hannibal dropping deep to collect the ball but repeatedly failing to progress attacks, while Sweden eventually turned control into late goals through Svanberg and Ayari."
     }
   ],
   "sources": [

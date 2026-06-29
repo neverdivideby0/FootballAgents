@@ -1,0 +1,41 @@
+{
+  "match_id": "Argentina_vs_Austria_2026-06-22",
+  "home": "Argentina",
+  "away": "Austria",
+  "date": "2026-06-22",
+  "home_read": {
+    "team": "Argentina",
+    "tactical_shape": [
+      "Enjoyed long spells of control but were worked hard by Austria's crisp passing and ferocious, scrappy press",
+      "Threat was minimal in the second half before late pressure and Messi's decisive finish"
+    ],
+    "standout_players": [
+      "Lionel Messi \u2014 record-breaking scorer, decisive late winner despite an early missed penalty",
+      "Emiliano Mart\u00ednez \u2014 repelled a Marcel Sabitzer free-kick",
+      "Thiago Almada \u2014 intuitively let Facundo Medina's cutback run for the record goal",
+      "Leandro Paredes \u2014 found Messi for the winner after the loose ball",
+      "Juli\u00e1n \u00c1lvarez \u2014 had an effort saved in the build-up to the winner"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Messi's relentless form and another landmark moment leave Argentina riding the emotional surge of a historic win."
+  },
+  "away_read": {
+    "team": "Austria",
+    "tactical_shape": [
+      "Crisp passing and a ferocious, scrappy press",
+      "Competent but blunt overall, and their tempo surprisingly slowed late on"
+    ],
+    "standout_players": [
+      "Alexander Schlager \u2014 beaten by Messi's record-breaking first-time finish",
+      "Marcel Sabitzer \u2014 forced Emiliano Mart\u00ednez into a save from a free-kick",
+      "Patrick Wimmer \u2014 substitute who glanced a late chance wide",
+      "Xaver Schlager \u2014 brought into a challenge in the buildup to Argentina's opener",
+      "David Alaba \u2014 almost conceded an own goal after Messi's footwork"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "Austria were competitive and awkward for Argentina, but the late fade and inability to score leaves them with frustration rather than breakthrough momentum."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/22/argentina-austria-world-cup-group-j-match-report"
+  ]
+}

@@ -5,20 +5,38 @@
   "date": "2026-06-19",
   "home_read": {
     "team": "United States",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Midfield rotations and a floating pentagon of play, with Weston McKennie, Tyler Adams and Malik Tillman forming the key starting trio",
+      "Likely to try to use possession to pull Australia\u2019s back two lines out of shape and create gaps"
+    ],
+    "standout_players": [
+      "Weston McKennie, Tyler Adams and Malik Tillman were described by Gustavo Alfaro as \u2018floating\u2019 and a key part of a \u2018pentagon\u2019 of play"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Coming off an emphatic 4-1 opener, but the punditry urges restraint and expects a very different, tougher test against Australia."
   },
   "away_read": {
     "team": "Australia",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 2 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Organised defence, intensity and a physical battle first approach",
+      "Happy to give opponents possession and look to hurt them in transition/direct play",
+      "Can play for the draw while remaining dangerous on the break"
+    ],
+    "standout_players": [
+      "Nestory Irankunda was singled out as a superpower and a player of the match against Turkey, with speed, determination without the ball and direct running highlighted",
+      "Mo Tour\u00e9 was described as a vital outlet when Australia are under pressure with the ball"
+    ],
+    "fatigue_injuries": [
+      "Aiden O\u2019Neill was only able to walk the day after the Turkey game",
+      "Mo Tour\u00e9 has a calf concern"
+    ],
+    "momentum": "They impressed by stunning Turkey and now have a pragmatic route to the knockout rounds, with rotation and discipline likely central to their progress."
   },
   "sources": [
+    "https://www.theguardian.com/football/2026/jun/18/world-cup-2026-socceroos-australia-usa-which-team-will-win-how",
     "https://www.theguardian.com/football/2026/jun/19/australia-v-usa-socceroos-usmnt-confected-hostility-2026-world-cup",
-    "https://www.theguardian.com/football/2026/jun/20/usa-australia-player-ratings-world-cup-group-d"
+    "https://www.theguardian.com/football/2026/jun/20/usa-australia-player-ratings-world-cup-group-d",
+    "https://www.theguardian.com/football/2026/jun/18/usmnt-christian-pulisic-status-mauricio-pochettino",
+    "https://www.theguardian.com/football/2026/jun/17/fifa-world-cup-2026-australia-usa-game-match-players-threats-battle-of-seattle"
   ]
 }

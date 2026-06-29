@@ -1,0 +1,46 @@
+{
+  "match_id": "Tunisia_vs_Netherlands_2026-06-25",
+  "home": "Tunisia",
+  "away": "Netherlands",
+  "date": "2026-06-25",
+  "home_read": {
+    "team": "Tunisia",
+    "tactical_shape": [
+      "Four changes from the 4-0 hammering against Japan",
+      "Defended poorly in the first 10 minutes",
+      "No stable structure described beyond struggling defensively and from set pieces"
+    ],
+    "standout_players": [
+      "Isma\u00ebl Gharbi spurned a brilliant early chance",
+      "Hazem Mastouri created the early chance for Gharbi",
+      "Anis Ben Slimane could have scored with his header",
+      "Hannibal Mejbri delivered the corner for Mastouri\u2019s header"
+    ],
+    "fatigue_injuries": [],
+    "momentum": "A sorry performance and heavy group-stage damage leave Tunisia heading home with a goal difference of minus 10."
+  },
+  "away_read": {
+    "team": "Netherlands",
+    "tactical_shape": [
+      "Virtually full-strength side",
+      "Comfortable in possession and control after the early opener",
+      "Used set pieces effectively, with goals from a free-kick and corners"
+    ],
+    "standout_players": [
+      "Frenkie de Jong ran the show again",
+      "Denzel Dumfries provided the dangerous cross that forced the own goal",
+      "Brian Brobbey scored from Virgil van Dijk\u2019s free-kick delivery",
+      "Virgil van Dijk picked out Brobbey with the set piece",
+      "Jan Paul van Hecke scored from a corner",
+      "Tijjani Reijnders hit a delightful chip off the crossbar",
+      "Memphis Depay almost produced a late acrobatic finish"
+    ],
+    "fatigue_injuries": [
+      "Missing Micky van de Ven and Crysencio Summerville after yellow cards in previous matches"
+    ],
+    "momentum": "Top spot secured, but Koeman warned they got too comfortable and must improve for a much tougher last-32 meeting with Morocco."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/26/tunisia-netherlands-world-cup-2026-match-report"
+  ]
+}

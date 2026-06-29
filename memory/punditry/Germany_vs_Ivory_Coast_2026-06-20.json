@@ -5,17 +5,44 @@
   "date": "2026-06-20",
   "home_read": {
     "team": "Germany",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Unchanged side from the previous match, with more thrust and bite after a triple substitution at the hour",
+      "Pushed more players forward in the second half and took more risks to force the win"
+    ],
+    "standout_players": [
+      "Deniz Undav scored twice, including the 94th-minute winner",
+      "Yahia Fofana made a majestic save to deny Havertz",
+      "Kai Havertz had early attempts and had a goal ruled out after Musiala's foul",
+      "Joshua Kimmich provided the cross for Havertz's header",
+      "Nadiem Amiri was influential off the bench and set up Undav's equaliser",
+      "Lennart Karl was absent through injury",
+      "Serge Gnabry was absent through injury",
+      "Manuel Neuer returned from international retirement to solve the goalkeeper issue",
+      "Jamal Musiala was involved in attack but also committed the foul for the disallowed goal"
+    ],
+    "fatigue_injuries": [
+      "Injuries to Serge Gnabry and Lennart Karl were noted before the tournament",
+      "Manuel Neuer had been coaxed back from almost two years of international retirement",
+      "Germany have concerns over the form of Musiala and Wirtz"
+    ],
+    "momentum": "A dramatic late win sends Germany into the knockout stages for the first time in 12 years and reinforces their reputation as tournament specialists."
   },
   "away_read": {
     "team": "Ivory Coast",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Sat in tightly packed lines and invited pressure before breaking quickly",
+      "Lured Germany forward, then tried to hurt them on the break",
+      "No longer looked so fit or frightful in the press late on"
+    ],
+    "standout_players": [
+      "Franck Kessi\u00e9 opened the scoring with the 30th-minute goal",
+      "Yan Diomande repeatedly carried the threat down the left",
+      "Amad Diallo had the chance after Diomande's cross but was blocked",
+      "Yahia Fofana made several important saves for C\u00f4te d'Ivoire",
+      "Simon Adingra was criticised for dawdling on a late breakaway"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Despite the defeat, C\u00f4te d'Ivoire are praised for pushing a major favourite hard and carry pride, with the result framed as a learning experience that can help them later in the tournament."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/20/germany-cote-divoire-group-e-match-report"

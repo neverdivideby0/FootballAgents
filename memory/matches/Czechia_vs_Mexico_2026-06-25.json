@@ -1,0 +1,84 @@
+{
+  "match_id": "Czechia_vs_Mexico_2026-06-25",
+  "home": "Czechia",
+  "away": "Mexico",
+  "date": "2026-06-25",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [],
+      "adjustments": [],
+      "key_matchups": [
+        "Edson \u00c1lvarez winning the ball before Romo\u2019s shot chance",
+        "Denis Vi\u0161insk\u00fd creating and taking two Czechia attempts on goal"
+      ],
+      "summary": "The opening phase is lively and open, with both sides generating early chances rather than settling into a cautious block. Czechia starts brightly and looks especially dangerous on the break or from loose balls, while Mexico\u2019s best moment comes from Edson \u00c1lvarez regaining possession and sparking a shot opportunity for Romo."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [],
+      "adjustments": [
+        "The game\u2019s tempo slows noticeably after the hydration break, with both sides struggling to create chances",
+        "Czechia show slightly more intent around the box through Denis Vi\u0161insk\u00fd and set-piece pressure, but no clear shape change is described"
+      ],
+      "key_matchups": [
+        "Denis Vi\u0161insk\u00fd vs Mexico's defensive coverage in the box",
+        "Adam Hlo\u017eek vs Mexico's cross-defending",
+        "Israel Reyes vs Czechia's clearance line on the acrobatic attempt",
+        "Gilberto Mora and Roberto Alvarado combining against Czechia's midfield/defensive pressure",
+        "Juli\u00e1n Qui\u00f1ones vs Czechia's challenge in a dangerous area"
+      ],
+      "summary": "After an even opening, this phase becomes more stop-start and subdued, with injury delays and a hydration break contributing to a noticeable drop in rhythm. Czechia begin to edge into the more dangerous moments through Denis Vi\u0161insk\u00fd\u2019s individual quality and a late free-kick, but Mexico also create flashes through open-play combinations, leaving the contest balanced and largely blunt before halftime."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "cagey, low-tempo first half",
+        "both sides in a cautious/block-oriented setup"
+      ],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "The first half was described as unusually cagey and lacking big moments, with a combined xG of just 0.46. No tactical tweaks or substitutions were made at the break, so both teams resumed unchanged for the second half."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Mexico building from the back and probing through midfield",
+        "Czechia defending their back line and later pushing forward in search of a goal",
+        "Czechia vulnerable to breakaways and attacks down the left-hand side"
+      ],
+      "adjustments": [
+        "Mexico shifted from long balls from the back to more success when recycling possession and playing through midfield",
+        "Czechia increased their attacking intent after conceding, but their final service remained inaccurate",
+        "Mexico exploited space with a marauding forward run from Jorge S\u00e1nchez and a breakaway finish from Mateo Ch\u00e1vez"
+      ],
+      "key_matchups": [
+        "Jorge S\u00e1nchez vs the Czech left side/defensive line",
+        "Mateo Ch\u00e1vez vs the Czech defense on the break",
+        "Juli\u00e1n Qui\u00f1ones vs Czechia's recovering defense"
+      ],
+      "summary": "The phase turned on Mexico\u2019s ability to move from direct long balls to more effective recycled attacks through midfield, which led to their opener and then a second goal moments later. Czechia were left exposed, particularly down their left side, and although they reacted by pushing forward after 58 minutes, their delivery into the box was consistently poor."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Mexican possession under control",
+        "Czechia pushing forward in search of a late chance",
+        "scrappy open-play/transition phase in stoppage time"
+      ],
+      "adjustments": [
+        "Guillermo Ochoa comes on for Rangel at 77'",
+        "Tom\u00e1\u0161 Sou\u010dek is forced off injured and replaced by Alexandr Sojka at 85'",
+        "late-game play becomes loose and experimental as players attempt audacious actions"
+      ],
+      "key_matchups": [
+        "Guillermo Ochoa vs Czechia\u2019s late closing/surge attempts",
+        "Tom\u00e1\u0161 Sou\u010dek closing down Guillermo Ochoa before his injury"
+      ],
+      "summary": "Mexico saw out the final quarter with sustained possession and complete crowd control, while Czechia tried repeatedly to surge forward but rarely built anything of substance. The phase was also defined by the emotional arrival of Guillermo Ochoa and a stoppage-time flourish, with Mexico adding a third goal from a broken play after Ochoa\u2019s long ball helped set it up."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/24/czechia-v-mexico-world-cup-2026-live"
+  ]
+}

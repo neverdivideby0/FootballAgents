@@ -1,0 +1,46 @@
+{
+  "match_id": "Belgium_vs_Iran_2026-06-21",
+  "home": "Belgium",
+  "away": "Iran",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Belgium",
+    "tactical_shape": [
+      "4-3-3 / attacking approach implied, with Kevin De Bruyne wide delivery and Leandro Trossard creating byline chances",
+      "Pushed forward and generated 15 shots, but were blunt in attack and struggled to break Iran down"
+    ],
+    "standout_players": [
+      "Thibaut Courtois \u2014 alert early, made an instinctive save from Taremi",
+      "Kevin De Bruyne \u2014 glittered in moments; the byline pass to De Cuyper was singled out as brilliant",
+      "Romelu Lukaku \u2014 huffed and puffed on his first start for club or country in more than 12 months",
+      "Nathan Ngoy \u2014 saw red after wiping out Mehdi Taremi",
+      "Maxim De Cuyper \u2014 twice involved in the biggest Belgium chances, but denied by Beiranvand"
+    ],
+    "fatigue_injuries": [
+      "J\u00e9r\u00e9my Doku was absent through illness",
+      "Romelu Lukaku was making his first start for club or country for more than 12 months"
+    ],
+    "momentum": "Pressure is mounting after another disappointing result; Belgium are in bother and must beat New Zealand to keep their hopes alive."
+  },
+  "away_read": {
+    "team": "Iran",
+    "tactical_shape": [
+      "Set up to absorb pressure and threaten in transition / from set-piece situations, with a long throw and organized defending",
+      "Stayed resilient under pressure and were willing to suffer without wilt"
+    ],
+    "standout_players": [
+      "Alireza Beiranvand \u2014 the moment of the match; made a miraculous save and had one of his best days",
+      "Amir Ghalenoei praised Beiranvand as one of Iran's greatest goalkeepers and extremely experienced, intelligent",
+      "Ali Nemati \u2014 stopped De Bruyne's cross with his legs splayed",
+      "Hossein Kanaanizadegan \u2014 forced Courtois into an alert save",
+      "Mehdi Taremi \u2014 had a precise finish ruled out for offside and won the red-card incident"
+    ],
+    "fatigue_injuries": [
+      "Sixteen hours to prepare in LA, two flights and a heavy game were cited as taxing conditions"
+    ],
+    "momentum": "Iran believe they can progress, with two creditable draws and growing confidence after resisting Belgium under severe conditions."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/21/belgium-iran-world-cup-group-g-match-report"
+  ]
+}

@@ -13,6 +13,7 @@ empty brief when no history exists — predict then behaves exactly as before.
 from __future__ import annotations
 
 import logging
+import re
 from pathlib import Path
 
 from worldcupagents.agents.schemas import MatchTacticalReport, PlayerStat, PunditryDigest
@@ -114,11 +115,53 @@ def _lesson_line(entry: str, first: str) -> str | None:
     return " | ".join(bits) if len(bits) > 1 else None
 
 
+_DOSSIER_LINE = re.compile(r"-\s*\d{4}-\d\d-\d\d:")
+
+
+def team_dossier_brief(team_a: str, team_b: str, config: dict, recent: int = 3) -> str:
+    """The per-team living dossier (`memory/teams/<TEAM>.md`) — the record `resolve`
+    appends to AND any notes you add by hand. Auto lesson lines are deduped (the same
+    fixture can be logged many times) and capped; MANUAL notes (anything not in the
+    auto format) are surfaced in full, since that's learning the loop can't derive.
+    "" when neither team has a dossier."""
+    teams_dir = Path(config.get("memory_dir", "memory")) / "teams"
+    blocks: list[str] = []
+    for team in (team_a, team_b):
+        f = teams_dir / f"{normalize_key(canonical_name(team))}.md"
+        if not f.exists():
+            continue
+        try:
+            body = [ln.strip() for ln in f.read_text(encoding="utf-8").splitlines()
+                    if ln.strip() and not ln.startswith("#")]
+        except Exception as e:  # noqa: BLE001
+            logger.warning("recall: could not read team dossier %s (%s)", f.name, e)
+            continue
+        auto = [ln for ln in body if _DOSSIER_LINE.match(ln)]
+        manual = [ln for ln in body if not _DOSSIER_LINE.match(ln)]
+        # Dedupe auto lines by fixture+outcome (ignore the Brier), keeping the newest.
+        seen: set[str] = set()
+        deduped: list[str] = []
+        for ln in reversed(auto):
+            core = ln.split("(we predicted")[0].strip()
+            if core in seen:
+                continue
+            seen.add(core)
+            deduped.append(ln)
+        keep = manual + list(reversed(deduped[:recent]))   # your notes first, then record
+        if keep:
+            blocks.append(f"{canonical_name(team)}:\n" + "\n".join(f"  {ln}" for ln in keep))
+    if not blocks:
+        return ""
+    return ("TEAM DOSSIER — accumulated record + your manual notes (memory/teams/)\n\n"
+            + "\n\n".join(blocks))
+
+
 def past_context_for(team_a: str, team_b: str, config: dict) -> str:
     """Everything memory has for this fixture: tactical brief + punditry signals +
-    qualitative notes + prediction lessons."""
+    qualitative notes + prediction lessons + the per-team living dossier."""
     parts = [predictive_brief(team_a, team_b, config),
              punditry_brief(team_a, team_b, config),
+             team_dossier_brief(team_a, team_b, config),
              qualitative_brief(team_a, team_b, config),
              prediction_lessons(team_a, team_b, config)]
     return "\n\n".join(p for p in parts if p)
@@ -338,11 +381,13 @@ def squad_club_stats(config: dict, squad: list[str], n: int = 8) -> list[PlayerS
 
 
 def players_digest(players: list[PlayerStat]) -> str:
+    """One player per line (lead with the name) — rich but scannable, not a
+    semicolon wall. Callers put the team label on its own line above this."""
     if not players:
         return "(no player stats on record)"
     out = []
     for p in players:
-        s = f"{p.player} {p.goals}G/{p.assists}A in {p.matches}"
+        s = f"{p.player}: {p.goals}G/{p.assists}A in {p.matches}"
         if p.xg is not None and p.xa is not None:
             s += f" (xG {p.xg:.1f}, xA {p.xa:.1f})"
         if p.key_passes is not None:
@@ -353,8 +398,8 @@ def players_digest(players: list[PlayerStat]) -> str:
             s += f", {p.pass_accuracy:.0f}% pass"
         if p.rating is not None:
             s += f", {p.rating:.2f} rating"
-        out.append(s)
-    return "; ".join(out)
+        out.append(f"  - {s}")
+    return "\n".join(out)
 
 
 def _source_suffix(report: MatchTacticalReport) -> str:

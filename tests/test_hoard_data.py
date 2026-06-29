@@ -60,7 +60,6 @@ def test_hoard_international_results_populates_warehouse_and_summaries(tmp_path,
 
     assert res.counts["wh_matches"] == 2              # NA future row skipped
     assert res.counts["wh_goals"] == 3
-    assert res.counts["wh_shootouts"] == 1
     assert res.counts["summary_matches"] == 2
     assert res.counts["summary_player_stats"] == 2    # own goal excluded
 
@@ -74,7 +73,7 @@ def test_hoard_international_results_populates_warehouse_and_summaries(tmp_path,
     assert counts["wh_matches"] == 2
     assert {p["player"] for p in players} == {"Alvaro Example", "Leo Example"}
     assert aliases
-    assert raw[0]["source_id"] == "international_results" and raw[0]["files"] == 4
+    assert raw[0]["source_id"] == "international_results" and raw[0]["files"] == 3
 
 
 def test_hoard_international_results_is_idempotent(tmp_path, monkeypatch):

@@ -1,0 +1,46 @@
+{
+  "match_id": "Uruguay_vs_Cape_Verde_Islands_2026-06-21",
+  "home": "Uruguay",
+  "away": "Cape Verde Islands",
+  "date": "2026-06-21",
+  "home_read": {
+    "team": "Uruguay",
+    "tactical_shape": [
+      "Bielsa's side dominated possession but were repeatedly exposed by Cape Verde's direct running and transitions.",
+      "Pushed frantically for the winner after the equaliser, with a very open, disorganised attack that risked being countered at the end."
+    ],
+    "standout_players": [
+      "Fernando Muslera \u2014 veteran keeper struggled on Pina's free-kick and was in no man\u2019s land for Varela\u2019s goal.",
+      "Maximiliano Ara\u00fajo \u2014 scored Uruguay\u2019s first equaliser with a close-range header.",
+      "Agust\u00edn Canobbio \u2014 finished Uruguay\u2019s second goal from close range, though later lacked calmness when through on goal.",
+      "Federico Valverde \u2014 came close with a free-kick narrowly over the bar.",
+      "Rodrigo Bentancur \u2014 header deflected off Cabral and onto a post before the equaliser chance."
+    ],
+    "fatigue_injuries": [
+      "Marcelo Bielsa said Ronald Ara\u00fajo will not return from injury for the next game."
+    ],
+    "momentum": "Highly disorganised and under serious pressure; Uruguay\u2019s tournament hopes are in jeopardy and they must beat Spain."
+  },
+  "away_read": {
+    "team": "Cape Verde Islands",
+    "tactical_shape": [
+      "Fearless, direct approach with quick running and electric pace, especially through Garry Rodrigues.",
+      "Held firm defensively for long spells and stayed resilient under pressure, even when hemmed in late on."
+    ],
+    "standout_players": [
+      "Kevin Pina \u2014 scored Cape Verde\u2019s maiden World Cup goal from a free-kick.",
+      "Garry Rodrigues \u2014 his touch and pace repeatedly troubled Uruguay.",
+      "H\u00e9lio Varela \u2014 scored the equaliser and showed great composure.",
+      "Steven Moreira \u2014 produced an outstanding block to deny Uruguay the lead.",
+      "Sidny Cabral \u2014 involved in creating panic with a cross-cum-shot and was unlucky with the deflected equaliser sequence."
+    ],
+    "fatigue_injuries": [
+      "Arcanjo was assisted with cramp by Federico Vi\u00f1as.",
+      "Vozinha spilled the ball for the disallowed Uruguay goal but no injury was reported."
+    ],
+    "momentum": "The underdogs continue to inspire belief; Cape Verde are fearless, resilient and in strong position to chase qualification."
+  },
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/22/cape-verde-uruguay-world-cup-group-h-match-report"
+  ]
+}

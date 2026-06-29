@@ -19,8 +19,16 @@ statistical baseline.
 from __future__ import annotations
 
 import logging
+import re
 
-from worldcupagents.agents.schemas import DecidedBy, JudgeRead, MatchVerdict, Outcome, ProbBreakdown
+from worldcupagents.agents.schemas import (
+    AlternativeOutcome,
+    DecidedBy,
+    JudgeRead,
+    MatchVerdict,
+    Outcome,
+    ProbBreakdown,
+)
 from worldcupagents.dataflows.world_cup_2026 import VENUE_NOTES as _VENUE_NOTES
 from worldcupagents.ensemble.baseline import (
     blend,
@@ -37,8 +45,22 @@ logger = logging.getLogger(__name__)
 
 
 def assemble_verdict(config: dict, fixture, home, away,
-                     read: JudgeRead | None, judge_weight: float) -> MatchVerdict:
-    """Build a fully blended, stage-aware MatchVerdict from an optional LLM read."""
+                     read: JudgeRead | None, judge_weight: float,
+                     debate_state: dict | None = None) -> MatchVerdict:
+    """Build a stage-aware MatchVerdict from an optional LLM read.
+
+    Two modes (config['verdict_mode']):
+      * "agents" (default) — when a real ``read`` exists, the judge's stated scoreline +
+        probabilities ARE the verdict (no Poisson/blend); the upset watch is built from the
+        advocates' black-swan calls in ``debate_state``.
+      * "stats" — the statistical path below (fitted-strength λ → grid → blend → clamp).
+    Agents-mode automatically falls back to the stats path whenever ``read`` is None
+    (offline / missing key / judge error), so predict never crashes.
+    """
+    mode = (config.get("verdict_mode") or "agents").lower()
+    if mode == "agents" and read is not None:
+        return _agents_verdict(config, fixture, home, away, read, debate_state)
+
     lam_h, lam_a = match_lambdas(config, home, away)
     grid = score_grid(lam_h, lam_a)
     base = grid_outcome_probs(grid)
@@ -109,6 +131,141 @@ def assemble_verdict(config: dict, fixture, home, away,
         ),
         alternative=alternative,
     )
+
+
+# ── Agents mode: the verdict IS the judge's read (no Poisson) ────────────────
+
+_SCORE_RE = re.compile(r"(\d+)\s*[-–]\s*(\d+)")
+_ALT_LIVE = 0.25
+
+
+def _parse_score(s: str | None) -> tuple[int, int] | None:
+    m = _SCORE_RE.search(s or "")
+    return (int(m.group(1)), int(m.group(2))) if m else None
+
+
+def _agents_verdict(config: dict, fixture, home, away, read: JudgeRead,
+                    debate_state: dict | None) -> MatchVerdict:
+    """The judge's stated score + probabilities become the verdict directly. The
+    statistical engine is bypassed; only the knockout no-draw rule is enforced."""
+    from worldcupagents.ensemble.focus import match_focus
+
+    p_home, p_draw, p_away = normalize3(read.p_home, read.p_draw, read.p_away)
+    decided_by = read.decided_by or DecidedBy.REGULATION
+    ft = _parse_score(read.scoreline)
+
+    if fixture.knockout:
+        # A knockout must resolve to a winner. Fold the draw mass onto the sides,
+        # and if the judge's full-time score is level, settle it (honour the judge's
+        # decided_by; else penalties when it's tight, extra time otherwise).
+        p_home, p_away = _fold_draw(p_home, p_draw, p_away)
+        p_draw = 0.0
+        level = ft is not None and ft[0] == ft[1]
+        if level and decided_by == DecidedBy.REGULATION:
+            decided_by = DecidedBy.PENALTIES if abs(p_home - p_away) < 0.10 else DecidedBy.EXTRA_TIME
+        elif not level:
+            decided_by = DecidedBy.REGULATION
+
+    outcome = _argmax_outcome(p_home, p_draw, p_away, fixture.knockout)
+    scoreline = _agents_scoreline(read.scoreline, decided_by, fixture, outcome)
+    alternative = _agents_alternative(debate_state, outcome, fixture,
+                                      (p_home, p_draw, p_away))
+
+    focus = match_focus(config, home, away)
+    key_factors = list(read.key_factors) + list(focus["key_factors"])[:2]
+    x_factors = list(read.x_factors) + list(focus["x_factors"])[:2]
+
+    return MatchVerdict(
+        outcome=outcome, decided_by=decided_by,
+        p_home=p_home, p_draw=p_draw, p_away=p_away,
+        scoreline=scoreline,
+        confidence=read.confidence,
+        exp_goals_home=None, exp_goals_away=None,  # a Poisson concept — n/a in agents mode
+        key_factors=key_factors, x_factors=x_factors,
+        rationale=read.rationale,
+        breakdown=None,  # no blend happened — the judge's numbers stand
+        alternative=alternative,
+    )
+
+
+def _agents_scoreline(raw: str | None, decided_by: DecidedBy, fixture, outcome: Outcome) -> str:
+    """Normalise the judge's scoreline to 'H-A' (+ a.e.t./pens suffix) and make sure a
+    knockout reads as a decisive result for whoever advances."""
+    sc = _parse_score(raw)
+    if sc is None:
+        sc = {"HOME_WIN": (1, 0), "AWAY_WIN": (0, 1), "DRAW": (1, 1)}[outcome.value]
+    h, a = sc
+    if not fixture.knockout:
+        return f"{h}-{a}"
+    if decided_by == DecidedBy.PENALTIES:
+        if h != a:                       # pens imply a level full-time score
+            a = h
+        return f"{h}-{a} (a.e.t., pens)"
+    if decided_by == DecidedBy.EXTRA_TIME:
+        if outcome == Outcome.HOME_WIN and h <= a:
+            h = a + 1
+        elif outcome == Outcome.AWAY_WIN and a <= h:
+            a = h + 1
+        return f"{h}-{a} (a.e.t.)"
+    # decisive in regulation — keep the score on the right side of the result
+    if outcome == Outcome.HOME_WIN and h <= a:
+        h = a + 1
+    elif outcome == Outcome.AWAY_WIN and a <= h:
+        a = h + 1
+    return f"{h}-{a}"
+
+
+def _agents_alternative(debate_state: dict | None, primary: Outcome, fixture,
+                        probs: tuple[float, float, float]) -> AlternativeOutcome:
+    """The upset watch, agent-sourced: pick the advocates' black-swan scoreline whose
+    outcome differs from the final call (prefer the surprising/losing side). Falls back
+    to the second-most-likely outcome when no usable black swan was captured."""
+    ds = debate_state or {}
+    idx = {Outcome.HOME_WIN: 0, Outcome.DRAW: 1, Outcome.AWAY_WIN: 2}
+    primary_p = probs[idx[primary]]
+
+    for side in ("away", "home"):  # the away/underdog swan first
+        raw = ds.get(f"{side}_black_swan")
+        sc = _parse_score(raw)
+        if not raw or sc is None:
+            continue
+        h, a = sc
+        oc = Outcome.HOME_WIN if h > a else Outcome.AWAY_WIN if a > h else Outcome.DRAW
+        if fixture.knockout and oc == Outcome.DRAW:  # a level knockout swan = pens upset
+            oc = Outcome.AWAY_WIN if primary == Outcome.HOME_WIN else Outcome.HOME_WIN
+        if oc == primary:
+            continue
+        alt_p = probs[idx[oc]]
+        score = f"{h}-{a}" + (" (a.e.t., pens)" if fixture.knockout and h == a else "")
+        how = _how_clause(raw)
+        return AlternativeOutcome(
+            outcome=oc, probability=round(alt_p, 3), scoreline=score,
+            gap=round(primary_p - alt_p, 3), live=alt_p >= _ALT_LIVE,
+            swing_factors=[how] if how else [],
+            narrative=(f"Black swan ({score}): {how}" if how else f"Black swan: {score}"),
+        )
+
+    # Fallback: second-most-likely outcome (no usable swan).
+    ranked = sorted(((o, probs[i]) for o, i in idx.items()), key=lambda x: x[1], reverse=True)
+    alt_oc, alt_p = next((o, p) for o, p in ranked if o != primary and p > 0)
+    score = {"HOME_WIN": "2-1", "AWAY_WIN": "1-2", "DRAW": "1-1"}[alt_oc.value]
+    if fixture.knockout and alt_oc != Outcome.DRAW:
+        score += " (a.e.t., pens)"
+    return AlternativeOutcome(
+        outcome=alt_oc, probability=round(alt_p, 3), scoreline=score,
+        gap=round(primary_p - alt_p, 3), live=alt_p >= _ALT_LIVE,
+        narrative=f"Second-most-likely outcome at {alt_p:.0%}.",
+    )
+
+
+def _how_clause(raw: str) -> str:
+    """The advocate's '(if …)' explanation after a black-swan scoreline, if present."""
+    m = re.search(r"\(([^)]+)\)", raw or "")
+    if m:
+        return m.group(1).strip()
+    # else any prose trailing the scoreline
+    tail = _SCORE_RE.sub("", raw or "", count=1).strip(" -–—:;,.")
+    return tail[:140]
 
 
 def _baseline_key_factors(config: dict, fixture, home, away) -> list[str]:

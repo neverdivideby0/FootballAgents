@@ -1,0 +1,97 @@
+{
+  "match_id": "South_Africa_vs_South_Korea_2026-06-25",
+  "home": "South Africa",
+  "away": "South Korea",
+  "date": "2026-06-25",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "South Korea three-man backline with the defensive line set very deep behind midfield",
+        "South Korea press and pin South Africa in their own half",
+        "South Africa dealing with pressure and circulating into crosses from wide/deep areas"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Kim Min-jae vs Aubrey Modiba on the near-post corner/goal-line clearance",
+        "Kim Min-jae influencing South Africa's shot with a headed deflection",
+        "Kim Seung-gyu vs South Africa's aerial crosses",
+        "Makgopa vs an inattentive Korean defense on the far-post header"
+      ],
+      "summary": "South Korea begin with an openly structured three-man backline and a high enough press to force South Africa into early defensive work, while South Africa try to respond through direct balls and crosses. The opening phase is defined by set-piece danger at both ends, with Kim Min-jae prominent in Korea's attacking and defensive boxes, and South Africa repeatedly testing Korea aerially before Korea reassert pressure and pin them back."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "South Africa pressing in waves without a consistently overwhelming high press",
+        "South Korea building through wide areas and set-piece routines",
+        "South Africa countering/direct attacking after turnovers",
+        "South Korea defending against repeated box swarms and counterattacks"
+      ],
+      "adjustments": [
+        "South Korea switching between left-side attacks and right-side set-piece delivery",
+        "South Africa attempting direct long balls forward after recovering possession",
+        "South Korea using more precise corner-kick movement after earlier crossing errors"
+      ],
+      "key_matchups": [
+        "Lee Gi-hyuk vs Maseko on the South Africa breakaway",
+        "Kim Seung-gyu vs South Africa's long-range shot and rebound chance",
+        "Mbatha vs Yang Hyun-jun after the midfield foul"
+      ],
+      "summary": "This phase is defined by turnover-heavy, transitional football: South Korea try to progress through wide attacks and corners, while South Africa repeatedly threaten after steals and direct balls. Neither side settles into sustained control, but South Africa create the clearest open-play chance with a 3-v-2 break and a double save, while South Korea look more dangerous from structured corner routines and right-sided deliveries."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [
+        "South Korea introduced three halftime substitutions: Son Heung-min for Paik Seung-ho, Kim Jin-gyu for Lee Tae-seok, and Jens Castrop for Hwang Hee-chan",
+        "Son Heung-min immediately joined the team huddle after entering"
+      ],
+      "key_matchups": [],
+      "summary": "The halftime picture is of a goalless match with South Korea under scrutiny after a subdued spell in the last half hour. The main tactical note is South Korea\u2019s triple change at the break, including the introduction of Son Heung-min, suggesting an attempt to reset both performance and structure for the second half."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "South Africa scale back the pressure after halftime",
+        "South Korea dominate possession for long stretches",
+        "South Africa operate with Maseko as the lone threat in transition"
+      ],
+      "adjustments": [
+        "South Africa drop off and reduce the press after halftime",
+        "South Korea attack more through both flanks, with the right side emerging as the more effective route",
+        "South Africa shift toward a counterattacking approach centered on Maseko"
+      ],
+      "key_matchups": [
+        "Maseko vs two South Korea defenders on the blocked shot at 51'",
+        "Mudau vs a South Korean attack on the slide tackle at 45'+4",
+        "Maseko vs Lee Han-beom on the interception at 54'"
+      ],
+      "summary": "This phase is defined by South Korea controlling possession while South Africa sit deeper and look to break through Maseko. The match briefly opens up on both flanks for Korea, but South Africa\u2019s best moments come from Maseko\u2019s individual threat and a few defensive interventions, before he eventually scores the breakthrough goal on 63 minutes."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "South Korea high defensive line",
+        "South Africa trying to attack in transition/counter",
+        "South Korea pushing up with crosses and set-piece pressure"
+      ],
+      "adjustments": [
+        "South Africa made a substitution: Mofokeng off, Jaylen Adams on",
+        "South Korea increased directness with balls over the top and wide crossing",
+        "South Africa repeatedly targeted runs and free kicks against South Korea's high line"
+      ],
+      "key_matchups": [
+        "Mudau vs Son",
+        "Lee Kang-in vs South African defense",
+        "Cho vs South Africa's back line/keepers on a high boot situation",
+        "Castrop vs South African defenders on the left",
+        "Son vs a wall of defenders at the edge of the box"
+      ],
+      "summary": "The phase is defined by South Korea\u2019s high line and South Africa trying to exploit it with direct balls, but the visitors repeatedly fail to make that approach stick. South Korea have most of the ball and a few promising wide/set-piece moments, yet their final actions are often poor, leaving the match tense but low on clear chances until the closing minutes."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/24/south-africa-v-south-korea-world-cup-2026-live"
+  ]
+}

@@ -5,17 +5,37 @@
   "date": "2026-06-15",
   "home_read": {
     "team": "Belgium",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Struggled to maximise width for large portions of the first half",
+      "Switched J\u00e9r\u00e9my Doku to the right after Egypt doubled up on him",
+      "Used Romelu Lukaku as a super sub from the bench in the 66th minute"
+    ],
+    "standout_players": [
+      "Romelu Lukaku made an instant impact off the bench, drawing defenders and forcing the equalising own goal",
+      "J\u00e9r\u00e9my Doku was heavily targeted and often doubled up on by Egypt",
+      "Leandro Trossard was indecisive in possession and lost the ball three times in the opening half-hour",
+      "Kevin De Bruyne attempted speculative long-range efforts"
+    ],
+    "fatigue_injuries": [
+      "The article notes Lukaku has only logged 40 minutes in Serie A for Napoli this season, raising concerns about readiness",
+      "Garcia said Belgium must go easy on Lukaku so he does not get hurt"
+    ],
+    "momentum": "Rescued a point from a difficult first-half position, with Lukaku\u2019s bench role looking like a useful weapon going forward."
   },
   "away_read": {
     "team": "Egypt",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Proactive pressing when Belgium tried to build down the wings",
+      "Fell into a more composed mid-block/possession approach after taking the lead, with the defence well stationed behind",
+      "Broke on the counter when able"
+    ],
+    "standout_players": [
+      "Mohamed Salah created the opener with a sharp pass from the right",
+      "Emam Ashour scored Egypt\u2019s goal with a shot underneath Thomas Meunier",
+      "Egypt effectively doubled up on J\u00e9r\u00e9my Doku and limited Belgium's width"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A credible opening display against a presumptive frontrunner, though they let the lead slip after Belgium introduced Lukaku."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/15/belgium-egypt-world-cup-2026-group-g-match-report"

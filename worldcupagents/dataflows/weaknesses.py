@@ -50,11 +50,8 @@ def find_weaknesses(config: dict, profile, opponent: str | None = None,
                     out.append(f"struggles against {opponent} — {w} win"
                                f"{'s' if w != 1 else ''} in the last {n} ({wdl}) [source: match store]")
 
-        # 2) Falls short on penalties / extra time (national teams).
-        so = _shootout(store, config, team)
-        if so and so["n"] >= 2 and so["lost"] > so["won"]:
-            out.append(f"falls short in shootouts — lost {so['lost']} of {so['n']} on "
-                       f"penalties [source: warehouse]")
+        # (Shootout record removed 2026-06 — the warehouse shootout data was too sparse
+        # and noisy to be a reliable weakness signal.)
 
         # 3) Set-piece vulnerability (conceded from dead balls).
         sp = _set_piece_conceded(store, comp, season, team)
@@ -84,15 +81,6 @@ def find_weaknesses(config: dict, profile, opponent: str | None = None,
 
 
 # ── components ────────────────────────────────────────────────────────────────
-
-def _shootout(store, config: dict, team: str):
-    try:
-        from worldcupagents.dataflows.entities import resolve_team
-        tid = resolve_team(team, kind="national", config=config).team_id
-        return store.shootout_record(tid) if tid else None
-    except Exception:  # noqa: BLE001
-        return None
-
 
 def _set_piece_conceded(store, comp, season, team) -> str:
     hit = store.situations(comp, season, team) if season else None

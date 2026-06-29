@@ -40,7 +40,8 @@ def make_final_pundit(config: dict, llm=None, usage_acc: dict | None = None):
 
         fx = state["fixture"]
         verdict = assemble_verdict(
-            config, fx, state["home_profile"], state["away_profile"], read, judge_weight
+            config, fx, state["home_profile"], state["away_profile"], read, judge_weight,
+            debate_state=state.get("debate_state"),
         )
         return {"verdict": verdict}
 
@@ -79,8 +80,11 @@ Three scenario pundits then stress-tested that verdict:
 Issue the FINAL verdict. ADJUST the provisional probabilities ONLY where the scenario
 debate surfaced concrete, evidence-backed risk — otherwise hold them. State explicitly in
 your rationale what (if anything) you moved and which pundit's point justified it.
-Return calibrated probabilities for HOME_WIN / DRAW / AWAY_WIN that sum to 1, a likely
-scoreline, your confidence, the decisive factors, and the external x-factors."""
+Return calibrated probabilities for HOME_WIN / DRAW / AWAY_WIN that sum to 1, THE final
+scoreline, decided_by where it's a knockout, your confidence, the decisive factors, and the
+external x-factors. Make the scoreline MATCH your read — a clear favourite (winner prob ≳ 0.55)
+warrants a decisive margin (2-0, 3-1, sometimes a rout), not a timid 1-0; keep tight scorelines
+for genuinely even games."""
     chain = llm.with_structured_output(JudgeRead, include_raw=True)
     result = chain.invoke(prompt)
     raw = result.get("raw") if isinstance(result, dict) else None

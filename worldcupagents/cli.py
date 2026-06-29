@@ -15,6 +15,7 @@ If you press Y the file is saved to exports/ with a unique filename.
 from __future__ import annotations
 
 import copy
+import json
 import os
 import sys
 from datetime import datetime, timezone
@@ -113,6 +114,16 @@ def predict(
         help="Show the live bookmaker consensus to the judge. --no-market for hypothetical "
              "matchups or in-play games (it's auto-skipped offline and when no fixture odds exist).",
     ),
+    verdict_mode: str = typer.Option(
+        None, "--verdict-mode",
+        help="How the score is decided: 'agents' (advocates propose scorelines, the judge picks "
+             "— no maths; default) or 'stats' (Poisson/strength blend). Offline always uses stats.",
+    ),
+    temperature: float = typer.Option(
+        None, "--temperature", "-t",
+        help="Debate LLM temperature (default 0.9). Higher = bolder, less hedged scorelines; "
+             "lower = safer. Some OpenAI reasoning models only accept 1.0.",
+    ),
     interactive: bool = typer.Option(
         False, "--interactive", "-i",
         help="Fully guided arrow-key flow: pick teams, venue, provider, models, and depth",
@@ -176,6 +187,16 @@ def predict(
         cfg["max_scenario_rounds"] = scenario_rounds
     if market is not None:
         cfg["enable_market_context"] = market
+    if verdict_mode is None and interactive and sys.stdin.isatty():
+        verdict_mode = _pick_verdict_mode()
+    if verdict_mode:
+        vm = verdict_mode.strip().lower()
+        if vm not in ("agents", "stats"):
+            console.print(f"[red]✗ --verdict-mode must be 'agents' or 'stats' (got {verdict_mode!r}).[/red]")
+            raise typer.Exit(1)
+        cfg["verdict_mode"] = vm
+    if temperature is not None:
+        cfg["llm_temperature"] = temperature
 
     if season:
         from worldcupagents.seasons import normalize_season
@@ -193,6 +214,9 @@ def predict(
         f"LLM: {cfg['llm_provider']} (deep={cfg['deep_think_llm']}, quick={cfg['quick_think_llm']})"
         if cfg["use_llm"] else "baseline-only (no LLM)"
     )
+    # Effective scoreline source: agents mode needs an LLM, so offline always reads stats.
+    score_src = (cfg.get("verdict_mode", "agents") if cfg["use_llm"] else "stats (offline)")
+    mode += f"   score: {score_src}"
     scenario_note = f"   scenario debate: {'on' if cfg.get('enable_scenario_debate') else 'off'}"
     season_note = ""
     if cfg.get("season") and lg.kind == "league":
@@ -1202,6 +1226,24 @@ def refresh(
     console.print(f"[green]✓ explorer[/green] {path}")
 
 
+def _digest_is_placeholder(path: Path) -> bool:
+    """True when a punditry digest exists but is an OFFLINE PLACEHOLDER (no LLM extraction
+    yet) — so an `--provider` run can upgrade it instead of skipping it as 'already done'."""
+    try:
+        d = json.loads(path.read_text(encoding="utf-8"))
+    except Exception:  # noqa: BLE001 — unreadable → treat as needing (re)analysis
+        return True
+    return any(((d.get(side) or {}).get("momentum") or "").lstrip().startswith("[placeholder]")
+               for side in ("home_read", "away_read"))
+
+
+def _needs_analysis(pdir: Path, m: dict, *, force: bool = False) -> bool:
+    """A finished match needs (re)analysis if it has no digest yet, or only a placeholder."""
+    from worldcupagents.agents.analyst.tactical import make_match_id
+    p = pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json"
+    return force or not p.exists() or _digest_is_placeholder(p)
+
+
 def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
     """One idempotent matchday tick: pull results, distil punditry + tactics for any
     newly-FINISHED match not yet processed, then auto-resolve + re-fit the weight."""
@@ -1226,7 +1268,9 @@ def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
         console.print(f"[green]✓ {lg_key}[/green] results updated "
                       f"(+{res['added']} rows, {res['total']} total)")
 
-    # 2. Finished WC matches whose punditry digest doesn't exist yet = "just finished".
+    # 2. Newly-FINISHED matches (no digest) — plus, when an LLM is on, placeholder digests
+    #    left by an earlier offline tick (so `watch --provider` upgrades them). Offline ticks
+    #    don't re-touch placeholders, to avoid re-scraping Guardian every poll.
     comp = cfg.get("fd_competition")
     store = MatchStore.from_config(cfg)
     try:
@@ -1236,8 +1280,11 @@ def _watch_tick(cfg: dict, leagues: str, reflect_llm) -> None:
         store.close()
     pdir = Path(cfg.get("memory_dir", "memory")) / "punditry"
     from worldcupagents.agents.analyst.tactical import make_match_id
+
+    def _dp(m):
+        return pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json"
     todo = [m for m in finished
-            if not (pdir / f"{make_match_id(m['home'], m['away'], m['date'])}.json").exists()]
+            if not _dp(m).exists() or (cfg.get("use_llm") and _digest_is_placeholder(_dp(m)))]
 
     if todo:
         console.print(f"[cyan]▸ {len(todo)} newly-finished match(es) to analyse[/cyan]")
@@ -1374,7 +1421,7 @@ def analyze_match_cmd(
     provider: str = typer.Option(
         None, "--provider", "-p", help="LLM provider for tactical analysis (implies --llm)"
     ),
-    model: str = typer.Option(None, "--model", help="Override the analyst model"),
+    model: str = typer.Option(None, "--model", "--quick-model", help="Override the analyst model"),
     llm: bool = typer.Option(None, "--llm/--no-llm", help="Run the real LLM analyst (default: offline placeholder)"),
     force: bool = typer.Option(False, "--force", "-f", help="Overwrite an existing populated report"),
     report: bool = typer.Option(True, "--report/--no-report",
@@ -1384,14 +1431,13 @@ def analyze_match_cmd(
     """Harvest post-game commentary and build a 5-phase tactical report.
 
     Offline by default (no spend). Add --provider/--llm to run the real analyst,
-    e.g. `analyze-match Argentina France --date 2022-12-18 --provider openai`.
+    e.g. `analyze-match Argentina France --date 2022-12-18 --provider openai --model gpt-5.4-mini`.
     Existing LLM-populated reports are protected and won't be overwritten unless
     you pass --force.
     """
     from worldcupagents.pipelines.analyze_match import analyze_match
 
-    # Reuse the predict config builder: resolves provider/models/use_llm + arrow-key picker.
-    cfg = _build_config(provider, None, model, llm, None)
+    cfg = _build_analyst_config(provider, model, llm)
     _resolve_league(cfg, league)
     mode = (
         f"LLM analyst: {cfg['llm_provider']} ({cfg['quick_think_llm']})"
@@ -1441,6 +1487,87 @@ def analyze_match_cmd(
         else:
             console.print("[dim]No match report/columns found (set GUARDIAN_API_KEY; 2026 WC games "
                           "have no Guardian articles yet).[/dim]")
+
+
+@app.command(name="analyze-all")
+def analyze_all_cmd(
+    provider: str = typer.Option(None, "--provider", "-p", help="LLM provider for extraction (implies --llm)"),
+    model: str = typer.Option(None, "--model", help="Override the analyst model"),
+    llm: bool = typer.Option(None, "--llm/--no-llm", help="Run the real LLM analyst (default: offline placeholder)"),
+    league: str = typer.Option("WC2026", "--league", "-L", help="Competition to scan for finished games"),
+    fetch: bool = typer.Option(True, "--fetch/--no-fetch", help="Pull the newest results into the store first"),
+    limit: int = typer.Option(0, "--limit", help="Cap how many games to analyse (0 = all)"),
+    force: bool = typer.Option(False, "--force", "-f", help="Re-analyse even when a report already exists"),
+):
+    """Backfill memory for EVERY finished match — no fixtures to type.
+
+    Scans the match store for finished games in the competition and runs the tactical
+    report + match-report digest for any not yet in memory (idempotent, keyed on the
+    punditry digest file). Offline lists what WOULD run; add --provider to extract.
+
+    \b
+      footballagents analyze-all                     # offline: list finished games to analyse
+      footballagents analyze-all --provider openai   # catch memory up on every game so far
+    """
+    from worldcupagents.dataflows.match_store import MatchStore
+    from worldcupagents.pipelines.analyze_match import analyze_match
+    from worldcupagents.pipelines.fetch_data import fetch_data
+    from worldcupagents.pipelines.punditry import analyze_punditry
+
+    cfg = _build_analyst_config(provider, model, llm)
+    _resolve_league(cfg, league)
+    mode = (f"LLM analyst: {cfg['llm_provider']} ({cfg['quick_think_llm']})"
+            if cfg["use_llm"] else "offline placeholder (add --provider/--llm for real extraction)")
+    console.print(f"[dim]{mode}[/dim]")
+
+    if fetch:
+        try:
+            res = fetch_data(cfg)
+            console.print(f"[green]✓ results updated[/green] (+{res['added']} rows, {res['total']} total)")
+        except Exception as e:  # noqa: BLE001 — a failed refresh shouldn't block analysing the store
+            console.print(f"[yellow]⚠ could not refresh results ({e}); scanning the existing store[/yellow]")
+
+    comp = cfg.get("fd_competition")
+    store = MatchStore.from_config(cfg)
+    try:
+        finished = [m for m in store.all_matches()
+                    if (comp is None or m.get("comp") == comp) and m.get("date")]
+    finally:
+        store.close()
+    pdir = Path(cfg.get("memory_dir", "memory")) / "punditry"
+    # Re-analyse games with no digest OR only a placeholder digest (an offline run leaves
+    # placeholders; a later --provider run should UPGRADE them, not skip them).
+    todo = [m for m in finished if _needs_analysis(pdir, m, force=force)]
+    todo.sort(key=lambda m: m["date"])
+    if limit and limit > 0:
+        todo = todo[:limit]
+
+    if not todo:
+        console.print(f"[green]✓ nothing to do[/green] — all {len(finished)} finished "
+                      f"{league} game(s) are already in memory.")
+        return
+
+    if not cfg["use_llm"]:
+        console.print(f"[cyan]{len(todo)} finished game(s) would be analysed[/cyan] "
+                      "(offline — add --provider to extract):")
+        for m in todo:
+            console.print(f"  • {m['home']} vs {m['away']} ({m['date']})")
+        return
+
+    console.print(f"[cyan]▸ analysing {len(todo)} finished game(s)…[/cyan]")
+    done = 0
+    for m in todo:
+        h, a, d = m["home"], m["away"], m["date"]
+        try:
+            analyze_match(h, a, d, cfg, force=force)        # liveblog → tactical report
+            po = analyze_punditry(h, a, d, cfg, force=force)  # match report → punditry digest
+            tag = f"{po.n_articles} article(s)" if po.n_articles else "no punditry found"
+            console.print(f"  [green]✓[/green] {h} vs {a} ({d}) — {tag}")
+            done += 1
+        except Exception as e:  # noqa: BLE001 — one bad fixture must not sink the batch
+            console.print(f"  [yellow]⚠ {h} vs {a} ({d}) skipped ({e})[/yellow]")
+    console.print(f"[green]✓ analysed {done}/{len(todo)}[/green] — these now feed future "
+                  "predictions via recall.")
 
 
 @app.command()
@@ -1730,6 +1857,48 @@ def _build_config(provider, deep_model, quick_model, llm, rounds, interactive=Fa
     return cfg
 
 
+def _build_analyst_config(provider: str | None, model: str | None, llm: bool | None) -> dict:
+    """Config for one-model analyst commands.
+
+    Unlike predict, analyze-match has no judge/advocate split. On a TTY, --llm
+    asks for provider first and then an analyst model from that provider's menu.
+    """
+    cfg = copy.deepcopy(DEFAULT_CONFIG)
+    provider_chosen = provider is not None
+
+    if llm is None:
+        use_llm = bool(provider_chosen or cfg.get("use_llm"))
+    else:
+        use_llm = llm
+
+    if use_llm and not provider_chosen and sys.stdin.isatty():
+        provider = _pick_provider()
+        provider_chosen = provider is not None
+        if not provider_chosen:
+            use_llm = False
+
+    if provider:
+        cfg["llm_provider"] = provider
+    cfg["use_llm"] = use_llm
+
+    _, q_default = default_models(cfg["llm_provider"])
+    cfg["quick_think_llm"] = model or (q_default if provider_chosen else cfg["quick_think_llm"])
+
+    if cfg.get("use_llm") and model is None and provider_chosen and sys.stdin.isatty():
+        cfg["quick_think_llm"] = _pick_model(
+            cfg["llm_provider"],
+            "Analyst model  (tactical extraction)",
+            cfg["quick_think_llm"],
+        )
+
+    if use_llm:
+        key_env = API_KEY_ENV.get(cfg["llm_provider"], "")
+        if key_env and not os.environ.get(key_env):
+            console.print(f"[yellow]⚠ {key_env} not set — will fall back to the placeholder analyst.[/yellow]")
+
+    return cfg
+
+
 def _pick_league() -> str | None:
     """Arrow-key competition picker (step 1 of the guided flow)."""
     import questionary
@@ -1824,6 +1993,19 @@ def _pick_stage(default: Stage) -> Stage:
         ("Quarter-final", Stage.QF), ("Semi-final", Stage.SF), ("Final / 3rd place", Stage.FINAL))]
     pick = questionary.select("Stage  (↑/↓ then Enter)", choices=choices, default=default).ask()
     return pick or default
+
+
+def _pick_verdict_mode() -> str | None:
+    """Arrow-key picker: how is the final score decided?"""
+    import questionary
+    return questionary.select(
+        "How is the score decided?  (↑/↓ then Enter)",
+        choices=[
+            questionary.Choice("🗣  Agents — advocates propose scorelines, the judge picks (no maths)", value="agents"),
+            questionary.Choice("📊  Stats — Poisson/strength blend (the statistical model)", value="stats"),
+        ],
+        default="agents",
+    ).ask()
 
 
 def _pick_team(label: str, groups: dict[str, list[str]], eliminated: set[str], exclude: str | None = None) -> str | None:
@@ -1990,6 +2172,7 @@ def _launch_menu() -> None:
             questionary.Choice("📋  Pre-match dossier — the data, no LLM", value="dossier"),
             questionary.Choice("📈  Live odds for a fixture", value="odds"),
             questionary.Choice("📡  Watch — matchday autopilot", value="watch"),
+            questionary.Choice("🧠  Analyze finished games into memory", value="analyze-all"),
             questionary.Choice("🔄  Refresh after a matchday", value="refresh"),
             questionary.Choice("✅  Resolve played predictions", value="resolve"),
             questionary.Choice("🎯  Signal credit — which signals helped", value="credit"),
@@ -2039,6 +2222,15 @@ def _menu_argv(action: str) -> list[str] | None:
         if questionary.confirm("Keep polling every 30 min? (No = one tick now)", default=False).ask():
             argv += ["--interval", "30"]
         return argv
+
+    if action == "analyze-all":
+        argv = ["analyze-all"]
+        sel = _menu_pick_llm("Use an LLM to extract tactics/punditry? (needs a key)")
+        if sel:
+            argv += ["--provider", sel["provider"], "--model", sel["quick"]]
+        else:
+            argv += ["--no-llm"]
+        return argv
     return None
 
 
@@ -2060,13 +2252,7 @@ def _run_argv(argv: list[str]) -> None:
 
 def _guided_select() -> dict | None:
     """Arrow-key selection of provider + deep/quick models (TradingAgents-style)."""
-    import questionary
-
-    provider = questionary.select(
-        "LLM provider  (↑/↓ then Enter)",
-        choices=[questionary.Choice(f"{p}  ({API_KEY_ENV[p]})", value=p) for p in PROVIDERS],
-        default=None,
-    ).ask()
+    provider = _pick_provider()
     if provider is None:  # Ctrl-C / Esc
         return None
 
@@ -2074,6 +2260,16 @@ def _guided_select() -> dict | None:
     deep = _pick_model(provider, "Deep model  (judge / reasoning)", d_default)
     quick = _pick_model(provider, "Quick model  (advocates)", q_default)
     return {"provider": provider, "deep": deep, "quick": quick}
+
+
+def _pick_provider() -> str | None:
+    import questionary
+
+    return questionary.select(
+        "LLM provider  (↑/↓ then Enter)",
+        choices=[questionary.Choice(f"{p}  ({API_KEY_ENV[p]})", value=p) for p in PROVIDERS],
+        default=None,
+    ).ask()
 
 
 def _pick_model(provider: str, label: str, default: str) -> str:

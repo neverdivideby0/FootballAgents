@@ -1,0 +1,92 @@
+{
+  "match_id": "Argentina_vs_Austria_2026-06-22",
+  "home": "Argentina",
+  "away": "Austria",
+  "date": "2026-06-22",
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "high press from both sides"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Molina vs Austria on Argentina's right side",
+        "Messi vs Austria's penalty-area defending",
+        "Lautaro Martinez vs Posch and Schlager in the box",
+        "Danso vs Argentina's build-up play",
+        "Wanner vs Molina on the left edge of the area"
+      ],
+      "summary": "The opening phase is characterized by both teams pressing aggressively rather than settling into a passive block. Argentina create the sharper early attacks through Molina\u2019s right-back involvement and Messi\u2019s passing, though the penalty sequence interrupts the rhythm and leaves the game disjointed. Austria then enjoy a stronger spell, with Danso helping them pin Argentina back and force fouls as Argentina struggle to play out cleanly."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "Austria in a fierce high press",
+        "Austria with a compact, energetic midfield block",
+        "Argentina forced into a counter-attacking phase",
+        "Argentina struggling to play through the middle"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Messi vs Austria\u2019s defensive work rate / pressing structure",
+        "Lautaro Mart\u00ednez combining with Messi against the Austrian back line",
+        "Marcel Sabitzer arriving from midfield and testing Argentina"
+      ],
+      "summary": "Austria set the tone with an aggressive press and a very compact midfield, making it difficult for Argentina to build through central areas. Argentina\u2019s main route became direct transitions to Messi and Lautaro, with their link-up gradually improving before Messi\u2019s 38th-minute goal gave them the lead.\u3011\u3010\u3002outputs"
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [
+        "Argentina back line",
+        "Austrian attempts to penetrate against Argentina's defensive block",
+        "Argentina content to see out the half with a 1-0 lead"
+      ],
+      "adjustments": [],
+      "key_matchups": [],
+      "summary": "Argentina went into half-time 1-0 up and appeared comfortable managing the game rather than chasing a second goal. Austria were able to circulate the ball and switch play, but the commentary stresses that they could not find a way through Argentina\u2019s back line, while Lionel Scaloni\u2019s side looked happy to protect the lead until the break."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Austria pressing high and winning turnovers in midfield",
+        "Argentina in a more sedate, controlled possession phase",
+        "Austria defending the box against Argentina's free-kick/cross situations"
+      ],
+      "adjustments": [
+        "Laimer and Sabitzer continuing to combine on Austria's left",
+        "Schmid and Wanner offering more hustle and presence between the lines at the start of the second half",
+        "Argentina increasing tempo slightly after halftime to gain a grip of the game",
+        "Messi dropping/roaming into central spaces to receive in behind, though caught offside"
+      ],
+      "key_matchups": [
+        "Xaver Schlager vs Lionel Messi",
+        "Emi Mart\u00ednez vs Austria's attacking pressure/crosses",
+        "Cristian Romero vs Austria attack/fitness management"
+      ],
+      "summary": "Austria are still leaning on their left-sided Laimer-Sabitzer connection and aggressive midfield pressing to win territory, but they\u2019re struggling to turn that into enough box entries or clear shooting chances. At the start of the second half, Schmid and Wanner add energy and pockets of creativity, while Argentina respond by trying to slow the game and reassert control through possession and set pieces, with Messi briefly threatening in behind before being caught offside. The phase is defined more by territory, fouls, and restarts than by open attacking flow."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "Argentina deep defensive shape / controlled low block",
+        "Austria committing bodies forward and later resorting to direct balls and crosses into the box"
+      ],
+      "adjustments": [
+        "Argentina brought on Leandro Paredes to beef up midfield",
+        "Argentina replaced Facundo Medina with Nicol\u00e1s Tagliafico after Medina\u2019s booking",
+        "Austria introduced Carney Chukwuemeka to add attacking threat"
+      ],
+      "key_matchups": [
+        "Facundo Medina vs Konrad Laimer",
+        "Emiliano Mart\u00ednez vs Arnautovi\u0107",
+        "Cristian Danso and Austria\u2019s defenders vs Argentina\u2019s late attacks",
+        "Austria\u2019s attacking players vs Argentina\u2019s block in the box"
+      ],
+      "summary": "Argentina spent the closing stages protecting their lead with a more conservative midfield setup, then freshened the back line after Medina\u2019s yellow. Austria tried to inject urgency with a new attacker and increasingly direct play, but their efforts were repeatedly met by blocks and resistance in the box. Messi\u2019s late goal after an Austrian turnover underlined the gap between Argentina\u2019s control and Austria\u2019s lack of cutting edge."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/22/argentina-v-austria-world-cup-2026-live"
+  ]
+}

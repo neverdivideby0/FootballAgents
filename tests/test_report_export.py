@@ -31,13 +31,12 @@ def test_markdown_report_has_all_sections(tmp_path):
     md = build_markdown_report(fx, v, final, predictor, cfg)
     assert "# Brazil vs Mexico" in md
     assert "## Summary" in md and "**Call:" in md          # answer-first summary
-    assert "## 1. Pre-Match Dossier" in md
-    assert "### Brazil" in md and "### Mexico" in md       # dossier per-team blocks
-    assert "## 2. Analyst Reports" in md and "**Form analyst**" in md
-    assert "## 3. Advocate Debate" in md
-    assert "## 4. Provisional Verdict (Judge)" in md
-    assert "## 5. Scenario (Risk) Debate" in md      # scenario on by default
-    assert "## 6. Final Verdict" in md
+    assert "## 1. Pre-Match Dossier" not in md            # the data dump is omitted now
+    assert "## 1. Analyst Reports" in md and "**Form analyst**" in md
+    assert "## 2. Advocate Debate" in md
+    assert "## 3. Provisional Verdict (Judge)" in md
+    assert "## 4. Scenario (Risk) Debate" in md      # scenario on by default
+    assert "## 5. Final Verdict" in md
     assert "Probabilities: H " in md
 
 
@@ -48,9 +47,9 @@ def test_markdown_report_skips_disabled_sections(tmp_path):
     final, v = predictor.predict(fx)
 
     md = build_markdown_report(fx, v, final, predictor, cfg)
-    assert "## 2. Analyst Reports" not in md
-    assert "## 5. Scenario (Risk) Debate" not in md
-    assert "## 6. Final Verdict" in md               # always present
+    assert "## 1. Analyst Reports" not in md
+    assert "## 4. Scenario (Risk) Debate" not in md
+    assert "## 5. Final Verdict" in md               # always present
 
 
 def test_export_writes_file(tmp_path):
@@ -62,4 +61,4 @@ def test_export_writes_file(tmp_path):
     path = export_markdown_report(fx, v, final, predictor, cfg)
     assert path.exists() and path.suffix == ".md"
     assert "Brazil_vs_Mexico" in path.name
-    assert "## 6. Final Verdict" in path.read_text()
+    assert "## 5. Final Verdict" in path.read_text()

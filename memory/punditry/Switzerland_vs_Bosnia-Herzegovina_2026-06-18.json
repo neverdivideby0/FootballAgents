@@ -5,17 +5,40 @@
   "date": "2026-06-18",
   "home_read": {
     "team": "Switzerland",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Used a transformative triple substitution to change the game",
+      "Played with width and pressure, with Dan Ndoye repeatedly running Bosnia ragged on the left",
+      "Relied on substitutes to inject pace and quality in the final third"
+    ],
+    "standout_players": [
+      "Johan Manzambi: player of the match; scored twice from the bench, brought poise and changed the match",
+      "Dan Ndoye: gave Bosnia the runaround and was Switzerland's most likely outlet before the breakthrough",
+      "Granit Xhaka: scored the final goal from the penalty spot",
+      "Rub\u00e9n Vargas: came off the bench and scored",
+      "Breel Embolo: won and converted a penalty in the earlier match context mentioned; here was released on goal by Manzambi"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "World Cup now truly up and running; in a position of power going into the Canada game."
   },
   "away_read": {
     "team": "Bosnia-Herzegovina",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Stubborn, compact opponents who relied on set pieces as their main route to goal",
+      "Spent much of the match under pressure, with attacks breaking down in the final action",
+      "Went down to 10 men after Tarik Muharemovic's red card"
+    ],
+    "standout_players": [
+      "Edin Dzeko: the focal point up front; had a first-half chance and was later withdrawn after a booking",
+      "Kerim Alajbegovic: created Bosnia's first real sight of goal with a pass to Dzeko",
+      "Nikola Katic: notable for his battling defending and winning a goal-kick after resisting a Swiss attack",
+      "Ermin Mahmic: scored a stoppage-time consolation with an unstoppable volley"
+    ],
+    "fatigue_injuries": [
+      "Tarik Muharemovic sent off after lunging in on Embolo",
+      "Amar Dedic booked for tugging at Ndoye",
+      "Edin Dzeko booked and then withdrawn"
+    ],
+    "momentum": "First defeat since last September; knockout hopes now hinge on beating Qatar in the final group game."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/18/switzerland-bosnia-and-herzegovina-group-b-match-report"

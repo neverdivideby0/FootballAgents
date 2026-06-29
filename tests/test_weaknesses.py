@@ -67,22 +67,6 @@ def test_over_reliance_on_one_scorer(tmp_path):
     assert "over-reliant on Solo Striker" in ws and "71%" in ws   # 20 / 28
 
 
-def test_shootout_weakness_for_nation(tmp_path):
-    cfg = _cfg(tmp_path); cfg["fd_competition"] = "WC"; cfg.pop("season", None)
-    store = MatchStore.from_config(cfg)
-    store.upsert_wh_team("national:spoils", "Spoils", kind="national", source_id="seed")
-    from worldcupagents.dataflows.entities import normalize_entity_key
-    store.upsert_wh_team_alias("national:spoils", "Spoils", "seed",
-                               normalize_entity_key("Spoils"), confidence=1.0, status="active")
-    store.upsert_wh_rows("wh_shootouts", [
-        {"shootout_id": f"s{i}", "home_team_id": "national:spoils", "away_team_id": "national:other",
-         "winner_team_id": "national:other" if i < 3 else "national:spoils"}
-        for i in range(4)])   # lost 3, won 1
-    store.close()
-    ws = " | ".join(find_weaknesses(cfg, _profile("Spoils"), "Other"))
-    assert "shootouts" in ws and "lost 3 of 4" in ws
-
-
 def test_form_slump(tmp_path):
     form = [MatchResult(opponent="A", goals_for=0, goals_against=2, date="2026-05-01"),
             MatchResult(opponent="B", goals_for=1, goals_against=3, date="2026-04-24"),

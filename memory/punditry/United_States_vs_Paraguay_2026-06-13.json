@@ -5,17 +5,41 @@
   "date": "2026-06-13",
   "home_read": {
     "team": "United States",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "4-1 win",
+      "played with joy and focus",
+      "created their own luck by taking the initiative from the opening whistle",
+      "kept pouring on the pressure after scoring",
+      "controlled the first half with half-space access and direct attacks up the channel"
+    ],
+    "standout_players": [
+      "Christian Pulisic \u2014 central to the early dominance, supplied the assist for McKennie and was a constant dribbling threat",
+      "Malik Tillman \u2014 lively in the first half, repeatedly nutmegged opponents and assisted Balogun's second goal",
+      "Weston McKennie \u2014 scored the opener and drove forward from midfield",
+      "Folarin Balogun \u2014 on World Cup debut, scored a 20-minute double",
+      "Tim Ream \u2014 started the move for the opening goal with a fizzed pass out from the back",
+      "Alex Freeman \u2014 involved in the build-up to the opener",
+      "Gio Reyna \u2014 late substitute, scored with the outside of his boot"
+    ],
+    "fatigue_injuries": [
+      "Christian Pulisic was taken off at half-time as a caution, rather than because of an injury"
+    ],
+    "momentum": "The US look buoyant and confident, having shown they can thrive under home-tournament pressure and play with purpose, though the second-half defensive issues are a reminder they still have faults."
   },
   "away_read": {
     "team": "Paraguay",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "improved after the break by monitoring Balogun\u2019s movement and tightening ranks",
+      "closed down the half-spaces that had been available to the US in the opening 45 minutes"
+    ],
+    "standout_players": [
+      "Orlando Gill \u2014 his restart created the turnover that led to Paraguay's goal",
+      "Miguel Almir\u00f3n \u2014 quickly helped launch the move for the goal",
+      "Julio Enciso \u2014 provided the assist for Maur\u00edcio's strike",
+      "Maur\u00edcio \u2014 scored Paraguay's only goal"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "Paraguay were outplayed for long spells but showed some resilience after half-time and at least found a consolation, though the opening defeat leaves them with defensive questions."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/12/usa-paraguay-world-cup-2026-group-d-match-report"

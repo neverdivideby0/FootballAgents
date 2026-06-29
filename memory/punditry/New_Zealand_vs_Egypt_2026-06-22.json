@@ -1,0 +1,21 @@
+{
+  "match_id": "New_Zealand_vs_Egypt_2026-06-22",
+  "home": "New Zealand",
+  "away": "Egypt",
+  "date": "2026-06-22",
+  "home_read": {
+    "team": "New Zealand",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "away_read": {
+    "team": "Egypt",
+    "tactical_shape": [],
+    "standout_players": [],
+    "fatigue_injuries": [],
+    "momentum": "[placeholder] no punditry articles found."
+  },
+  "sources": []
+}

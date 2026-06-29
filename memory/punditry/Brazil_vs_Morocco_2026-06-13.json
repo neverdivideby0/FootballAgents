@@ -5,17 +5,43 @@
   "date": "2026-06-13",
   "home_read": {
     "team": "Brazil",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "tactical_shape": [
+      "Ancelotti initially used Roger Iba\u00f1ez at right-back, which left Brazil exposed and was targeted by Morocco.",
+      "After half-time, Ancelotti made tactical tweaks and replaced Casemiro and Iba\u00f1ez with Fabinho and Danilo, producing a more structured system that pushed Morocco back into their own half."
+    ],
+    "standout_players": [
+      "Vin\u00edcius J\u00fanior rescued Brazil with the equaliser, scoring from a tight angle after creating space down the left.",
+      "Alisson was beaten by Saibari for Morocco\u2019s goal and then almost made a costly late fumble.",
+      "Lucas Paquet\u00e1 came close with a volley that Bounou tipped wide.",
+      "Igor Thiago missed a header in the first half and was later denied from a tight angle.",
+      "Casemiro struggled in midfield and was booked before being substituted.",
+      "Roger Iba\u00f1ez was exposed at right-back and also booked."
+    ],
+    "fatigue_injuries": [
+      "Neymar was sidelined by a calf injury.",
+      "Casemiro and Iba\u00f1ez were both withdrawn at half-time after struggling and being booked."
+    ],
+    "momentum": "Brazil were lacklustre and anxious early, but improved after adjustments; the result underlines that Ancelotti has plenty of work to do before they look like real contenders."
   },
   "away_read": {
     "team": "Morocco",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Morocco pressed aggressively from the start and targeted Brazil\u2019s improvised right-back area.",
+      "They played with a midfield anchored by Ayyoub Bouaddi and were able to push Brazil back in the first half.",
+      "In the second half the rhythm dropped and Ouahbi\u2019s triple substitution suggested Morocco were prepared to settle for a point."
+    ],
+    "standout_players": [
+      "Ayyoub Bouaddi produced an outstanding, assured midfield display beyond his 18 years.",
+      "Ismael Saibari scored a brilliant opening goal with a composed lob.",
+      "Brahim D\u00edaz produced a sensational pass to set up the opener.",
+      "Achraf Hakimi created danger and could have done more when he shot instead of passing to D\u00edaz.",
+      "Yassine Bounou made key saves from Paquet\u00e1, Igor Thiago and Luis Henrique.",
+      "Noussair Mazraoui drove forward from left-back and Neil El Aynaoui had an early shot blocked."
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] no punditry articles found."
+    "momentum": "Morocco looked deservedly competitive and capable of going deep again, though the second-half drop in rhythm meant they had to settle for a draw."
   },
-  "sources": []
+  "sources": [
+    "https://www.theguardian.com/football/2026/jun/14/brazil-morocco-world-cup-match-report"
+  ]
 }

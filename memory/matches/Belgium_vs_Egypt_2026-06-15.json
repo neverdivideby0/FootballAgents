@@ -6,38 +6,77 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "Egypt starting with Salah as a No.10 behind Marmoush, with Ziko on the right and Ashour on the left"
+      ],
       "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 10 commentary beats. Enable use_llm for tactical extraction."
+      "key_matchups": [
+        "Kevin De Bruyne shooting from the edge of the D against Egypt's goalkeeper Shobeir",
+        "Salah challenging Onana, who goes down after contact"
+      ],
+      "summary": "Egypt begin brightly and on the front foot, with Salah operating as a No.10 behind Marmoush and supporting wide attackers on either side. Belgium\u2019s main early threat comes from De Bruyne, who already finds a pocket at the top of the box for a curling effort, while the only notable physical duel mentioned is Salah catching Onana. "
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 19 commentary beats; 1 events; goals at 19'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "cagey, fairly even open-play phase",
+        "Egypt in a compact defensive setup with counterattacking moments"
+      ],
+      "adjustments": [
+        "Ashour moved infield from the left to find space before the goal",
+        "Salah playing angled passes into central areas on transition",
+        "Belgium increased attacking pressure after the goal but remained wasteful"
+      ],
+      "key_matchups": [
+        "Timothy Castagne vs Mo Salah",
+        "J\u00e9r\u00e9my Doku vs Hany",
+        "J\u00e9r\u00e9my Doku vs Attia",
+        "Kevin De Bruyne vs Shobeir",
+        "Ziko vs Thibaut Courtois"
+      ],
+      "summary": "This phase was tight early on, with Belgium slightly on top after a slow start but Egypt threatening in transition. The decisive tactical moment came when Ashour drifted in from the left to receive Salah\u2019s angled pass and finish from the edge of the D, while Belgium\u2019s response produced more pressure than clear chances. Doku and De Bruyne offered moments of threat, but Egypt\u2019s compactness and direct counterattacking gave them the better end product."
     },
     {
       "phase": "Half-Time Brief",
-      "formations_blocks": [],
-      "adjustments": [],
+      "formations_blocks": [
+        "defensive block",
+        "game management to half-time"
+      ],
+      "adjustments": [
+        "Salah delayed the counter and recycled possession to a defensive teammate",
+        "Egypt chose to slow the tempo and see the match through to half-time"
+      ],
       "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 4 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "Egypt ended the half by prioritising control over risk, with Salah\u2019s break being recycled rather than forced forward once support was lacking. The phase points to a cautious defensive approach as Egypt protected their 1-0 lead at the break against Belgium."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 21 commentary beats; 1 events; goals at 66'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Egypt defending in a compact block and doubling up on Doku",
+        "Belgium looking to isolate Doku in wide duels and attack through set pieces"
+      ],
+      "adjustments": [
+        "Belgium made a double substitution on 57' with Maxim De Cuyper and Nicolas Raskin replacing Timothy Castagne and Amadou Onana",
+        "De Bruyne varied Belgium's free-kick routine by going short once before later taking one direct",
+        "Egypt responded to Belgium's pressure by tightening coverage on Doku with repeated doubling"
+      ],
+      "key_matchups": [
+        "Doku vs Fathy/Ibrahim/Attia",
+        "Marmoush vs Mechele",
+        "Marmoush vs Ngoy",
+        "Salah vs Courtois"
+      ],
+      "summary": "This phase was defined by Belgium trying to unlock Egypt through Doku\u2019s 1v1s and De Bruyne\u2019s set pieces, while Egypt stayed disciplined enough to double up on Belgium\u2019s main wide threat. Belgium\u2019s adjustments came via a double change in midfield/defence, but Egypt also created dangerous transitions and chances through Marmoush and Salah before Belgium eventually levelled via an own goal."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
+      "formations_blocks": [
+        "Belgium 4-2-3-1",
+        "Egypt 4-2-3-1"
+      ],
       "adjustments": [],
       "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 29 commentary beats. Enable use_llm for tactical extraction."
+      "summary": "The available text for this phase is dominated by team-news context rather than in-play tactical detail. Based on the lineups provided, both sides are set up in mirrored 4-2-3-1 shapes, with Belgium and Egypt matching each other structurally rather than showing any documented late-game tactical shifts. No specific press, block, adjustment, or individual matchup is described in the supplied commentary."
     }
   ],
   "sources": [

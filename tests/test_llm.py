@@ -65,9 +65,10 @@ def test_llm_advocates_and_judge_drive_verdict(tmp_path):
     deep = FakeLLM(content="", read=read)
 
     fx = Fixture(home="Spain", away="Brazil", stage=Stage.GROUP)
-    # This test checks the blend/breakdown wiring; disable the contextual clamp so the
-    # exact blend equality below holds (the clamp itself is covered by test_draw_stage).
-    cfg = _cfg(tmp_path); cfg["max_contextual_delta"] = 1.0
+    # This test checks the STATS-path blend/breakdown wiring; pin verdict_mode=stats and
+    # disable the contextual clamp so the exact blend equality below holds (agents mode
+    # would use the judge read verbatim — that path is covered in test_agents_verdict).
+    cfg = _cfg(tmp_path); cfg["max_contextual_delta"] = 1.0; cfg["verdict_mode"] = "stats"
     final, v = Predictor(cfg, deep_llm=deep, quick_llm=quick).predict(fx)
 
     # Advocate text came from the quick LLM.

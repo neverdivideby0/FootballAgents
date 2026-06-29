@@ -6,38 +6,98 @@
   "phases": [
     {
       "phase": "0-15 Initial Setup",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 0-15 Initial Setup: 10 commentary beats; 1 events; goals at 12'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "England trying to play out from the back",
+        "Croatia starting strongly with an aggressive press/high-pressure start",
+        "Croatia defending the initial corner and threatening from set pieces"
+      ],
+      "adjustments": [
+        "Kane drops deep to link play",
+        "Gordon makes runs down the left looking to be released by Rice",
+        "Madueke provides a threat down the right after a loose touch from Modric"
+      ],
+      "key_matchups": [
+        "Rice vs Perisic (Rice intercepts Perisic's low cross)",
+        "Stones vs Croatia's early press (England's buildup under pressure)",
+        "Modric vs Madueke (Modric's error leads to the penalty)",
+        "Kane vs Livakovic (saved first penalty, then scored the retake)"
+      ],
+      "summary": "Croatia began the phase on the front foot, pressing England\u2019s build-up and creating early danger from corners and wide deliveries. England were initially shaky, but a turnover from Modric and Madueke\u2019s reaction won a penalty, which Kane eventually converted on the retake after Gvardiol encroached. "
     },
     {
       "phase": "15-45 First-Half Shift",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 15-45 First-Half Shift: 21 commentary beats; 2 events; goals at 36', 42'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "England counterattacking after the penalty",
+        "Croatia pressing/high stepping to attack and recover possession"
+      ],
+      "adjustments": [
+        "Kane dropping deep to link play",
+        "Madueke stretching the right side and attacking in behind",
+        "Bellingham driving from the left channel",
+        "England becoming more dangerous on transitions after initially being second best"
+      ],
+      "key_matchups": [
+        "James vs Musa",
+        "Gvardiol vs Kane",
+        "Livakovic vs Kane"
+      ],
+      "summary": "The phase opens with Croatia pushing forward and England surviving a dangerous right-sided cross, but England begin to look increasingly threatening once they can break quickly. Kane drops deeper to connect play, Madueke provides width on the right, and Bellingham carries the ball from the left, with the rhythm briefly interrupted by the hydration break and the retake drama. Croatia level through Baturina, but England respond quickly through Kane to restore control in a transition-heavy, end-to-end spell."
     },
     {
       "phase": "Half-Time Brief",
       "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] Half-Time Brief: 11 commentary beats. Enable use_llm for tactical extraction."
+      "adjustments": [
+        "No changes at half-time",
+        "England described as having 'fallen back into fearful patterns' and being 'confused' and 'complicated'",
+        "England appeared to receive a firm half-time talking-to",
+        "Second half restarted by Croatia after England were late back on the pitch"
+      ],
+      "key_matchups": [
+        "Declan Rice\u2019s corners vs Croatia\u2019s set-piece preparation",
+        "O\u2019Reilly unmarked at the far post from Rice\u2019s corner"
+      ],
+      "summary": "The half-time message from England\u2019s staff suggests a side that had drifted into nervous, overcomplicated habits despite leading the game\u2019s chance creation. The key tactical note in the brief is England\u2019s continued threat from Rice\u2019s corners, with one delivery immediately producing a far-post header chance for O\u2019Reilly, underlining Croatia\u2019s vulnerability at set pieces."
     },
     {
       "phase": "45-75 Tactical Adjustments",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 45-75 Tactical Adjustments: 23 commentary beats; 2 events; goals at 45', 47'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "Croatia pass and probe, suggesting a settled possession shape rather than an explicit high press or low block",
+        "England attacking through sustained pressure and repeated corners after the restart"
+      ],
+      "adjustments": [
+        "Croatia tried to settle after conceding by circulating possession and using Modric\u2019s free-kick delivery",
+        "England increasingly funnelled attacks down the right via James and Madueke, then kept pressure on through set pieces",
+        "Rice also began driving from the left flank, adding a different attacking route"
+      ],
+      "key_matchups": [
+        "Bellingham vs Pasalic",
+        "James vs Modric on the free kick",
+        "Rice vs Livakovic",
+        "Madueke vs Modric",
+        "O\u2019Reilly vs Livakovic",
+        "Gordon vs Livakovic"
+      ],
+      "summary": "The phase is defined by a swing in momentum immediately after the interval: England score again at 47' and then pin Croatia back with wave after wave of pressure, especially from set pieces and right-sided combinations. Croatia respond by trying to steady possession through Modric and Baturina, but they are largely on the back foot, surviving thanks to Livakovic\u2019s saves and clearances under heavy pressure."
     },
     {
       "phase": "75-90+ Crunch Time",
-      "formations_blocks": [],
-      "adjustments": [],
-      "key_matchups": [],
-      "summary": "[placeholder] 75-90+ Crunch Time: 21 commentary beats; 1 events; goals at 85'. Enable use_llm for tactical extraction."
+      "formations_blocks": [
+        "England protecting a lead and looking to shore things up",
+        "Croatia pushing on for a response in the closing stages"
+      ],
+      "adjustments": [
+        "Croatia double substitution: Kramaric and Vlasic on for Mario Pasalic and Baturina",
+        "England substitution: Spence on for Bellingham, suggesting a more defensive shape to hold the lead"
+      ],
+      "key_matchups": [
+        "Rashford vs Stanisic on England's left",
+        "Marco Pasalic vs Pickford from a tight angle",
+        "Matanovic vs Pickford from distance",
+        "Kramaric vs Pickford after crossing from the left",
+        "Spence vs Livakovic in a late England break",
+        "Kovacic vs Pickford from range"
+      ],
+      "summary": "This phase is open and tense, with Croatia committing bodies forward in search of a way back while England sit on their lead and then add another late goal. Croatia create a series of chances from the right, the left, and from distance, but Pickford and England\u2019s last line hold firm, while Livakovic is also tested at the other end. England\u2019s substitution of Spence for Bellingham points to game management, but Rashford\u2019s 85th-minute goal effectively settles the contest."
     }
   ],
   "sources": [

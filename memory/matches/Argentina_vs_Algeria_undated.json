@@ -1,0 +1,78 @@
+{
+  "match_id": "Argentina_vs_Algeria_undated",
+  "home": "Argentina",
+  "away": "Algeria",
+  "date": null,
+  "phases": [
+    {
+      "phase": "0-15 Initial Setup",
+      "formations_blocks": [
+        "4-3-3 (out of possession)"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Messi vs Hadj Moussa",
+        "Lautaro Martinez vs Zidane"
+      ],
+      "summary": "Argentina defend in a 4-3-3 shape out of possession with Messi on the right of the front three, adopting a patient approach to draw Algeria out. Algeria threaten with a first attack that would have opened the scoring, but Chaibi's goal is ruled out by VAR for a marginal offside; Messi also has a finish ruled offside on a quick counter. Messi then contributes defensively by dispossessing Hadj Moussa as Algeria look to build, while Maza recycles possession to maintain control in a low-tempo phase."
+    },
+    {
+      "phase": "15-45 First-Half Shift",
+      "formations_blocks": [
+        "deep low block"
+      ],
+      "adjustments": [],
+      "key_matchups": [
+        "Messi vs Zidane"
+      ],
+      "summary": "Argentina build through patient defense-to-midfield play with Messi dropping deep to initiate vertical passes. Messi finishes a one-two move between the lines with a left-foot strike past Zidane to give Argentina the lead, while Algeria sit in a deep low block and defend stoutly. The phase features sustained ball movement and a hydration break, with a VAR offside check interrupting the early action."
+    },
+    {
+      "phase": "Half-Time Brief",
+      "formations_blocks": [],
+      "adjustments": [
+        "Molina on for Montiel at right back (46)",
+        "Alvarez on for Almada (56)",
+        "Gonzalez on for La Martinez (56)"
+      ],
+      "key_matchups": [
+        "Messi vs A\u00efssa Mandi",
+        "Mac Allister vs Maza",
+        "La Martinez vs Zidane"
+      ],
+      "summary": "At half-time Argentina lead 1-0 and replace Montiel with Molina, signaling a right-back tweak. Algeria begin the second half with possession, but Argentina remain compact and Fernandez clears; Messi has a long-range effort that goes wide from the D while La Martinez tests Zidane, earning a save. Argentina then bring Alvarez and Gonzalez on to refresh the attack as the phase develops."
+    },
+    {
+      "phase": "45-75 Tactical Adjustments",
+      "formations_blocks": [
+        "Argentina compact narrow defensive block",
+        "Argentina high-pressing sequence/pressing trigger"
+      ],
+      "adjustments": [
+        "Algeria substitutions: Mahrez, Aouar, Amoura on; Hadj Moussa, Gouiri, Boudaoui off (63')"
+      ],
+      "key_matchups": [
+        "Lionel Messi vs Zidane (Algeria goalkeeper) \u2013 Messi\u2019s goal after spill and later save denying a hat-trick",
+        "Mahrez vs Maza \u2013 sharp interplay leading to Algeria\u2019s first shot"
+      ],
+      "summary": "Argentina used a long-ball release to Messi that culminated in a poacher\u2019s finish after Mac Allister\u2019s low drive; Zidane\u2019s spill set Messi up for the 60th-minute goal. Algeria responded with three substitutions, but Argentina maintained a compact narrow defensive shape and pressed to force errors, with Messi continuing to threaten and Lisandro Mart\u00ednez stepping out of defense to help play out from the back."
+    },
+    {
+      "phase": "75-90+ Crunch Time",
+      "formations_blocks": [
+        "low-block (disciplined back four)"
+      ],
+      "adjustments": [
+        "Substitution: Messi and Romero off; Otamendi and Nico Paz on (78')."
+      ],
+      "key_matchups": [
+        "Messi vs Zidane (goalkeeper)",
+        "Aouar vs Mac Allister (midfield duel)"
+      ],
+      "summary": "Messi's 76th-minute goal punctuates a rapid Argentina break, showing Messi's tempo control and finishing with authority. In the late phases Argentina sit compact with a disciplined back four, inviting Algeria to probe outside the box while subs at 78' refresh experience and maintain shape as the game winds down."
+    }
+  ],
+  "sources": [
+    "https://www.theguardian.com/football/live/2026/jun/17/fifa-world-cup-2026-live-argentina-v-algeria-updates-arg-vs-alg-group-j-match-score-latest"
+  ]
+}

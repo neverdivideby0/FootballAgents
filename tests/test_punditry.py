@@ -132,3 +132,46 @@ def test_fetch_articles_handles_name_variants():
     ]}}
     arts = _provider_with_response(payload).fetch_articles("USA", "Korea Republic", "2026-06-20")
     assert [a["url"] for a in arts] == ["u/usa-kor"]
+
+
+def test_fetch_match_uses_name_variants_for_liveblog():
+    payload = {"response": {"results": [
+        {"webTitle": "Uruguay 2-2 Cape Verde: World Cup 2026 – as it happened",
+         "type": "liveblog", "webUrl": "u/uru-cpv",
+         "blocks": {"body": [{"bodyTextSummary": "1 min: Uruguay kick off."}]}},
+    ]}}
+    feed = _provider_with_response(payload).fetch_match("Uruguay", "Cape Verde Islands", "2026-06-21")
+    assert feed.sources == ["u/uru-cpv"]
+    assert feed.lines == ["1 min: Uruguay kick off."]
+
+
+def test_fetch_match_refuses_unrelated_liveblog():
+    payload = {"response": {"results": [
+        {"webTitle": "Belgium 0-0 Iran: World Cup 2026 – as it happened",
+         "type": "liveblog", "webUrl": "u/bel-iran",
+         "blocks": {"body": [{"bodyTextSummary": "1 min: Belgium kick off."}]}},
+    ]}}
+    feed = _provider_with_response(payload).fetch_match("Uruguay", "Cape Verde Islands", "2026-06-21")
+    assert feed.sources == []
+    assert feed.lines == []
+
+
+def test_search_url_uses_a_date_window_not_a_single_day():
+    # Liveblogs/reports are stamped night-of or the next morning, and store dates drift,
+    # so the Guardian search must BRACKET the fixture date, not pin a single day.
+    from worldcupagents.dataflows.commentary.guardian import _date_window
+    assert _date_window("2026-06-25") == ("2026-06-23", "2026-06-28")  # [-2, +3]
+    assert _date_window(None) is None and _date_window("not-a-date") is None
+    url = _provider_with_response({"response": {"results": []}})._search_url("Japan", "Sweden", "2026-06-25")
+    assert "from-date=2026-06-23" in url and "to-date=2026-06-28" in url
+
+
+def test_search_terms_span_input_and_canonical_warehouse_name():
+    # The query must include each team's CANONICAL (warehouse) spelling too, so the
+    # Guardian surfaces a report titled 'Côte d'Ivoire' for our 'Ivory Coast'.
+    from worldcupagents.dataflows.commentary.guardian import GuardianCommentaryProvider as G
+    from worldcupagents.dataflows.names import canonical_name
+    q = G._search_terms("Ivory Coast", "Ecuador")
+    assert "Ivory Coast" in q and canonical_name("Ivory Coast") in q and "Ecuador" in q
+    # input == canonical collapses (no 'Ecuador Ecuador')
+    assert G._search_terms("Ecuador", "Ecuador").split().count("Ecuador") == 1

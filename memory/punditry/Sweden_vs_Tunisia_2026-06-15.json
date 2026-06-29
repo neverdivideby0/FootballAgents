@@ -5,17 +5,36 @@
   "date": "2026-06-15",
   "home_read": {
     "team": "Sweden",
-    "tactical_shape": [],
-    "standout_players": [],
-    "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "tactical_shape": [
+      "Solid team performance behind Alex Isak and Viktor Gy\u00f6keres",
+      "Relied on quick transitions/breaks rather than prolonged possession, with Gy\u00f6keres instrumental in the build-up",
+      "Defensive support functioned well enough to allow the forwards to show their quality"
+    ],
+    "standout_players": [
+      "Yasin Ayari - scored twice, including the opener and the fifth; one of Sweden's key attacking threats",
+      "Viktor Gy\u00f6keres - instrumental in the first goal, created the second, won/tackled for the third, and scored Sweden's third; influential night",
+      "Alexander Isak - assisted Gy\u00f6keres for the second goal and played Svanberg in for the fourth; showed his quality",
+      "Mattias Svanberg - scored the fourth after coming off the bench",
+      "Victor Lindel\u00f6f - provided the ball over the top for the opener"
+    ],
+    "fatigue_injuries": [
+      "Graham Potter was bleeding from an ear injury he was unable to explain"
+    ],
+    "momentum": "Potter's Sweden are continuing a remarkable renewal and look confident, with the win reinforcing their World Cup place and upward momentum."
   },
   "away_read": {
     "team": "Tunisia",
-    "tactical_shape": [],
-    "standout_players": [],
+    "tactical_shape": [
+      "Did not start by trying to kill the game or waste time; there was an actual attempt to play football",
+      "Showed some creative endeavour and were willing to attack rather than purely spoil",
+      "Briefly had a spell after half-time where a comeback seemed possible"
+    ],
+    "standout_players": [
+      "Omar Rekik - headed in Tunisia's only goal from Hannibal Mejbri's cross",
+      "Hannibal Mejbri - provided the right-wing cross for the goal"
+    ],
     "fatigue_injuries": [],
-    "momentum": "[placeholder] 1 punditry article(s) collected; enable use_llm for extraction."
+    "momentum": "A self-destructive display dominated by individual mistakes leaves Tunisia with an implosion to learn from and little positive momentum."
   },
   "sources": [
     "https://www.theguardian.com/football/2026/jun/15/sweden-tunisia-world-cup-match-report"

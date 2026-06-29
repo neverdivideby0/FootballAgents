@@ -85,7 +85,7 @@ def test_career_totals_line_orders_by_goals(tmp_path):
     cfg = _cfg(tmp_path)
     _seed_warehouse(cfg)
     line = _career_totals_line(cfg, "Argentina")
-    assert "Lionel Messi 180 caps, 106 intl goals (2005–present)" in line
+    assert "Lionel Messi: 180 caps, 106 intl goals (2005–present)" in line
     assert line.index("Messi") < line.index("Lautaro")        # goals desc
     assert "[source: https://en.wikipedia.org/wiki/Lionel_Messi]" in line
 
@@ -137,7 +137,7 @@ def test_form_report_carries_warehouse_lines_for_wc_fixture(tmp_path):
     assert "H2H (international):" in form
     assert "shot profile (WC 2022)" in form
     player = final.get("player_report", "")
-    assert "Lionel Messi 180 caps" in player
+    assert "Lionel Messi: 180 caps" in player
 
 
 def test_league_fixtures_skip_warehouse_taps(tmp_path):

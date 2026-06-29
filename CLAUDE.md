@@ -46,11 +46,17 @@ Predictions run under a **live TUI** (`tui.py`, progress/messages/report/stats)
 on a TTY via `Predictor.predict_stream`. The memory loop is **closed**: `resolve
 --provider X` writes an LLM reflection into `prediction_log.md`, and
 `recall.prediction_lessons` (n_same=5, n_cross=3, TA's get_past_context port)
-injects resolved lessons back into the Judge & Final Pundit prompts.
+injects resolved lessons back into the Judge & Final Pundit prompts. The per-team
+**living dossier** (`memory/teams/<TEAM>.md`) — which `resolve` appends to and you can
+edit by hand — is now read back too via `recall.team_dossier_brief` (deduped auto lines
++ your manual notes), so hand-written team learnings flow into the debate (it was
+write-only before).
 
 CLI commands: `predict` (with `--depth`, `--scenario/--no-scenario`,
-`--scenario-rounds`), `analyze-match` (Guardian commentary → 5-phase tactical
-report in memory/matches/), `scout-report` (stats + tactical memory → report),
+`--scenario-rounds`, `--verdict-mode agents|stats`), `analyze-match` (Guardian
+commentary → 5-phase tactical report in memory/matches/), `analyze-all` (backfill
+memory for EVERY finished game — no fixtures typed; offline lists what would run),
+`scout-report` (stats + tactical memory → report),
 `critic` (quant vs qual cross-examination), `resolve` (Brier + optional LLM
 reflection), `backtest` (calibration yardstick), `fetch-data` (populate the
 SQLite match store), `watch` (matchday autopilot: poll → structured-punditry +
@@ -70,6 +76,38 @@ so the user picks provider + model (e.g. `gpt-5.4-mini`, not the cheap default).
 Guarded by `sys.stdin.isatty()` — a non-TTY invocation prints `--help` instead of
 hanging. Note: `analyze-match`/`watch` use the **quick** model by design (cheap
 extraction); pass `--model <id>` (or pick it in the menu) to use a stronger one.
+
+**Agent-driven verdict (2026-06, `verdict_mode`):** the SCORELINE is decided by the
+agents, not the maths. Each advocate ends with a `Scorelines: 2-1, 1-1, 2-0 | Black
+swan: 0-2 (how)` line (parsed in `advocates/advocate.py`, stashed per-side in
+`debate_state`); the judge is shown both sides' calls (`pundit.scorelines_block`) and
+picks THE final score + states the W/D/L probabilities directly. `verdict.assemble_verdict`
+has two branches keyed on `config["verdict_mode"]`: **"agents"** (default) uses the judge's
+read verbatim — no Poisson/blend/clamp, `breakdown=None`, `exp_goals=None`, and the upset
+watch (`AlternativeOutcome`) is built from the advocates' **black-swan** scorelines; **"stats"**
+is the original fitted-strength λ → grid → blend path (kept as a clickable choice —
+`predict --verdict-mode stats`, the `-i`/menu picker — and powering simulate/backtest/evaluate).
+Agents mode **auto-falls back to stats whenever there's no usable LLM read** (offline / missing
+key / judge error), so predict never crashes and the offline tests stay on the math.
+**Knockouts:** the agents MAY call a level full-time score, but a knockout always resolves to a
+winner — `assemble_verdict` folds `p_draw`→0 and sets `decided_by` (extra_time/penalties) with
+the `(a.e.t., pens)` suffix (`JudgeRead.decided_by` carries the judge's choice). The
+`resolve`/Brier/calibration learning loop is **unchanged** — it scores whatever probabilities
+the verdict carries, now LLM-sourced in agents mode. **Scoreline boldness (2026-06):** the
+debate LLMs run at a higher sampling temperature (`llm_temperature`, default **0.9**, passed to
+the advocate/judge/scenario clients in `Predictor`; `predict -t/--temperature` or
+`WCA_LLM_TEMPERATURE` to tune — some OpenAI reasoning models need 1.0), AND the advocate/judge
+prompts now tell the agents NOT to default to one-goal margins — a clear favourite should get a
+decisive scoreline (2-0/3-1/rout), tight scores reserved for even games. (Extraction commands
+like `analyze-match`/`watch` build their own clients and stay deterministic.)
+
+**Matchday learning loop (the simple path):** `fetch-data` (results → store) → `analyze-all`
+or `watch` (Guardian live-feed → `memory/matches/`, match report → `memory/punditry/`) →
+`predict` (recall — `predictive_brief`/`punditry_brief`/`team_dossier_brief` — feeds the
+analysed history into the debate) → `resolve --sync` (Brier + a lesson appended to
+`memory/teams/<TEAM>.md`, which flows into the next prediction). `analyze-all` needs **no
+fixtures typed** (scans the store for finished games); multi-word team names are **quoted**
+(`analyze-match "New Zealand" Egypt`). `watch` chains fetch+analyse+resolve in one tick.
 
 To run with real LLMs: pick a provider at the CLI (`--provider anthropic|openai|
 google|deepseek`) with the matching key in `.env` (DeepSeek routes through the
@@ -359,10 +397,13 @@ Understat has xG; FBref/Sofascore/WhoScored are blocked; API-Football free is
 capped to 2022–2024) — add it as prose via `qual-data`/`note-player`, or a paid
 API-Football/Opta tier.
 
-**Dossier in the report + national club stats (2026-06):** the markdown export
-opens with **§0 Pre-Match Dossier** (`prematch.dossier_markdown` — per-team
-forte/tempo/set-pieces/XI/players/career/form/weaknesses/notes + market + H2H)
-so a reader can sanity-check the data and form their own view. National-team
+**Dossier in the report + national club stats (2026-06):** the `dossier` command
+(`prematch.dossier_markdown` — per-team forte/tempo/set-pieces/XI/players/career/
+form/weaknesses/notes + market + H2H) is a no-LLM lookup so a reader can sanity-check
+the data and form their own view. *(Update 2026-06: it is NO LONGER embedded in the
+prediction report — it was an info-dump wall; the export now leads with the Analyst
+Reports. The `dossier` command stays as an on-demand lookup, wired into the menu/
+explorer.)* National-team
 player tables are no longer empty: `recall.squad_club_stats` matches each squad
 player BY NAME across the club leagues (PL/PD/SA/BL1/FL1 Understat) and shows
 their **club form** (e.g. Austria → Schmid/Werder, Laimer/Bayern; Turkey → Güler/
@@ -379,20 +420,36 @@ Notes surface squad-scoped next to the player in the Player Analyst
 that data can't capture. `hoard-data` raw fetches now reuse files across
 snapshot dirs (`_ensure_raw`) so StatsBomb's 337 MB isn't re-downloaded daily.
 Data-utilization note: matches/wh_matches/situations/career-totals/
-player-match-stats/shootouts/qual/player-notes are all consumed at predict time;
+player-match-stats/qual/player-notes are all consumed at predict time;
 **under-used**: `wh_lineups` (historical XIs, unused), `wh_goals` minute-level
 timing (only aggregated), and cross-competition club stats for national-team
 squad players (the biggest untapped join).
 
 **Data-backed weaknesses (2026-06):** `dataflows/weaknesses.py::find_weaknesses`
 surfaces concrete soft spots — ONLY when a real threshold trips (no manufactured
-flaws): bogey/can't-beat opponent (H2H vs the actual opponent), falls short in
-shootouts (`wh_shootouts`, nationals), set-piece vulnerability (Understat
-conceded), soft home / poor away record (`venue_record`), goal over-reliance on
-one scorer, form slump, indiscipline, leaky defence, blunt finishing. Each is
-sourced + recency-bounded. Shown per team in the `dossier` (red ✗ list) and fed
-into the Form Analyst (`reports._weakness_line`) so advocates attack real flaws.
-New store readers: `venue_record`, `h2h_vs`, `shootout_record`.
+flaws): bogey/can't-beat opponent (H2H vs the actual opponent), set-piece
+vulnerability (Understat conceded), soft home / poor away record (`venue_record`),
+goal over-reliance on one scorer, form slump, indiscipline, leaky defence, blunt
+finishing. Each is sourced + recency-bounded. Shown per team in the `dossier` (red
+✗ list) and fed into the Form Analyst (`reports._weakness_line`) so advocates
+attack real flaws. New store readers: `venue_record`, `h2h_vs`. (The shootout
+weakness + `wh_shootouts` table were **removed 2026-06** — the warehouse shootout
+data was too sparse/noisy to trust; the table is dropped on connect.)
+
+**Alias-aware team reads (2026-06, fixes "South Korea lost to Korea Republic"):**
+the same nation can appear under different vendor spellings — the `matches` table
+holds both "South Korea" (football-data.org) and "Korea Republic" (.co.uk), while
+`wh_matches`/`player_notes` use only "Korea Republic". Readers that filtered/compared
+by one raw name produced split or **self-referential** output (a side "losing to"
+its own canonical name, with the score flipped). Fix: every per-team read funnels
+through the alias table (`dataflows/names.py`). `MatchStore._team_match_sql` /
+`_side_sql` match ANY surface spelling (`surface_forms`) in the SQL, and
+`MatchStore._same_team` decides perspective by canonical key — applied in
+`team_stat_profile`, `recent_team_matches`, `venue_record`, `h2h_vs`.
+`reports._fmt_wh_match` compares perspective canonically too. `player_notes` are now
+keyed by `canonical_name` on write AND read (so notes filed under either spelling
+resolve). Net: predicting "South Korea" now finds its squad notes, real recent
+opponents, and H2H — no self-matches.
 
 **Pre-match dossier (2026-06):** `footballagents dossier HOME AWAY` is the
 unified no-LLM lookup — line-up, squad-scoped player stats, recent scores+stats
@@ -420,7 +477,13 @@ matchday loop (newest results → auto-resolve pendings → refresh internationa
 explainers (Brier with worked examples, de-vig, the blend equation, what each
 LLM-lift table row means and how it relates to the debate), and FAQs
 (`_GUIDE_HTML` in data_explorer.py). All explorer tables are click-to-sort;
-the three data tables have Comp/Season/Source dropdown filters. Payload caps
+the three data tables have Comp/Season/Source dropdown filters. **Readable tactical
+reports (2026-06):** the Memory tab's "Tactical reports" is now **click-to-expand
+`<details>` cards** (native HTML, no JS) — each opens the phase summaries + populated
+formations/adjustments/matchups AND the sibling match-report punditry digest, with an
+amber "offline placeholder" chip when a report ran without an LLM (so `0/5` reads as
+"not extracted yet", not "scrape failed"). `_memory` carries the phase/punditry bodies;
+`tactical_rows`/`_phase_block`/`_punditry_block` render them. Payload caps
 keep the NEWEST rows (capping the head used to hide every PL/WC row behind
 1870s internationals). Wikipedia career-totals ingest now sources titles from
 **current WC2026 squads** (competition feed, ~1,170 players) before all-time
